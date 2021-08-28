@@ -668,6 +668,9 @@ includeFile("record_keepers/record_keepers.lua")
 --Battlefields
 includeFile("battlefields/battlefield_spawner.lua");
 
+--WarZones
+includeFile("warzone/warzone_spawner.lua")
+
 --Tests
 includeFile("tests/tests.lua")
 
