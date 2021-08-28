@@ -110,11 +110,11 @@ registerScreenPlay("NabooTheedScreenPlay", true)
 
 function NabooTheedScreenPlay:start()
 	if (isZoneEnabled(self.planet)) then
-		self:spawnMobiles()
-		self:spawnSceneObjects()
-		self:spawnGcwMobiles()
-		self:spawnPatrolMobiles()
-		self:spawnStationaryMobiles()
+		--self:spawnMobiles()
+		--self:spawnSceneObjects()
+		--self:spawnGcwMobiles()
+		--self:spawnPatrolMobiles()
+		--self:spawnStationaryMobiles()
 	end
 end
 
