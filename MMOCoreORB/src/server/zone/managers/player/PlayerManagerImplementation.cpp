@@ -312,6 +312,8 @@ void PlayerManagerImplementation::loadStartingLocations() {
 
 	delete iffStream;
 
+	info(startingLocationList.getTotalLocations() + "******************", true);
+
 	info(true) << "Loaded " << startingLocationList.getTotalLocations() << " starting locations.";
 }
 
