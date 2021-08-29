@@ -3640,6 +3640,8 @@ StartingLocation* PlayerManagerImplementation::getStartingLocation(const String&
 
 		if (loc == nullptr)
 			continue;
+		
+		info(String::valueOf(loc) + " **********", true);
 
 		if (loc->getLocation() == city)
 			return loc;
