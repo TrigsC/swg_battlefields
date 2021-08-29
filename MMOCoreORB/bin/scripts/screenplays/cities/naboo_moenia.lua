@@ -56,11 +56,11 @@ registerScreenPlay("NabooMoeniaScreenPlay", true)
 
 function NabooMoeniaScreenPlay:start()
 	if (isZoneEnabled("naboo")) then
-		self:spawnMobiles()
-		self:spawnPatrolMobiles()
-		self:spawnStationaryMobiles()
-		self:spawnSceneObjects()
-		self:spawnGcwMobiles()
+		--self:spawnMobiles()
+		--self:spawnPatrolMobiles()
+		--self:spawnStationaryMobiles()
+		--self:spawnSceneObjects()
+		--self:spawnGcwMobiles()
 	end
 end
 
