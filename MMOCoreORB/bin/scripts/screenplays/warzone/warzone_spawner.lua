@@ -55,7 +55,8 @@ function WarZoneSpawner:spawnSceneObjects()
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -116.13, 28,-4206.98, 9995377, math.rad(180) )
 
     --Naboo Imperial Starting Area
-    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3598.9, -209.34, 7001.14, 9995378, math.rad(150) )
-    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_column_s03.iff", 3621.66, -209.07, 6995.39, 9995379, math.rad(250) )
-    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3621.66, -209.07, 6995.39, 9995379, math.rad(250) )
+    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3571.38, -209.32, 6985.26, 9995373, math.rad(150) )
+    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3598.9, -209.34, 7001.14, 9995372, math.rad(150) )
+    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_column_s03.iff", 3613.18, -210, 7009.50, 9995374, math.rad(150) )
+    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3621.66, -209.07, 6995.39, 9995375, math.rad(230) )
 end
