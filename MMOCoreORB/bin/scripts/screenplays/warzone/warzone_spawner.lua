@@ -18,6 +18,7 @@ function WarZoneSpawner:spawnSceneObjects()
 	--Guild Hall regular
 	--spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s02.iff", -218.9, 28.6,-4049.5, 0, 0)
 
+    --Corellia Coronet
 	--Perimeter
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -307.2, 28,-4146.5, 9995397, 0)
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -429.3, 28,-4147, 9995396, 0)
@@ -52,4 +53,9 @@ function WarZoneSpawner:spawnSceneObjects()
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", 93.69, 28,-4402.79, 9995375, math.rad(270) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", 20.53, 28,-4242.06, 9995376, math.rad(180) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -116.13, 28,-4206.98, 9995377, math.rad(180) )
+
+    --Naboo Imperial Starting Area
+    spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3598.9, -209.34, 7001.14, 9995378, math.rad(150) )
+    spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_column_s03.iff", 3621.66, -209.07, 6995.39, 9995379, math.rad(250) )
+    spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3621.66, -209.07, 6995.39, 9995379, math.rad(250) )
 end
