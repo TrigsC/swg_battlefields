@@ -74,6 +74,20 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3539.551514, -208.073944, 6946.337891, 9995386, -0.469837, -0.000001, 0.882753, -0.000001)
     spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_column_s03.iff", 3530.288818, -209.081100, 6960.103027, 9995387, 0.884247, 0.000000, 0.467019, 0.000000)
 
+    spawnSceneObject("naboo", "object/building/military/military_base_gate_house_imperial.iff", 3631.350586, -209.819199, 6972.072266, 9995388, 0.889216, 0.000000, 0.457487, 0.000000)
+    spawnSceneObject("naboo", "object/building/military/military_base_gate_house_imperial.iff", 3612.228516, -210.549561, 7002.398438, 9995389, 0.882553, -0.000000, 0.470214, -0.000000)
+    spawnSceneObject("naboo", "object/building/military/military_base_gate_house_imperial.iff", 3536.751221, -209.267822, 6957.563965, 9995390, -0.466464, -0.000000, 0.884540, 0.000000)
+    spawnSceneObject("naboo", "object/building/military/military_base_gate_house_imperial.iff", 3561.656006, -207.786469, 6922.701172, 9995391, -0.479285, -0.000001, 0.877659, -0.000001)
+
+    spawnSceneObject("naboo", "object/tangible/event_perk/lamdba_shuttle.iff", 3565.625488, -207.386780, 6949.822266, 9995392, 0.892182, 0.000001, 0.451676, 0.000001)
+
+    spawnSceneObject("naboo", "object/building/military/military_imperial_field_hospital.iff", 3613.689941, -207.561172, 6960.862305, 9995393, 0.942201, 0.000001, -0.335048, 0.000002)
+
+    spawnSceneObject("naboo", "object/building/military/small_imperial_cloning_facility.iff", 3595.409180, -208.759308, 6989.313965, 9995394, 0.268415, 0.000001, 0.963303, 0.000001)
+
+    spawnSceneObject("naboo", "object/tangible/terminal/terminal_guild.iff", 3591.895996, -208.514969, 6979.841309, 9995395, -0.500295, -0.000304, 0.865850, 0.000109)
+    spawnSceneObject("naboo", "object/tangible/terminal/terminal_character_builder.iff", 3606.756836, -207.112717, 6956.389648, 9995396, -0.419645, 0.000001, 0.907688, 0.000001)
+
     --shuttle /tool tjt 3556.129639 -208.060806 6941.846680 0.882746 0.000000 0.469851 0.000000
     --spawnSceneObject(self.planet, "object/tangible/terminal/terminal_elevator_up.iff", .5, 0, -21.4, 1076971, 1, 0, 0, 0)
 end
