@@ -1517,7 +1517,9 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 	ghost->setCloning(true);
 
 	if (cellID == 0)
-		player->switchZone(zone->getZoneName(), cloner->getWorldPositionX() + coordinate->getPositionX(), cloner->getWorldPositionZ() + coordinate->getPositionZ(), cloner->getWorldPositionY() + coordinate->getPositionY(), 0);
+		if player->isImperial(){
+			player->switchZone("naboo", 3590, -208, 6990, 3);
+			//player->switchZone(zone->getZoneName(), cloner->getWorldPositionX() + coordinate->getPositionX(), cloner->getWorldPositionZ() + coordinate->getPositionZ(), cloner->getWorldPositionY() + coordinate->getPositionY(), 0);
 	else
 		player->switchZone(zone->getZoneName(), coordinate->getPositionX(), coordinate->getPositionZ(), coordinate->getPositionY(), cell->getObjectID());
 
