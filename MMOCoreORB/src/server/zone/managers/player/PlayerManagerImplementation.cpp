@@ -1320,6 +1320,10 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 	cloneMenu->setCallback(new CloningRequestSuiCallback(player->getZoneServer(), typeofdeath));
 	cloneMenu->setPromptTitle("@base_player:revive_title");
 
+	//if (player->isImperial())
+	//	String name = "Imperial HQ (" + String::valueOf((int)loc->getWorldPositionX()) + ", " + String::valueOf((int)loc->getWorldPositionY()) + ")";
+	//	cloneMenu->addMenuItem(name, loc->getObjectID());
+
 	uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
 	ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
 	String predesignatedName = "None";
@@ -1389,8 +1393,11 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 
 	cloneMenu->setPromptText(promptText.toString());
 
-	if (closestCloning != nullptr)
+	if (closestCloning != nullptr) {
 		cloneMenu->addMenuItem("@base_player:revive_closest", closestCloning->getObjectID());
+		String name = "Force Shrine (" + String::valueOf(closestCloning->getObjectID()) + ")";
+		player->info(name)
+	}
 
 	if (preDesignatedFacility != nullptr && preDesignatedFacility->getZone() == zone)
 		cloneMenu->addMenuItem("@base_player:revive_bind", preDesignatedFacility->getObjectID());
