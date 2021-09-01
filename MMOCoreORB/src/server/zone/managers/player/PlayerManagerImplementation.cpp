@@ -1322,10 +1322,10 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 
 	if (player->isImperial()) {
 		String name = "Imperial HQ";
-		cloneMenu->addMenuItem(name, 281474993818364);
+		cloneMenu->addMenuItem(name);
 	}
 
-	uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
+	/*uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
 	ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
 	String predesignatedName = "None";
 
@@ -1384,21 +1384,15 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 			closestName = cr->getRegionDisplayedName();
 		else
 			closestName = closestCloning->getDisplayedName();
-	}
+	}*/
 
 	StringBuffer promptText;
-	promptText << "Closest:\t\t " << closestName << "\n"
-			<< "Pre-Designated: " << predesignatedName << "\n"
-			<< "Cash Balance:\t " << player->getCashCredits() << "\n\n"
-			<< "Select the desired option and click OK.";
+	promptText << "Select the desired option and click OK.";
 
 	cloneMenu->setPromptText(promptText.toString());
 
-	if (closestCloning != nullptr) {
+	/*if (closestCloning != nullptr)
 		cloneMenu->addMenuItem("@base_player:revive_closest", closestCloning->getObjectID());
-		String name = "Force Shrine (" + String::valueOf(closestCloning->getObjectID()) + ")";
-		info("******" + name + "*************", true);
-	}
 
 	if (preDesignatedFacility != nullptr && preDesignatedFacility->getZone() == zone)
 		cloneMenu->addMenuItem("@base_player:revive_bind", preDesignatedFacility->getObjectID());
@@ -1426,7 +1420,7 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 				cloneMenu->addMenuItem(name, loc->getObjectID());
 			}
 		}
-	}
+	}*/
 
 	ghost->addSuiBox(cloneMenu);
 	player->sendMessage(cloneMenu->generateMessage());
@@ -1516,7 +1510,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 
 	ghost->setCloning(true);
 	if (player->isImperial())
-			player->switchZone("naboo", 3590, -208, 6990, 0);
+			player->switchZone("naboo", 3600, -208, 6980, 0);
 
 	/*if (cellID == 0)
 		player->switchZone(zone->getZoneName(), cloner->getWorldPositionX() + coordinate->getPositionX(), cloner->getWorldPositionZ() + coordinate->getPositionZ(), cloner->getWorldPositionY() + coordinate->getPositionY(), 0);
