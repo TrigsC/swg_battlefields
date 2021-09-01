@@ -1320,9 +1320,10 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 	cloneMenu->setCallback(new CloningRequestSuiCallback(player->getZoneServer(), typeofdeath));
 	cloneMenu->setPromptTitle("@base_player:revive_title");
 
-	//if (player->isImperial())
-	//	String name = "Imperial HQ (" + String::valueOf((int)loc->getWorldPositionX()) + ", " + String::valueOf((int)loc->getWorldPositionY()) + ")";
-	//	cloneMenu->addMenuItem(name, loc->getObjectID());
+	if (player->isImperial()) {
+		String name = "Imperial HQ";
+		cloneMenu->addMenuItem(name, 281474993818364);
+	}
 
 	uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
 	ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
