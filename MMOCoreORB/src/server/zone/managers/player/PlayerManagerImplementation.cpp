@@ -1396,7 +1396,7 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 	if (closestCloning != nullptr) {
 		cloneMenu->addMenuItem("@base_player:revive_closest", closestCloning->getObjectID());
 		String name = "Force Shrine (" + String::valueOf(closestCloning->getObjectID()) + ")";
-		player->info(name);
+		info("******" + name + "*************", true);
 	}
 
 	if (preDesignatedFacility != nullptr && preDesignatedFacility->getZone() == zone)
