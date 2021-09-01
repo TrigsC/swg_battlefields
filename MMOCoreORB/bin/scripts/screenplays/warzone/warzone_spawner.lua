@@ -79,7 +79,7 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("naboo", "object/building/military/military_base_gate_house_imperial.iff", 3536.751221, -209.267822, 6957.563965, 9995390, -0.466464, -0.000000, 0.884540, 0.000000)
     spawnSceneObject("naboo", "object/building/military/military_base_gate_house_imperial.iff", 3561.656006, -207.786469, 6922.701172, 9995391, -0.479285, -0.000001, 0.877659, -0.000001)
 
-    spawnSceneObject("naboo", "object/tangible/event_perk/lamdba_shuttle.iff", 3565.625488, -207.386780, 6949.822266, 9995392, 0.892182, 0.000001, 0.451676, 0.000001)
+    spawnSceneObject("naboo", "object/tangible/event_perk/lambda_shuttle.iff", 3565.625488, -207.386780, 6949.822266, 9995392, 0.892182, 0.000001, 0.451676, 0.000001)
 
     spawnSceneObject("naboo", "object/building/military/military_imperial_field_hospital.iff", 3613.689941, -207.561172, 6960.862305, 9995393, 0.942201, 0.000001, -0.335048, 0.000002)
 
