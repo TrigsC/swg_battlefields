@@ -1459,12 +1459,12 @@ bool PlayerManagerImplementation::isValidClosestCloner(CreatureObject* player, S
 }
 
 void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uint64 clonerID, int typeofdeath) {
-	ManagedReference<SceneObject*> cloner = server->getObject(clonerID);
+	//ManagedReference<SceneObject*> cloner = server->getObject(clonerID);
 
-	if (cloner == nullptr) {
+	/*if (cloner == nullptr) {
 		error("Cloning structure is null");
 		return;
-	}
+	}*/
 
 	PlayerObject* ghost = player->getPlayerObject();
 
@@ -1474,7 +1474,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 	}
 
 
-	CloningBuildingObjectTemplate* cbot = cast<CloningBuildingObjectTemplate*>(cloner->getObjectTemplate());
+	/*CloningBuildingObjectTemplate* cbot = cast<CloningBuildingObjectTemplate*>(cloner->getObjectTemplate());
 
 	if (cbot == nullptr) {
 		error("Not a cloning building template.");
@@ -1510,16 +1510,16 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 			error(msg.toString());
 			return;
 		}
-	}
+	}*/
 
 	Zone* zone = player->getZone();
 
 	ghost->setCloning(true);
-
-	if (cellID == 0)
-		if player->isImperial(){
+	if (player->isImperial())
 			player->switchZone("naboo", 3590, -208, 6990, 3);
-			//player->switchZone(zone->getZoneName(), cloner->getWorldPositionX() + coordinate->getPositionX(), cloner->getWorldPositionZ() + coordinate->getPositionZ(), cloner->getWorldPositionY() + coordinate->getPositionY(), 0);
+
+	/*if (cellID == 0)
+		player->switchZone(zone->getZoneName(), cloner->getWorldPositionX() + coordinate->getPositionX(), cloner->getWorldPositionZ() + coordinate->getPositionZ(), cloner->getWorldPositionY() + coordinate->getPositionY(), 0);
 	else
 		player->switchZone(zone->getZoneName(), coordinate->getPositionX(), coordinate->getPositionZ(), coordinate->getPositionY(), cell->getObjectID());
 
@@ -1531,7 +1531,7 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 		player->addWounds(CreatureAttribute::ACTION, 100, true, false);
 		player->addWounds(CreatureAttribute::MIND, 100, true, false);
 		player->addShockWounds(100, true);
-	}
+	}*/
 
 	//if (player->getFactionStatus() != FactionStatus::ONLEAVE && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_IMPERIAL && cbot->getFacilityType() != CloningBuildingObjectTemplate::FACTION_REBEL && !player->hasSkill("force_title_jedi_rank_03"))
 	player->setFactionStatus(FactionStatus::OVERT);
