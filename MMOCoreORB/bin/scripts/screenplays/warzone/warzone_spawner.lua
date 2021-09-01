@@ -59,6 +59,6 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3598.9, -209.34, 7001.14, 9995372, math.rad(150) )
     spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_column_s03.iff", 3613.18, -210, 7009.50, 9995374, math.rad(150) )
     spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3622.7, -209.57, 6996.46, 9995375, math.rad(239) )
-    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3544.121582, -209.295563, 6968.811523, 0.276633, 0.000001, 0.960973, 0.000001)
+    spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3544.121582, -209.295563, 6968.811523, 9995376, 0.276633, 0.000001, 0.960973, 0.000001)
     --spawnSceneObject(self.planet, "object/tangible/terminal/terminal_elevator_up.iff", .5, 0, -21.4, 1076971, 1, 0, 0, 0)
 end
