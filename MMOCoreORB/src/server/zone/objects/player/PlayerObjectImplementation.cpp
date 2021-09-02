@@ -1414,24 +1414,19 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->schedulePersonalEnemyFlagTasks();
+
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
-	StringBuffer promptText;
-	//if (ghost->getLastLogout())
-	//Time time = ghost->getLastLogout()->getFormattedTime();
-	promptText << "OFFLINE. Last On: " << ghost->getLastLogout()->miliDifference() << endl;
-	info(promptText.toString(), true);
-	//uint32 sec = res->getUnsignedInt(0);
 
-	//Time timeVal(ghost->getLastLogout()->miliDifference());
-
-	//if (logoutTimeStamp.miliDifference() > 60000) {
 	if (ghost->getLastLogout()->miliDifference() > 20020) {
-		info("************* GREATER THAN two MIN", true);
-		if (playerCreature->isImperial())
-			playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
-	}
-	if (ghost->getLastLogout()->miliDifference() < -179980) {
-		info("************* LESS THAN THREE MIN", true);
+		if (playerCreature->isImperial()) {
+			playerCreature->switchZone("naboo", 2423, 292, -3915, 0);
+		} else if (playerCreature->isRebel()) {
+			playerCreature->switchZone("corellia", -6528, 398, 5968, 0);
+		} else {
+			playerCreature->setFaction(Factions::FACTIONIMPERIAL);
+			playerCreature->setFactionStatus(FactionStatus::OVERT);
+			playerCreature->switchZone("naboo", 2423, 292, -3915, 0);
+		 }
 	}
 	
 }
