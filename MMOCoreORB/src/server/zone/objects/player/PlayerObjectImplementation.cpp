@@ -1425,14 +1425,15 @@ void PlayerObjectImplementation::notifyOnline() {
 	//Time timeVal(ghost->getLastLogout()->miliDifference());
 
 	//if (logoutTimeStamp.miliDifference() > 60000) {
-	if (ghost->getLastLogout()->miliDifference() > -179980) {
-		info("************* GREATER THAN THREE MIN", true);
+	if (ghost->getLastLogout()->miliDifference() > 20020) {
+		info("************* GREATER THAN two MIN", true);
+		if (playerCreature->isImperial())
+			playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
 	}
 	if (ghost->getLastLogout()->miliDifference() < -179980) {
 		info("************* LESS THAN THREE MIN", true);
 	}
-	if (playerCreature->isImperial())
-		playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
+	
 }
 
 void PlayerObjectImplementation::notifyOffline() {
