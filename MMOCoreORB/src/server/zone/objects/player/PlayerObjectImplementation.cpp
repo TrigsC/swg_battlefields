@@ -1419,7 +1419,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	//if (ghost->getLastLogout())
 	//Time time = ghost->getLastLogout()->getFormattedTime();
 	promptText << "OFFLINE. Last On: " << ghost->getLastLogout()->getFormattedTime() << endl;
-	info(promptText, true);
+	info(promptText.toString(), true);
 	if (playerCreature->isImperial())
 		playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
 }
