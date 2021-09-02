@@ -1422,9 +1422,9 @@ void PlayerObjectImplementation::notifyOnline() {
 	info(promptText.toString(), true);
 	//uint32 sec = res->getUnsignedInt(0);
 
-	Time timeVal(ghost->getLastLogout());
+	//Time timeVal(ghost->logoutTimeStamp.miliDifference());
 
-	if (timeVal.miliDifference() > 60000) {
+	if (logoutTimeStamp.miliDifference() > 60000) {
 		info("************* GREATER THAN ONE MIN", true);
 	}
 	if (playerCreature->isImperial())
