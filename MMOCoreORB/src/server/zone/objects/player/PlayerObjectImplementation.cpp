@@ -1414,6 +1414,9 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	playerCreature->schedulePersonalEnemyFlagTasks();
+
+	if (playerCreature->isImperial())
+		playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
 }
 
 void PlayerObjectImplementation::notifyOffline() {
