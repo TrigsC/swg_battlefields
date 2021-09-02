@@ -86,6 +86,10 @@ public:
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
 				continue;
+			
+			// FIX RALLY: Check distance from leader to member
+			if (!checkDistance(leader, member, 32))
+				continue;
 
 			if (!member->isInCombat())
 				continue;
