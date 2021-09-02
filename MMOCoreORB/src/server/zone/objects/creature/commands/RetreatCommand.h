@@ -94,7 +94,7 @@ public:
 				continue;
 			
 			// FIX RALLY: Check distance from leader to member
-			if (!checkDistance(leader, member, 32))
+			if (!checkDistance(player, member, 32))
 				continue;
 
 			Locker clocker(member, player);
