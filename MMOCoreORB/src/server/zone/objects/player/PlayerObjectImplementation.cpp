@@ -1416,7 +1416,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	playerCreature->schedulePersonalEnemyFlagTasks();
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
 	//if (ghost->getLastLogout())
-	info("*************" + ghost->getLastLogout() + "************", true);
+	info(ghost->getLastLogout(), true);
 	if (playerCreature->isImperial())
 		playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
 }
