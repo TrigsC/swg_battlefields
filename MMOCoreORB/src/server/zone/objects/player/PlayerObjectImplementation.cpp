@@ -1415,9 +1415,11 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->schedulePersonalEnemyFlagTasks();
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+	StringBuffer promptText;
 	//if (ghost->getLastLogout())
-	Time time = ghost->getLastLogout()->getFormattedTime();
-	info("*************" + String::valueOf(time), true);
+	//Time time = ghost->getLastLogout()->getFormattedTime();
+	promptText << "OFFLINE. Last On: " << ghost->getLastLogout()->getFormattedTime() << endl;
+	info(promptText, true);
 	if (playerCreature->isImperial())
 		playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
 }
