@@ -58,7 +58,13 @@ public:
 			return GENERALERROR;
 		}
 
-		info("*************" + city + "*************", true);
+		if (city == "naboo_imp")
+			player->setFaction(Factions::FACTIONIMPERIAL);
+		
+		if (city == "naboo_rebel")
+			player->setFaction(Factions::FACTIONREBEL);
+
+		player->setFactionStatus(FactionStatus::OVERT);
 
 		player->switchZone(startingLocation->getZoneName(), startingLocation->getX(), startingLocation->getZ(), startingLocation->getY(), startingLocation->getCell());
 		player->setDirection(startingLocation->getHeading());
