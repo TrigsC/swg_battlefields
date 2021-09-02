@@ -58,6 +58,8 @@ public:
 			return GENERALERROR;
 		}
 
+		info("*************" + city + "*************", true)
+
 		player->switchZone(startingLocation->getZoneName(), startingLocation->getX(), startingLocation->getZ(), startingLocation->getY(), startingLocation->getCell());
 		player->setDirection(startingLocation->getHeading());
 
