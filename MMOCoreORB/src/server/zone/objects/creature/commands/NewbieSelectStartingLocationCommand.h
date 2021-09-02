@@ -8,6 +8,8 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/StartingLocation.h"
 #include "server/zone/objects/player/PlayerObject.h"
+#include "templates/faction/Factions.h"
+#include "server/zone/objects/player/FactionStatus.h"
 
 class NewbieSelectStartingLocationCommand : public QueueCommand {
 public:
