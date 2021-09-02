@@ -1509,8 +1509,15 @@ void PlayerManagerImplementation::sendPlayerToCloner(CreatureObject* player, uin
 	Zone* zone = player->getZone();
 
 	ghost->setCloning(true);
-	if (player->isImperial())
-			player->switchZone("naboo", 3600, -208, 6980, 0);
+	if (player->isImperial()) {
+		player->switchZone("naboo", 2423, 292, -3915, 0);
+	} else if (player->isRebel()) {
+		player->switchZone("corellia", -6528, 398, 5968, 0);
+	} else {
+		player->setFaction(Factions::FACTIONIMPERIAL);
+		player->setFactionStatus(FactionStatus::OVERT);
+		player->switchZone("naboo", 2423, 292, -3915, 0);
+	}
 
 	/*if (cellID == 0)
 		player->switchZone(zone->getZoneName(), cloner->getWorldPositionX() + coordinate->getPositionX(), cloner->getWorldPositionZ() + coordinate->getPositionZ(), cloner->getWorldPositionY() + coordinate->getPositionY(), 0);
