@@ -1422,7 +1422,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	info(promptText.toString(), true);
 	//uint32 sec = res->getUnsignedInt(0);
 
-	Time timeVal(ghost->getLastLogout()->miliDifference());
+	//Time timeVal(ghost->getLastLogout()->miliDifference());
 
 	//if (logoutTimeStamp.miliDifference() > 60000) {
 	if (ghost->getLastLogout()->miliDifference() > 60000) {
