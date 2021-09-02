@@ -1418,8 +1418,15 @@ void PlayerObjectImplementation::notifyOnline() {
 	StringBuffer promptText;
 	//if (ghost->getLastLogout())
 	//Time time = ghost->getLastLogout()->getFormattedTime();
-	promptText << "OFFLINE. Last On: " << ghost->getLastLogout()->getFormattedTime() << endl;
+	promptText << "OFFLINE. Last On: " << ghost->getLastLogout() << endl;
 	info(promptText.toString(), true);
+	//uint32 sec = res->getUnsignedInt(0);
+
+	Time timeVal(ghost->getLastLogout());
+
+	if (timeVal.miliDifference() > 60000) {
+		info("************* GREATER THAN ONE MIN", true);
+	}
 	if (playerCreature->isImperial())
 		playerCreature->switchZone("naboo", 3600, -208, 6980, 0);
 }
