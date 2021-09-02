@@ -1418,7 +1418,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	StringBuffer promptText;
 	//if (ghost->getLastLogout())
 	//Time time = ghost->getLastLogout()->getFormattedTime();
-	promptText << "OFFLINE. Last On: " << ghost->getLastLogout().miliDifference() << endl;
+	promptText << "OFFLINE. Last On: " << ghost->getLastLogout().getFormattedTime().miliDifference() << endl;
 	info(promptText.toString(), true);
 	//uint32 sec = res->getUnsignedInt(0);
 
