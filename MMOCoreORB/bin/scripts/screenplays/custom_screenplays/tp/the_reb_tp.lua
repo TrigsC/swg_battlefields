@@ -28,6 +28,7 @@ function reb_tp_convo_handler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 	return convoTemplate:getScreen("first_screen")
 end
 
+reb_tp_convo_handler = conv_handler:new {}
 
 function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, selectedOption, pConvScreen)
 

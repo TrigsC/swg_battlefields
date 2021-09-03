@@ -19,6 +19,8 @@ function theImpTPScreenPlay:spawnMobiles()
 	local pImp = spawnMobile("naboo", "tp_imperial", 2437.594971, 291.989197, -3895.646484, 0.973531, 0)
 end
 
+imp_tp_convo_handler = conv_handler:new {}
+
 function imp_tp_convo_handler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 
 	-- Sets how the screens are called from /mobile/conversation.lua
