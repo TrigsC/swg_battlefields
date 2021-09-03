@@ -1,18 +1,18 @@
-theRebTPScreenPlay = ScreenPlay:new {
+reb_tp_convo_handler = ScreenPlay:new {
 	numberOfActs = 1,
 
-    screenplayName = "theRebTPScreenPlay"
+    screenplayName = "reb_tp_convo_handler"
 }
 
-registerScreenPlay("theRebTPScreenPlay", true)
+registerScreenPlay("reb_tp_convo_handler", true)
 
-function theRebTPScreenPlay:start()
+function reb_tp_convo_handler:start()
 	if (isZoneEnabled("corellia")) then
 	    self:spawnMobiles()
 	end
 end
 
-function theRebTPScreenPlay:spawnMobiles()
+function reb_tp_convo_handler:spawnMobiles()
 
 	--local preb = spawnMobile("corellia", "tp_rebel", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
     spawnMobile("corellia", "tp_rebel", 0, -6522.184570, 398, 6040.704590, 0, 0)
