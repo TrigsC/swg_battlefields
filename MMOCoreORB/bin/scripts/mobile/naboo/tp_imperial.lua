@@ -1,18 +1,19 @@
+CreatureTemplates:addCreatureTemplate(tp_imperial, "tp_imperial")
+
 tp_imperial = Creature:new {
-	objectName = "@mob/creature_names:imperial_recruiter",
-	randomNameType = NAME_GENERIC,
-	randomNameTag = true,
-	socialGroup = "imperial",
-	faction = "imperial",
-	level = 20,
-	chanceHit = 0.33,
-	damageMin = 190,
-	damageMax = 200,
-	baseXp = 1426,
-	baseHAM = 5000,
-	baseHAMmax = 6100,
+	objectName = "",
+	customName = "Jyr Koble",
+	socialGroup = "",
+	faction = "",
+	level = 100,
+	chanceHit = 1,
+	damageMin = 645,
+	damageMax = 1000,
+	baseXp = 9429,
+	baseHAM = 24000,
+	baseHAMmax = 30000,
 	armor = 0,
-	resists = {0,0,0,40,-1,40,-1,-1,-1},
+	resists = {0,0,0,0,0,0,0,0,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,24 +21,19 @@ tp_imperial = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.000000,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = NONE,
-	creatureBitmask = NONE,
+	creatureBitmask = PACK,
+	optionsBitmask = INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {
-		"object/mobile/dressed_imperial_recruiter_human_female_01.iff",
-		"object/mobile/dressed_imperial_recruiter_human_female_02.iff",
-		"object/mobile/dressed_imperial_recruiter_moncal_male_01.iff",
-		"object/mobile/dressed_imperial_recruiter_twilek_female_01.iff"},
+	templates = {"object/mobile/dressed_jyr_koble.iff"},
 	lootGroups = {},
 	weapons = {},
-	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster),
 	conversationTemplate = "tp_imperialConversationTemplate",
-	containerComponentTemplate = "",
-	optionsBitmask = INVULNERABLE + CONVERSABLE
-
+	attacks = {
+	}
 }
 
 CreatureTemplates:addCreatureTemplate(tp_imperial, "tp_imperial")
