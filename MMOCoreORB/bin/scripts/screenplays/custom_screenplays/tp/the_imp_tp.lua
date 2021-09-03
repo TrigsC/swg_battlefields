@@ -5,9 +5,9 @@ theImpTPScreenPlay = ScreenPlay:new {
 registerScreenPlay("theImpTPScreenPlay", true)
 
 function theImpTPScreenPlay:start()
-	if (isZoneEnabled("naboo")) then
-		self:spawnMobiles()
-	end
+	--if (isZoneEnabled("naboo")) then
+	self:spawnMobiles()
+	--end
 end
 
 function theImpTPScreenPlay:spawnMobiles()
