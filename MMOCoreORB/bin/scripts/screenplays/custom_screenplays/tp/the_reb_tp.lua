@@ -33,6 +33,7 @@ function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
 
 	local screen = LuaConversationScreen(pConvScreen)
 	local screenID = screen:getScreenID()
+    local pConvScreen = screen:cloneScreen()
 
 	-- This checks what the player has chosen and runs the code accordingly.
 	if (screenID == "fight") then
