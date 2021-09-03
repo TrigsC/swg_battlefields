@@ -1,13 +1,15 @@
 theRebTPScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
+
+    screenplayName = "theRebTPScreenPlay"
 }
 
 registerScreenPlay("theRebTPScreenPlay", true)
 
 function theRebTPScreenPlay:start()
-	--if (isZoneEnabled("corellia")) then
-	self:spawnMobiles()
-	--end
+	if (isZoneEnabled("corellia")) then
+	    self:spawnMobiles()
+	end
 end
 
 function theRebTPScreenPlay:spawnMobiles()
