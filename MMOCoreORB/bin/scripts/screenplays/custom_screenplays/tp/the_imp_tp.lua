@@ -1,18 +1,18 @@
-theImpTPScreenPlay = ScreenPlay:new {
+imp_tp_convo_handler = ScreenPlay:new {
 	numberOfActs = 1,
 
-	screenplayName = "theImpTPScreenPlay"
+	screenplayName = "imp_tp_convo_handler"
 }
 
-registerScreenPlay("theImpTPScreenPlay", true)
+registerScreenPlay("imp_tp_convo_handler", true)
 
-function theImpTPScreenPlay:start()
+function imp_tp_convo_handler:start()
 	if (isZoneEnabled("naboo")) then
 		self:spawnMobiles()
 	end
 end
 
-function theImpTPScreenPlay:spawnMobiles()
+function imp_tp_convo_handler:spawnMobiles()
 
 	--local pHan = spawnMobile("naboo", "tp_imperial", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
 	spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
