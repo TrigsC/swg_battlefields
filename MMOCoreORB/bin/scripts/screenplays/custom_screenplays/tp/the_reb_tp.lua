@@ -16,7 +16,7 @@ end
 function theRebTPScreenPlay:spawnMobiles()
 
 	--local preb = spawnMobile("corellia", "tp_rebel", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
-    local preb = spawnMobile("corellia", "tp_rebel", 1, -6522.184570, 398, 6040.704590, 0.998666, 0)
+    local preb = spawnMobile("corellia", "tp_rebel", 0, -6522.184570, 398, 6040.704590, 0.998666, 0)
 end
 
 reb_tp_convo_handler = conv_handler:new {}
