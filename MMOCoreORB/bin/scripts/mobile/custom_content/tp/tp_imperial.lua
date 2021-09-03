@@ -26,7 +26,8 @@ tp_imperial = Creature:new {
 	optionsBitmask = INVULNERABLE + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/4lom.iff"},
+	--templates = {"object/mobile/4lom.iff"},
+	templates = {"object/mobile/dressed_fs_village_whip.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "tp_imperialConversationTemplate",
