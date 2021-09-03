@@ -1,6 +1,6 @@
 tp_imperial = Creature:new {
-	objectName = "",
 	customName = "Imperial Battlefield",
+	randomNameTag = false,
 	socialGroup = "imperial",
 	faction = "imperial",
 	level = 100,

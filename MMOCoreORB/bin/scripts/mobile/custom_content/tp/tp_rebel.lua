@@ -1,9 +1,9 @@
 tp_rebel = Creature:new {
-	objectName = "",
 	customName = "Rebel Battlefield",
+	randomNameTag = false,
 	socialGroup = "rebel",
 	faction = "rebel",
-	level = 100,
+	level = 300,
 	chanceHit = 1,
 	damageMin = 645,
 	damageMax = 1000,
