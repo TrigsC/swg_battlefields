@@ -23,7 +23,7 @@ tp_imperial = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = AIENABLED + INTERESTING + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/4lom.iff"},

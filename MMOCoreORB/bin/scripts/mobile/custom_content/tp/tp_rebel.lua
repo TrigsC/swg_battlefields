@@ -23,7 +23,7 @@ tp_rebel = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = AIENABLED + INTERESTING + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/3po_protocol_droid_red.iff"},
