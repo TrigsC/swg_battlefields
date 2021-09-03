@@ -8,9 +8,13 @@ registerScreenPlay("WarZoneSpawner", true)
 
 function WarZoneSpawner:start()
 	if (isZoneEnabled("corellia")) then
-		--self:spawnMobiles()
+		self:spawnMobiles()
 		self:spawnSceneObjects()
 	end
+end
+
+function WarZoneSpawner:spawnMobiles()
+    spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
 end
 
 function WarZoneSpawner:spawnSceneObjects()
@@ -90,4 +94,5 @@ function WarZoneSpawner:spawnSceneObjects()
 
     --shuttle /tool tjt 3556.129639 -208.060806 6941.846680 0.882746 0.000000 0.469851 0.000000
     --spawnSceneObject(self.planet, "object/tangible/terminal/terminal_elevator_up.iff", .5, 0, -21.4, 1076971, 1, 0, 0, 0)
+    
 end

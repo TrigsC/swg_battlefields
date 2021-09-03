@@ -1,22 +1,24 @@
-imp_tp_convo_handler = ScreenPlay:new {
-	numberOfActs = 1,
-
-	screenplayName = "imp_tp_convo_handler"
-}
-
-registerScreenPlay("imp_tp_convo_handler", true)
-
-function imp_tp_convo_handler:start()
-	if (isZoneEnabled("naboo")) then
-		self:spawnMobiles()
-	end
-end
-
-function imp_tp_convo_handler:spawnMobiles()
-
-	--local pHan = spawnMobile("naboo", "tp_imperial", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
-	spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
-end
+--imp_tp_convo_handler = ScreenPlay:new {
+--	numberOfActs = 1,
+--
+--	screenplayName = "imp_tp_convo_handler"
+--}
+--
+--registerScreenPlay("imp_tp_convo_handler", true)
+--
+--function imp_tp_convo_handler:start()
+--	if (isZoneEnabled("naboo")) then
+--		self:spawnMobiles()
+--	end
+--end
+--
+--function imp_tp_convo_handler:spawnMobiles()
+--
+--	--local pHan = spawnMobile("naboo", "tp_imperial", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
+--	spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
+--end
+--
+local ObjectManager = require("managers.object.object_manager")
 
 imp_tp_convo_handler = conv_handler:new {}
 
