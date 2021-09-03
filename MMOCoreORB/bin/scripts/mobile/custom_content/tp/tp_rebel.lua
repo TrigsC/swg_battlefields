@@ -1,6 +1,5 @@
 tp_rebel = Creature:new {
 	customName = "Rebel Battlefield",
-	randomNameTag = false,
 	socialGroup = "rebel",
 	faction = "rebel",
 	level = 300,
@@ -23,15 +22,14 @@ tp_rebel = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + INTERESTING + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/3po_protocol_droid_red.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "tp_rebelConversationTemplate",
-	attacks = {
-	}
+	attacks = {},
+	optionsBitmask = INTERESTING + INVULNERABLE + CONVERSABLE
 }
 
 CreatureTemplates:addCreatureTemplate(tp_rebel, "tp_rebel")
