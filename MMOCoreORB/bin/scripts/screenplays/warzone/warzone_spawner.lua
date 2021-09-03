@@ -14,7 +14,7 @@ function WarZoneSpawner:start()
 end
 
 function WarZoneSpawner:spawnMobiles()
-    spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
+    spawnMobile("naboo", "nuna", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
 end
 
 function WarZoneSpawner:spawnSceneObjects()
