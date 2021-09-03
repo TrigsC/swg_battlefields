@@ -19,6 +19,8 @@ function theRebTPScreenPlay:spawnMobiles()
     local preb = spawnMobile("corellia", "tp_rebel", -6522.184570, 398, 6040.704590, 0.998666, 0)
 end
 
+reb_tp_convo_handler = conv_handler:new {}
+
 function reb_tp_convo_handler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 
 	-- Sets how the screens are called from /mobile/conversation.lua
@@ -27,8 +29,6 @@ function reb_tp_convo_handler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
 	-- If the player has no relevant screenplay states, it returns the first screen.	
 	return convoTemplate:getScreen("first_screen")
 end
-
-reb_tp_convo_handler = conv_handler:new {}
 
 function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, selectedOption, pConvScreen)
 
