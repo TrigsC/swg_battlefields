@@ -1,17 +1,18 @@
 tp_imperial = Creature:new {
-	customName = "Imperial Battlefield",
-	randomNameTag = false,
+	objectName = "@mob/creature_names:imperial_recruiter",
+	randomNameType = NAME_GENERIC,
+	randomNameTag = true,
 	socialGroup = "imperial",
 	faction = "imperial",
-	level = 100,
-	chanceHit = 1,
-	damageMin = 645,
-	damageMax = 1000,
-	baseXp = 9429,
-	baseHAM = 24000,
-	baseHAMmax = 30000,
+	level = 20,
+	chanceHit = 0.33,
+	damageMin = 190,
+	damageMax = 200,
+	baseXp = 1426,
+	baseHAM = 5000,
+	baseHAMmax = 6100,
 	armor = 0,
-	resists = {0,0,0,0,0,0,0,0,-1},
+	resists = {0,0,0,40,-1,40,-1,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -19,19 +20,24 @@ tp_imperial = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.000000,
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + INTERESTING + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/4lom.iff"},
+	templates = {
+		"object/mobile/dressed_imperial_recruiter_human_female_01.iff",
+		"object/mobile/dressed_imperial_recruiter_human_female_02.iff",
+		"object/mobile/dressed_imperial_recruiter_moncal_male_01.iff",
+		"object/mobile/dressed_imperial_recruiter_twilek_female_01.iff"},
 	lootGroups = {},
 	weapons = {},
+	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster),
 	conversationTemplate = "tp_imperialConversationTemplate",
-	attacks = {
-	}
+	containerComponentTemplate = "",
+	optionsBitmask = INVULNERABLE + CONVERSABLE
+
 }
 
 CreatureTemplates:addCreatureTemplate(tp_imperial, "tp_imperial")
