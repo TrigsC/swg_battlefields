@@ -1,2 +1,2 @@
-includeFile("custom_content/tp/tp_rebel.lua")
-includeFile("custom_content/tp/tp_imperial.lua")
+includeFile("tp/tp_rebel.lua")
+includeFile("tp/tp_imperial.lua")
