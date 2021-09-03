@@ -15,8 +15,8 @@ end
 
 function theRebTPScreenPlay:spawnMobiles()
 
-	local pHan = spawnMobile("corellia", "tp_rebel", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
-	self:setMoodString(pHan, "npc_sitting_chair")
+	--local preb = spawnMobile("corellia", "tp_rebel", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
+    local preb = spawnMobile("corellia", "tp_rebel", -6522.184570, 398, 6040.704590, 0.998666, 0)
 end
 
 function reb_tp_convo_handler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
