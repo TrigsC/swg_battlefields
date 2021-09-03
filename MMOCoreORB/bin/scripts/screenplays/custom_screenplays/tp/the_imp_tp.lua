@@ -16,7 +16,7 @@ end
 function theImpTPScreenPlay:spawnMobiles()
 
 	--local pHan = spawnMobile("naboo", "tp_imperial", 1, -10.5, -0.9, 24.3, 179, 0)-- planet, template, x, z, y, yaw, cellID
-	local pImp = spawnMobile("naboo", "tp_imperial", 2437.594971, 291.989197, -3895.646484, 0.973531, 0)
+	local pImp = spawnMobile("naboo", "tp_imperial", 1, 2437.594971, 291.989197, -3895.646484, 0.973531, 0)
 end
 
 imp_tp_convo_handler = conv_handler:new {}
