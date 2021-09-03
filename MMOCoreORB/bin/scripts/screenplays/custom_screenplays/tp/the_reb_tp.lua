@@ -1,7 +1,5 @@
 theRebTPScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
-
-	screenplayName = "theRebTPScreenPlay",
 }
 
 registerScreenPlay("theRebTPScreenPlay", true)

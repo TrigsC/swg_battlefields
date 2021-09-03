@@ -1,7 +1,5 @@
 theImpTPScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
-
-	screenplayName = "theImpTPScreenPlay",
 }
 
 registerScreenPlay("theImpTPScreenPlay", true)
