@@ -1,2 +1,4 @@
-includeFile("custom_content/tp/tp_rebel.lua")
-includeFile("custom_content/tp/tp_imperial.lua")
+--New Content Mob Template Files
+
+--Child Folders
+includeFile("custom_content/tp/serverobjects.lua")
