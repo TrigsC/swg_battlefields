@@ -7,7 +7,7 @@ tp_imp_convo_template = ConvoTemplate:new {
 
 first_screen = ConvoScreen:new {
 	id = "first_screen",
-	customDialogText = "The Empire is requesting assistance at the battlefield!",
+	customDialogText = "The Empire is requesting assistance at the frontline!",
 	stopConversation = "false",
 	options = {
 		{"Take me to the fight!", "fight"},

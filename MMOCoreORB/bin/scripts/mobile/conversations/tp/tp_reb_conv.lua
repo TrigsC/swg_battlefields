@@ -7,7 +7,7 @@ tp_reb_convo_template = ConvoTemplate:new {
 
 first_screen = ConvoScreen:new {
 	id = "first_screen",
-	customDialogText = "The Rebels are requesting assistance at the battlefield!",
+	customDialogText = "The Rebels are requesting assistance to the frontline!",
 	stopConversation = "false",
 	options = {
 		{"Take me to the fight!", "fight"},

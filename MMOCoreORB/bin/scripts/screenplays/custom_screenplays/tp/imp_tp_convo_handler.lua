@@ -18,7 +18,7 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
 	-- This checks what the player has chosen and runs the code accordingly.
 	if (screenID == "fight") then
         CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
-		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the battlefield!") -- Sends an on screen system message.
+		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
             -- Will need to somehow get the current pvp zone to pass here
             --if (councilType == self.COUNCIL_LIGHT) then
             --    enclaveLoc = { -5575, 0, 4905 }
