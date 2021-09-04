@@ -18,8 +18,6 @@
 --	spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 0, 0)
 --end
 --
-local ObjectManager = require("managers.object.object_manager")
-
 imp_tp_convo_handler = conv_handler:new {}
 
 function imp_tp_convo_handler:getInitialScreen(pPlayer, pNpc, pConvTemplate)
