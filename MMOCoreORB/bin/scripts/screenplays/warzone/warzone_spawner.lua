@@ -48,6 +48,12 @@ function WarZoneSpawner:spawnSceneObjects()
     -- Character builder
     spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
     
+    --military_wall_strong_rebl_style_01
+    spawnSceneObject("corellia", "object/static/structure/military/military_wall_strong_rebl_style_01.iff", -6559.655273, 403.794922, 5940.076660, 9995405, -0.400055, -0.000002, 0.916491, -0.000002)
+    spawnSceneObject("corellia", "object/static/structure/military/military_wall_strong_rebl_style_01.iff", -6491.673828, 403.793701, 5917.130859, 9995406, 0.102275, -0.000001, 0.994756, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/military/military_wall_strong_rebl_style_01.iff", -6435.701660, 403.709076, 6023.416016, 9995407, 0.843996, 0.000000, 0.536349, 0.000000)
+
+
     --Corellia Coronet
 	--Perimeter
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -307.2, 28,-4146.5, 9995397, 0)
