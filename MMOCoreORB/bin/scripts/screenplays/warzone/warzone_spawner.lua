@@ -27,6 +27,23 @@ function WarZoneSpawner:spawnSceneObjects()
     -- Character builder
     spawnSceneObject("naboo", "object/tangible/terminal/terminal_character_builder.iff", 2428.552979, 292.000000, -3910.535889, 9995396, 0.103863, -0.000001, 0.994592, -0.000001)
 
+    --military_wall_weak_imperial_32_style_01
+    spawnSceneObject("naboo", "object/static/structure/military/shared_military_wall_weak_imperial_32_style_01.iff", 2454.300293, 290.171356, -3914.878906, 9995397, 0.751653, -0.000001, 0.659551, -0.000000)
+    spawnSceneObject("naboo", "object/static/structure/military/shared_military_wall_weak_imperial_32_style_01.iff", 2451.142822, 290.279938, -3947.072754, 9995398, 0.582305, -0.000001, 0.812970, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/military/shared_military_wall_weak_imperial_32_style_01.iff", 2433.604248, 290.405853, -3973.836670, 9995399, 0.351802, -0.000001, 0.936074, -0.000001)
+    spawnSceneObject("naboo", "object/static/structure/military/shared_military_wall_weak_imperial_32_style_01.iff", 2405.982178, 290.490753, -3981.321777, 9995400, -0.093148, -0.000001, 0.995652, -0.000001)
+
+
+    --military_wall_weak_imperial_style_01
+    spawnSceneObject("naboo", "object/static/structure/military/shared_military_wall_weak_imperial_style_01.iff", 2406.934326, 290.173584, -3890.299316, 9995401, 0.993324, 0.000000, -0.115355, 0.000000)
+
+    --bfield_column_impl_med
+    spawnSceneObject("naboo", "object/installation/battlefield/destructible/shared_bfield_column_impl_med.iff", 2456.594482, 290.464935, -3931.302979, 9995402, 0.718681, 0.000000, 0.695340, 0.000000)
+    spawnSceneObject("naboo", "object/installation/battlefield/destructible/shared_bfield_column_impl_med.iff", 2445.539795, 290.835907, -3962.948242, 9995403, 0.443769, -0.000000, 0.896141, -0.000000)
+    spawnSceneObject("naboo", "object/installation/battlefield/destructible/shared_bfield_column_impl_med.iff", 2421.414551, 290.693207, -3984.122803, 9995404, 0.004853, -0.000001, 0.999988, -0.000001)
+
+
+
     -- Rebel Spawn
     -- Character builder
     spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
