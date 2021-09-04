@@ -23,6 +23,14 @@ function WarZoneSpawner:spawnSceneObjects()
 	--Guild Hall regular
 	--spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s02.iff", -218.9, 28.6,-4049.5, 0, 0)
 
+    -- Imperial Spawn
+    -- Character builder
+    spawnSceneObject("naboo", "object/tangible/terminal/terminal_character_builder.iff", 2428.552979, 292.000000, -3910.535889, 9995396, 0.103863, -0.000001, 0.994592, -0.000001)
+
+    -- Rebel Spawn
+    -- Character builder
+    spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397 0.918580, 0.000000, -0.395236, 0.000001)
+    
     --Corellia Coronet
 	--Perimeter
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -307.2, 28,-4146.5, 9995397, 0)
