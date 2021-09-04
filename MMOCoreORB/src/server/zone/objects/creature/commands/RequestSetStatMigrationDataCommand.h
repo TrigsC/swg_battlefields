@@ -51,6 +51,30 @@ public:
 			return GENERALERROR;
 		}
 
+		if (creature->isInCombat()) {
+			creature->sendSystemMessage("You cannot migrate stats in combat!");
+			return GENERALERROR;
+		}
+
+		SortedVector<QuadTreeEntry*> closeObjects;
+		CloseObjectsVector* vec = (CloseObjectsVector*) creature->getCloseObjects();
+		vec->safeCopyTo(closeObjects);
+
+		bool nearSpawnPoint = false;
+
+		for (int i = 0; i < closeObjects.size(); i++) {
+			SceneObject* object = cast<SceneObject*>( closeObjects.get(i));
+			if (object != nullptr && object->getGameObjectType() == SceneObjectType::CHARACTERBUILDERTERMINAL && checkDistance(creature, object, 100)) {
+				nearSpawnPoint = true;
+				break;
+			}
+		}
+
+		if (!nearSpawnPoint) {
+			creature->sendSystemMessage("You must be at your spawn to migrate stats!");
+			return GENERALERROR;
+		}
+
 		StringTokenizer tokenizer(arguments.toString());
 		tokenizer.setDelimeter(" ");
 
@@ -85,7 +109,7 @@ public:
 		//Player is in the tutorial zone and is allowed to migrate stats.
 		Zone* zone = creature->getZone();
 
-		if (zone != nullptr && zone->getZoneName() == "tutorial")
+		if (zone != nullptr && zone->getZoneName() == "tutorial" or "corellia" or "naboo")
 			session->migrateStats();
 
 
