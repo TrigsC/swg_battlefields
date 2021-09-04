@@ -109,7 +109,7 @@ public:
 		//Player is in the tutorial zone and is allowed to migrate stats.
 		Zone* zone = creature->getZone();
 
-		if (zone != nullptr && zone->getZoneName() == "tutorial" or "corellia" or "naboo")
+		if (zone != nullptr && (zone->getZoneName() == "tutorial" or "corellia" or "naboo"))
 			session->migrateStats();
 
 
