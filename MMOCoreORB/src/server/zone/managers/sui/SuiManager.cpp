@@ -449,10 +449,18 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				player->clearDots();
 			} else if (templatePath == "frs_light_side") {
 				PlayerManager* pman = zserv->getPlayerManager();
-				pman->unlockFRSForTesting(player, 1);
+				if (player->isRebel()){
+					pman->unlockFRSForTesting(player, 1);
+				} else {
+					player->sendSystemMessage("You must be rebel to join the light side!");
+				}
 			} else if (templatePath == "frs_dark_side") {
 				PlayerManager* pman = zserv->getPlayerManager();
-				pman->unlockFRSForTesting(player, 2);
+				if (player->isImperial()){
+					pman->unlockFRSForTesting(player, 2);
+				} else {
+					player->sendSystemMessage("You must be imperial to join the dark side!");
+				}
 
 			} else if (templatePath == "color_crystals" || templatePath == "krayt_pearls") {
 				ManagedReference<SceneObject*> inventory = player->getSlottedObject("inventory");
