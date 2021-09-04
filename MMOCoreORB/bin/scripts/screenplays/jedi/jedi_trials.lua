@@ -502,9 +502,9 @@ function JediTrials:completeKnightForTesting(pPlayer, councilType)
 
 	if (isZoneEnabled("yavin4")) then
 		if (councilType == self.COUNCIL_LIGHT) then
-			enclaveLoc = { -5575, 0, 4905 }
+			enclaveLoc = { "corellia", -6528, 398, 5968 }
 		else
-			enclaveLoc = { 5079, 0, 305 }
+			enclaveLoc = { "naboo", 2423, 292, -3915 }
 		end
 
 		local player = CreatureObject(pPlayer)
@@ -512,6 +512,6 @@ function JediTrials:completeKnightForTesting(pPlayer, councilType)
 		if (player:isRidingMount()) then
 			player:dismount()
 		end
-		SceneObject(pPlayer):switchZone("yavin4", enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], 0)
+		SceneObject(pPlayer):switchZone(enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], enclaveLoc[4], 0)
 	end
 end
