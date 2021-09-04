@@ -29,7 +29,7 @@ function WarZoneSpawner:spawnSceneObjects()
 
     -- Rebel Spawn
     -- Character builder
-    spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397 0.918580, 0.000000, -0.395236, 0.000001)
+    spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
     
     --Corellia Coronet
 	--Perimeter
