@@ -7,7 +7,7 @@ tp_imp_convo_template = ConvoTemplate:new {
 
 first_screen = ConvoScreen:new {
 	id = "first_screen",
-	leftDialog = "The Empire is requesting assistance at the battlefield!",
+	customDialogText = "The Empire is requesting assistance at the battlefield!",
 	stopConversation = "false",
 	options = {
 		{"Take me to the fight!", "fight"},
@@ -18,7 +18,7 @@ tp_imp_convo_template:addScreen(first_screen);
 
 exit_one = ConvoScreen:new {
 	id = "exit_one",
-	leftDialog = "Then I will log this insubordination on your record!",
+	customDialogText = "Then I will log this insubordination on your record!",
 	stopConversation = "true",
 	options = {}
 }
@@ -26,7 +26,7 @@ tp_imp_convo_template:addScreen(exit_one);
 
 fight = ConvoScreen:new {
 	id = "fight",
-	leftDialog = "For the Empire!",
+	customDialogText = "For the Empire!",
 	stopConversation = "true",
 	options = {}
 }

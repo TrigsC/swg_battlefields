@@ -300,9 +300,6 @@ includeFile("events/bestine_election/convos/victor_questp_slums_conv_handler.lua
 includeFile("events/bestine_election/convos/victor_visalis_conv_handler.lua")
 includeFile("events/bestine_election/convos/tour_aryon_conv_handler.lua")
 
--- 
-includeFile("custom_screenplays/tp/imp_tp_convo_handler.lua")
-
 -- Cries of Alderaan
 includeFile("events/coa/coa.lua")
 includeFile("events/coa/coa2Screenplay.lua")
@@ -684,4 +681,6 @@ includeFile("events/ServerEventAutomation.lua")
 includeFile("../custom_scripts/screenplays/screenplays.lua")
 
 -- tp to battlefields
-includeFile("custom_screenplays/screenplays.lua")
+-- 
+includeFile("custom_screenplays/tp/imp_tp_convo_handler.lua")
+includeFile("custom_screenplays/tp/reb_tp_convo_handler.lua")

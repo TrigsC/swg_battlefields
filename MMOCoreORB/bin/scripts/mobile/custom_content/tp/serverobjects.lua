@@ -1,1 +1,0 @@
-includeFile("tp/tp_rebel.lua")

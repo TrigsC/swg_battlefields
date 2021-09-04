@@ -1,4 +1,4 @@
-tp_rebelConversationTemplate = ConvoTemplate:new {
+tp_reb_convo_template = ConvoTemplate:new {
 	initialScreen = "first_screen",
 	templateType = "Lua",
 	luaClassHandler = "reb_tp_convo_handler",
@@ -14,7 +14,7 @@ first_screen = ConvoScreen:new {
 		{"I still need to get prepared.", "exit_one"},
 	}
 }
-tp_rebelConversationTemplate:addScreen(first_screen);
+tp_reb_convo_template:addScreen(first_screen);
 
 exit_one = ConvoScreen:new {
 	id = "exit_one",
@@ -22,7 +22,7 @@ exit_one = ConvoScreen:new {
 	stopConversation = "true",
 	options = {}
 }
-tp_rebelConversationTemplate:addScreen(exit_one);
+tp_reb_convo_template:addScreen(exit_one);
 
 fight = ConvoScreen:new {
 	id = "fight",
@@ -30,6 +30,6 @@ fight = ConvoScreen:new {
 	stopConversation = "true",
 	options = {}
 }
-tp_rebelConversationTemplate:addScreen(fight);
+tp_reb_convo_template:addScreen(fight);
 
-addConversationTemplate("tp_rebelConversationTemplate", tp_rebelConversationTemplate);
+addConversationTemplate("tp_reb_convo_template", tp_reb_convo_template);

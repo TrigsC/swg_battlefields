@@ -1,6 +1,6 @@
-CreatureTemplates:addCreatureTemplate(tp_imperial, "tp_imperial")
+CreatureTemplates:addCreatureTemplate(tp_rebel, "tp_rebel")
 
-tp_imperial = Creature:new {
+tp_rebel = Creature:new {
 	objectName = "",
 	customName = "Battlefield TP",
 	socialGroup = "",
@@ -31,9 +31,9 @@ tp_imperial = Creature:new {
 	templates = {"object/mobile/3po_protocol_droid_red.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "tp_imp_convo_template",
+	conversationTemplate = "tp_reb_convo_template",
 	attacks = {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(tp_imperial, "tp_imperial")
+CreatureTemplates:addCreatureTemplate(tp_rebel, "tp_rebel")
