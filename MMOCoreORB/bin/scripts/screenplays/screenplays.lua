@@ -679,3 +679,8 @@ includeFile("events/ServerEventAutomation.lua")
 
 -- Custom content - Loads last to allow for overrides
 includeFile("../custom_scripts/screenplays/screenplays.lua")
+
+-- tp to battlefields
+-- 
+includeFile("custom_screenplays/tp/imp_tp_convo_handler.lua")
+includeFile("custom_screenplays/tp/reb_tp_convo_handler.lua")
