@@ -32,7 +32,7 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
                 player:dismount()
         end
             --SceneObject(pPlayer):switchZone("yavin4", enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], 0)
-        SceneObject(pPlayer):switchZone("corellia", 50, 100, 200, 0)
+        SceneObject(pPlayer):switchZone("corellia", -210, 28, -4057, 0)
 
 	end
 
