@@ -37,9 +37,8 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
 
 	-- This checks what the player has chosen and runs the code accordingly.
 	if (screenID == "fight") then
-		CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
+        CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
 		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the battlefield!") -- Sends an on screen system message.
-        if (isZoneEnabled("corellia")) then
             -- Will need to somehow get the current pvp zone to pass here
             --if (councilType == self.COUNCIL_LIGHT) then
             --    enclaveLoc = { -5575, 0, 4905 }
@@ -47,14 +46,14 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
             --    enclaveLoc = { 5079, 0, 305 }
             --end
     
-            local player = CreatureObject(pPlayer)
+        local player = CreatureObject(pPlayer)
     
-            if (player:isRidingMount()) then
+        if (player:isRidingMount()) then
                 player:dismount()
-            end
-            --SceneObject(pPlayer):switchZone("yavin4", enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], 0)
-            SceneObject(pPlayer):switchZone("corellia", 50, 100, 200, 0)
         end
+            --SceneObject(pPlayer):switchZone("yavin4", enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], 0)
+        SceneObject(pPlayer):switchZone("corellia", 50, 100, 200, 0)
+
 	end
 
     return pConvScreen
