@@ -23,13 +23,13 @@ lt_lance = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK,
-	optionsBitmask = AIENABLED + CONVERSABLE + INTERESTING + INVULNERABLE,
+	optionsBitmask = AIENABLED + INVULNERABLE,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_lieutenant_lance.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "corvetteLtLanceConvoTemplate",
+	conversationTemplate = "",
 	attacks = {
 	}
 }
