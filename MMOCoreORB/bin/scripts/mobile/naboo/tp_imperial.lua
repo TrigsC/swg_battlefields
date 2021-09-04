@@ -31,7 +31,7 @@ tp_imperial = Creature:new {
 	templates = {"object/mobile/dressed_jyr_koble.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "tp_imperialConversationTemplate",
+	conversationTemplate = "tp_imp_convo_template",
 	attacks = {
 	}
 }
