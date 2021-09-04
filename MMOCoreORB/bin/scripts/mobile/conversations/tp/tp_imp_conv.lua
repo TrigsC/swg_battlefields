@@ -11,7 +11,7 @@ first_screen = ConvoScreen:new {
 	stopConversation = "false",
 	options = {
 		{"Take me to the fight!", "fight"},
-		{"I still need to get prepared.", "exit_one"},
+		{"I still need to get prepared.", "exit_one"}
 	}
 }
 tp_imperialConversationTemplate:addScreen(first_screen);
