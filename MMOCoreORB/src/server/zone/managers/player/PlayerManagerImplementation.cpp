@@ -1325,6 +1325,11 @@ void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* playe
 		cloneMenu->addMenuItem(name);
 	}
 
+	if (player->isRebel()) {
+		String name = "Rebel HQ";
+		cloneMenu->addMenuItem(name);
+	}
+
 	/*uint64 preDesignatedFacilityOid = ghost->getCloningFacility();
 	ManagedReference<SceneObject*> preDesignatedFacility = server->getObject(preDesignatedFacilityOid);
 	String predesignatedName = "None";
