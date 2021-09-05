@@ -684,3 +684,4 @@ includeFile("../custom_scripts/screenplays/screenplays.lua")
 -- 
 includeFile("custom_screenplays/tp/imp_tp_convo_handler.lua")
 includeFile("custom_screenplays/tp/reb_tp_convo_handler.lua")
+includeFile("custom_screenplays/tp/tp_hq_convo_handler.lua")

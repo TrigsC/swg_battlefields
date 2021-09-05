@@ -16,6 +16,12 @@ end
 function WarZoneSpawner:spawnMobiles()
     spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 170, 0)
     spawnMobile("corellia", "tp_rebel", 0, -6522, 398, 6040, 130, 0)
+
+    --Corellia Zone
+    -- imp
+    spawnMobile("corellia", "tp_hq", 0, -210, 28, -4057, 0, 0)
+    -- reb
+    spawnMobile("corellia", "tp_hq", 0, -173, 28, -4839, 0, 0)
 end
 
 function WarZoneSpawner:spawnSceneObjects()
