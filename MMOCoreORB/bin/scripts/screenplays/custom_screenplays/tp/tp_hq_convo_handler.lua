@@ -25,7 +25,7 @@ function tp_hq_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sel
                 enclaveLoc = { "corellia", -6528, 398, 5968 }
             else
                 enclaveLoc = { "naboo", 2423, 292, -3915 }
-        -end
+        end
     
         local player = CreatureObject(pPlayer)
     
