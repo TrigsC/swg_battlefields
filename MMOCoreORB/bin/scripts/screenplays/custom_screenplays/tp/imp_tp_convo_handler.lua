@@ -19,11 +19,17 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
 	if (screenID == "fight") then
         CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
 		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
-            -- Will need to somehow get the current pvp zone to pass here
+        if (WarzoneManager:getCurrentPhase() ~= 1) then
+            warzoneLoc = { "corellia", -210, 28, -4057 }
+        elseif (WarzoneManager:getCurrentPhase() ~= 2) then
+            warzoneLoc = { "naboo", -5987, 6, 4292 }
+        else
+            warzoneLoc = { "naboo", -5868, 9, 3922 }
+        end
             --if (councilType == self.COUNCIL_LIGHT) then
-            --    enclaveLoc = { -5575, 0, 4905 }
+            --    warzoneLoc = { -5575, 0, 4905 }
             --else
-            --    enclaveLoc = { 5079, 0, 305 }
+            --    warzoneLoc = { 5079, 0, 305 }
             --end
     
         local player = CreatureObject(pPlayer)
@@ -31,8 +37,8 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
         if (player:isRidingMount()) then
                 player:dismount()
         end
-            --SceneObject(pPlayer):switchZone("yavin4", enclaveLoc[1], enclaveLoc[2], enclaveLoc[3], 0)
-        SceneObject(pPlayer):switchZone("corellia", -210, 28, -4057, 0)
+        SceneObject(pPlayer):switchZone(warzoneLoc[1], warzoneLoc[2], warzoneLoc[3], warzoneLoc[4], 0)
+        --SceneObject(pPlayer):switchZone("corellia", -210, 28, -4057, 0)
 
 	end
 
