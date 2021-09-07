@@ -24,7 +24,7 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
         elseif (WarzoneManager:getCurrentPhase() ~= 2) then
             warzoneLoc = { "naboo", -5987, 6, 4292 }
         else
-            warzoneLoc = { "naboo", -5868, 9, 3922 }
+            warzoneLoc = { "naboo", -5987, 6, 4292 }
         end
             --if (councilType == self.COUNCIL_LIGHT) then
             --    warzoneLoc = { -5575, 0, 4905 }
