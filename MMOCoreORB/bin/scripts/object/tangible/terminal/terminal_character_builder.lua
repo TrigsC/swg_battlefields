@@ -1590,6 +1590,10 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			--},
 			"Armor",
 			{
+				"PSG",
+				{
+					"Imperial PSG", "object/tangible/component/armor/shield_generator_personal_imperial_test.iff",
+				},
 				--	"Bone Armor",
 				--	{
 				--		"Bone Left Bicep", "object/tangible/wearables/armor/bone/armor_bone_s01_bicep_l.iff",
