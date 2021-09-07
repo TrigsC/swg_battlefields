@@ -1,6 +1,6 @@
 WarzoneManager = ScreenPlay:new {
 	WARZONE_TOTAL_NUMBER_OF_PHASES = 2,
-	phaseChangeTimeOfDay = { hour = 08, min = 20 }, -- Hour of day, server military time, to change the phase. Comment out to disable
+	phaseChangeTimeOfDay = { hour = 08, min = 30 }, -- Hour of day, server military time, to change the phase. Comment out to disable
 
 	--WARZONE_PHASE_DURATION = 168 * 60 * 60 * 1000 -- 7 days
     WARZONE_PHASE_DURATION = 1 * 60 * 60 * 1000 -- 1 hour
@@ -56,7 +56,7 @@ function WarzoneManager.getNextPhaseChangeTime(includePast)
 	local nextPhaseChange = lastPhaseChange + (WarzoneManager.getWarzonePhaseDuration() / 1000)
 
 	local timeTable = os.date("*t", nextPhaseChange)
-	local disregardTimeOfDay = WarzoneManager.getWarzonePhaseDuration() < (24 * 60 * 60 * 1000)
+	local disregardTimeOfDay = WarzoneManager.getWarzonePhaseDuration() < (1 * 60 * 60 * 1000)
 
 	if (WarzoneManager.phaseChangeTimeOfDay ~= nil) then
 		if (disregardTimeOfDay) then
