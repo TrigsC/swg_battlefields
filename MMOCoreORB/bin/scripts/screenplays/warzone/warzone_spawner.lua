@@ -117,23 +117,23 @@ function WarZoneSpawner:spawnSceneObjects()
 
     --Imperial Side
     --Banners
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_imperial_style_01.iff", -242.764572, 28.000000, -4158.641602, 9995413, -0.003379, -0.000001, 0.999994, -0.000001)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_imperial_style_01.iff", -253.933563, 28.000000, -4152.202148, 9995414, -0.456698, -0.000001, 0.889622, -0.000001)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_imperial_style_01.iff", -175.364273, 27.999969, -4219.573730, 9995415, 0.023047, -0.000001, 0.999727, -0.000001)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_imperial_style_01.iff", -152.595520, 28.000000, -4218.673828, 9995416, -0.000258, -0.000001, 1.000000, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -242.764572, 28.000000, -4158.641602, 9995413, -0.003379, -0.000001, 0.999994, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -253.933563, 28.000000, -4152.202148, 9995414, -0.456698, -0.000001, 0.889622, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -175.364273, 27.999969, -4219.573730, 9995415, 0.023047, -0.000001, 0.999727, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -152.595520, 28.000000, -4218.673828, 9995416, -0.000258, -0.000001, 1.000000, -0.000001)
 
     --Rebel Side
     --Banners
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -44.192482, 28.000000, -4799.090820, 9995417, 0.782615, 0.000000, 0.622506, 0.000000)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -43.403961, 28.000000, -4818.764648, 9995418, 0.697644, -0.000000, 0.716437, -0.000000)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -229.352127, 28.000000, -4724.079590, 9995419, 0.766234, 0.000000, 0.642561, 0.000000)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -230.021210, 28.000000, -4712.869141, 9995420, 0.766234, 0.000000, 0.642561, 0.000000)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -214.209076, 28.000000, -4694.008789, 9995421, -0.699209, -0.000001, 0.714917, -0.000001)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -212.977936, 28.000000, -4672.692871, 9995422, 0.726985, 0.000000, 0.686654, 0.000000)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -157.715775, 27.993208, -4655.173828, 9995423, -0.005131, -0.000002, 0.999986, -0.000001)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -149.948181, 28.000000, -4655.267090, 9995424, 0.065267, -0.000003, 0.997868, -0.000002)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -105.338020, 28.000000, -4659.260254, 9995425, 0.989940, 0.000000, 0.141486, 0.000000)
-    spawnSceneObject("corellia", "object/static/structure/general/shared_banner_rebel_style_01.iff", -97.703972, 28.000000, -4663.101074, 9995426, 0.989940, 0.000000, 0.141486, 0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -44.192482, 28.000000, -4799.090820, 9995417, 0.782615, 0.000000, 0.622506, 0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -43.403961, 28.000000, -4818.764648, 9995418, 0.697644, -0.000000, 0.716437, -0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -229.352127, 28.000000, -4724.079590, 9995419, 0.766234, 0.000000, 0.642561, 0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -230.021210, 28.000000, -4712.869141, 9995420, 0.766234, 0.000000, 0.642561, 0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -214.209076, 28.000000, -4694.008789, 9995421, -0.699209, -0.000001, 0.714917, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -212.977936, 28.000000, -4672.692871, 9995422, 0.726985, 0.000000, 0.686654, 0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -157.715775, 27.993208, -4655.173828, 9995423, -0.005131, -0.000002, 0.999986, -0.000001)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -149.948181, 28.000000, -4655.267090, 9995424, 0.065267, -0.000003, 0.997868, -0.000002)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -105.338020, 28.000000, -4659.260254, 9995425, 0.989940, 0.000000, 0.141486, 0.000000)
+    spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -97.703972, 28.000000, -4663.101074, 9995426, 0.989940, 0.000000, 0.141486, 0.000000)
 
 
     --Naboo Imperial Starting Area (OLD)
