@@ -23,7 +23,7 @@ loam_redge = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = PACK,
-	optionsBitmask = INVULNERABLE + CONVERSABLE,
+	optionsBitmask = INVULNERABLE, -- + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/loam_redge.iff"},
