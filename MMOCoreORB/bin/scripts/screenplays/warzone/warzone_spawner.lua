@@ -46,6 +46,12 @@ function WarZoneSpawner:spawnSceneObjects()
     -- Imperial Spawn
     -- Character builder
     spawnSceneObject("naboo", "object/tangible/terminal/terminal_character_builder.iff", 2428.552979, 292.000000, -3910.535889, 9995396, 0.103863, -0.000001, 0.994592, -0.000001)
+    publicweaponstation
+    spawnSceneObject("naboo", "object/tangible/crafting/station/public_weapon_station.iff", 2440.973389, 292.000000, -3965.747803, 9995427, 0.926448, 0.000001, -0.376422, 0.000002)
+
+    weaponstation
+    spawnSceneObject("naboo", "object/tangible/crafting/station/weapon_station.iff", 2408.884277, 292.000000, -3918.531250, 9995428, 0.769101, 0.000000, 0.639127, 0.000000)
+
 
     --military_wall_weak_imperial_32_style_01
     spawnSceneObject("naboo", "object/static/structure/military/military_wall_weak_imperial_32_style_01.iff", 2454.300293, 290.171356, -3914.878906, 9995397, 0.751653, -0.000001, 0.659551, -0.000000)
