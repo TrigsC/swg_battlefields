@@ -2668,7 +2668,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			--},
 			"Pharmaceutical",
 			{
-				"StimPack A", "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_a.iff",
+				--"StimPack A", "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_a.iff",
 				"StimPack B", "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_b.iff",
 				"StimPack C", "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_c.iff",
 				"StimPack D", "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_d.iff",
@@ -2689,8 +2689,10 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				"Medpack Enhance Poison C", "object/tangible/medicine/crafted/medpack_enhance_poison_c.iff",
 				"Fire blanket", "object/tangible/medicine/crafted/medic_fire_blanket.iff",
 				"Medpack Cure Disease A", "object/tangible/medicine/crafted/medpack_cure_disease_a.iff",
+				"Medpack Cure Disease B", "object/tangible/medicine/crafted/medpack_cure_disease_b.iff",
 				"Medpack Cure Disease Area A", "object/tangible/medicine/crafted/medpack_cure_disease_area_a.iff",
 				"Medpack Cure Poison A", "object/tangible/medicine/crafted/medpack_cure_poison_a.iff",
+				"Medpack Cure Poison B", "object/tangible/medicine/crafted/medpack_cure_poison_b.iff",
 				"Medpack Cure Poison Area A", "object/tangible/medicine/crafted/medpack_cure_poison_area_a.iff",
 				"Disease Health Area A", "object/tangible/medicine/crafted/medpack_disease_area_health_a.iff",
 				"Poison Health Area A", "object/tangible/medicine/crafted/medpack_poison_area_health_a.iff",
@@ -2747,7 +2749,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Clothing and Armor Crafting Tool", "object/tangible/crafting/station/clothing_tool.iff",
 					"Food and Chemical Crafting Tool", "object/tangible/crafting/station/food_tool.iff",
 					"Generic Crafting Tool", "object/tangible/crafting/station/generic_tool.iff",
-					"Lightsaber Crafting Toolkit", "object/tangible/crafting/station/jedi_tool.iff",
+					"Lightsaber Crafting Toolkit", "object/tangible/crafting/station/jedi_tool_crit_experiment_20.iff",
 					"Starship Crafting Tool", "object/tangible/crafting/station/space_tool.iff",
 					"Structure and Furniture Crafting Tool", "object/tangible/crafting/station/structure_tool.iff",
 					"Weapon, Droid, and General Item Crafting Tool", "object/tangible/crafting/station/weapon_tool.iff"

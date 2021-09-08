@@ -46,7 +46,7 @@ object_tangible_medicine_crafted_crafted_stimpack_sm_s1_e = object_tangible_medi
 	templateType = STIMPACK,
 	useCount = 10,
 	medicineUse = 40,
-	effectiveness = 1000,
+	effectiveness = 1200,
 	medicineClass = STIM_E,
 	attributes = {0, 3},
 
