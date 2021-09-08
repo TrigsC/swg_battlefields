@@ -60,7 +60,7 @@ professionSpecificItems = {
 	jedi = { },
 	outdoors_scout = {  },
 	science_medic = {  },
-	social_entertainer = { slitherhorn }
+	social_entertainer = {  }
 }
 
 commonStartingItems = { compHelmet, compChest, compBoots }
