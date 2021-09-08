@@ -57,21 +57,21 @@ object_tangible_wearables_armor_kashyyykian_hunting_armor_kashyyykian_hunting_br
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
 	actionEncumbrance = 80,
-	mindEncumbrance = 80,
+	mindEncumbrance = 84,
 
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 80,
-	energy = 65,
-	electricity = 65,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
+	kinetic = 90,
+	energy = 90,
+	electricity = 80,
+	stun = 38,
+	blast = 90,
+	heat = 76,
+	cold = 73,
+	acid = 90,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
