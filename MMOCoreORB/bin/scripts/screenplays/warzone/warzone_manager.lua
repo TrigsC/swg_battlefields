@@ -174,7 +174,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	end
 
 	WarzoneManager.setCurrentPhase(currentPhase)
-	--WarzoneManager.setCurrentPhaseID(phaseID + 1)
+	WarzoneManager.setCurrentPhaseID(phaseID + 1)
 	--WarzoneManager:spawnMobiles(currentPhase, false)
 	--WarzoneManager:spawnSceneObjects(currentPhase, false)
 
