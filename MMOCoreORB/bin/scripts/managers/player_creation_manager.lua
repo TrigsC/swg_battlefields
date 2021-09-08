@@ -56,11 +56,11 @@ compBoots = "object/tangible/wearables/armor/composite/armor_composite_boots.iff
 professionSpecificItems = {
 	combat_brawler = { brawlerOneHander, brawlerTwoHander, brawlerPolearm },
 	combat_marksman = { marksmanPistol, marksmanCarbine, marksmanRifle },
-	crafting_artisan = {  },
+	crafting_artisan = { },
 	jedi = { },
-	outdoors_scout = {  },
-	science_medic = {  },
-	social_entertainer = {  }
+	outdoors_scout = { },
+	science_medic = { },
+	social_entertainer = { }
 }
 
 commonStartingItems = { compHelmet, compChest, compBoots }
