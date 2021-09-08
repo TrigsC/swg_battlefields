@@ -51,6 +51,8 @@ compChest = "object/tangible/wearables/armor/composite/armor_composite_chest_pla
 
 compBoots = "object/tangible/wearables/armor/composite/armor_composite_boots.iff"
 
+compLBracer = "object/tangible/wearables/armor/composite/armor_composite_bracer_l.iff"
+
 --x31Speeder = "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff"
 
 professionSpecificItems = {
@@ -63,4 +65,4 @@ professionSpecificItems = {
 	social_entertainer = { }
 }
 
-commonStartingItems = { compHelmet, compChest, compBoots }
+commonStartingItems = { compHelmet, compChest, compBoots, compLBracer }
