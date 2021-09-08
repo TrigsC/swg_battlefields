@@ -140,5 +140,6 @@ naboo_regions = {
 	{"wreckage", 6314, 4248, {CIRCLE, 30}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"western_forest", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"world_spawner", 0, 0, {CIRCLE, -1}, SPAWNAREA + WORLDSPAWNAREA, {"naboo_world", "global"}, 2048},
+	{"allmap", 0, 0, {CIRCLE, 11000}, NOSPAWNAREA + NOBUILDZONEAREA}
 	--{"imp_hq", 3600, 6980, {CIRCLE, 1000}, NOSPAWNAREA + NOBUILDZONEAREA}
 }
