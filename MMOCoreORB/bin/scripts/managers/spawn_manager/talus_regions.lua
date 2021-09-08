@@ -219,5 +219,6 @@ talus_regions = {
 	{"yitsarin_river_canyon_5", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"yitsarin_river_canyon_6", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"yitsarin_river_canyon_7", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
-	{"yitsarin_river_canyon_8", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA}
+	{"yitsarin_river_canyon_8", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
+	{"allmap", 0, 0, {CIRCLE, 11000}, NOSPAWNAREA + NOBUILDZONEAREA}
 }

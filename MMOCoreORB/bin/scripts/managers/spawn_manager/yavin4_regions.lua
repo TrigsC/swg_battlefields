@@ -129,5 +129,6 @@ yavin4_regions = {
 	{"yavin4_labor_outpost", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"yavin4_mining_outpost", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"yunteh_mountains_1", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
-	{"yunteh_mountains_2", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA}
+	{"yunteh_mountains_2", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
+	{"allmap", 0, 0, {CIRCLE, 11000}, NOSPAWNAREA + NOBUILDZONEAREA}
 }

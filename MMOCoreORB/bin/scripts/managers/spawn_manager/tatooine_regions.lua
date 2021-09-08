@@ -299,5 +299,6 @@ tatooine_regions = {
 	{"western_oasis", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"wind_harvest_complex", -7170, -2405, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"wind_harvest_unit", -2910, -6249, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
-	{"world_spawner", 0, 0, {CIRCLE, -1}, SPAWNAREA + WORLDSPAWNAREA, {"tatooine_world", "global"}, 2048}
+	{"world_spawner", 0, 0, {CIRCLE, -1}, SPAWNAREA + WORLDSPAWNAREA, {"tatooine_world", "global"}, 2048},
+	{"allmap", 0, 0, {CIRCLE, 11000}, NOSPAWNAREA + NOBUILDZONEAREA}
 }

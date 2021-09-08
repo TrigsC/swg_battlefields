@@ -129,5 +129,6 @@ endor_regions = {
 	{"yawari_cliffs_6", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"yawari_cliffs_7", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"yawari_cliffs_8", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
-	{"yawari_cliffs_9", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA}
+	{"yawari_cliffs_9", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
+	{"allmap", 0, 0, {CIRCLE, 11000}, NOSPAWNAREA + NOBUILDZONEAREA}
 }

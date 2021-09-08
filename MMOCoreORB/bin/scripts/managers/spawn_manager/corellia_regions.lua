@@ -168,5 +168,6 @@ corellia_regions = {
 	{"wind_farm", 6270, 4395, {CIRCLE, 50}, NOSPAWNAREA + NOBUILDZONEAREA},
 	{"western_mountain_forest", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
 	{"western_plains", 0, 0, {CIRCLE, 0}, UNDEFINEDAREA},
-	{"world_spawner", 0, 0, {CIRCLE, -1}, SPAWNAREA + WORLDSPAWNAREA, {"corellia_world", "global"}, 2048}
+	{"world_spawner", 0, 0, {CIRCLE, -1}, SPAWNAREA + WORLDSPAWNAREA, {"corellia_world", "global"}, 2048},
+	{"allmap", 0, 0, {CIRCLE, 11000}, NOSPAWNAREA + NOBUILDZONEAREA}
 }
