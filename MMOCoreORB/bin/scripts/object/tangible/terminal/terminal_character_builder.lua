@@ -72,138 +72,138 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 		{
 			"Learn Skill",
 			{
-				"Architect",
-				{
-					"Novice", "crafting_architect_novice",
-					"Furniture",
-					{
-						"Furniture I", "crafting_architect_production_01",
-						"Furniture II", "crafting_architect_production_02",
-						"Furniture III", "crafting_architect_production_03",
-						"Furniture IV", "crafting_architect_production_04"
-					},
-					"Construction",
-					{
-						"Construction I", "crafting_architect_techniques_01",
-						"Construction II", "crafting_architect_techniques_02",
-						"Construction III", "crafting_architect_techniques_03",
-						"Construction IV", "crafting_architect_techniques_04"
-					},
-					"Installations",
-					{
-						"Installations I", "crafting_architect_harvesting_01",
-						"Installations II", "crafting_architect_harvesting_02",
-						"Installations III", "crafting_architect_harvesting_03",
-						"Installations IV", "crafting_architect_harvesting_04"
-					},
-					"Buildings",
-					{
-						"Buildings I", "crafting_architect_blueprints_01",
-						"Buildings II", "crafting_architect_blueprints_02",
-						"Buildings III", "crafting_architect_blueprints_03",
-						"Buildings IV", "crafting_architect_blueprints_04"
-					},
-					"Master", "crafting_architect_master"
-				},
-				"Armorsmith",
-				{
-					"Novice", "crafting_armorsmith_novice",
-					"Personal Armor",
-					{
-						"Personal Armor I", "crafting_armorsmith_personal_01",
-						"Personal Armor II", "crafting_armorsmith_personal_02",
-						"Personal Armor III", "crafting_armorsmith_personal_03",
-						"Personal Armor IV", "crafting_armorsmith_personal_04"
-					},
-					"Layers",
-					{
-						"Layers I", "crafting_armorsmith_heavy_01",
-						"Layers II", "crafting_armorsmith_heavy_02",
-						"Layers III", "crafting_armorsmith_heavy_03",
-						"Layers IV", "crafting_armorsmith_heavy_04"
-					},
-					"Deflectors",
-					{
-						"Deflectors I", "crafting_armorsmith_deflectors_01",
-						"Deflectors II", "crafting_armorsmith_deflectors_02",
-						"Deflectors III", "crafting_armorsmith_deflectors_03",
-						"Deflectors IV", "crafting_armorsmith_deflectors_04"
-					},
-					"Technique",
-					{
-						"Technique I", "crafting_armorsmith_complexity_01",
-						"Technique II", "crafting_armorsmith_complexity_02",
-						"Technique III", "crafting_armorsmith_complexity_03",
-						"Technique IV", "crafting_armorsmith_complexity_04"
-					},
-					"Master", "crafting_armorsmith_master"
-				},
-				"Artisan",
-				{
-					"Novice", "crafting_artisan_novice",
-					"Engineering",
-					{
-						"Engineering I", "crafting_artisan_engineering_01",
-						"Engineering II", "crafting_artisan_engineering_02",
-						"Engineering III", "crafting_artisan_engineering_03",
-						"Engineering IV", "crafting_artisan_engineering_04"
-					},
-					"Domestic Arts",
-					{
-						"Domestic Arts I", "crafting_artisan_domestic_01",
-						"Domestic Arts II", "crafting_artisan_domestic_02",
-						"Domestic Arts III", "crafting_artisan_domestic_03",
-						"Domestic Arts IV", "crafting_artisan_domestic_04"
-					},
-					"Business",
-					{
-						"Business I", "crafting_artisan_business_01",
-						"Business II", "crafting_artisan_business_02",
-						"Business III", "crafting_artisan_business_03",
-						"Business IV", "crafting_artisan_business_04"
-					},
-					"Surveying",
-					{
-						"Surveying I", "crafting_artisan_survey_01",
-						"Surveying II", "crafting_artisan_survey_02",
-						"Surveying III", "crafting_artisan_survey_03",
-						"Surveying IV", "crafting_artisan_survey_04"
-					},
-					"Master", "crafting_artisan_master"
-				},
-				"Bio-Engineer",
-				{
-					"Novice", "outdoors_bio_engineer_novice",
-					"Clone Engineering",
-					{
-						"Clone Engineering I", "outdoors_bio_engineer_creature_01",
-						"Clone Engineering II", "outdoors_bio_engineer_creature_02",
-						"Clone Engineering III", "outdoors_bio_engineer_creature_03",
-						"Clone Engineering IV", "outdoors_bio_engineer_creature_04"
-					},
-					"Tissue Engineering",
-					{
-						"Tissue Engineering I", "outdoors_bio_engineer_tissue_01",
-						"Tissue Engineering II", "outdoors_bio_engineer_tissue_02",
-						"Tissue Engineering III", "outdoors_bio_engineer_tissue_03",
-						"Tissue Engineering IV", "outdoors_bio_engineer_tissue_04"
-					},
-					"DNA Sampling",
-					{
-						"DNA Sampling I", "outdoors_bio_engineer_dna_harvesting_01",
-						"DNA Sampling II", "outdoors_bio_engineer_dna_harvesting_02",
-						"DNA Sampling III", "outdoors_bio_engineer_dna_harvesting_03",
-						"DNA Sampling IV", "outdoors_bio_engineer_dna_harvesting_04"
-					},
-					"Engineering Techniques",
-					{
-						"Engineering Techniques I", "outdoors_bio_engineer_production_01",
-						"Engineering Techniques II", "outdoors_bio_engineer_production_02",
-						"Engineering Techniques III", "outdoors_bio_engineer_production_03",
-						"Engineering Techniques IV", "outdoors_bio_engineer_production_04"
-					},
-					"Master", "outdoors_bio_engineer_master"
-				},
+				--"Architect",
+				--{
+					--"Novice", "crafting_architect_novice",
+					--"Furniture",
+					--{
+					--	"Furniture I", "crafting_architect_production_01",
+					--	"Furniture II", "crafting_architect_production_02",
+					--	"Furniture III", "crafting_architect_production_03",
+					--	"Furniture IV", "crafting_architect_production_04"
+					--},
+					--"Construction",
+					--{
+					--	"Construction I", "crafting_architect_techniques_01",
+					--	"Construction II", "crafting_architect_techniques_02",
+					--	"Construction III", "crafting_architect_techniques_03",
+					--	"Construction IV", "crafting_architect_techniques_04"
+					--},
+					--"Installations",
+					--{
+					--	"Installations I", "crafting_architect_harvesting_01",
+					--	"Installations II", "crafting_architect_harvesting_02",
+					--	"Installations III", "crafting_architect_harvesting_03",
+					--	"Installations IV", "crafting_architect_harvesting_04"
+					--},
+					--"Buildings",
+					--{
+					--	"Buildings I", "crafting_architect_blueprints_01",
+					--	"Buildings II", "crafting_architect_blueprints_02",
+					--	"Buildings III", "crafting_architect_blueprints_03",
+					--	"Buildings IV", "crafting_architect_blueprints_04"
+					--},
+					--"Master", "crafting_architect_master"
+				--},
+				--"Armorsmith",
+				--{
+					--"Novice", "crafting_armorsmith_novice",
+					--"Personal Armor",
+					--{
+					--	"Personal Armor I", "crafting_armorsmith_personal_01",
+					--	"Personal Armor II", "crafting_armorsmith_personal_02",
+					--	"Personal Armor III", "crafting_armorsmith_personal_03",
+					--	"Personal Armor IV", "crafting_armorsmith_personal_04"
+					--},
+					--"Layers",
+					--{
+					--	"Layers I", "crafting_armorsmith_heavy_01",
+					--	"Layers II", "crafting_armorsmith_heavy_02",
+					--	"Layers III", "crafting_armorsmith_heavy_03",
+					--	"Layers IV", "crafting_armorsmith_heavy_04"
+					--},
+					--"Deflectors",
+					--{
+					--	"Deflectors I", "crafting_armorsmith_deflectors_01",
+					--	"Deflectors II", "crafting_armorsmith_deflectors_02",
+					--	"Deflectors III", "crafting_armorsmith_deflectors_03",
+					--	"Deflectors IV", "crafting_armorsmith_deflectors_04"
+					--},
+					--"Technique",
+					--{
+					--	"Technique I", "crafting_armorsmith_complexity_01",
+					--	"Technique II", "crafting_armorsmith_complexity_02",
+					--	"Technique III", "crafting_armorsmith_complexity_03",
+					--	"Technique IV", "crafting_armorsmith_complexity_04"
+					--},
+					--"Master", "crafting_armorsmith_master"
+				--},
+				--"Artisan",
+				--{
+					--"Novice", "crafting_artisan_novice",
+					--"Engineering",
+					--{
+					--	"Engineering I", "crafting_artisan_engineering_01",
+					--	"Engineering II", "crafting_artisan_engineering_02",
+					--	"Engineering III", "crafting_artisan_engineering_03",
+					--	"Engineering IV", "crafting_artisan_engineering_04"
+					--},
+					--"Domestic Arts",
+					--{
+					--	"Domestic Arts I", "crafting_artisan_domestic_01",
+					--	"Domestic Arts II", "crafting_artisan_domestic_02",
+					--	"Domestic Arts III", "crafting_artisan_domestic_03",
+					--	"Domestic Arts IV", "crafting_artisan_domestic_04"
+					--},
+					--"Business",
+					--{
+					--	"Business I", "crafting_artisan_business_01",
+					--	"Business II", "crafting_artisan_business_02",
+					--	"Business III", "crafting_artisan_business_03",
+					--	"Business IV", "crafting_artisan_business_04"
+					--},
+					--"Surveying",
+					--{
+					--	"Surveying I", "crafting_artisan_survey_01",
+					--	"Surveying II", "crafting_artisan_survey_02",
+					--	"Surveying III", "crafting_artisan_survey_03",
+					--	"Surveying IV", "crafting_artisan_survey_04"
+					--},
+					--"Master", "crafting_artisan_master"
+				--},
+				--"Bio-Engineer",
+				--{
+					--"Novice", "outdoors_bio_engineer_novice",
+					--"Clone Engineering",
+					--{
+					--	"Clone Engineering I", "outdoors_bio_engineer_creature_01",
+					--	"Clone Engineering II", "outdoors_bio_engineer_creature_02",
+					--	"Clone Engineering III", "outdoors_bio_engineer_creature_03",
+					--	"Clone Engineering IV", "outdoors_bio_engineer_creature_04"
+					--},
+					--"Tissue Engineering",
+					--{
+					--	"Tissue Engineering I", "outdoors_bio_engineer_tissue_01",
+					--	"Tissue Engineering II", "outdoors_bio_engineer_tissue_02",
+					--	"Tissue Engineering III", "outdoors_bio_engineer_tissue_03",
+					--	"Tissue Engineering IV", "outdoors_bio_engineer_tissue_04"
+					--},
+					--"DNA Sampling",
+					--{
+					--	"DNA Sampling I", "outdoors_bio_engineer_dna_harvesting_01",
+					--	"DNA Sampling II", "outdoors_bio_engineer_dna_harvesting_02",
+					--	"DNA Sampling III", "outdoors_bio_engineer_dna_harvesting_03",
+					--	"DNA Sampling IV", "outdoors_bio_engineer_dna_harvesting_04"
+					--},
+					--"Engineering Techniques",
+					--{
+					--	"Engineering Techniques I", "outdoors_bio_engineer_production_01",
+					--	"Engineering Techniques II", "outdoors_bio_engineer_production_02",
+					--	"Engineering Techniques III", "outdoors_bio_engineer_production_03",
+					--	"Engineering Techniques IV", "outdoors_bio_engineer_production_04"
+					--},
+					--"Master", "outdoors_bio_engineer_master"
+				--},
 				"Bounty Hunter",
 				{
 					"Novice", "combat_bountyhunter_novice",
@@ -303,39 +303,39 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					},
 					"Master", "combat_carbine_master"
 				},
-				"Chef",
-				{
-					"Novice", "crafting_chef_novice",
-					"Entrees",
-					{
-						"Entrees I", "crafting_chef_dish_01",
-						"Entrees II", "crafting_chef_dish_02",
-						"Entrees III", "crafting_chef_dish_03",
-						"Entrees IV", "crafting_chef_dish_04"
-					},
-					"Desserts",
-					{
-						"Desserts I", "crafting_chef_dessert_01",
-						"Desserts II", "crafting_chef_dessert_02",
-						"Desserts III", "crafting_chef_dessert_03",
-						"Desserts IV", "crafting_chef_dessert_04"
-					},
-					"Mixology",
-					{
-						"Mixology I", "crafting_chef_drink_01",
-						"Mixology II", "crafting_chef_drink_02",
-						"Mixology III", "crafting_chef_drink_03",
-						"Mixology IV", "crafting_chef_drink_04"
-					},
-					"Cooking",
-					{
-						"Cooking I", "crafting_chef_techniques_01",
-						"Cooking II", "crafting_chef_techniques_02",
-						"Cooking III", "crafting_chef_techniques_03",
-						"Cooking IV", "crafting_chef_techniques_04"
-					},
-					"Master", "crafting_chef_master"
-				},
+				--"Chef",
+				--{
+					--"Novice", "crafting_chef_novice",
+					--"Entrees",
+					--{
+					--	"Entrees I", "crafting_chef_dish_01",
+					--	"Entrees II", "crafting_chef_dish_02",
+					--	"Entrees III", "crafting_chef_dish_03",
+					--	"Entrees IV", "crafting_chef_dish_04"
+					--},
+					--"Desserts",
+					--{
+					--	"Desserts I", "crafting_chef_dessert_01",
+					--	"Desserts II", "crafting_chef_dessert_02",
+					--	"Desserts III", "crafting_chef_dessert_03",
+					--	"Desserts IV", "crafting_chef_dessert_04"
+					--},
+					--"Mixology",
+					--{
+					--	"Mixology I", "crafting_chef_drink_01",
+					--	"Mixology II", "crafting_chef_drink_02",
+					--	"Mixology III", "crafting_chef_drink_03",
+					--	"Mixology IV", "crafting_chef_drink_04"
+					--},
+					--"Cooking",
+					--{
+					--	"Cooking I", "crafting_chef_techniques_01",
+					--	"Cooking II", "crafting_chef_techniques_02",
+					--	"Cooking III", "crafting_chef_techniques_03",
+					--	"Cooking IV", "crafting_chef_techniques_04"
+					--},
+					--"Master", "crafting_chef_master"
+				--},
 				"Combat Medic",
 				{
 					"Novice", "science_combatmedic_novice",
@@ -501,39 +501,39 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					},
 					"Master", "science_doctor_master"
 				},
-				"Droid Engineer",
-				{
-					"Novice", "crafting_droidengineer_novice",
-					"Production",
-					{
-						"Intermediate Droid Production", "crafting_droidengineer_production_01",
-						"Advanced Droid Production", "crafting_droidengineer_production_02",
-						"Expert Droid Production", "crafting_droidengineer_production_03",
-						"Master Droid Production", "crafting_droidengineer_production_04"
-					},
-					"Construction Techniques",
-					{
-						"Intermediate Droid Construction Techniques", "crafting_droidengineer_techniques_01",
-						"Advanced Droid Construction Techniques", "crafting_droidengineer_techniques_02",
-						"Expert Droid Construction Techniques", "crafting_droidengineer_techniques_03",
-						"Master Droid Construction Techniques", "crafting_droidengineer_techniques_04"
-					},
-					"Refinement",
-					{
-						"Intermediate Droid Refinement", "crafting_droidengineer_refinement_01",
-						"Advanced Droid Refinement", "crafting_droidengineer_refinement_02",
-						"Expert Droid Refinement", "crafting_droidengineer_refinement_03",
-						"Master Droid Refinement", "crafting_droidengineer_refinement_04"
-					},
-					"Blueprints",
-					{
-						"Intermediate Droid Blueprints", "crafting_droidengineer_blueprints_01",
-						"Advanced Droid Blueprints", "crafting_droidengineer_blueprints_02",
-						"Expert Droid Blueprints", "crafting_droidengineer_blueprints_03",
-						"Master Droid Blueprints", "crafting_droidengineer_blueprints_04"
-					},
-					"Master", "crafting_droidengineer_master"
-				},
+				--"Droid Engineer",
+				--{
+					--"Novice", "crafting_droidengineer_novice",
+					--"Production",
+					--{
+					--	"Intermediate Droid Production", "crafting_droidengineer_production_01",
+					--	"Advanced Droid Production", "crafting_droidengineer_production_02",
+					--	"Expert Droid Production", "crafting_droidengineer_production_03",
+					--	"Master Droid Production", "crafting_droidengineer_production_04"
+					--},
+					--"Construction Techniques",
+					--{
+					--	"Intermediate Droid Construction Techniques", "crafting_droidengineer_techniques_01",
+					--	"Advanced Droid Construction Techniques", "crafting_droidengineer_techniques_02",
+					--	"Expert Droid Construction Techniques", "crafting_droidengineer_techniques_03",
+					--	"Master Droid Construction Techniques", "crafting_droidengineer_techniques_04"
+					--},
+					--"Refinement",
+					--{
+					--	"Intermediate Droid Refinement", "crafting_droidengineer_refinement_01",
+					--	"Advanced Droid Refinement", "crafting_droidengineer_refinement_02",
+					--	"Expert Droid Refinement", "crafting_droidengineer_refinement_03",
+					--	"Master Droid Refinement", "crafting_droidengineer_refinement_04"
+					--},
+					--"Blueprints",
+					--{
+					--	"Intermediate Droid Blueprints", "crafting_droidengineer_blueprints_01",
+					--	"Advanced Droid Blueprints", "crafting_droidengineer_blueprints_02",
+					--	"Expert Droid Blueprints", "crafting_droidengineer_blueprints_03",
+					--	"Master Droid Blueprints", "crafting_droidengineer_blueprints_04"
+					--},
+					--"Master", "crafting_droidengineer_master"
+				--},
 				"Entertainer",
 				{
 					"Novice", "social_entertainer_novice",
@@ -1449,39 +1449,39 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					},
 					"Master", "combat_2hsword_master"
 				},
-				"Tailor",
-				{
-					"Novice", "crafting_tailor_novice",
-					"Casual Wear",
-					{
-						"Casual Wear I", "crafting_tailor_casual_01",
-						"Casual Wear II", "crafting_tailor_casual_02",
-						"Casual Wear III", "crafting_tailor_casual_03",
-						"Casual Wear IV", "crafting_tailor_casual_04"
-					},
-					"Field Wear",
-					{
-						"Field Wear I", "crafting_tailor_field_01",
-						"Field Wear II", "crafting_tailor_field_02",
-						"Field Wear III", "crafting_tailor_field_03",
-						"Field Wear IV", "crafting_tailor_field_04"
-					},
-					"Formal Wear",
-					{
-						"Formal Wear I", "crafting_tailor_formal_01",
-						"Formal Wear II", "crafting_tailor_formal_02",
-						"Formal Wear III", "crafting_tailor_formal_03",
-						"Formal Wear IV", "crafting_tailor_formal_04"
-					},
-					"Tailoring",
-					{
-						"Tailoring I", "crafting_tailor_production_01",
-						"Tailoring II", "crafting_tailor_production_02",
-						"Tailoring III", "crafting_tailor_production_03",
-						"Tailoring IV", "crafting_tailor_production_04"
-					},
-					"Master", "crafting_tailor_master"
-				},
+				--"Tailor",
+				--{
+					--"Novice", "crafting_tailor_novice",
+					--"Casual Wear",
+					--{
+					--	"Casual Wear I", "crafting_tailor_casual_01",
+					--	"Casual Wear II", "crafting_tailor_casual_02",
+					--	"Casual Wear III", "crafting_tailor_casual_03",
+					--	"Casual Wear IV", "crafting_tailor_casual_04"
+					--},
+					--"Field Wear",
+					--{
+					--	"Field Wear I", "crafting_tailor_field_01",
+					--	"Field Wear II", "crafting_tailor_field_02",
+					--	"Field Wear III", "crafting_tailor_field_03",
+					--	"Field Wear IV", "crafting_tailor_field_04"
+					--},
+					--"Formal Wear",
+					--{
+					--	"Formal Wear I", "crafting_tailor_formal_01",
+					--	"Formal Wear II", "crafting_tailor_formal_02",
+					--	"Formal Wear III", "crafting_tailor_formal_03",
+					--	"Formal Wear IV", "crafting_tailor_formal_04"
+					--},
+					--"Tailoring",
+					--{
+					--	"Tailoring I", "crafting_tailor_production_01",
+					--	"Tailoring II", "crafting_tailor_production_02",
+					--	"Tailoring III", "crafting_tailor_production_03",
+					--	"Tailoring IV", "crafting_tailor_production_04"
+					--},
+					--"Master", "crafting_tailor_master"
+				--},
 				"Teras Kasi Artist",
 				{
 					"Novice", "combat_unarmed_novice",
@@ -1515,39 +1515,39 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					},
 					"Master", "combat_unarmed_master"
 				},
-				"Weaponsmith",
-				{
-					"Novice", "crafting_weaponsmith_novice",
-					"Melee",
-					{
-						"Intermediate Melee Weapons Crafting", "crafting_weaponsmith_melee_01",
-						"Advanced Melee Weapons Crafting", "crafting_weaponsmith_melee_02",
-						"Expert Melee Weapons Crafting", "crafting_weaponsmith_melee_03",
-						"Master Melee Weapons Crafting", "crafting_weaponsmith_melee_04"
-					},
-					"Firearms",
-					{
-						"Intermediate Firearms Crafting", "crafting_weaponsmith_firearms_01",
-						"Advanced Firearms Crafting", "crafting_weaponsmith_firearms_02",
-						"Expert Firearms Crafting", "crafting_weaponsmith_firearms_03",
-						"Master Firearms Crafting", "crafting_weaponsmith_firearms_04"
-					},
-					"Munitions",
-					{
-						"Intermediate Munitions Crafting", "crafting_weaponsmith_munitions_01",
-						"Advanced Munitions Crafting", "crafting_weaponsmith_munitions_02",
-						"Expert Munitions Crafting", "crafting_weaponsmith_munitions_03",
-						"Master Munitions Crafting", "crafting_weaponsmith_munitions_04"
-					},
-					"Techniques",
-					{
-						"Intermediate Weapon Crafting Techniques", "crafting_weaponsmith_techniques_01",
-						"Advanced Weapon Crafting Techniques", "crafting_weaponsmith_techniques_02",
-						"Expert Weapon Crafting Techniques", "crafting_weaponsmith_techniques_03",
-						"Master Weapon Crafting Techniques", "crafting_weaponsmith_techniques_04"
-					},
-					"Master", "crafting_weaponsmith_master"
-				}
+				--"Weaponsmith",
+				--{
+					--"Novice", "crafting_weaponsmith_novice",
+					--"Melee",
+					--{
+					--	"Intermediate Melee Weapons Crafting", "crafting_weaponsmith_melee_01",
+					--	"Advanced Melee Weapons Crafting", "crafting_weaponsmith_melee_02",
+					--	"Expert Melee Weapons Crafting", "crafting_weaponsmith_melee_03",
+					--	"Master Melee Weapons Crafting", "crafting_weaponsmith_melee_04"
+					--},
+					--"Firearms",
+					--{
+					--	"Intermediate Firearms Crafting", "crafting_weaponsmith_firearms_01",
+					--	"Advanced Firearms Crafting", "crafting_weaponsmith_firearms_02",
+					--	"Expert Firearms Crafting", "crafting_weaponsmith_firearms_03",
+					--	"Master Firearms Crafting", "crafting_weaponsmith_firearms_04"
+					--},
+					--"Munitions",
+					--{
+					--	"Intermediate Munitions Crafting", "crafting_weaponsmith_munitions_01",
+					--	"Advanced Munitions Crafting", "crafting_weaponsmith_munitions_02",
+					--	"Expert Munitions Crafting", "crafting_weaponsmith_munitions_03",
+					--	"Master Munitions Crafting", "crafting_weaponsmith_munitions_04"
+					--},
+					--"Techniques",
+					--{
+					--	"Intermediate Weapon Crafting Techniques", "crafting_weaponsmith_techniques_01",
+					--	"Advanced Weapon Crafting Techniques", "crafting_weaponsmith_techniques_02",
+					--	"Expert Weapon Crafting Techniques", "crafting_weaponsmith_techniques_03",
+					--	"Master Weapon Crafting Techniques", "crafting_weaponsmith_techniques_04"
+					--},
+					--"Master", "crafting_weaponsmith_master"
+				--}
 			},
 			"Unlearn All Skills", "unlearn_all_skills",
 			"Cleanse Character", "cleanse_character",
