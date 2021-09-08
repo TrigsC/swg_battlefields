@@ -62,9 +62,11 @@ public:
 
 		if (city == "naboo_imp")
 			player->setFaction(Factions::FACTIONIMPERIAL);
+			player->increaseFactionStanding("imperial", 100000);
 		
 		if (city == "naboo_rebel")
 			player->setFaction(Factions::FACTIONREBEL);
+			player->increaseFactionStanding("rebel", 100000);
 
 		player->setFactionStatus(FactionStatus::OVERT);
 
