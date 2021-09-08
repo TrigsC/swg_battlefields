@@ -62,13 +62,14 @@ public:
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 		if (ghost != nullptr) {
-			if (city == "naboo_imp")
+			if (city == "naboo_imp") {
 				player->setFaction(Factions::FACTIONIMPERIAL);
 				ghost->increaseFactionStanding("imperial", 100000);
-			
-			if (city == "naboo_rebel")
+			}
+			if (city == "naboo_rebel") {
 				player->setFaction(Factions::FACTIONREBEL);
 				ghost->increaseFactionStanding("rebel", 100000);
+			}
 			
 			player->setFactionStatus(FactionStatus::OVERT);
 		}
