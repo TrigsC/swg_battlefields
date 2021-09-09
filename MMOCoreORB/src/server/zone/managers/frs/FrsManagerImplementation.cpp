@@ -2777,7 +2777,7 @@ short FrsManagerImplementation::getEnclaveType(BuildingObject* enclave) {
 }
 
 short FrsManagerImplementation::getEnclaveTypeByPlanet(const String& planet) {
-	if (planet == nullptr)
+	if (planet == "")
 		return 0;
 
 	if (planet == "corellia")
