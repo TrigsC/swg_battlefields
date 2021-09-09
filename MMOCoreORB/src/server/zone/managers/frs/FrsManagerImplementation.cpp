@@ -1221,6 +1221,7 @@ void FrsManagerImplementation::handleVoteStatusSui(CreatureObject* player, Scene
 
 	if (ghost == nullptr)
 		return;
+	info("INSIDE handleVoteStatusSui AFTER GHOST", true);
 
 	ManagedReference<FrsRank*> rankData = getFrsRank(enclaveType, rank);
 
@@ -1228,6 +1229,8 @@ void FrsManagerImplementation::handleVoteStatusSui(CreatureObject* player, Scene
 		player->sendSystemMessage("@force_rank:invalid_rank_selected"); // That is an invalid rank.
 		return;
 	}
+
+	info("INSIDE handleVoteStatusSui AFTER rankDataa", true);
 
 	ManagedReference<SuiListBox*> box = new SuiListBox(player, SuiWindowType::ENCLAVE_VOTING, SuiListBox::HANDLESINGLEBUTTON);
 	box->setOkButton(true, "@ok");
