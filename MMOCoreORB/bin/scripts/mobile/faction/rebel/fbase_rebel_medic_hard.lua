@@ -24,7 +24,7 @@ fbase_rebel_medic_hard = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HEALER,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED, -- + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {
