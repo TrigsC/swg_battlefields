@@ -66,11 +66,11 @@ public:
 				player->setFaction(Factions::FACTIONIMPERIAL);
 				ghost->increaseFactionStanding("imperial", 100000);
 			}
-			if (city == "naboo_rebel") {
+			if (city == "corellia_rebel") {
 				player->setFaction(Factions::FACTIONREBEL);
 				ghost->increaseFactionStanding("rebel", 100000);
 			}
-			
+
 			player->setFactionStatus(FactionStatus::OVERT);
 		}
 
