@@ -19,6 +19,7 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 170, 0)
     --Cnet Reb HQ
     spawnMobile("corellia", "tp_rebel", 0, -6522, 398, 6040, 130, 0)
+    spawnMobile("corellia", "rebel_recruiter", 0, -6537, 398, 6037, 130, 0)
 
     --Corellia Zone
     -- imp
@@ -47,7 +48,7 @@ function WarZoneSpawner:spawnSceneObjects()
     -- Character builder
     spawnSceneObject("naboo", "object/tangible/terminal/terminal_character_builder.iff", 2428.552979, 292.000000, -3910.535889, 9995396, 0.103863, -0.000001, 0.994592, -0.000001)
     
-    
+
     spawnSceneObject("naboo", "object/tangible/crafting/station/public_weapon_station.iff", 2440.973389, 292.000000, -3965.747803, 9995427, 0.926448, 0.000001, -0.376422, 0.000002)
 
     
