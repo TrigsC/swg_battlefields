@@ -30,6 +30,7 @@ void EnclaveTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObje
 		return;
 
 	String planet = player->getZone()->getZoneName();
+	info("*******" + planet + "*********", true)
 
 	//int enclaveType = frsManager->getEnclaveType(building);
 	int enclaveType = frsManager->getEnclaveTypeByPlanet(planet);
