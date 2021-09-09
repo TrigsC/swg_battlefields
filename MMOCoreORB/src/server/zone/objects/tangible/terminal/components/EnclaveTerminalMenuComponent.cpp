@@ -29,7 +29,7 @@ void EnclaveTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObje
 	if (frsManager == nullptr)
 		return;
 
-	String planet = getPlanetName();
+	String planet = player->getZone()->getPlanetName();
 
 	//int enclaveType = frsManager->getEnclaveType(building);
 	int enclaveType = frsManager->getEnclaveTypeByPlanet(planet);
@@ -126,7 +126,7 @@ int EnclaveTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObjec
 	if (frsManager == nullptr)
 		return 1;
 	
-	String planet = getPlanetName();
+	String planet = player->getZone()->getPlanetName();
 
 	//int enclaveType = frsManager->getEnclaveType(building);
 	int enclaveType = frsManager->getEnclaveTypeByPlanet(planet);
