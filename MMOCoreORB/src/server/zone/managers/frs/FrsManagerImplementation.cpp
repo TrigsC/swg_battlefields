@@ -2777,14 +2777,19 @@ short FrsManagerImplementation::getEnclaveType(BuildingObject* enclave) {
 }
 
 short FrsManagerImplementation::getEnclaveTypeByPlanet(const String& planet) {
-	if (planet == "")
+	if (planet == "") {
+		info("********** NOPE ***************", true);
 		return 0;
+	}
 
-	if (planet == "corellia")
+	if (planet == "corellia") {
+		info("**********" + planet + "***************", true);
 		return FrsManager::COUNCIL_LIGHT;
-	else if (planet == "naboo")
-		return FrsManager::COUNCIL_DARK;
 
+	}else if (planet == "naboo") {
+		info("**********" + planet + "***************", true);
+		return FrsManager::COUNCIL_DARK;
+	}
 	return 0;
 }
 
