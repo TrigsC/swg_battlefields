@@ -76,8 +76,8 @@ function WarZoneSpawner:spawnSceneObjects()
     -- Character builder
     spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
     --spawnSceneObject("naboo", "object/tangible/terminal/terminal_guild.iff", 3591.895996, -208.514969, 6979.841309, 9995395, -0.500295, -0.000304, 0.865850, 0.000109)
-    spawnSceneObject("corellia", "object/tangible/terminal/terminal_light_enclave_voting.iff", -6519.513672, 398.000000, 6016.104004, 9995397, 0.000000, -0.395236, 0.000001)
-    spawnSceneObject("corellia", "object/tangible/terminal/terminal_light_enclave_challenge.iff", -6521.921875, 398.000000, 6013.890137, 9995397, 0.000000, -0.395236, 0.000001)
+    spawnSceneObject("corellia", "object/tangible/terminal/terminal_light_enclave_voting.iff", -6519.513672, 398.000000, 6016.104004, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
+    spawnSceneObject("corellia", "object/tangible/terminal/terminal_light_enclave_challenge.iff", -6521.921875, 398.000000, 6013.890137, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
     --military_wall_strong_rebl_style_01
     spawnSceneObject("corellia", "object/static/structure/military/military_wall_strong_rebl_style_01.iff", -6559.655273, 403.794922, 5940.076660, 9995405, -0.400055, -0.000002, 0.916491, -0.000002)
     spawnSceneObject("corellia", "object/static/structure/military/military_wall_strong_rebl_style_01.iff", -6491.673828, 403.793701, 5917.130859, 9995406, 0.102275, -0.000001, 0.994756, -0.000001)
