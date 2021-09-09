@@ -2776,6 +2776,18 @@ short FrsManagerImplementation::getEnclaveType(BuildingObject* enclave) {
 	return 0;
 }
 
+short FrsManagerImplementation::getEnclaveTypeByPlanet(string planet) {
+	if (planet == nullptr)
+		return 0;
+
+	if (planet == "corellia")
+		return FrsManager::COUNCIL_LIGHT;
+	else if (planet == "naboo")
+		return FrsManager::COUNCIL_DARK;
+
+	return 0;
+}
+
 void FrsManagerImplementation::recoverJediItems(CreatureObject* player) {
 	if (player == nullptr)
 		return;

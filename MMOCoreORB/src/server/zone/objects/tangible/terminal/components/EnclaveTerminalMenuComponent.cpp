@@ -12,10 +12,14 @@
 void EnclaveTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	ManagedReference<BuildingObject*> building = sceneObject->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
 
-	if (building == nullptr || player->isDead() || player->isIncapacitated())
+	//if (building == nullptr || player->isDead() || player->isIncapacitated())
+	//	return;
+
+	if (player->isDead() || player->isIncapacitated())
 		return;
 
-	ZoneServer* zServ = building->getZoneServer();
+	//ZoneServer* zServ = building->ZoneServer();
+	ZoneServer* zServ = player->getZoneServer();
 
 	if (zServ == nullptr)
 		return;
@@ -25,7 +29,10 @@ void EnclaveTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObje
 	if (frsManager == nullptr)
 		return;
 
-	int enclaveType = frsManager->getEnclaveType(building);
+	String planet = player->getPlanetName();
+
+	//int enclaveType = frsManager->getEnclaveType(building);
+	int enclaveType = frsManager->getEnclaveTypeByPlanet(planet);
 
 	if (enclaveType == 0)
 		return;
@@ -103,12 +110,13 @@ int EnclaveTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObjec
 		return 1;
 	}
 
-	ManagedReference<BuildingObject*> building = sceneObject->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
+	//ManagedReference<BuildingObject*> building = sceneObject->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
 
-	if (building == nullptr)
-		return 1;
+	//if (building == nullptr)
+	//	return 1;
 
-	ZoneServer* zServ = building->getZoneServer();
+	//ZoneServer* zServ = building->ZoneServer();
+	ZoneServer* zServ = player->getZoneServer();
 
 	if (zServ == nullptr)
 		return 1;
@@ -117,8 +125,11 @@ int EnclaveTerminalMenuComponent::handleObjectMenuSelect(SceneObject* sceneObjec
 
 	if (frsManager == nullptr)
 		return 1;
+	
+	String planet = player->getPlanetName();
 
-	int enclaveType = frsManager->getEnclaveType(building);
+	//int enclaveType = frsManager->getEnclaveType(building);
+	int enclaveType = frsManager->getEnclaveTypeByPlanet(planet);
 
 	if (enclaveType == 0)
 		return 1;

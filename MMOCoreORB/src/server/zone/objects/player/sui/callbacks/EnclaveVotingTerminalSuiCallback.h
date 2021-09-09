@@ -44,7 +44,10 @@ public:
 		if (frsMan == nullptr)
 			return;
 
-		int enclaveType = frsMan->getEnclaveType(building);
+		String planet = player->getPlanetName();
+
+		int enclaveType = frsMan->getEnclaveTypeByPlanet(planet);
+		//int enclaveType = frsMan->getEnclaveType(building);
 
 		if (enclaveType == 0)
 			return;
