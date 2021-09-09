@@ -17,7 +17,7 @@ public:
 
 private:
 	int getEnclaveType(BuildingObject* building) const;
-	int getEnclaveTypeByPlanet(string planet) const;
+	int getEnclaveTypeByPlanet(String planet) const;
 	int getTerminalType(SceneObject* terminal) const;
 
 };
