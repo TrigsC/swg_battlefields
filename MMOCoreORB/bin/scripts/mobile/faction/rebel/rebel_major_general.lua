@@ -24,7 +24,7 @@ rebel_major_general = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED, -- + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {

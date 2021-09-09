@@ -24,7 +24,7 @@ fbase_rebel_army_captain_extreme = Creature:new {
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED, -- + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {

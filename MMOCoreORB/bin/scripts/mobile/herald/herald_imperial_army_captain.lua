@@ -24,7 +24,7 @@ herald_imperial_army_captain = Creature:new {
 	ferocity = 0,
 	pvpBitmask = NONE,
 	creatureBitmask = NONE,
-	optionsBitmask = AIENABLED + CONVERSABLE,
+	optionsBitmask = AIENABLED, -- + CONVERSABLE,
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_imperial_captain_m.iff"},
