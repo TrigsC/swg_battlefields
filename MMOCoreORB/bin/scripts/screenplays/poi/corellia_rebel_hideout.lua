@@ -260,7 +260,7 @@ function RebelHideoutScreenPlay:spawnMobiles()
 	spawnMobile("corellia", "rebel_sergeant", 300, 5.4, 0.1, 2.3, -93, 8205791)
 	--spawnMobile("corellia", "rebel_major", 300, 3.2, 0.1, 3.6, -153, 8205791)
 	spawnMobile("corellia", "rebel_staff_sergeant", 300, 4.1, 0.1, -3.6, 101, 8205792)
-	--spawnMobile("corellia", "rebel_medic", 300, -2.9, 0.1, -4.0, -74, 8205793)
+	spawnMobile("corellia", "rebel_medic", 300, -2.9, 0.1, -4.0, -74, 8205793)
 	spawnMobile("corellia", "rebel_commando", 300, -5.0, 0.1, -2.1, 119, 8205793)
 
 	-- East Building Interior

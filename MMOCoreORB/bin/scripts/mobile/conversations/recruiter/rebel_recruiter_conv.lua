@@ -40,9 +40,9 @@ member_covert_start = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_466", -- Hello friend. Is there something that I may do to help you?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_overt"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_overt"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -55,9 +55,9 @@ member_overt_start = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_466", -- Hello friend. Is there something that I may do to help you?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_overt"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_overt"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_overt"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_overt"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -144,7 +144,7 @@ confirm_go_covert = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_506", -- You are currently in Special Forces. Do you need to step back from it for now?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_508", "accepted_go_covert"}, -- Yes please. I would like to return to combatant status and not fight the Imperial Special Forces.
+		--{"@conversation/faction_recruiter_rebel:s_508", "accepted_go_covert"}, -- Yes please. I would like to return to combatant status and not fight the Imperial Special Forces.
 		{"@conversation/faction_recruiter_rebel:s_512", "stay_special_forces"} -- Actually, I want to stay in Special Forces.
 	}
 }
@@ -156,9 +156,9 @@ stay_special_forces = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_514", -- Good show! Show those Imperials what for. May I help you with something else instead?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_overt"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_overt"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_overt"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_overt"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -190,8 +190,8 @@ leave_time_covert = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_528", -- We really need your skills. Are you sure that you want to go on leave now? You will be overlooked by most Imperials, unless you get stopped by a tenacious agent that finds something linking you to us.
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_530", "accepted_go_on_leave"}, -- Yes. I really need to take some leave time.
-		{"@conversation/faction_recruiter_rebel:s_534", "stay_covert"} -- Maybe not. I will stay active.
+		--{"@conversation/faction_recruiter_rebel:s_530", "accepted_go_on_leave"}, -- Yes. I really need to take some leave time.
+		--{"@conversation/faction_recruiter_rebel:s_534", "stay_covert"} -- Maybe not. I will stay active.
 	}
 }
 
@@ -202,9 +202,9 @@ stay_covert = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_536", -- I wish all of our soldiers had your dedication. I salute you!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_overt"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_overt"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -216,7 +216,7 @@ leave_time_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_528", -- We really need your skills. Are you sure that you want to go on leave now? You will be overlooked by most Imperials, unless you get stopped by a tenacious agent that finds something linking you to us.
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_530", "accepted_go_on_leave"}, -- Yes. I really need to take some leave time.
+		--{"@conversation/faction_recruiter_rebel:s_530", "accepted_go_on_leave"}, -- Yes. I really need to take some leave time.
 		{"@conversation/faction_recruiter_rebel:s_534", "stay_overt"} -- Maybe not. I will stay active.
 	}
 }
@@ -228,9 +228,9 @@ stay_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_536", -- I wish all of our soldiers had your dedication. I salute you!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -252,8 +252,8 @@ leave_resign_covert = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_540", -- How could you turn your back on people trying to win freedom from tyranny? We need everyone we can get! Won't you reconsider?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_542", "accepted_resign"}, -- I'm sure. I have had enough war. I want out.
-		{"@conversation/faction_recruiter_rebel:s_546", "dont_resign_covert"} -- You are right. It was a momentary lapse. I will stay with the Rebellion.
+		--{"@conversation/faction_recruiter_rebel:s_542", "accepted_resign"}, -- I'm sure. I have had enough war. I want out.
+		--{"@conversation/faction_recruiter_rebel:s_546", "dont_resign_covert"} -- You are right. It was a momentary lapse. I will stay with the Rebellion.
 	}
 }
 
@@ -264,9 +264,9 @@ dont_resign_covert = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_548", -- Doubt is understandable, but have faith. We are on the right side. No one wants to cater to a tyrant. Down with the Empire!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_overt"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_overt"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -278,7 +278,7 @@ leave_resign_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_540", -- How could you turn your back on people trying to win freedom from tyranny? We need everyone we can get! Won't you reconsider?
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_542", "accepted_resign"}, -- I'm sure. I have had enough war. I want out.
+		--{"@conversation/faction_recruiter_rebel:s_542", "accepted_resign"}, -- I'm sure. I have had enough war. I want out.
 		{"@conversation/faction_recruiter_rebel:s_546", "dont_resign_overt"} -- You are right. It was a momentary lapse. I will stay with the Rebellion.
 	}
 }
@@ -290,9 +290,9 @@ dont_resign_overt = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_548", -- Doubt is understandable, but have faith. We are on the right side. No one wants to cater to a tyrant. Down with the Empire!
 	stopConversation = "false",
 	options = {
-		{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
-		{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
-		{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
+		--{"@conversation/faction_recruiter_rebel:s_504", "confirm_go_covert"}, -- I need to address my role in the Civil War.
+		--{"@conversation/faction_recruiter_rebel:s_526", "leave_time_covert"}, -- I need to go on leave for a time.
+		--{"@conversation/faction_recruiter_rebel:s_538", "resign_covert"}, -- This is all too much for me. I would like to resign completely.
 		{"@conversation/faction_recruiter_rebel:s_562", "show_gcw_score"}, -- How are we doing in the war against the Imperial tyrants?
 	}
 }
@@ -315,7 +315,7 @@ resume_duties = ConvoScreen:new {
 	stopConversation = "false",
 	options = {
 		{"@conversation/faction_recruiter_rebel:s_454", "accepted_resume_duties"}, -- Absolutely.
-		{"@conversation/faction_recruiter_rebel:s_458", "stay_on_leave"} -- Actually, I think I like being on leave.
+		--{"@conversation/faction_recruiter_rebel:s_458", "stay_on_leave"} -- Actually, I think I like being on leave.
 	}
 }
 
@@ -419,11 +419,11 @@ faction_purchase = ConvoScreen:new {
 	leftDialog = "@conversation/faction_recruiter_rebel:s_482",  -- we have some things.  what do you need?
 	stopConversation = "false",
 	options = {
-		{ "@conversation/faction_recruiter_rebel:s_484", "fp_installations" }, -- We have some things. What do you need?
+		--{ "@conversation/faction_recruiter_rebel:s_484", "fp_installations" }, -- We have some things. What do you need?
 		{ "@conversation/faction_recruiter_rebel:s_488", "fp_weapons_armor" }, -- I need better weaponry and armor.
 		--{ "@conversation/faction_recruiter_rebel:s_492", "fp_schematics" }, -- I like to build. What schematics are available?
-		{ "@conversation/faction_recruiter_rebel:s_496", "fp_furniture"}, -- I would like to do some decorating. I need furniture.
-		{ "@conversation/faction_recruiter_rebel:s_500", "fp_hirelings" }, -- I need some back-up troops.
+		--{ "@conversation/faction_recruiter_rebel:s_496", "fp_furniture"}, -- I would like to do some decorating. I need furniture.
+		--{ "@conversation/faction_recruiter_rebel:s_500", "fp_hirelings" }, -- I need some back-up troops.
 	},
 }
 
