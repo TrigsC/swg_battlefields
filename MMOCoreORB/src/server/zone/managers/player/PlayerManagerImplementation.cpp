@@ -1244,6 +1244,8 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 				}
 			}
 
+			broadcastKillMessage(attackerCreature, player);
+
 			if (attackerCreature->isPlayerCreature()) {
 				if (!CombatManager::instance()->areInDuel(attackerCreature, player)) {
 					FactionManager::instance()->awardPvpFactionPoints(attackerCreature, player);
@@ -1301,6 +1303,31 @@ void PlayerManagerImplementation::killPlayer(TangibleObject* attacker, CreatureO
 	player->setTargetID(0, true);
 
 	player->notifyObjectKillObservers(attacker);
+}
+
+void PlayerManagerImplementation::broadcastKillMessage(CreatureObject* attacker, CreatureObject* victim) {
+	if (CombatManager::instance()->areInDuel(attacker, victim)) {
+		return;
+	}
+
+	PlayerObject* victimGhost = victim->getPlayerObject();
+
+	// GCW kill
+	if (victimGhost != nullptr && attacker->getFaction() != 0 && victim->getFaction() != 0  && attacker->getFaction() != victim->getFaction()) {
+		StringBuffer factionDeathBroadcast;
+		if (attacker->getFaction() == Factions::FACTIONREBEL) {
+			attacker->playEffect("clienteffect/holoemote_rebel.cef", "head");
+			factionDeathBroadcast << "A Rebel named " << attacker->getFirstName() << " has murdered " << victim->getFirstName() << ", an Empire Loyalist.";
+		} else if (attacker->getFaction() == Factions::FACTIONIMPERIAL) {
+			attacker->playEffect("clienteffect/holoemote_imperial.cef", "head");
+			factionDeathBroadcast << attacker->getFirstName() << ", an Empire Loyalist, has found and slaughtered the Rebel Scum named " << victim->getFirstName() << ".";
+		} else {
+			return;
+		}
+
+		server->getChatManager()->broadcastGalaxy(nullptr, factionDeathBroadcast.toString());
+		return;
+	}
 }
 
 void PlayerManagerImplementation::sendActivateCloneRequest(CreatureObject* player, int typeofdeath) {
