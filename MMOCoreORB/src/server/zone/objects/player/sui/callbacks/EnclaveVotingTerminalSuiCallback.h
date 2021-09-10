@@ -1,6 +1,7 @@
 #ifndef ENCLAVEVOTINGTERMINALSUICALLBACK_H_
 #define ENCLAVEVOTINGTERMINALSUICALLBACK_H_
 
+#include "server/zone/Zone.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/frs/FrsManager.h"
 
@@ -29,22 +30,25 @@ public:
 		if (terminal == nullptr)
 			return;
 
-		ManagedReference<SceneObject*> parent = terminal->getParentRecursively(SceneObjectType::BUILDING);
+		//ManagedReference<SceneObject*> parent = terminal->getParentRecursively(SceneObjectType::BUILDING);
 
-		if (parent == nullptr)
-			return;
+		//if (parent == nullptr)
+		//	return;
 
-		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(parent.get());
+		//ManagedReference<BuildingObject*> building = cast<BuildingObject*>(parent.get());
 
-		if (building == nullptr)
-			return;
+		//if (building == nullptr)
+		//	return;
 
 		FrsManager* frsMan = player->getZoneServer()->getFrsManager();
 
 		if (frsMan == nullptr)
 			return;
 
-		int enclaveType = frsMan->getEnclaveType(building);
+		String planet = player->getZone()->getZoneName();
+
+		int enclaveType = frsMan->getEnclaveTypeByPlanet(planet);
+		//int enclaveType = frsMan->getEnclaveType(building);
 
 		if (enclaveType == 0)
 			return;

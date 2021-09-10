@@ -261,6 +261,8 @@ class FrsManager extends ManagedService implements Logger {
 
 	public native short getEnclaveType(BuildingObject enclave);
 
+	public native short getEnclaveTypeByPlanet(final string planet);
+
 	@arg1preLocked
 	public native boolean isEligibleForPromotion(CreatureObject player, int rank);
 
