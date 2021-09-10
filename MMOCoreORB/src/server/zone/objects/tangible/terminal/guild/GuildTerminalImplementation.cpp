@@ -17,31 +17,35 @@
 
 
 void GuildTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-	ManagedReference<BuildingObject*> building = getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
-	if (building == nullptr) {
-		return;
-	}
+	//ManagedReference<BuildingObject*> building = getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
+	//if (building == nullptr) {
+	//	return;
+	//}
 
-	ManagedReference<CreatureObject*> owner = building->getOwnerCreatureObject();
-	if (owner == nullptr || !owner->isPlayerCreature()) {
-		return;
-	}
+	//ManagedReference<CreatureObject*> owner = building->getOwnerCreatureObject();
+	//if (owner == nullptr || !owner->isPlayerCreature()) {
+	//	return;
+	//}
 
-	ManagedReference<PlayerObject*> ownerGhost = owner->getPlayerObject().get();
+	//ManagedReference<PlayerObject*> ownerGhost = owner->getPlayerObject().get();
 	ManagedReference<PlayerObject*> playerGhost = player->getPlayerObject().get();
 
-	if (ownerGhost == nullptr || playerGhost == nullptr)
+	//if (ownerGhost == nullptr || playerGhost == nullptr)
+	//	return;
+	if (playerGhost == nullptr)
 		return;
 
-	ManagedReference<GuildObject*> guildObject = owner->getGuildObject().get();
+	ManagedReference<GuildObject*> guildObject = player->getGuildObject().get();
 
 	if (guildObject == nullptr) {
 
-		if (player == owner) {
-			if (!player->isInGuild()) {
-				menuResponse->addRadialMenuItem(185, 3, "@guild:menu_create"); // Create Guild
-			}
-
+		//if (player == owner) {
+		//	if (!player->isInGuild()) {
+		//		menuResponse->addRadialMenuItem(185, 3, "@guild:menu_create"); // Create Guild
+		//	}
+		//}
+		if (!player->isInGuild()) {
+			menuResponse->addRadialMenuItem(185, 3, "@guild:menu_create"); // Create Guild
 		}
 
 		return;
@@ -78,10 +82,12 @@ void GuildTerminalImplementation::fillObjectMenuResponse(ObjectMenuResponse* men
 	if (guildObject->hasMember(playerID))
 		menuResponse->addRadialMenuItemToRadialID(194, 190, 3, "@guild:menu_sponsor"); // Sponsor for Membership
 
-	if ((isLeader && player == owner) || playerGhost->isPrivileged())
+	//if ((isLeader && player == owner) || playerGhost->isPrivileged())
+	if (isLeader || playerGhost->isPrivileged())
 		menuResponse->addRadialMenuItemToRadialID(194, 68, 3, "@guild:menu_leader_change"); // Transfer PA Leadership
 
-	if (isLeader && !ownerGhost->isOnline() && ownerGhost->getDaysSinceLastLogout() >= 28)
+	//if (isLeader && !ownerGhost->isOnline() && ownerGhost->getDaysSinceLastLogout() >= 28)
+	if (isLeader)
 		menuResponse->addRadialMenuItemToRadialID(194, 69, 3, "@guild:accept_hall"); // Transfer PA Hall Lots to Myself
 
 	if (guildObject->isElectionEnabled()) {
@@ -121,23 +127,25 @@ int GuildTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, 
 	if (guildManager == nullptr)
 		return TerminalImplementation::handleObjectMenuSelect(player, selectedID);
 
-	ManagedReference<BuildingObject*> building = getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
-	if (building == nullptr) {
-		return 1;
-	}
+	//ManagedReference<BuildingObject*> building = getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
+	//if (building == nullptr) {
+	//	return 1;
+	//}
 
-	ManagedReference<CreatureObject*> owner = building->getOwnerCreatureObject();
-	if (owner == nullptr || !owner->isPlayerCreature()) {
-		return 1;
-	}
+	//ManagedReference<CreatureObject*> owner = building->getOwnerCreatureObject();
+	//if (owner == nullptr || !owner->isPlayerCreature()) {
+	//	return 1;
+	//}
 
-	ManagedReference<PlayerObject*> ownerGhost = owner->getPlayerObject().get();
+	//ManagedReference<PlayerObject*> ownerGhost = owner->getPlayerObject().get();
 	ManagedReference<PlayerObject*> playerGhost = player->getPlayerObject().get();
 
-	if (ownerGhost == nullptr || playerGhost == nullptr)
+	//if (ownerGhost == nullptr || playerGhost == nullptr)
+	//	return 1;
+	if (playerGhost == nullptr)
 		return 1;
 
-	ManagedReference<GuildObject*> guildObject = owner->getGuildObject().get();
+	ManagedReference<GuildObject*> guildObject = player->getGuildObject().get();
 
 	uint64 playerID = player->getObjectID();
 	bool isMember = false, isLeader = false;
@@ -150,12 +158,14 @@ int GuildTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, 
 
 	switch (selectedID) {
 	case 68:
-		if (guildObject != nullptr && ((isLeader && player == owner) || playerGhost->isPrivileged())) {
+		//if (guildObject != nullptr && ((isLeader && player == owner) || playerGhost->isPrivileged())) {
+		if (guildObject != nullptr && (isLeader || playerGhost->isPrivileged()) {
 			guildManager->sendGuildTransferTo(player, _this.getReferenceUnsafeStaticCast());
 		}
 		break;
 	case 69:
-		if (isLeader && !ownerGhost->isOnline() && ownerGhost->getDaysSinceLastLogout() >= 28) {
+		//if (isLeader && !ownerGhost->isOnline() && ownerGhost->getDaysSinceLastLogout() >= 28) {
+		if (isLeader) {
 			guildManager->sendAcceptLotsTo(player, _this.getReferenceUnsafeStaticCast());
 		}
 		break;
@@ -202,7 +212,8 @@ int GuildTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, 
 		}
 		break;
 	case 185:
-		if (guildObject == nullptr && player == owner) {
+		//if (guildObject == nullptr && player == owner) {
+		if (guildObject == nullptr) {
 			guildManager->sendGuildCreateNameTo(player, _this.getReferenceUnsafeStaticCast());
 		}
 		break;
