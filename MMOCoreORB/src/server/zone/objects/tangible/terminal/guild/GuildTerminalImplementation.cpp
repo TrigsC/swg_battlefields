@@ -163,12 +163,12 @@ int GuildTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, 
 			guildManager->sendGuildTransferTo(player, _this.getReferenceUnsafeStaticCast());
 		}
 		break;
-	case 69:
+	//case 69:
 		//if (isLeader && !ownerGhost->isOnline() && ownerGhost->getDaysSinceLastLogout() >= 28) {
-		if (isLeader) {
-			guildManager->sendAcceptLotsTo(player, _this.getReferenceUnsafeStaticCast());
-		}
-		break;
+	//	if (isLeader) {
+	//		guildManager->sendAcceptLotsTo(player, _this.getReferenceUnsafeStaticCast());
+	//	}
+	//	break;
 	case 70:
 		if (isLeader && !guildObject->isElectionEnabled()) {
 			guildManager->toggleElection(guildObject, player);
