@@ -3608,7 +3608,8 @@ void FrsManagerImplementation::acceptArenaChallenge(CreatureObject* player, uint
 
 	challengeData->setChallengeAccepterID(player->getObjectID());
 
-	if (!challenger->isOnline() || challenger->isDead() || !isPlayerInEnclave(challenger)) {
+	//if (!challenger->isOnline() || challenger->isDead() || !isPlayerInEnclave(challenger)) {
+	if (!challenger->isOnline() || challenger->isDead()) {
 		if (challenger->isOnline()) {
 			challenger->sendSystemMessage("@pvp_rating:ch_terminal_challenger_forfeit_ch"); // Since you were not in the enclave, or you were dead, when your challenge was accepted, you have conceded the battle. Your honor has been tarnished significantly by your actions.
 		}
@@ -3684,9 +3685,9 @@ void FrsManagerImplementation::acceptArenaChallenge(CreatureObject* player, uint
 }
 
 void FrsManagerImplementation::teleportPlayerToDarkArena(CreatureObject* player) {
-	if (!isPlayerInEnclave(player)) {
-		return;
-	}
+	//if (!isPlayerInEnclave(player)) {
+	//	return;
+	//}
 
 	float randX = -12.f + System::random(24);
 	float randY = -85.f + System::random(24);
