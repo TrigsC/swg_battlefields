@@ -21,6 +21,10 @@
 #include "server/zone/managers/player/PlayerMap.h"
 #include "server/login/account/Account.h"
 
+#ifndef FRS_TESTING
+#define FRS_TESTING
+#endif
+
 void FrsManagerImplementation::initialize() {
 	auto zoneServer = this->zoneServer.get();
 

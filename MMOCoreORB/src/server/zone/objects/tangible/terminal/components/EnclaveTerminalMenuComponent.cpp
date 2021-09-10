@@ -9,6 +9,10 @@
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/player/variables/FrsData.h"
 
+#ifndef FRS_TESTING
+#define FRS_TESTING
+#endif
+
 void EnclaveTerminalMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	ManagedReference<BuildingObject*> building = sceneObject->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
 
