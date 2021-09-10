@@ -52,7 +52,7 @@ public:
 		//	return;
 		//}
 
-		ManagedReference<GuildObject*> guild = oldLeader->getGuildObject().get();
+		//ManagedReference<GuildObject*> guild = oldLeader->getGuildObject().get();
 		if (guild == nullptr || !guild->isTransferPending())
 			return;
 
