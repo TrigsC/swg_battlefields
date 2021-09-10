@@ -1221,7 +1221,6 @@ void FrsManagerImplementation::handleVoteStatusSui(CreatureObject* player, Scene
 
 	if (ghost == nullptr)
 		return;
-	info("INSIDE handleVoteStatusSui AFTER GHOST", true);
 
 	ManagedReference<FrsRank*> rankData = getFrsRank(enclaveType, rank);
 
@@ -1229,8 +1228,6 @@ void FrsManagerImplementation::handleVoteStatusSui(CreatureObject* player, Scene
 		player->sendSystemMessage("@force_rank:invalid_rank_selected"); // That is an invalid rank.
 		return;
 	}
-
-	info("INSIDE handleVoteStatusSui AFTER rankDataa", true);
 
 	ManagedReference<SuiListBox*> box = new SuiListBox(player, SuiWindowType::ENCLAVE_VOTING, SuiListBox::HANDLESINGLEBUTTON);
 	box->setOkButton(true, "@ok");
@@ -2781,16 +2778,13 @@ short FrsManagerImplementation::getEnclaveType(BuildingObject* enclave) {
 
 short FrsManagerImplementation::getEnclaveTypeByPlanet(const String& planet) {
 	if (planet == "") {
-		info("********** NOPE ***************", true);
 		return 0;
 	}
 
 	if (planet == "corellia") {
-		info("**********" + planet + "***************", true);
 		return FrsManager::COUNCIL_LIGHT;
 
 	}else if (planet == "naboo") {
-		info("**********" + planet + "***************", true);
 		return FrsManager::COUNCIL_DARK;
 	}
 	return 0;

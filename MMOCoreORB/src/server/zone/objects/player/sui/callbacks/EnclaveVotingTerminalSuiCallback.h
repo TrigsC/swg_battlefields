@@ -30,15 +30,15 @@ public:
 		if (terminal == nullptr)
 			return;
 
-		ManagedReference<SceneObject*> parent = terminal->getParentRecursively(SceneObjectType::BUILDING);
+		//ManagedReference<SceneObject*> parent = terminal->getParentRecursively(SceneObjectType::BUILDING);
 
-		if (parent == nullptr)
-			return;
+		//if (parent == nullptr)
+		//	return;
 
-		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(parent.get());
+		//ManagedReference<BuildingObject*> building = cast<BuildingObject*>(parent.get());
 
-		if (building == nullptr)
-			return;
+		//if (building == nullptr)
+		//	return;
 
 		FrsManager* frsMan = player->getZoneServer()->getFrsManager();
 
