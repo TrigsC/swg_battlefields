@@ -891,24 +891,25 @@ void GuildManagerImplementation::sendGuildTransferTo(CreatureObject* player, Gui
 }
 
 void GuildManagerImplementation::sendTransferAckTo(CreatureObject* player, const String& newOwnerName, SceneObject* sceoTerminal){
-	ManagedReference<BuildingObject*> building = sceoTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
-	if (building == nullptr) {
-		return;
-	}
+	//ManagedReference<BuildingObject*> building = sceoTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
+	//if (building == nullptr) {
+	//	return;
+	//}
 
-	ManagedReference<CreatureObject*> owner = building->getOwnerCreatureObject();
-	if (owner == nullptr || !owner->isPlayerCreature()) {
-		return;
-	}
+	//ManagedReference<CreatureObject*> owner = building->getOwnerCreatureObject();
+	//if (owner == nullptr || !owner->isPlayerCreature()) {
+	//	return;
+	//}
 
-	ManagedReference<GuildObject*> guild = owner->getGuildObject().get();
+	ManagedReference<GuildObject*> guild = player->getGuildObject().get();
 
 	if (guild == nullptr)
 		return;
 
 	Locker _lock(guild);
 
-	if (!(guild->getGuildLeaderID() == player->getObjectID() && player == owner) && !player->getPlayerObject()->isPrivileged())
+	//if (!(guild->getGuildLeaderID() == player->getObjectID() && player == owner) && !player->getPlayerObject()->isPrivileged())
+	if (!(guild->getGuildLeaderID() == player->getObjectID()) && !player->getPlayerObject()->isPrivileged())
 		return;
 
 	ManagedReference<PlayerManager*> playerManager = server->getPlayerManager();
@@ -937,10 +938,10 @@ void GuildManagerImplementation::sendTransferAckTo(CreatureObject* player, const
 		return;
 	}
 
-	if ( !target->getPlayerObject()->hasLotsRemaining(5) ) {
-		target->sendSystemMessage("@guild:ml_no_lots_free");  // That person does not have enough free lots to own the PA hall.  PA hall ownership is a requirement be guild leader
-		return;
-	}
+	//if ( !target->getPlayerObject()->hasLotsRemaining(5) ) {
+	//	target->sendSystemMessage("@guild:ml_no_lots_free");  // That person does not have enough free lots to own the PA hall.  PA hall ownership is a requirement be guild leader
+	//	return;
+	//}
 
 	guild->setTransferPending(true);
 

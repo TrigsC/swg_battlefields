@@ -34,29 +34,40 @@ public:
 		if (guildTerminal == nullptr)
 			return;
 
-		ManagedReference<BuildingObject*> buildingObject = guildTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
-		if (buildingObject == nullptr)
-			return;
+		ManagedReference<GuildObject*> guild = newLeader->getGuildObject().get();
+		uint64 oldLeaderID = guild->getGuildLeaderID();
 
-		ManagedReference<CreatureObject*> owner = buildingObject->getOwnerCreatureObject();
-		if (owner == nullptr || !owner->isPlayerCreature()) {
-			return;
+		ManagedReference<SceneObject*> oldLeader = server->getObject(oldLeaderID);
+		CreatureObject* oldLeaderCreo = nullptr;
+		if (oldLeader != nullptr && oldLeader->isPlayerCreature()) {
+			oldLeaderCreo = oldLeader.castTo<CreatureObject*>();
 		}
 
-		ManagedReference<GuildObject*> guild = owner->getGuildObject().get();
+		//ManagedReference<BuildingObject*> buildingObject = guildTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
+		//if (buildingObject == nullptr)
+		//	return;
+
+		//ManagedReference<CreatureObject*> owner = buildingObject->getOwnerCreatureObject();
+		//if (owner == nullptr || !owner->isPlayerCreature()) {
+		//	return;
+		//}
+
+		ManagedReference<GuildObject*> guild = oldLeader->getGuildObject().get();
 		if (guild == nullptr || !guild->isTransferPending())
 			return;
 
 		Locker clocker(guild, newLeader);
 
-		if (guild->getGuildLeaderID() != owner->getObjectID() || guild != newLeader->getGuildObject().get()) {
+		//if (guild->getGuildLeaderID() != owner->getObjectID() || guild != newLeader->getGuildObject().get()) {
+		if (guild->getGuildLeaderID() != oldLeaderCreo->getObjectID() || guild != newLeader->getGuildObject().get()) {
 			guild->setTransferPending(false);
 			return;
 		}
 
 		if ( cancelPressed ) {
 			guild->setTransferPending(false);
-			owner->sendSystemMessage("@guild:ml_rejected"); // That player does not want to become guild leader
+			//owner->sendSystemMessage("@guild:ml_rejected"); // That player does not want to become guild leader
+			oldLeaderCreo->sendSystemMessage("@guild:ml_rejected"); // That player does not want to become guild leader
 			return;
 		}
 
@@ -67,10 +78,11 @@ public:
 
 			Core::getTaskManager()->executeTask([=] () {
 				// transfer structure to new leader
-				if (guildManager->transferGuildHall(newOwner, sceoTerminal)) {
+				//if (guildManager->transferGuildHall(newOwner, sceoTerminal)) {
 					// change leadership of guild
-					guildManager->transferLeadership(newOwner, owner, false);
-				}
+					//guildManager->transferLeadership(newOwner, owner, false);
+				guildManager->transferLeadership(newOwner, oldLeaderCreo, false);
+				//}
 			}, "TransferGuildLambda");
 		}
 	}
