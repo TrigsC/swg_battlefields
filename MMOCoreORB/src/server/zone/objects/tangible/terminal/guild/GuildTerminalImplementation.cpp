@@ -159,7 +159,7 @@ int GuildTerminalImplementation::handleObjectMenuSelect(CreatureObject* player, 
 	switch (selectedID) {
 	case 68:
 		//if (guildObject != nullptr && ((isLeader && player == owner) || playerGhost->isPrivileged())) {
-		if (guildObject != nullptr && (isLeader || playerGhost->isPrivileged()) {
+		if (guildObject != nullptr && (isLeader || playerGhost->isPrivileged())) {
 			guildManager->sendGuildTransferTo(player, _this.getReferenceUnsafeStaticCast());
 		}
 		break;
