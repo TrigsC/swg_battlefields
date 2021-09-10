@@ -26,6 +26,11 @@ maxPetitioners = 11
 maxChallenges = 20
 missedVotePenalty = 100 -- FRS XP
 
+-- FRS XP gain is divided amongst attackers
+--shareXPOnKill = true
+--SWGIntended: Give full FRS XP
+shareXPOnKill = false
+
 -- Restrict players from voting for and challenging other characters on their account
 sameAccountEnclaveRestrictions = 1
 
