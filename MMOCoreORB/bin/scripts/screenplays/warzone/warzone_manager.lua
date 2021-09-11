@@ -127,7 +127,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 
 	if (not isZoneEnabled("corellia")) then
 		if (hasServerEvent("WarzonePhaseChange")) then
-			rescheduleServerEvent("WarzonePhaseChange", 60 * 60 * 1000)
+			rescheduleServerEvent("WarzonePhaseChange", 1 * 60 * 60 * 1000)
 		end
 
 		return

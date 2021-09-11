@@ -29,6 +29,8 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -243, 28, -4153, 0, 0)
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -250, 28, -4151, 0, 0)
 
+    spawnMobile("yavin4", "tp_hq", 0, 0.047546, -43.411976, -28.052734, 0.999826, -0.000000, 0.010403, -0.000000, 8)
+
     -- reb
     spawnMobile("corellia", "tp_hq", 0, -173, 28, -4839, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -83, 28, -4805, 0, 0)
@@ -36,6 +38,8 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -133, 28, -4700, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -154, 28, -4698, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -198, 28, -4733, 0, 0)
+
+    spawnMobile(
 
 end
 
