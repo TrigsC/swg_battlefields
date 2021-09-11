@@ -45,6 +45,13 @@ function WarZoneSpawner:spawnMobiles()
     --reb
     spawnMobile("tatooine", "tp_hq", 0, -5070, 75, -6539, 180, 0)
 
+    -- THEED
+    -- imp
+    spawnMobile("naboo", "tp_hq", 0, -5995, 6, 4295, 90, 0)
+
+    --reb
+    spawnMobile("naboo", "tp_hq", 0, -4582, 7, 4136, 270, 0)
+
 end
 
 function WarZoneSpawner:spawnSceneObjects()

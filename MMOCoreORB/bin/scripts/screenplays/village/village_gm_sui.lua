@@ -15,25 +15,25 @@ function VillageGmSui:showMainPage(pPlayer)
 	local suiPrompt = " \\#pcontrast1 " .. "Current Phase:" .. " \\#pcontrast2 " .. curPhase .. " (id " .. phaseID .. ")\n" .. " \\#pcontrast1 " .. "Current Server Time:" .. " \\#pcontrast2 " .. os.date("%c") .. "\n"
 	local suiPrompt = suiPrompt .. " \\#pcontrast1 " .. "Next Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", nextPhaseChange)  .. "\n \\#pcontrast1 " .. "Phase Time Left: " .. " \\#pcontrast2 " --.. phaseTimeLeft
 
-	local pMaster = VillageJediManagerTownship:getMasterObject()
+	--local pMaster = VillageJediManagerTownship:getMasterObject()
 
-	if (pMaster ~= nil) then
-		local playerTable = SceneObject(pMaster):getPlayersInRange(192)
-		suiPrompt = suiPrompt .. "\n \\#pcontrast1 " .. "Players in Village: " .. " \\#pcontrast2 " .. #playerTable
-	end
+	--if (pMaster ~= nil) then
+	--	local playerTable = SceneObject(pMaster):getPlayersInRange(192)
+	--	suiPrompt = suiPrompt .. "\n \\#pcontrast1 " .. "Players in Village: " .. " \\#pcontrast2 " .. #playerTable
+	--end
 
 	local sui = SuiListBox.new("VillageGmSui", "mainCallback")
-	sui.setTitle("Village GM Panel")
+	sui.setTitle("Warzone GM Panel")
 	sui.setPrompt(suiPrompt)
 
-	sui.add("Lookup player by target", "playerLookupByTarget")
-	sui.add("Lookup player by name", "playerLookupByName")
-	sui.add("Lookup player by oid", "playerLookupByOID")
-	sui.add("List players in village", "listOnlineVillagePlayers")
+	--sui.add("Lookup player by target", "playerLookupByTarget")
+	--sui.add("Lookup player by name", "playerLookupByName")
+	--sui.add("Lookup player by oid", "playerLookupByOID")
+	--sui.add("List players in village", "listOnlineVillagePlayers")
 
-	if (curPhase == 3) then
-		sui.add("Manage CounterStrike Bases", "manageCounterStrikeBases")
-	end
+	--if (curPhase == 3) then
+	--	sui.add("Manage CounterStrike Bases", "manageCounterStrikeBases")
+	--end
 
 	sui.add("Output LUA os.time() (Debugging)", "getOSTime")
 
@@ -116,7 +116,7 @@ function VillageGmSui:changePhaseCallback(pPlayer, pSui, eventIndex, args)
 	local curPhase = WarzoneManager:getCurrentPhase()
 	local nextPhase = curPhase + 1
 
-	if nextPhase == 3 then
+	if nextPhase == 4 then
 		nextPhase = 1
 	end
 
