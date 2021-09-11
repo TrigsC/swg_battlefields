@@ -30,7 +30,6 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -174, 28, -4177, 0, 0)
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -243, 28, -4153, 0, 0)
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -250, 28, -4151, 0, 0)
-
     -- reb
     spawnMobile("corellia", "tp_hq", 0, -173, 28, -4839, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -83, 28, -4805, 0, 0)
@@ -38,6 +37,13 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -133, 28, -4700, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -154, 28, -4698, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -198, 28, -4733, 0, 0)
+
+    -- Wayfar
+    -- imp
+    spawnMobile("tatooine", "tp_hq", 0, -5309, 75, -6567, 180, 0)
+
+    --reb
+    spawnMobile("tatooine", "tp_hq", 0, -5070, 75, -6539, 180, 0)
 
 end
 
@@ -52,39 +58,26 @@ function WarZoneSpawner:spawnSceneObjects()
     -- Imperial Spawn
     -- Character builder
     spawnSceneObject("naboo", "object/tangible/terminal/terminal_character_builder.iff", 2428.552979, 292.000000, -3910.535889, 9995396, 0.103863, -0.000001, 0.994592, -0.000001)
-    
-
     spawnSceneObject("naboo", "object/tangible/crafting/station/public_weapon_station.iff", 2440.973389, 292.000000, -3965.747803, 9995427, 0.926448, 0.000001, -0.376422, 0.000002)
-
-    
-    spawnSceneObject("naboo", "object/tangible/crafting/station/weapon_station.iff", 2408.884277, 292.000000, -3918.531250, 9995428, 0.769101, 0.000000, 0.639127, 0.000000)
-
-
+    spawnSceneObject("naboo", "object/tangible/terminal/terminal_dark_enclave_voting.iff", 2408.428223, 292.005066, -3914.252686, 9995405, -0.641751, -0.000003, 0.766913, -0.000003)
+    spawnSceneObject("naboo", "object/tangible/terminal/terminal_dark_enclave_challenge.iff", 2407.919189, 292.000000, -3910.608398, 9995406, -0.659468, -0.000004, 0.751732, -0.000004)
+    spawnSceneObject("naboo", "object/tangible/terminal/terminal_guild.iff", 2406.652588, 292.000000, -3906.270020, 9995407, 0.766893, 0.000000, 0.641775, 0.000000)
     --military_wall_weak_imperial_32_style_01
     spawnSceneObject("naboo", "object/static/structure/military/military_wall_weak_imperial_32_style_01.iff", 2454.300293, 290.171356, -3914.878906, 9995397, 0.751653, -0.000001, 0.659551, -0.000000)
     spawnSceneObject("naboo", "object/static/structure/military/military_wall_weak_imperial_32_style_01.iff", 2451.142822, 290.279938, -3947.072754, 9995398, 0.582305, -0.000001, 0.812970, 0.000000)
     spawnSceneObject("naboo", "object/static/structure/military/military_wall_weak_imperial_32_style_01.iff", 2433.604248, 290.405853, -3973.836670, 9995399, 0.351802, -0.000001, 0.936074, -0.000001)
     spawnSceneObject("naboo", "object/static/structure/military/military_wall_weak_imperial_32_style_01.iff", 2405.982178, 290.490753, -3981.321777, 9995400, -0.093148, -0.000001, 0.995652, -0.000001)
-
-
     --military_wall_weak_imperial_style_01
     spawnSceneObject("naboo", "object/static/structure/military/military_wall_weak_imperial_style_01.iff", 2406.934326, 290.173584, -3890.299316, 9995401, 0.993324, 0.000000, -0.115355, 0.000000)
-
     --bfield_column_impl_med
     spawnSceneObject("naboo", "object/installation/battlefield/destructible/bfield_column_impl_med.iff", 2456.594482, 290.464935, -3931.302979, 9995402, 0.718681, 0.000000, 0.695340, 0.000000)
     spawnSceneObject("naboo", "object/installation/battlefield/destructible/bfield_column_impl_med.iff", 2445.539795, 290.835907, -3962.948242, 9995403, 0.443769, -0.000000, 0.896141, -0.000000)
     spawnSceneObject("naboo", "object/installation/battlefield/destructible/bfield_column_impl_med.iff", 2421.414551, 290.693207, -3984.122803, 9995404, 0.004853, -0.000001, 0.999988, -0.000001)
     
-    spawnSceneObject("naboo", "object/tangible/terminal/terminal_dark_enclave_voting.iff", 2408.428223, 292.005066, -3914.252686, 9995405, -0.641751, -0.000003, 0.766913, -0.000003)
-    spawnSceneObject("naboo", "object/tangible/terminal/terminal_dark_enclave_challenge.iff", 2407.919189, 292.000000, -3910.608398, 9995406, -0.659468, -0.000004, 0.751732, -0.000004)
-    spawnSceneObject("naboo", "object/tangible/terminal/terminal_guild.iff", 2406.652588, 292.000000, -3906.270020, 9995407, 0.766893, 0.000000, 0.641775, 0.000000)
-
 
     -- Rebel Spawn
     -- Character builder
     spawnSceneObject("corellia", "object/tangible/terminal/terminal_character_builder.iff", -6525.165527, 398.000000, 6010.492676, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
-    --spawnSceneObject("naboo", "object/tangible/terminal/terminal_guild.iff", 3591.895996, -208.514969, 6979.841309, 9995395, -0.500295, -0.000304, 0.865850, 0.000109)
-    
     spawnSceneObject("corellia", "object/tangible/terminal/terminal_light_enclave_voting.iff", -6519.513672, 398.000000, 6016.104004, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
     spawnSceneObject("corellia", "object/tangible/terminal/terminal_light_enclave_challenge.iff", -6521.921875, 398.000000, 6013.890137, 9995397, 0.918580, 0.000000, -0.395236, 0.000001)
     spawnSceneObject("naboo", "object/tangible/terminal/terminal_guild.iff", -6516.572754, 398.000000, 6019.006348, 9995398, 0.912366, -0.000001, -0.409375, 0.000000)
@@ -101,27 +94,20 @@ function WarZoneSpawner:spawnSceneObjects()
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -518.2, 28,-4217.8, 9995395, math.rad(135) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -563.4, 28,-4239.9, 9995394, math.rad(135) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -591.5, 28,-4330.6, 9995393, math.rad(90) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -591.6, 28,-4480.56, 9995392, math.rad(90) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -591.6, 28,-4506.78, 9995391, math.rad(90) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -535.9, 28,-4626.4, 9995390, math.rad(0) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -523.57, 28,-4642.17, 9995389, math.rad(90) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s02.iff", -524.57, 28.6,-4666.34, 9995388, math.rad(90) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s02.iff", -524.3, 28.6,-4679.34, 9995387, math.rad(90) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s02.iff", -503.84, 28.0,-4699, 9995386, math.rad(0) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -301.5, 28,-4783.65, 9995385, math.rad(0) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -218.99, 28,-4794.91, 9995384, math.rad(90) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -120.9, 28,-4814.69, 9995383, math.rad(0) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -90.84, 28,-4833.5, 9995382, math.rad(0) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -26.62, 28,-4838.64, 9995381, math.rad(0) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -1.37, 28,-4847.86, 9995380, math.rad(0) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", 24.55, 28,-4836.67, 9995379, math.rad(350) )
-
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s04.iff", 163.37, 28,-4700.05, 9995378, math.rad(315) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s04.iff", 126.03, 28,-4542.33, 9995372, math.rad(270) )
 	spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", 141.94, 28,-4536.77, 9995373, math.rad(315) )
@@ -134,14 +120,12 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x16_s01.iff", -441.376343, 28.000000, -4746.615234, 9995410, 0.920660, 0.000000, 0.390365, 0.000000)
     spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -164.238113, 28.000000, -4844.681641, 9995411, 0.961303, 0.000000, -0.275494, 0.000000)
     spawnSceneObject("corellia", "object/static/structure/corellia/corl_imprv_wall_4x32_s01.iff", -187.891632, 28.000000, -4843.392090, 9995412, 0.937082, 0.000000, 0.349109, 0.000000)
-
     --Imperial Side
     --Banners
     spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -242.764572, 28.000000, -4158.641602, 9995413, -0.003379, -0.000001, 0.999994, -0.000001)
     spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -253.933563, 28.000000, -4152.202148, 9995414, -0.456698, -0.000001, 0.889622, -0.000001)
     spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -175.364273, 27.999969, -4219.573730, 9995415, 0.023047, -0.000001, 0.999727, -0.000001)
     spawnSceneObject("corellia", "object/static/structure/general/banner_imperial_style_01.iff", -152.595520, 28.000000, -4218.673828, 9995416, -0.000258, -0.000001, 1.000000, -0.000001)
-
     --Rebel Side
     --Banners
     spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -44.192482, 28.000000, -4799.090820, 9995417, 0.782615, 0.000000, 0.622506, 0.000000)
@@ -155,6 +139,26 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -105.338020, 28.000000, -4659.260254, 9995425, 0.989940, 0.000000, 0.141486, 0.000000)
     spawnSceneObject("corellia", "object/static/structure/general/banner_rebel_style_01.iff", -97.703972, 28.000000, -4663.101074, 9995426, 0.989940, 0.000000, 0.141486, 0.000000)
 
+    --Wayfar
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5076.979492, 75.000000, -6537.668457, 9995426, 0.862556, 0.000000, -0.505962, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5065.906738, 75.000000, -6535.527344, 9995426, -0.217006, -0.000001, 0.976170, -0.000001)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5055.346680, 75.000114, -6548.510254, 9995426, -0.606940, 0.000000, 0.794748, -0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5052.854980, 74.999939, -6566.514160, 9995426, 0.707727, 0.000002, -0.706486, 0.000003)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5043.961914, 75.000000, -6577.602539, 9995426, -0.227420, -0.000001, 0.973797, -0.000001)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5032.822266, 75.000000, -6590.876953, 9995426, -0.611130, -0.000004, 0.791530, -0.000004)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5031.292969, 74.942459, -6610.369629, 9995426, 0.740473, 0.000001, -0.672086, 0.000002)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5033.739258, 75.000000, -6629.738281, 9995426, 0.758985, 0.000000, -0.651108, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5044.986816, 75.003777, -6640.376953, 9995426, 0.998951, 0.000000, -0.045788, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5210.791504, 75.000000, -6618.606445, 9995426, 0.996886, 0.000000, 0.078843, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5306.751953, 75.000000, -6521.432617, 9995426, 0.701502, -0.000001, 0.712667, -0.000001)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5219.171387, 75.000000, -6452.943848, 9995426, 0.600407, -0.000000, 0.799694, -0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5167.296875, 75.000000, -6455.758301, 9995426, -0.504749, -0.000001, 0.863266, -0.000001)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5092.387207, 75.000000, -6507.812012, 9995426, -0.676348, -0.000001, 0.736582, -0.000002)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5307.867188, 75.114388, -6564.445313, 9995426, 0.998404, 0.000000, -0.056483, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5313.798828, 75.557137, -6574.905762, 9995426, -0.651379, -0.000000, 0.758752, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5311.210449, 75.651894, -6591.282715, 9995426, -0.653040, -0.000000, 0.757323, 0.000000)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5300.781738, 75.225380, -6605.636719, 9995426, -0.242926, -0.000001, 0.970045, 0.000001)
+    spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5286.918457, 74.984978, -6602.675293, 9995426, 0.475142, -0.000002, 0.879909, 0.000002)
 
     --Naboo Imperial Starting Area (OLD)
     --spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3571.38, -209.32, 6985.26, 9995373, math.rad(150) )

@@ -78,11 +78,11 @@ registerScreenPlay("TatooineWayfarScreenPlay", true)
 
 function TatooineWayfarScreenPlay:start()
 	if (isZoneEnabled(self.planet)) then
-		self:spawnMobiles()
-		self:spawnPatrolMobiles()
-		self:spawnStationaryMobiles()
+		--self:spawnMobiles()
+		--self:spawnPatrolMobiles()
+		--self:spawnStationaryMobiles()
 		self:spawnSceneObjects()
-		self:spawnGcwMobiles()
+		--self:spawnGcwMobiles()
 	end
 end
 
