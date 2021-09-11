@@ -39,8 +39,6 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -154, 28, -4698, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -198, 28, -4733, 0, 0)
 
-    spawnMobile(
-
 end
 
 function WarZoneSpawner:spawnSceneObjects()
