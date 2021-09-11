@@ -44,9 +44,10 @@ end
 function WarZoneSpawner:spawnSceneObjects()
 
 	-- Dark Enclave
-    spawnSceneObject("yavin4", "object/static/structure/corellia/corl_imprv_wall_4x32_s04.iff", 5082.293945, 79.815178, 304.940796, 0.999785,9995396, 0.000000, 0.020744, 0.000000)
-    spawnSceneObject("yavin4", "object/static/structure/corellia/corl_imprv_wall_4x32_s04.iff", 5082.030762, 78.458969, 314.276062, 0.999540, 9995396,-0.000000 ,0.030326, 0.000002)
-    spawnSceneObject("yavin4", "object/static/structure/corellia/corl_imprv_wall_4x16_s04.iff", 5095.313965, 79.999283, 311.800903, 0.705704, 9995396,-0.000000, 0.708507, -0.000000)
+    spawnSceneObject("yavin4", "object/static/structure/corellia/corl_imprv_wall_4x32_s04.iff", 5082.293945, 79.815178, 304.940796, 9995396, 0.999785, 0.000000, 0.020744, 0.000000)
+    spawnSceneObject("yavin4", "object/static/structure/corellia/corl_imprv_wall_4x32_s04.iff", 5082.030762, 78.458969, 314.276062, 9995396, 0.999540, -0.000000 ,0.030326, 0.000002)
+    spawnSceneObject("yavin4", "object/static/structure/corellia/corl_imprv_wall_4x16_s04.iff", 5095.313965, 79.999283, 311.800903, 9995396, 0.705704, -0.000000, 0.708507, -0.000000)
+    
 
     -- Imperial Spawn
     -- Character builder
