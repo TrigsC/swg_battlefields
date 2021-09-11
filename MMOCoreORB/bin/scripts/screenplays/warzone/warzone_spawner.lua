@@ -17,7 +17,7 @@ function WarZoneSpawner:spawnMobiles()
 
     --Cnet Imp HQ
     spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 170, 0)
-    spawnMobile("yavin4", "tp_hq", 0, 0.047546, -43.411976, -28.052734, 0.999826, 8)
+    spawnMobile("yavin4", "tp_hq", 0, -0.0559132, -43.4244, -56.2239, 90, 17)
     --Cnet Reb HQ
     spawnMobile("corellia", "tp_rebel", 0, -6522, 398, 6040, 130, 0)
     spawnMobile("corellia", "rebel_recruiter", 0, -6537, 398, 6037, 130, 0)
