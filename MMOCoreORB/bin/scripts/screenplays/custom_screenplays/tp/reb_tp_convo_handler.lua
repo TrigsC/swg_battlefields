@@ -22,9 +22,14 @@ function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
         if (isZoneEnabled("corellia")) then
 
             if (WarzoneManager:getCurrentPhase() ~= 1) then
+                --CNET
                 warzoneLoc = { "corellia", -173, 28, -4839 }
             elseif (WarzoneManager:getCurrentPhase() ~= 2) then
+                --THEED
                 warzoneLoc = { "naboo", -4584, 7, 4136 }
+            elseif (WarzoneManager:getCurrentPhase() ~= 3) then
+                --WAYFAR
+                warzoneLoc = { "tatooine", -5071, 75, -6540 }
             else
                 warzoneLoc = { "naboo", -4584, 7, 4136 }
             end

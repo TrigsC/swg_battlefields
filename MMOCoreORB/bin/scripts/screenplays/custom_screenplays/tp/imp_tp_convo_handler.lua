@@ -20,9 +20,14 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
         CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
 		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
         if (WarzoneManager:getCurrentPhase() ~= 1) then
+            --CENT
             warzoneLoc = { "corellia", -210, 28, -4057 }
         elseif (WarzoneManager:getCurrentPhase() ~= 2) then
+            --THEED
             warzoneLoc = { "naboo", -5987, 6, 4292 }
+        elseif (WarzoneManager:getCurrentPhase() ~= 3) then
+            --WAYFAR
+            warzoneLoc = { "tatooine", -5308, 75, -6574 }
         else
             warzoneLoc = { "naboo", -5987, 6, 4292 }
         end
