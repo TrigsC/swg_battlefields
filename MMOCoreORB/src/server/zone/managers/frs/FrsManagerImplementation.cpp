@@ -3701,14 +3701,15 @@ void FrsManagerImplementation::teleportPlayerToDarkArena(CreatureObject* player)
 	if (ghost != nullptr) {
 		ghost->setForcedTransform(true);
 
-		uint64 playerCell = player->getParentID();
+		//uint64 playerCell = player->getParentID();
+		player->switchZone("yavin4", randX, -47.424f, randY, ARENA_CELL)
 
-		auto msg = player->info();
-		msg << "Dark Enclave Arena Movement  X = " << randX  << "  Y = " << randY << " Cell ID:  " << playerCell;
-		msg.flush();
+		//auto msg = player->info();
+		//msg << "Dark Enclave Arena Movement  X = " << randX  << "  Y = " << randY << " Cell ID:  " << playerCell;
+		//msg.flush();
 	}
-
-	player->teleport(randX, -47.424f, randY, ARENA_CELL);
+	
+	//player->teleport(randX, -47.424f, randY, ARENA_CELL);
 }
 
 void FrsManagerImplementation::sendArenaChallengeSUI(CreatureObject* player, SceneObject* terminal, short suiType, short enclaveType) {
