@@ -3702,7 +3702,7 @@ void FrsManagerImplementation::teleportPlayerToDarkArena(CreatureObject* player)
 		ghost->setForcedTransform(true);
 
 		//uint64 playerCell = player->getParentID();
-		player->switchZone("yavin4", randX, -47.424f, randY, ARENA_CELL)
+		player->switchZone("yavin4", randX, -47.424f, randY, ARENA_CELL);
 
 		//auto msg = player->info();
 		//msg << "Dark Enclave Arena Movement  X = " << randX  << "  Y = " << randY << " Cell ID:  " << playerCell;
