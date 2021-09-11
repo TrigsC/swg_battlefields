@@ -17,6 +17,7 @@ function WarZoneSpawner:spawnMobiles()
 
     --Cnet Imp HQ
     spawnMobile("naboo", "tp_imperial", 0, 2437.594971, 291.989197, -3895.646484, 170, 0)
+    spawnMobile("yavin4", "tp_hq", 0, 0.047546, -43.411976, -28.052734, 0.999826, 8)
     --Cnet Reb HQ
     spawnMobile("corellia", "tp_rebel", 0, -6522, 398, 6040, 130, 0)
     spawnMobile("corellia", "rebel_recruiter", 0, -6537, 398, 6037, 130, 0)
@@ -28,8 +29,6 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -174, 28, -4177, 0, 0)
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -243, 28, -4153, 0, 0)
     spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -250, 28, -4151, 0, 0)
-
-    spawnMobile("yavin4", "tp_hq", 0, 0.047546, -43.411976, -28.052734, 0.999826, -0.000000, 0.010403, -0.000000, 8)
 
     -- reb
     spawnMobile("corellia", "tp_hq", 0, -173, 28, -4839, 0, 0)
