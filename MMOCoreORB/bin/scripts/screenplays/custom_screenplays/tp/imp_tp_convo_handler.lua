@@ -29,7 +29,7 @@ function imp_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
             --WAYFAR
             warzoneLoc = { "tatooine", -5308, 75, -6574 }
         else
-            warzoneLoc = { "naboo", -5987, 6, 4292 }
+            warzoneLoc = { "naboo", 2423, 292, -3915 }
         end
             --if (councilType == self.COUNCIL_LIGHT) then
             --    warzoneLoc = { -5575, 0, 4905 }

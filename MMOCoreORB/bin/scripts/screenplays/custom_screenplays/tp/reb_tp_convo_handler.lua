@@ -21,17 +21,17 @@ function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
 		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
         if (isZoneEnabled("corellia")) then
 
-            if (WarzoneManager:getCurrentPhaseID() ~= 1) then
+            if (WarzoneManager:getCurrentPhaseID() == 1) then
                 --CNET
                 warzoneLoc = { "corellia", -173, 28, -4839 }
-            elseif (WarzoneManager:getCurrentPhaseID() ~= 2) then
+            elseif (WarzoneManager:getCurrentPhaseID() == 2) then
                 --THEED
                 warzoneLoc = { "naboo", -4584, 7, 4136 }
-            elseif (WarzoneManager:getCurrentPhaseID() ~= 3) then
+            elseif (WarzoneManager:getCurrentPhaseID() == 3) then
                 --WAYFAR
                 warzoneLoc = { "tatooine", -5071, 75, -6540 }
             else
-                warzoneLoc = { "naboo", -4584, 7, 4136 }
+                warzoneLoc = { "corellia", -6528, 398, 5968 }
             end
                 --if (councilType == self.COUNCIL_LIGHT) then
                 --    warzoneLoc = { -5575, 0, 4905 }
