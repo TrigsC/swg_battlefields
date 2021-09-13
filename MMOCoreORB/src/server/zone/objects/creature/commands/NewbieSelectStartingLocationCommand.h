@@ -62,13 +62,18 @@ public:
 
 		ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 		if (ghost != nullptr) {
+			StringBuffer query;
 			if (city == "naboo_imp") {
 				player->setFaction(Factions::FACTIONIMPERIAL);
 				ghost->increaseFactionStanding("imperial", 100000);
+				query << "UPDATE characters SET faction=1 WHERE character_oid=" << player->getObjectID() << ");";
+				ServerDatabase::instance()->executeStatement(query);
 			}
 			if (city == "corellia_rebel") {
 				player->setFaction(Factions::FACTIONREBEL);
 				ghost->increaseFactionStanding("rebel", 100000);
+				query << "UPDATE characters SET faction=2 WHERE character_oid=" << player->getObjectID() << ");";
+				ServerDatabase::instance()->executeStatement(query);
 			}
 
 			player->setFactionStatus(FactionStatus::OVERT);
