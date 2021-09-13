@@ -6073,12 +6073,8 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		deathFaction = 0;
 	
 	gcw_death_query << "INSERT INTO pvp_death(pvp_death_id, character_oid, faction, planet, date) VALUES (NULL," << player->getObjectID() << "," << deathFaction << ",'" << planet << "',NULL);";
-	try {
-		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(gcw_death_query.toString()));
-		uint32 deathID = result->getLastAffectedRow();
-	} catch(Exception& e) {
-		info("Exception inserting pvp_death: " + e.getMessage(), true);
-	}
+	UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(gcw_death_query.toString()));
+	uint32 deathID = result->getLastAffectedRow();
 
 	for (int i = 0; i < threatMap->size(); ++i) {
 		ThreatMapEntry* entry = &threatMap->elementAt(i).getValue();
@@ -6153,12 +6149,7 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 
 		StringBuffer gcw_kill_query;
 		gcw_kill_query << "INSERT INTO pvp_kill(pvp_kill_id, pvp_death_id, damage, character_oid, date) VALUES (NULL," << deathID << "," << damageContribution << "," << attackerCreo->getObjectID() << ",NULL);";
-		
-		try {
-			ServerDatabase::instance()->executeStatement(gcw_kill_query.toString());
-		} catch(Exception& e) {
-			info("Exception inserting pvp_kill: " + e.getMessage(), true);
-		}
+		ServerDatabase::instance()->executeStatement(gcw_kill_query.toString());
 
 		if (frsManager != nullptr && frsManager->isFrsEnabled() && frsManager->isValidFrsBattle(attackerCreo, player)) {
 			int attackerFrsXp = frsManager->calculatePvpExperienceChange(attackerCreo, player, damageContribution, false);
