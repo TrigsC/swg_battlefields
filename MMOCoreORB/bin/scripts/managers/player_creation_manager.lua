@@ -56,8 +56,8 @@ compLBracer = "object/tangible/wearables/armor/composite/armor_composite_bracer_
 --x31Speeder = "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff"
 
 professionSpecificItems = {
-	combat_brawler = { brawlerOneHander, brawlerTwoHander, brawlerPolearm },
-	combat_marksman = { marksmanPistol, marksmanCarbine, marksmanRifle },
+	combat_brawler = { },
+	combat_marksman = { },
 	crafting_artisan = { },
 	jedi = { },
 	outdoors_scout = { },
