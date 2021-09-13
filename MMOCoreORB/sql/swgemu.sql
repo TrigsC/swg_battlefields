@@ -296,6 +296,7 @@ CREATE TABLE  `swgemu`.`pvp_death` (
   `pvp_death_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `character_oid` bigint(20) unsigned NOT NULL,
   `faction` tinyint(1) NOT NULL DEFAULT '0',
+  `planet` varchar(8) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`pvp_death_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
