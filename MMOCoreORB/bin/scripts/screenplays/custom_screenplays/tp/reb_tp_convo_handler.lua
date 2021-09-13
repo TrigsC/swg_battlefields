@@ -30,6 +30,9 @@ function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
             elseif (WarzoneManager:getCurrentPhaseID() == 3) then
                 --WAYFAR
                 warzoneLoc = { "tatooine", -5071, 75, -6540 }
+            elseif (WarzoneManager:getCurrentPhaseID() == 4) then
+                --WAYFAR
+                warzoneLoc = { "dantooine", -7049, 25, 5390 }
             else
                 warzoneLoc = { "corellia", -6528, 398, 5968 }
             end
