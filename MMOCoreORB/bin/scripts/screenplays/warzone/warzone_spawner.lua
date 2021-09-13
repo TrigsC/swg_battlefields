@@ -41,16 +41,20 @@ function WarZoneSpawner:spawnMobiles()
     -- Wayfar
     -- imp
     spawnMobile("tatooine", "tp_hq", 0, -5309, 75, -6567, 180, 0)
-
     --reb
     spawnMobile("tatooine", "tp_hq", 0, -5070, 75, -6539, 180, 0)
 
     -- THEED
     -- imp
     spawnMobile("naboo", "tp_hq", 0, -5995, 6, 4295, 90, 0)
-
     --reb
     spawnMobile("naboo", "tp_hq", 0, -4582, 7, 4136, 270, 0)
+
+    -- REBHIDEOUT
+    -- imp
+    spawnMobile("dantooine", "tp_hq", 0, -6622, 30, 5481, 0, 0)
+    --reb
+    spawnMobile("dantooine", "tp_hq", 0, -7049, 25, 5390, 20, 0)
 
 end
 
@@ -166,6 +170,23 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5311.210449, 75.651894, -6591.282715, 9995426, -0.653040, -0.000000, 0.757323, 0.000000)
     spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5300.781738, 75.225380, -6605.636719, 9995426, -0.242926, -0.000001, 0.970045, 0.000001)
     spawnSceneObject("tatooine", "object/static/structure/tatooine/wall_junkshop_watto.iff", -5286.918457, 74.984978, -6602.675293, 9995426, 0.475142, -0.000002, 0.879909, 0.000002)
+
+    --Dantooine Rebel Hideout
+	--Perimeter
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -6960.492676, 24.996916, 5361.170410, 9995430, 0.389242, -0.000000, 0.921136, -0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -7032.614746, 24.902138, 5343.525879, 9995430, -0.368210, 0.000001, 0.929742, 0.000001)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -6663.572754, 30.021053, 5597.991699, 9995430, 0.999998, -0.000001, 0.002065, 0.000001)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -6623.630859, 30.017553, 5474.550781, 9995430, 0.010929, -0.000001, 0.999940, 0.000001)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -6609.315430, 30.000000, 5478.166992, 9995430, 0.228907, -0.000001, 0.973448, 0.000001)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -6624.975098, 30.000000, 5547.953125, 9995430, 0.999856, 0.000000, 0.016963, 0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_16_style_01.iff", -7042.058105, 25.000000, 5434.697266, 9995430, 0.978673, 0.000000, -0.205425, 0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_32_style_01.iff", -6603.877441, 30.000000, 5543.691406, 9995430, 0.989788, 0.000000, 0.142544, 0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_32_style_01.iff", -6590.883301, 30.000000, 5525.974609, 9995430, 0.681494, -0.000000, 0.731824, -0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_32_style_01.iff", -6597.332031, 30.000000, 5495.721191, 9995430, 0.574651, -0.000001, 0.818398, -0.000001)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_32_style_01.iff", -7025.170410, 24.686785, 5429.686035, 9995430, 0.928553, 0.000000, 0.371200, 0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_32_style_01.iff", -7059.090332, 25.000071, 5418.524414, 9995430, 0.887992, 0.000001, -0.459857, 0.000000)
+    spawnSceneObject("dantooine", "object/static/structure/military/military_wall_strong_rebl_32_style_01.iff", -7058.447266, 25.340925, 5393.011230, 9995430, -0.466497, -0.000001, 0.884523, -0.000001)
+
 
     --Naboo Imperial Starting Area (OLD)
     --spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3571.38, -209.32, 6985.26, 9995373, math.rad(150) )
