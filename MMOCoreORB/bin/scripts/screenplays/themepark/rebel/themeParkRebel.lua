@@ -934,13 +934,13 @@ npcMapRebel =
 			stfFile = "@theme_park_rebel/han_solo",
 			missions = han_missions
 		},
-		{
-			spawnData = { planetName = "dantooine", npcTemplate = "ackbar", x = -14.4, z = 1.0, y = -21.7, direction = 0, cellID = 6555566, position = STAND },
-			worldPosition = { x = -6812.5, y = 5560.7 },
-			npcNumber = 64,
-			stfFile = "@theme_park_rebel/captain_ackbar",
-			missions = ackbar_missions
-		},
+		--{
+		--	spawnData = { planetName = "dantooine", npcTemplate = "ackbar", x = -14.4, z = 1.0, y = -21.7, direction = 0, cellID = 6555566, position = STAND },
+		--	worldPosition = { x = -6812.5, y = 5560.7 },
+		--	npcNumber = 64,
+		--	stfFile = "@theme_park_rebel/captain_ackbar",
+		--	missions = ackbar_missions
+		--},
 		{
 			spawnData = { planetName = "dantooine", npcTemplate = "mon_mothma", x = -3.4, z = 7.0, y = -12.2, direction = -34, cellID = 6555568, position = STAND },
 			worldPosition = { x = -6823.6, y = 5551.2 },
