@@ -56,7 +56,7 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("dantooine", "fbase_stormtrooper_extreme", 60, -6613, 30, 5523, 0, 0)
     --reb
     spawnMobile("dantooine", "tp_hq", 0, -7049, 25, 5390, 20, 0)
-    spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -7038, 25, 5410, 0, 0)
+    spawnMobile("dantooine", "fbase_rebel_soldier_extreme", 60, -7038, 25, 5410, 0, 0)
 
 end
 
