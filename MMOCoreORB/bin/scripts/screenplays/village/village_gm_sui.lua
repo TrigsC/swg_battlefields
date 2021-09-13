@@ -116,7 +116,7 @@ function VillageGmSui:changePhaseCallback(pPlayer, pSui, eventIndex, args)
 	local curPhase = WarzoneManager:getCurrentPhase()
 	local nextPhase = curPhase + 1
 
-	if nextPhase == 4 then
+	if nextPhase == 5 then
 		nextPhase = 1
 	end
 

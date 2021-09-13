@@ -26,10 +26,10 @@ function WarZoneSpawner:spawnMobiles()
     --Corellia Zone
     -- imp
     spawnMobile("corellia", "tp_hq", 0, -210, 28, -4057, 0, 0)
-    spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -154, 28, -4175, 0, 0)
-    spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -174, 28, -4177, 0, 0)
-    spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -243, 28, -4153, 0, 0)
-    spawnMobile("corellia", "fbase_stormtrooper_extreme", 30, -250, 28, -4151, 0, 0)
+    spawnMobile("corellia", "fbase_stormtrooper_extreme", 60, -154, 28, -4175, 0, 0)
+    spawnMobile("corellia", "fbase_stormtrooper_extreme", 60, -174, 28, -4177, 0, 0)
+    spawnMobile("corellia", "fbase_stormtrooper_extreme", 60, -243, 28, -4153, 0, 0)
+    spawnMobile("corellia", "fbase_stormtrooper_extreme", 60, -250, 28, -4151, 0, 0)
     -- reb
     spawnMobile("corellia", "tp_hq", 0, -173, 28, -4839, 0, 0)
     spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -83, 28, -4805, 0, 0)
@@ -53,8 +53,10 @@ function WarZoneSpawner:spawnMobiles()
     -- REBHIDEOUT
     -- imp
     spawnMobile("dantooine", "tp_hq", 0, -6622, 30, 5481, 0, 0)
+    spawnMobile("dantooine", "fbase_stormtrooper_extreme", 60, -6613, 30, 5523, 0, 0)
     --reb
     spawnMobile("dantooine", "tp_hq", 0, -7049, 25, 5390, 20, 0)
+    spawnMobile("corellia", "fbase_rebel_soldier_extreme", 60, -7038, 25, 5410, 0, 0)
 
 end
 
