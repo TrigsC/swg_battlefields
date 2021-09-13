@@ -286,6 +286,35 @@ LOCK TABLES `deleted_characters` WRITE;
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `deleted_characters` ENABLE KEYS */;
 
+--
+-- SWGIntended
+-- Definition of table `swgemu`.`pvp_death`
+--
+
+DROP TABLE IF EXISTS `swgemu`.`pvp_death`;
+CREATE TABLE  `swgemu`.`pvp_death` (
+  `pvp_death_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `character_oid` bigint(20) unsigned NOT NULL,
+  `faction` tinyint(1) NOT NULL DEFAULT '0',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`pvp_death_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- SWGIntended
+-- Definition of table `swgemu`.`pvp_kill`
+--
+
+DROP TABLE IF EXISTS `swgemu`.`pvp_kill`;
+CREATE TABLE  `swgemu`.`pvp_kill` (
+  `pvp_kill_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pvp_death_id` int(10) unsigned NOT NULL,
+  `damage` float NOT NULL,
+  `character_oid` bigint(20) unsigned NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`pvp_kill_id`),
+  FOREIGN KEY (`pvp_death_id`) REFERENCES `swgemu`.`pvp_death`(`pvp_death_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Definition of table `swgemu`.`galaxy`
