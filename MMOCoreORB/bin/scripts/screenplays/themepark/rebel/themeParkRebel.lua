@@ -941,13 +941,13 @@ npcMapRebel =
 		--	stfFile = "@theme_park_rebel/captain_ackbar",
 		--	missions = ackbar_missions
 		--},
-		{
-			spawnData = { planetName = "dantooine", npcTemplate = "mon_mothma", x = -3.4, z = 7.0, y = -12.2, direction = -34, cellID = 6555568, position = STAND },
-			worldPosition = { x = -6823.6, y = 5551.2 },
-			npcNumber = 128,
-			stfFile = "@theme_park_rebel/mon_mothma",
-			missions = mon_missions
-		},
+		--{
+		--	spawnData = { planetName = "dantooine", npcTemplate = "mon_mothma", x = -3.4, z = 7.0, y = -12.2, direction = -34, cellID = 6555568, position = STAND },
+		--	worldPosition = { x = -6823.6, y = 5551.2 },
+		--	npcNumber = 128,
+		--	stfFile = "@theme_park_rebel/mon_mothma",
+		--	missions = mon_missions
+		--},
 		{
 			spawnData = { planetName = "yavin4", npcTemplate = "jan_dodonna", x = 0, z = 0, y = -41.9, direction = 0, cellID = 3465388, position = STAND },
 			worldPosition = { x = 5014.8, y = 5537.8 },

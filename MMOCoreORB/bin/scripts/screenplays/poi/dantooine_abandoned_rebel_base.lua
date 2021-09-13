@@ -9,7 +9,7 @@ registerScreenPlay("AbandonedRebelBaseScreenPlay", true)
 
 function AbandonedRebelBaseScreenPlay:start()
 	if (isZoneEnabled("dantooine")) then
-		self:spawnMobiles()
+		--self:spawnMobiles()
 	end
 end
 
