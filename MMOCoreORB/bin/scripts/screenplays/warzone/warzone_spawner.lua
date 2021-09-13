@@ -56,7 +56,7 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("dantooine", "fbase_stormtrooper_extreme", 60, -6613, 30, 5523, 0, 0)
     spawnMobile("dantooine", "fbase_stormtrooper_extreme", 60, -6622, 30, 5517, 0, 0)
     spawnMobile("dantooine", "fbase_stormtrooper_rifleman_hard", 60, -6641, 30, 5556, 270, 0)
-    spawnMobile("dantooine", "fbase_stormtrooper_rifleman_hard", 60, -6641, 30, 5556, 270, 0)
+    spawnMobile("dantooine", "fbase_stormtrooper_rifleman_hard", 60, -6640, 30, 5531, 270, 0)
     spawnMobile("dantooine", "fbase_stormtrooper", 60, -6683, 30, 5505, 270, 0)
     spawnMobile("dantooine", "fbase_stormtrooper", 60, -6684, 30, 5513, 270, 0)
     --reb
