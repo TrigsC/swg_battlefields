@@ -1416,16 +1416,23 @@ void PlayerObjectImplementation::notifyOnline() {
 	playerCreature->schedulePersonalEnemyFlagTasks();
 
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+	StringBuffer query;
 
 	if (ghost->getLastLogout()->miliDifference() > 20020) {
 		if (playerCreature->isImperial()) {
 			playerCreature->switchZone("naboo", 2423, 292, -3915, 0);
+			query << "UPDATE characters SET faction=1 WHERE character_oid=" << player->getObjectID() << ";";
+			ServerDatabase::instance()->executeStatement(query);
 		} else if (playerCreature->isRebel()) {
 			playerCreature->switchZone("corellia", -6528, 398, 5968, 0);
+			query << "UPDATE characters SET faction=2 WHERE character_oid=" << player->getObjectID() << ";";
+			ServerDatabase::instance()->executeStatement(query);
 		} else {
 			playerCreature->setFaction(Factions::FACTIONIMPERIAL);
 			playerCreature->setFactionStatus(FactionStatus::OVERT);
 			playerCreature->switchZone("naboo", 2423, 292, -3915, 0);
+			query << "UPDATE characters SET faction=1 WHERE character_oid=" << player->getObjectID() << ";";
+			ServerDatabase::instance()->executeStatement(query);
 		 }
 	}
 	
