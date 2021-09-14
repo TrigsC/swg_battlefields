@@ -6061,7 +6061,6 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 	int frsXpAdjustment = 0;
 	bool throttleOnly = true;
 	int deathFaction = 0;
-	StringBuffer gcw_death_query;
 
 	String planet = player->getZone()->getZoneName();
 
@@ -6071,7 +6070,8 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		deathFaction = 1;
 	else
 		deathFaction = 0;
-	
+		
+	StringBuffer gcw_death_query;
 	gcw_death_query << "INSERT INTO pvp_death(pvp_death_id, character_oid, faction, planet, date) VALUES (NULL," << player->getObjectID() << "," << deathFaction << ",'" << planet << "',NULL);";
 	UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(gcw_death_query.toString()));
 	uint32 deathID = result->getLastAffectedRow();
@@ -6104,6 +6104,11 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 
 		if (player->getDistanceTo(attacker) > 80.f)
 			continue;
+		
+		float damageContr = (float) entry->getTotalDamage() / totalDamage;
+		StringBuffer gcw_kill_query;
+		gcw_kill_query << "INSERT INTO pvp_kill(pvp_kill_id, pvp_death_id, damage, character_oid, date) VALUES (NULL," << deathID << "," << damageContr << "," << attackerCreo->getObjectID() << ",NULL);";
+		ServerDatabase::instance()->executeStatement(gcw_kill_query.toString());
 
 		int curAttackerRating = attackerGhost->getPvpRating();
 
@@ -6146,10 +6151,6 @@ void PlayerManagerImplementation::doPvpDeathRatingUpdate(CreatureObject* player,
 		}
 
 		float damageContribution = (float) entry->getTotalDamage() / totalDamage;
-
-		StringBuffer gcw_kill_query;
-		gcw_kill_query << "INSERT INTO pvp_kill(pvp_kill_id, pvp_death_id, damage, character_oid, date) VALUES (NULL," << deathID << "," << damageContribution << "," << attackerCreo->getObjectID() << ",NULL);";
-		ServerDatabase::instance()->executeStatement(gcw_kill_query.toString());
 
 		if (frsManager != nullptr && frsManager->isFrsEnabled() && frsManager->isValidFrsBattle(attackerCreo, player)) {
 			int attackerFrsXp = frsManager->calculatePvpExperienceChange(attackerCreo, player, damageContribution, false);
