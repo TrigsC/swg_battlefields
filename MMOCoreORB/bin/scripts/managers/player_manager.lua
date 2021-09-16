@@ -72,7 +72,21 @@ baseStoredShips = 3
 -----------------------------------
 veteranRewardMilestones = {90, 180, 270, 360, 450, 540, 630, 720, 810, 900, 990, 1080} --days, must be sorted low to high
 
+veteranRewardMilestonesRebel = {90, 180, 270, 360, 450, 540, 630, 720, 810, 900, 990, 1080}
+
+veteranRewardMilestonesImperial = {90, 180, 270, 360, 450, 540, 630, 720, 810, 900, 990, 1080}
+
 veteranRewardAdditionalMilestones = 360 --frequency, in days, of additional milestones (beyond the established ones)
+
+veteranRewardsImperial = {
+	{templateFile = "object/tangible/veteran_reward/frn_vet_r2_toy.iff", milestone=1, oneTime=false, description="@veteran_new:mini_r2"},
+	{templateFile = "object/tangible/veteran_reward/frn_vet_tie_fighter_toy.iff", milestone=2, oneTime=false, description="@veteran_new:mini_tiefighter"},
+}
+
+veteranRewardsRebel = {
+	{templateFile = "object/tangible/veteran_reward/frn_vet_x_wing_toy.iff", milestone=1, oneTime=false, description="@veteran_new:mini_xwing"},
+	{templateFile = "object/tangible/veteran_reward/frn_vet_tie_fighter_toy.iff", milestone=2, oneTime=false, description="@veteran_new:mini_tiefighter"},
+}
 
 veteranRewards = {
 

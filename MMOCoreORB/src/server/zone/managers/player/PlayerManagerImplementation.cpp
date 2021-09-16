@@ -270,7 +270,59 @@ void PlayerManagerImplementation::loadLuaConfig() {
 
 	rewardsListLua.pop();
 
+	//IMPERIAL AWARDS
+	LuaObject rewardMilestonesImperialLua = lua->getGlobalObject("veteranRewardMilestonesImperial");
+	for (int i = 1; i <= rewardMilestonesImperialLua.getTableSize(); ++i) {
+		veteranRewardMilestonesImperial.add(rewardMilestonesImperialLua.getIntAt(i));
+	}
+	veteranRewardMilestonesImperial.pop();
+
+	LuaObject rewardsListImperialLua = lua->getGlobalObject("veteranRewardsImperial");
+	int size = rewardsListImperialLua.getTableSize();
+
+	lua_State* L = rewardsListImperialLua.getLuaState();
+
+	for (int i = 0; i < size; ++i) {
+		lua_rawgeti(L, -1, i + 1);
+		LuaObject a(L);
+
+		VeteranReward reward;
+		reward.parseFromLua(&a);
+		veteranRewardsImperial.add(reward);
+
+		a.pop();
+	}
+
+	rewardsListImperialLua.pop();
+
+	//REBEL AWARDS
+	LuaObject rewardMilestonesRebelLua = lua->getGlobalObject("veteranRewardMilestonesRebel");
+	for (int i = 1; i <= rewardMilestonesRebelLua.getTableSize(); ++i) {
+		veteranRewardMilestonesRebel.add(rewardMilestonesRebelLua.getIntAt(i));
+	}
+	rewardMilestonesRebelLua.pop();
+
+	LuaObject rewardsListRebelLua = lua->getGlobalObject("veteranRewardsRebel");
+	int size = rewardsListRebelLua.getTableSize();
+
+	lua_State* L = rewardsListRebelLua.getLuaState();
+
+	for (int i = 0; i < size; ++i) {
+		lua_rawgeti(L, -1, i + 1);
+		LuaObject a(L);
+
+		VeteranReward reward;
+		reward.parseFromLua(&a);
+		veteranRewardsRebel.add(reward);
+
+		a.pop();
+	}
+
+	rewardsListRebelLua.pop();
+
 	info(true) << "Loaded " << veteranRewards.size() << " veteran rewards.";
+	info(true) << "Loaded " << veteranRewardsImperial.size() << " imperial rewards.";
+	info(true) << "Loaded " << veteranRewardsRebel.size() << " rebel rewards.";
 
 	LuaObject jboxSongs = lua->getGlobalObject("jukeboxSongs");
 
@@ -5348,10 +5400,16 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 
 	if (account == nullptr || playerGhost == nullptr )
 		return -1;
+	ManagedReference<CreatureObject*> player = playerGhost->getParentRecursively(SceneObjectType::PLAYERCREATURE).castTo<CreatureObject*>();
+
+	if (player == nullptr)
+		return -1;
 	
 	const String query = "SELECT pvp_death.pvp_death_id, date, COUNT(CASE WHEN pvp_death.faction = 1 THEN 1 END) - COUNT(CASE WHEN pvp_death.faction = 2 THEN 1 END) AS diff FROM pvp_death GROUP BY pvp_death.planet;";
 	int rebelWins = 0;
 	int imperialWins = 0;
+	int rebel = 0;
+	int imperial = 0;
 	int dayLength = 24 * 60 * 60 * 1000;
 	try {
 		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
@@ -5383,6 +5441,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 					imperialWins += 1;
 				}
 			}
+
 			info("REBEL WINS " + String::valueOf(rebelWins) + "******", true);
 			info("IMPERIAL WINS " + String::valueOf(imperialWins) + "******", true);
 		} else if (result->getRowsAffected() == 0) {
@@ -5394,33 +5453,46 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 		error() << "database error " << err.getMessage();
 		return false;
 	}
-
-	int accountAge = account->getAgeInDays();
-	int milestone = -1;
+	if (player->isImperial) {
+		for (int i = 0; i < veteranRewardMilestonesImperial.size(); i++) {
+			milestone = veteranRewardMilestonesImperial.get(i);
+			if (imperialWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+				return milestone;
+			}
+		}
+	}
+	if (player->isRebel) {
+		for (int i = 0; i < veteranRewardMilestonesRebel.size(); i++) {
+			milestone = veteranRewardMilestonesRebel.get(i);
+			if (rebelWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+				return milestone;
+			}
+		}
+	}
+	//int accountAge = account->getAgeInDays();
+	//int milestone = -1;
 
 	// Return -1 if account age is less than the first milestone
-	if (accountAge < veteranRewardMilestones.get(0)) {
-		return -1;
-	}
+	//if (accountAge < veteranRewardMilestones.get(0)) {
+	//	return -1;
+	//}
 
 	// Return the first milestone for which the player is eligible and has not already claimed
-	for (int i = 0; i < veteranRewardMilestones.size(); i++) {
-		milestone = veteranRewardMilestones.get(i);
-		if (accountAge >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
-			return milestone;
-		}
-	}
+	//for (int i = 0; i < veteranRewardMilestones.size(); i++) {
+	//	milestone = veteranRewardMilestones.get(i);
+	//	if (accountAge >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+	//		return milestone;
+	//	}
+	//}
 
 	// They've claimed all of the established milestones, see if they're eligible for an additional one
-	milestone += veteranRewardAdditionalMilestones;
-
-	while (accountAge >= milestone) {
-		if (playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
-			return milestone;
-		}
-
-		milestone += veteranRewardAdditionalMilestones;
-	}
+	//milestone += veteranRewardAdditionalMilestones;
+	//while (accountAge >= milestone) {
+	//	if (playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+	//		return milestone;
+	//	}
+	//	milestone += veteranRewardAdditionalMilestones;
+	//}
 
 	// Not eligible for any milestones
 	return -1;
