@@ -558,6 +558,7 @@ class PlayerManager extends Observer implements Logger {
 
 	public int getVeteranRewardMilestone( int index ){
 		return veteranRewardMilestones.get(index);
+	}
 
 	@local
 	public native JukeboxSong getJukeboxSong( int index ){
