@@ -275,14 +275,14 @@ void PlayerManagerImplementation::loadLuaConfig() {
 	for (int i = 1; i <= rewardMilestonesImperialLua.getTableSize(); ++i) {
 		veteranRewardMilestonesImperial.add(rewardMilestonesImperialLua.getIntAt(i));
 	}
-	veteranRewardMilestonesImperial.pop();
+	rewardMilestonesImperialLua.pop();
 
 	LuaObject rewardsListImperialLua = lua->getGlobalObject("veteranRewardsImperial");
-	int size = rewardsListImperialLua.getTableSize();
+	int sizei = rewardsListImperialLua.getTableSize();
 
 	lua_State* L = rewardsListImperialLua.getLuaState();
 
-	for (int i = 0; i < size; ++i) {
+	for (int i = 0; i < sizei; ++i) {
 		lua_rawgeti(L, -1, i + 1);
 		LuaObject a(L);
 
@@ -303,11 +303,11 @@ void PlayerManagerImplementation::loadLuaConfig() {
 	rewardMilestonesRebelLua.pop();
 
 	LuaObject rewardsListRebelLua = lua->getGlobalObject("veteranRewardsRebel");
-	int size = rewardsListRebelLua.getTableSize();
+	int sizer = rewardsListRebelLua.getTableSize();
 
 	lua_State* L = rewardsListRebelLua.getLuaState();
 
-	for (int i = 0; i < size; ++i) {
+	for (int i = 0; i < sizer; ++i) {
 		lua_rawgeti(L, -1, i + 1);
 		LuaObject a(L);
 
@@ -5229,29 +5229,53 @@ void PlayerManagerImplementation::claimVeteranRewards(CreatureObject* player) {
 	box->setOkButton(true, "@ok");
 	box->setCancelButton(true, "@cancel");
 
-	for ( int i = 0; i < veteranRewards.size(); i++) {
+	if (player->isImperial()) {
+		for ( int i = 0; i < veteranRewardsImperial.size(); i++) {
 
-		// Any rewards at or below current milestone are eligible
-		VeteranReward reward = veteranRewards.get(i);
-		if (reward.getMilestone() <= milestone) {
+			// Any rewards at or below current milestone are eligible
+			VeteranReward reward = veteranRewardsImperial.get(i);
+			if (reward.getMilestone() <= milestone) {
 
-			// Filter out one-time rewards already claimed
-			if (reward.isOneTime() && playerGhost->hasChosenVeteranReward(reward.getTemplateFile())) {
-				continue;
-			}
-
-			SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(reward.getTemplateFile().hashCode());
-			if (rewardTemplate != nullptr) {
-				if (reward.getDescription().isEmpty()) {
-					box->addMenuItem(rewardTemplate->getDetailedDescription(), i);
+				// Filter out one-time rewards already claimed
+				if (reward.isOneTime() && playerGhost->hasChosenVeteranReward(reward.getTemplateFile())) {
+					continue;
 				}
-				else{
-					box->addMenuItem(reward.getDescription(), i);
+
+				SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(reward.getTemplateFile().hashCode());
+				if (rewardTemplate != nullptr) {
+					if (reward.getDescription().isEmpty()) {
+						box->addMenuItem(rewardTemplate->getDetailedDescription(), i);
+					}
+					else{
+						box->addMenuItem(reward.getDescription(), i);
+					}
+				}
+			}
+		}
+	} else if (player->isRebel()) {
+				for ( int i = 0; i < veteranRewardsRebel.size(); i++) {
+
+			// Any rewards at or below current milestone are eligible
+			VeteranReward reward = veteranRewardsRebel.get(i);
+			if (reward.getMilestone() <= milestone) {
+
+				// Filter out one-time rewards already claimed
+				if (reward.isOneTime() && playerGhost->hasChosenVeteranReward(reward.getTemplateFile())) {
+					continue;
+				}
+
+				SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(reward.getTemplateFile().hashCode());
+				if (rewardTemplate != nullptr) {
+					if (reward.getDescription().isEmpty()) {
+						box->addMenuItem(rewardTemplate->getDetailedDescription(), i);
+					}
+					else{
+						box->addMenuItem(reward.getDescription(), i);
+					}
 				}
 			}
 		}
 	}
-
 	box->setUsingObject(nullptr);
 	playerGhost->addSuiBox(box);
 	player->sendMessage(box->generateMessage());
@@ -5453,7 +5477,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 		error() << "database error " << err.getMessage();
 		return false;
 	}
-	if (player->isImperial) {
+	if (player->isImperial()) {
 		for (int i = 0; i < veteranRewardMilestonesImperial.size(); i++) {
 			milestone = veteranRewardMilestonesImperial.get(i);
 			if (imperialWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
@@ -5461,7 +5485,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 			}
 		}
 	}
-	if (player->isRebel) {
+	if (player->isRebel()) {
 		for (int i = 0; i < veteranRewardMilestonesRebel.size(); i++) {
 			milestone = veteranRewardMilestonesRebel.get(i);
 			if (rebelWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
