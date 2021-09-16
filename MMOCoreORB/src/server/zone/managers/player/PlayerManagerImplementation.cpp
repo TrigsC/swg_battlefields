@@ -284,13 +284,13 @@ void PlayerManagerImplementation::loadLuaConfig() {
 
 	for (int i = 0; i < sizei; ++i) {
 		lua_rawgeti(Li, -1, i + 1);
-		LuaObject a(Li);
+		LuaObject ai(Li);
 
-		VeteranReward reward;
-		reward.parseFromLua(&a);
-		veteranRewardsImperial.add(reward);
+		veteranRewardsImperial rewardi;
+		rewardi.parseFromLua(&ai);
+		veteranRewardsImperial.add(rewardi);
 
-		a.pop();
+		ai.pop();
 	}
 
 	rewardsListImperialLua.pop();
@@ -309,13 +309,13 @@ void PlayerManagerImplementation::loadLuaConfig() {
 
 	for (int i = 0; i < sizer; ++i) {
 		lua_rawgeti(Lr, -1, i + 1);
-		LuaObject a(Lr);
+		LuaObject ar(Lr);
 
-		VeteranReward reward;
-		reward.parseFromLua(&a);
-		veteranRewardsRebel.add(reward);
+		veteranRewardsRebel rewardr;
+		rewardr.parseFromLua(&ar);
+		veteranRewardsRebel.add(rewardr);
 
-		a.pop();
+		ar.pop();
 	}
 
 	rewardsListRebelLua.pop();
@@ -5456,15 +5456,16 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 				uint32 timeDiff = currentTime.getMiliTime() - dateOfDeath;
 				if (dayLength < timeDiff) {
 					info("INSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
+					if (diff >= 0) {
+						rebelWins += 1;
+					} else if (diff <= 0) {
+						imperialWins += 1;
+					}
 				}
 
-				info("OUTSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
+				//info("OUTSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 
-				if (diff >= 0) {
-					rebelWins += 1;
-				} else if (diff <= 0) {
-					imperialWins += 1;
-				}
+
 			}
 			if (player->isImperial()) {
 				info("IMPERIAL WINS " + String::valueOf(imperialWins) + "******", true);
