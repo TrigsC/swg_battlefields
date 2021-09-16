@@ -104,6 +104,12 @@ class PlayerManager extends Observer implements Logger {
 	@dereferenced
 	private VeteranRewardList veteranRewards;
 
+	@dereferenced
+	private VeteranRewardList veteranRewardsImperial;
+
+	@dereferenced
+	private VeteranRewardList veteranRewardsRebel;
+
 	private ZoneServer server;
 
 	transient CharacterNameMap nameMap;
