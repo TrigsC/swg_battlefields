@@ -5357,23 +5357,23 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 
 		if (result == nullptr) {
 			//error("ERROR WHILE LOOKING UP CHARACTER IN SQL TABLE");
-			player->sendSystemMessage("Rewards are not available yet.");
+			playerGhost->sendSystemMessage("Rewards are not available yet.");
 			return false;
 		} else if (result->getRowsAffected() > 1) {
 
 			while (result->next()) {
 				int pvpDeathId = result->getInt(0);
-				Time dateOfDeath = result->getTimeStamp(1);
+				const Time* dateOfDeath = result->getTimeStamp(1);
 				int diff = result->getInt(2);
 
 				Time currentTime;
 
 				//float elapsedTime = (currentTime.getTime() - lastMaintenanceTime.getTime());
 				if (dateOfDeath >= currentTime.getTime().AddHours(-24)) {
-					info("INSIDE TIME " + pvpDeathId + "******", true);
+					info("INSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 				}
 
-				info("OUTSIDE TIME " + pvpDeathId + "******", true);
+				info("OUTSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 
 				if (diff >= 0) {
 					rebelWins += 1;
@@ -5381,14 +5381,10 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 					imperialWins += 1;
 				}
 			}
-			info("REBEL WINS " + rebelWins + "******", true);
-			info("IMPERIAL WINS " + imperialWins + "******", true);
-		}
-			error("More than one character with oid = " + String::valueOf(characterID) + " in galaxy " + String::valueOf(galaxyID));
-			return false;
-
+			info("REBEL WINS " + String::valueOf(rebelWins) + "******", true);
+			info("IMPERIAL WINS " + String::valueOf(imperialWins) + "******", true);
 		} else if (result->getRowsAffected() == 0) {
-			return true;
+			return false;
 		}
 
 			
