@@ -5352,6 +5352,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 	const String query = "SELECT pvp_death.pvp_death_id, date, COUNT(CASE WHEN pvp_death.faction = 1 THEN 1 END) - COUNT(CASE WHEN pvp_death.faction = 2 THEN 1 END) AS diff FROM pvp_death GROUP BY pvp_death.planet;";
 	int rebelWins = 0;
 	int imperialWins = 0;
+	int dayLength = 24 * 60 * 60 * 1000;
 	try {
 		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
 
@@ -5369,7 +5370,8 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 				Time currentTime;
 
 				//float elapsedTime = (currentTime.getTime() - lastMaintenanceTime.getTime());
-				if (dateOfDeath >= currentTime.getTime()) {
+				uint32 timeDiff = currentTime.getMiliTime() - dateOfDeath->getMiliTime();
+				if (dayLength < timeDiff) {
 					info("INSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 				}
 
