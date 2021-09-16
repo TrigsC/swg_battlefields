@@ -5147,10 +5147,10 @@ void PlayerManagerImplementation::claimVeteranRewards(CreatureObject* player) {
 		return;
 
 	// Send message with current account age
-	StringIdChatParameter timeActiveMsg;
-	timeActiveMsg.setStringId("veteran", "self_time_active"); // You have %DI days logged for veteran rewards.
-	timeActiveMsg.setDI( account->getAgeInDays() );
-	player->sendSystemMessage(timeActiveMsg );
+	//StringIdChatParameter timeActiveMsg;
+	//timeActiveMsg.setStringId("veteran", "self_time_active"); // You have %DI days logged for veteran rewards.
+	//timeActiveMsg.setDI( account->getAgeInDays() );
+	//player->sendSystemMessage(timeActiveMsg );
 
 	// Verify player is eligible for a reward
 	int milestone = getEligibleMilestone( playerGhost, account );
@@ -5348,6 +5348,54 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 
 	if (account == nullptr || playerGhost == nullptr )
 		return -1;
+	
+	const String query = "SELECT pvp_death.pvp_death_id, date, COUNT(CASE WHEN pvp_death.faction = 1 THEN 1 END) - COUNT(CASE WHEN pvp_death.faction = 2 THEN 1 END) AS diff FROM pvp_death GROUP BY pvp_death.planet;";
+	int rebelWins = 0;
+	int imperialWins = 0;
+	try {
+		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
+
+		if (result == nullptr) {
+			//error("ERROR WHILE LOOKING UP CHARACTER IN SQL TABLE");
+			player->sendSystemMessage("Rewards are not available yet.");
+			return false;
+		} else if (result->getRowsAffected() > 1) {
+
+			while (result->next()) {
+				int pvpDeathId = result->getInt(0);
+				Time dateOfDeath = result->getTimeStamp(1);
+				int diff = result->getInt(2);
+
+				Time currentTime;
+
+				//float elapsedTime = (currentTime.getTime() - lastMaintenanceTime.getTime());
+				if (dateOfDeath >= currentTime.getTime().AddHours(-24)) {
+					info("INSIDE TIME " + pvpDeathId + "******", true);
+				}
+
+				info("OUTSIDE TIME " + pvpDeathId + "******", true);
+
+				if (diff >= 0) {
+					rebelWins += 1;
+				} else if (diff <= 0) {
+					imperialWins += 1;
+				}
+			}
+			info("REBEL WINS " + rebelWins + "******", true);
+			info("IMPERIAL WINS " + imperialWins + "******", true);
+		}
+			error("More than one character with oid = " + String::valueOf(characterID) + " in galaxy " + String::valueOf(galaxyID));
+			return false;
+
+		} else if (result->getRowsAffected() == 0) {
+			return true;
+		}
+
+			
+	} catch (const DatabaseException& err) {
+		error() << "database error " << err.getMessage();
+		return false;
+	}
 
 	int accountAge = account->getAgeInDays();
 	int milestone = -1;
