@@ -5435,6 +5435,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 	int rebel = 0;
 	int imperial = 0;
 	int dayLength = 24 * 60 * 60 * 1000;
+	int milestone = -1
 	try {
 		UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
 
