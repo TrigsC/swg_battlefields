@@ -5466,9 +5466,28 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 					imperialWins += 1;
 				}
 			}
-
-			info("REBEL WINS " + String::valueOf(rebelWins) + "******", true);
-			info("IMPERIAL WINS " + String::valueOf(imperialWins) + "******", true);
+			if (player->isImperial()) {
+				info("IMPERIAL WINS " + String::valueOf(imperialWins) + "******", true);
+				for (int i = 0; i < veteranRewardMilestonesImperial.size(); i++) {
+					info("IMPERIAL Milestones " + String::valueOf(milestone) + "******", true);
+					milestone = veteranRewardMilestonesImperial.get(i);
+					if (imperialWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+						return milestone;
+					}
+				}
+			}
+			if (player->isRebel()) {
+				info("REBEL WINS " + String::valueOf(rebelWins) + "******", true);
+				for (int i = 0; i < veteranRewardMilestonesRebel.size(); i++) {
+					info("REBEL Milestones " + String::valueOf(milestone) + "******", true);
+					milestone = veteranRewardMilestonesRebel.get(i);
+					if (rebelWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+						return milestone;
+					}
+				}
+			}
+			
+			
 		} else if (result->getRowsAffected() == 0) {
 			return false;
 		}
@@ -5478,22 +5497,8 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 		error() << "database error " << err.getMessage();
 		return false;
 	}
-	if (player->isImperial()) {
-		for (int i = 0; i < veteranRewardMilestonesImperial.size(); i++) {
-			milestone = veteranRewardMilestonesImperial.get(i);
-			if (imperialWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
-				return milestone;
-			}
-		}
-	}
-	if (player->isRebel()) {
-		for (int i = 0; i < veteranRewardMilestonesRebel.size(); i++) {
-			milestone = veteranRewardMilestonesRebel.get(i);
-			if (rebelWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
-				return milestone;
-			}
-		}
-	}
+
+
 	//int accountAge = account->getAgeInDays();
 	//int milestone = -1;
 
