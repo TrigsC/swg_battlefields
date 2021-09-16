@@ -5363,7 +5363,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 
 			while (result->next()) {
 				int pvpDeathId = result->getInt(0);
-				Time dateOfDeath = result->getUnsignedInt(1);
+				uint32 dateOfDeath = result->getUnsignedInt(1);
 				int diff = result->getInt(2);
 
 				Time currentTime;
