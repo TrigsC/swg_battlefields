@@ -8,7 +8,6 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include <utility>
 #include <mutex>
-#include <ctime>
 
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterFailed.h"
@@ -5364,13 +5363,13 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 
 			while (result->next()) {
 				int pvpDeathId = result->getInt(0);
-				const Time* dateOfDeath = result->getTime(1);
+				Time dateOfDeath = result->getUnsignedInt(1);
 				int diff = result->getInt(2);
 
-				//Time currentTime;
+				Time currentTime;
 
 				//float elapsedTime = (currentTime.getTime() - lastMaintenanceTime.getTime());
-				if (dateOfDeath >= DateTime.Now.AddHours(-24)) {
+				if (dateOfDeath >= currentTime.getTime()) {
 					info("INSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 				}
 
