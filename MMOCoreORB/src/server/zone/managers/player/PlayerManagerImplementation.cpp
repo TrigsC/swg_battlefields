@@ -286,7 +286,7 @@ void PlayerManagerImplementation::loadLuaConfig() {
 		lua_rawgeti(Li, -1, i + 1);
 		LuaObject ai(Li);
 
-		veteranReward reward;
+		VeteranReward reward;
 		reward.parseFromLua(&ai);
 		veteranRewardsImperial.add(reward);
 
@@ -311,7 +311,7 @@ void PlayerManagerImplementation::loadLuaConfig() {
 		lua_rawgeti(Lr, -1, i + 1);
 		LuaObject ar(Lr);
 
-		veteranReward reward;
+		VeteranReward reward;
 		reward.parseFromLua(&ar);
 		veteranRewardsRebel.add(reward);
 
