@@ -280,11 +280,11 @@ void PlayerManagerImplementation::loadLuaConfig() {
 	LuaObject rewardsListImperialLua = lua->getGlobalObject("veteranRewardsImperial");
 	int sizei = rewardsListImperialLua.getTableSize();
 
-	lua_State* L = rewardsListImperialLua.getLuaState();
+	lua_State* Li = rewardsListImperialLua.getLuaState();
 
 	for (int i = 0; i < sizei; ++i) {
-		lua_rawgeti(L, -1, i + 1);
-		LuaObject a(L);
+		lua_rawgeti(Li, -1, i + 1);
+		LuaObject a(Li);
 
 		VeteranReward reward;
 		reward.parseFromLua(&a);
@@ -305,11 +305,11 @@ void PlayerManagerImplementation::loadLuaConfig() {
 	LuaObject rewardsListRebelLua = lua->getGlobalObject("veteranRewardsRebel");
 	int sizer = rewardsListRebelLua.getTableSize();
 
-	lua_State* L = rewardsListRebelLua.getLuaState();
+	lua_State* Lr = rewardsListRebelLua.getLuaState();
 
 	for (int i = 0; i < sizer; ++i) {
-		lua_rawgeti(L, -1, i + 1);
-		LuaObject a(L);
+		lua_rawgeti(Lr, -1, i + 1);
+		LuaObject a(Lr);
 
 		VeteranReward reward;
 		reward.parseFromLua(&a);
