@@ -8,6 +8,7 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include <utility>
 #include <mutex>
+#include <ctime>
 
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterFailed.h"
