@@ -5357,19 +5357,19 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 
 		if (result == nullptr) {
 			//error("ERROR WHILE LOOKING UP CHARACTER IN SQL TABLE");
-			playerGhost->sendSystemMessage("Rewards are not available yet.");
+			//playerGhost->sendSystemMessage("Rewards are not available yet.");
 			return false;
 		} else if (result->getRowsAffected() > 1) {
 
 			while (result->next()) {
 				int pvpDeathId = result->getInt(0);
-				const Time* dateOfDeath = result->getTimeStamp(1);
+				const Time* dateOfDeath = result->getTime(1);
 				int diff = result->getInt(2);
 
-				Time currentTime;
+				//Time currentTime;
 
 				//float elapsedTime = (currentTime.getTime() - lastMaintenanceTime.getTime());
-				if (dateOfDeath >= currentTime.getTime().AddHours(-24)) {
+				if (dateOfDeath >= DateTime.Now.AddHours(-24)) {
 					info("INSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 				}
 
