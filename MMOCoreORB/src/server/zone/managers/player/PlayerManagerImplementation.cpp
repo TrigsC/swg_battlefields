@@ -5370,7 +5370,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 				Time currentTime;
 
 				//float elapsedTime = (currentTime.getTime() - lastMaintenanceTime.getTime());
-				uint32 timeDiff = currentTime.getMiliTime() - dateOfDeath->getMiliTime();
+				uint32 timeDiff = currentTime.getMiliTime() - dateOfDeath;
 				if (dayLength < timeDiff) {
 					info("INSIDE TIME " + String::valueOf(pvpDeathId) + "******", true);
 				}
