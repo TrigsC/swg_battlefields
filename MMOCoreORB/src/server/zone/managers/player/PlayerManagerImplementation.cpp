@@ -5475,7 +5475,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 					info("IMPERIAL Milestones BEFORE " + String::valueOf(milestone) + "******", true);
 					if (imperialWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
 						info("IMPERIAL Milestones AFTER " + String::valueOf(milestone) + "******", true);
-						return imperialWins;
+						return milestone;
 					}
 				}
 			}
@@ -5485,7 +5485,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 					info("REBEL Milestones " + String::valueOf(milestone) + "******", true);
 					milestone = veteranRewardMilestonesRebel.get(i);
 					if (rebelWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
-						return rebelWins;
+						return milestone;
 					}
 				}
 			}
