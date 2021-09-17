@@ -93,10 +93,22 @@ class PlayerManager extends Observer implements Logger {
 	@dereferenced
 	private SortedVector<int> veteranRewardMilestones;
 
+	@dereferenced
+	private SortedVector<int> veteranRewardMilestonesImperial;
+
+	@dereferenced
+	private SortedVector<int> veteranRewardMilestonesRebel;
+
 	private int veteranRewardAdditionalMilestones;
 
 	@dereferenced
 	private VeteranRewardList veteranRewards;
+
+	@dereferenced
+	private VeteranRewardList veteranRewardsImperial;
+
+	@dereferenced
+	private VeteranRewardList veteranRewardsRebel;
 
 	private ZoneServer server;
 
@@ -558,6 +570,22 @@ class PlayerManager extends Observer implements Logger {
 
 	public int getVeteranRewardMilestone( int index ){
 		return veteranRewardMilestones.get(index);
+	}
+
+	public int getNumVeteranRewardMilestonesRebel(){
+		return veteranRewardMilestonesRebel.size();
+	}
+
+	public int getVeteranRewardMilestoneRebel( int index ){
+		return veteranRewardMilestonesRebel.get(index);
+	}
+
+	public int getNumVeteranRewardMilestonesImperial(){
+		return veteranRewardMilestonesImperial.size();
+	}
+
+	public int getVeteranRewardMilestoneImperial( int index ){
+		return veteranRewardMilestonesImperial.get(index);
 	}
 
 	@local
