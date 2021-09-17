@@ -5429,7 +5429,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 	if (player == nullptr)
 		return -1;
 	
-	const String query = "SELECT pvp_death.pvp_death_id, date, COUNT(CASE WHEN pvp_death.faction = 1 THEN 1 END) - COUNT(CASE WHEN pvp_death.faction = 2 THEN 1 END) AS diff FROM pvp_death GROUP BY pvp_death.planet;";
+	const String query = "SELECT pvp_death.pvp_death_id, date, COUNT(CASE WHEN pvp_death.faction = 1 THEN 1 END) - COUNT(CASE WHEN pvp_death.faction = 2 THEN 1 END) AS diff FROM pvp_death GROUP BY YEAR(pvp_death.date), MONTH(pvp_death.date), DAY(pvp_death.date);";
 	int rebelWins = 0;
 	int imperialWins = 0;
 	int rebel = 0;
