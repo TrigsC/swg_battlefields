@@ -5470,9 +5470,11 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 			if (player->isImperial()) {
 				info("IMPERIAL WINS " + String::valueOf(imperialWins) + "******", true);
 				for (int i = 0; i < veteranRewardMilestonesImperial.size(); i++) {
-					info("IMPERIAL Milestones " + String::valueOf(milestone) + "******", true);
+					info("Milestone SIZE" + String::valueOf(veteranRewardMilestonesImperial.size()) + "******", true);
 					milestone = veteranRewardMilestonesImperial.get(i);
+					info("IMPERIAL Milestones BEFORE " + String::valueOf(milestone) + "******", true);
 					if (imperialWins >= milestone && playerGhost->getChosenVeteranReward(milestone).isEmpty()) {
+						info("IMPERIAL Milestones AFTER " + String::valueOf(milestone) + "******", true);
 						return milestone;
 					}
 				}
