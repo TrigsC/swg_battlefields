@@ -516,6 +516,12 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 		return;
 	}
 
+	if (!player->isDead() || !player->isIncapacitated()) {
+		ItemSoldMessage* soldMessage = new ItemSoldMessage(objectid, ItemSoldMessage::UNKNOWNERROR);
+		player->sendMessage(soldMessage);
+		return;
+	}
+
 	ManagedReference<TradeSession*> tradeContainer = player->getActiveSession(SessionFacadeType::TRADE).castTo<TradeSession*>();
 
 	if (tradeContainer != nullptr) {
