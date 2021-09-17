@@ -87,6 +87,7 @@ veteranRewardsImperial = {
 veteranRewardsRebel = {
 	{templateFile = "object/tangible/veteran_reward/frn_vet_x_wing_toy.iff", milestone=1, oneTime=false, description="@veteran_new:mini_xwing"},
 	{templateFile = "object/tangible/veteran_reward/frn_vet_tie_fighter_toy.iff", milestone=2, oneTime=false, description="@veteran_new:mini_tiefighter"},
+	{templateFile = "object/tangible/veteran_reward/frn_vet_x_wing_toy.iff", milestone=3, oneTime=false, description="@veteran_new:mini_xwing"},
 }
 
 veteranRewards = {
