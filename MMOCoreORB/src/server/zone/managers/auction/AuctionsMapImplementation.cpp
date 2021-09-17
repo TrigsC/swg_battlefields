@@ -18,6 +18,9 @@ int AuctionsMapImplementation::addItem(CreatureObject* player, SceneObject* vend
 	if(vendor == nullptr || vendor->getZone() == nullptr)
 		return ItemSoldMessage::VENDORNOTWORKING;
 
+	if(vendor != nullptr || vendor->getZone() != nullptr)
+		return ItemSoldMessage::VENDORNOTWORKING;
+
 	String planet = vendor->getZone()->getZoneName();
 
 	String region = "@planet_n:" + vendor->getZone()->getZoneName();
