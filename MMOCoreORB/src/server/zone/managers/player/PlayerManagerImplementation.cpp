@@ -5233,44 +5233,44 @@ void PlayerManagerImplementation::claimVeteranRewards(CreatureObject* player) {
 		for ( int i = 0; i < veteranRewardsImperial.size(); i++) {
 
 			// Any rewards at or below current milestone are eligible
-			VeteranReward reward = veteranRewardsImperial.get(i);
-			if (reward.getMilestone() <= milestone) {
+			VeteranReward rewardi = veteranRewardsImperial.get(i);
+			if (rewardi.getMilestone() <= milestone) {
 
 				// Filter out one-time rewards already claimed
-				if (reward.isOneTime() && playerGhost->hasChosenVeteranReward(reward.getTemplateFile())) {
+				if (rewardi.isOneTime() && playerGhost->hasChosenVeteranReward(rewardi.getTemplateFile())) {
 					continue;
 				}
 
-				SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(reward.getTemplateFile().hashCode());
+				SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(rewardi.getTemplateFile().hashCode());
 				if (rewardTemplate != nullptr) {
-					if (reward.getDescription().isEmpty()) {
+					if (rewardi.getDescription().isEmpty()) {
 						box->addMenuItem(rewardTemplate->getDetailedDescription(), i);
 					}
 					else{
-						box->addMenuItem(reward.getDescription(), i);
+						box->addMenuItem(rewardi.getDescription(), i);
 					}
 				}
 			}
 		}
 	} else if (player->isRebel()) {
-				for ( int i = 0; i < veteranRewardsRebel.size(); i++) {
+		for ( int i = 0; i < veteranRewardsRebel.size(); i++) {
 
 			// Any rewards at or below current milestone are eligible
-			VeteranReward reward = veteranRewardsRebel.get(i);
-			if (reward.getMilestone() <= milestone) {
+			VeteranReward rewardr = veteranRewardsRebel.get(i);
+			if (rewardr.getMilestone() <= milestone) {
 
 				// Filter out one-time rewards already claimed
-				if (reward.isOneTime() && playerGhost->hasChosenVeteranReward(reward.getTemplateFile())) {
+				if (rewardr.isOneTime() && playerGhost->hasChosenVeteranReward(rewardr.getTemplateFile())) {
 					continue;
 				}
 
-				SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(reward.getTemplateFile().hashCode());
+				SharedObjectTemplate* rewardTemplate = TemplateManager::instance()->getTemplate(rewardr.getTemplateFile().hashCode());
 				if (rewardTemplate != nullptr) {
-					if (reward.getDescription().isEmpty()) {
+					if (rewardr.getDescription().isEmpty()) {
 						box->addMenuItem(rewardTemplate->getDetailedDescription(), i);
 					}
 					else{
-						box->addMenuItem(reward.getDescription(), i);
+						box->addMenuItem(rewardr.getDescription(), i);
 					}
 				}
 			}
