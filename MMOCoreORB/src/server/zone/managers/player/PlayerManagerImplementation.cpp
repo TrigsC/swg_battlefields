@@ -5526,7 +5526,7 @@ int PlayerManagerImplementation::getEligibleMilestone(PlayerObject *playerGhost,
 	//}
 
 	// Not eligible for any milestones
-	return -1;
+	return milestone;
 }
 
 int PlayerManagerImplementation::getFirstIneligibleMilestone(PlayerObject *playerGhost, Account* account) {
