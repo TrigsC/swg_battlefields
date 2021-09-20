@@ -1082,6 +1082,9 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	float xpAdjustment = ((float)ratingDiff / 2000.f) * 0.5f;
 	int xpChange = getBaseExperienceGain(playerGhost, opponentGhost, !isVictim);
 
+	info("******* xpchange: " + xpChange + " *******", true);
+	info("******* contribution: " + contribution + " *******", true);
+
 	//if (xpChange != 0) {
 		//xpChange = (int)((float)xpChange * contribution);
 	//	if (isVictim || (shareXPOnKill && !isVictim)) {
