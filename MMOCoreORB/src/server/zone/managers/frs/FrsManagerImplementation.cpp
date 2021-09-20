@@ -1091,11 +1091,11 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 		// Adjust xp value depending on pvp rating
 		// A lower rated victim will lose less experience, a higher rated victim will lose more experience
 		// A lower rated victor will gain more experience, a higher rated victor will gain less experience
-		if ((targetRating < opponentRating && isVictim) || (targetRating > opponentRating && !isVictim)) {
-			xpChange -= (int)((float)xpChange * xpAdjustment);
-		} else {
-			xpChange += (int)((float)xpChange * xpAdjustment);
-		}
+		//if ((targetRating < opponentRating && isVictim) || (targetRating > opponentRating && !isVictim)) {
+		//	xpChange -= (int)((float)xpChange * xpAdjustment);
+		//} else {
+		//	xpChange += (int)((float)xpChange * xpAdjustment);
+		//}
 	}
 
 	return xpChange;
