@@ -1082,14 +1082,11 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 	float xpAdjustment = ((float)ratingDiff / 2000.f) * 0.5f;
 	int xpChange = getBaseExperienceGain(playerGhost, opponentGhost, !isVictim);
 
-	info("******* xpchange: " + String::valueOf(xpChange) + " *******", true);
-	info("******* contribution: " + String::valueOf(contribution) + " *******", true);
-
-	//if (xpChange != 0) {
+	if (xpChange != 0) {
 		//xpChange = (int)((float)xpChange * contribution);
-	//	if (isVictim || (shareXPOnKill && !isVictim)) {
-	//		xpChange = (int)((float)xpChange * contribution);
-	//	}
+		if (isVictim || (shareXPOnKill && !isVictim)) {
+			xpChange = (int)((float)xpChange * contribution);
+		}
 
 		// Adjust xp value depending on pvp rating
 		// A lower rated victim will lose less experience, a higher rated victim will lose more experience
@@ -1099,7 +1096,7 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 		//} else {
 		//	xpChange += (int)((float)xpChange * xpAdjustment);
 		//}
-	//}
+	}
 
 	return xpChange;
 }
