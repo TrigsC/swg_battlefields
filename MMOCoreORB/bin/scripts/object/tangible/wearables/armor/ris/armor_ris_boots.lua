@@ -101,10 +101,10 @@ object_tangible_wearables_armor_ris_armor_ris_boots = object_tangible_wearables_
 	kinetic = 90,
 	energy = 90,
 	electricity = 80,
-	stun = 38,
+	stun = 40,
 	blast = 90,
-	heat = 76,
-	cold = 73,
+	heat = 90,
+	cold = 90,
 	acid = 90,
 	lightSaber = 0,
 

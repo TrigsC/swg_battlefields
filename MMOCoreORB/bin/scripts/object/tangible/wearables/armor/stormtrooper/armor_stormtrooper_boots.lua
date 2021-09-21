@@ -103,12 +103,12 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_boots = object_t
 	kinetic = 90,
 	energy = 90,
 	electricity = 80,
-	stun = 38,
+	stun = 40,
 	blast = 90,
-	heat = 76,
-	cold = 73,
+	heat = 90,
+	cold = 90,
 	acid = 90,
-	lightSaber = 0,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_boots, "object/tangible/wearables/armor/stormtrooper/armor_stormtrooper_boots.iff")

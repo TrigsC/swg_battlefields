@@ -55,23 +55,23 @@ object_tangible_wearables_armor_ithorian_sentinel_ith_armor_s03_leggings = objec
 	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 130,
-	actionEncumbrance = 230,
-	mindEncumbrance = 85,
+	healthEncumbrance = 124,
+	actionEncumbrance = 215,
+	mindEncumbrance = 80,
 
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 65,
-	energy = 65,
+	kinetic = 90,
+	energy = 90,
 	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
+	stun = 40,
+	blast = 90,
+	heat = 90,
+	cold = 90,
+	acid = 90,
 	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},

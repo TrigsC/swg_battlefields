@@ -83,9 +83,9 @@ object_tangible_wearables_armor_marauder_armor_marauder_s03_helmet = object_tang
 	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 83,
-	actionEncumbrance = 80,
-	mindEncumbrance = 331,
+	healthEncumbrance = 75,
+	actionEncumbrance = 72,
+	mindEncumbrance = 305,
 
 	maxCondition = 30000,
 
@@ -95,10 +95,10 @@ object_tangible_wearables_armor_marauder_armor_marauder_s03_helmet = object_tang
 	kinetic = 90,
 	energy = 90,
 	electricity = 80,
-	stun = 38,
+	stun = 40,
 	blast = 90,
-	heat = 76,
-	cold = 73,
+	heat = 90,
+	cold = 90,
 	acid = 90,
 	lightSaber = 0,
 }

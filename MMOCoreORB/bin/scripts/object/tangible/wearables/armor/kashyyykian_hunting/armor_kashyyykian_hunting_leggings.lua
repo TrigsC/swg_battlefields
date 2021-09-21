@@ -52,12 +52,12 @@ object_tangible_wearables_armor_kashyyykian_hunting_armor_kashyyykian_hunting_le
 	-- Damage types in WeaponObject
 	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = KINETIC,
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 81,
-	actionEncumbrance = 100,
-	mindEncumbrance = 85,
+	healthEncumbrance = 124,
+	actionEncumbrance = 215,
+	mindEncumbrance = 80,
 
 	maxCondition = 30000,
 
@@ -67,10 +67,10 @@ object_tangible_wearables_armor_kashyyykian_hunting_armor_kashyyykian_hunting_le
 	kinetic = 90,
 	energy = 90,
 	electricity = 80,
-	stun = 38,
+	stun = 40,
 	blast = 90,
-	heat = 76,
-	cold = 73,
+	heat = 90,
+	cold = 90,
 	acid = 90,
 	lightSaber = 0,
 

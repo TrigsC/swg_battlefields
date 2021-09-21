@@ -55,9 +55,9 @@ object_tangible_wearables_armor_ithorian_sentinel_ith_armor_s03_chest_plate = ob
 	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 292,
-	actionEncumbrance = 120,
-	mindEncumbrance = 87,
+	healthEncumbrance = 268,
+	actionEncumbrance = 111,
+	mindEncumbrance = 78,
 
 	maxCondition = 30000,
 
@@ -67,10 +67,10 @@ object_tangible_wearables_armor_ithorian_sentinel_ith_armor_s03_chest_plate = ob
 	kinetic = 90,
 	energy = 90,
 	electricity = 80,
-	stun = 38,
+	stun = 40,
 	blast = 90,
-	heat = 76,
-	cold = 73,
+	heat = 90,
+	cold = 90,
 	acid = 90,
 	lightSaber = 0,
 
