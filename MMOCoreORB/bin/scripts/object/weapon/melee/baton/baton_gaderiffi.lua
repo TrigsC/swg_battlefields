@@ -103,9 +103,9 @@ object_weapon_melee_baton_baton_gaderiffi = object_weapon_melee_baton_shared_bat
 
 
 	-- The values below are the default values.  To be used for blue frog objects primarily
-	healthAttackCost = 47,
-	actionAttackCost = 26,
-	mindAttackCost = 10,
+	healthAttackCost = 53,
+	actionAttackCost = 32,
+	mindAttackCost = 15,
 	forceCost = 0,
 
 	pointBlankRange = 0,
@@ -117,10 +117,10 @@ object_weapon_melee_baton_baton_gaderiffi = object_weapon_melee_baton_shared_bat
 	maxRange = 5,
 	maxRangeAccuracy = -10,
 
-	minDamage = 90,
-	maxDamage = 185,
+	minDamage = 201,
+	maxDamage = 350,
 
-	attackSpeed = 4,
+	attackSpeed = 3.4,
 
 	woundsRatio = 16,
 

@@ -102,7 +102,7 @@ object_weapon_melee_polearm_lance_vibrolance = object_weapon_melee_polearm_share
 	-- The values below are the default values.  To be used for blue frog objects primarily
 	healthAttackCost = 45,
 	actionAttackCost = 65,
-	mindAttackCost = 22,
+	mindAttackCost = 16,
 	forceCost = 0,
 
 	pointBlankRange = 0,
@@ -114,10 +114,10 @@ object_weapon_melee_polearm_lance_vibrolance = object_weapon_melee_polearm_share
 	maxRange = 5,
 	maxRangeAccuracy = -24,
 
-	minDamage = 80,
-	maxDamage = 290,
+	minDamage = 99,
+	maxDamage = 450,
 
-	attackSpeed = 4.5,
+	attackSpeed = 4,
 
 	woundsRatio = 20,
 
