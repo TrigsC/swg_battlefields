@@ -68,6 +68,27 @@ function WarZoneSpawner:spawnMobiles()
     spawnMobile("dantooine", "fbase_rebel_soldier", 60, -6950, 25, 5419, 30, 0)
     spawnMobile("dantooine", "fbase_rebel_soldier", 60, -6956, 25, 5425, 30, 0)
 
+    -- THEED
+    -- reb
+    spawnMobile("naboo", "fbase_rebel_soldier", 60, -4828, 6, 4122, 290, 0)
+    spawnMobile("naboo", "fbase_rebel_soldier", 60, -4842, 6, 4101, 290, 0)
+    spawnMobile("naboo", "fbase_rebel_soldier", 60, -4829, 6, 4064, 200, 0)
+    spawnMobile("naboo", "fbase_rebel_rifleman_hard", 60, -4681, 6, 4011, 210, 0)
+    spawnMobile("naboo", "fbase_rebel_rifleman_hard", 60, -4630, 6, 4033, 210, 0)
+    spawnMobile("naboo", "fbase_rebel_soldier_extreme", 60, -4596, 6, 4118, 190, 0)
+    spawnMobile("naboo", "fbase_rebel_soldier_extreme", 60, -4596, 6, 4118, 190, 0)
+    -- imp
+    spawnMobile("naboo", "fbase_stormtrooper_extreme", 60, -5969, 6, 4303, 40, 0)
+    spawnMobile("naboo", "fbase_stormtrooper_extreme", 60, -5902, 6, 4273, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper_rifleman_hard", 60, -5940, 6, 4249, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper_rifleman_hard", 60, -5976, 6, 4210, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper_rifleman_hard", 60, -5895, 6, 4151, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper_rifleman_hard", 60, -5897, 6, 4126, 40, 0)
+    spawnMobile("naboo", "fbase_stormtrooper", 60, -5835, 6, 4125, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper", 60, -5827, 6, 4151, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper", 60, -5812, 6, 4263, 90, 0)
+    spawnMobile("naboo", "fbase_stormtrooper", 60, -5802, 6, 4296, 90, 0)
+
 end
 
 function WarZoneSpawner:spawnSceneObjects()
@@ -296,7 +317,28 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -4644.739746, 4.974399, 4049.992920, 9995555, 0.978911, 0.000000, -0.204288, 0.000000)
     spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -4639.939453, 5.579536, 4082.246582, 9995555, -0.626877, -0.000001, 0.779118, -0.000001)
     spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -4644.909180, 6.000012, 4104.276855, 9995555, -0.628118, -0.000001, 0.778118, -0.000001)
-
+    --imp banners
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5829.174316, 6.000000, 4155.972656, 9995555, 0.495115, -0.000000, 0.868827, -0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5839.462891, 6.000000, 4122.976563, 9995555, 0.765768, 0.000001, -0.643116, 0.000001)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5827.498535, 6.000000, 4258.668945, 9995555, 0.842640, 0.000000, 0.538477, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5856.772949, 6.000000, 4278.491699, 9995555, 0.855424, 0.000000, 0.517928, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5855.461426, 6.000000, 4322.578125, 9995555, 0.446602, -0.000000, 0.894733, -0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5835.289063, 6.000000, 4332.331055, 9995555, 0.446107, -0.000000, 0.894980, -0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5919.058594, 6.000000, 4322.823242, 9995555, 0.866413, 0.000000, 0.499328, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5927.886230, 6.000000, 4338.248535, 9995555, 0.866413, 0.000000, 0.499328, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5950.387695, 6.000000, 4254.495117, 9995555, 0.564389, -0.000001, 0.825509, 0.000001)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5982.961426, 6.000000, 4247.802246, 9995555, 0.279167, -0.000001, 0.960243, 0.000001)
+    --reb banners
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4589.584961, 6.000000, 4124.054688, 9995555, 0.929787, 0.000000, 0.368098, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4598.379395, 6.000000, 4140.702148, 9995555, 0.967751, 0.000000, 0.251910, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4629.918457, 6.002994, 4090.009521, 9995555, 0.981484, 0.000000, 0.191543, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4614.406738, 5.983288, 4042.001465, 9995555, -0.161454, 0.014122, 0.986778, 0.000787)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4660.082031, 6.000000, 4014.475830, 9995555, 0.860897, 0.000000, 0.508780, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4686.621094, 6.000000, 3999.290771, 9995555, -0.360794, 0.000001, 0.932646, -0.000001)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4710.546387, 6.000000, 4018.667480, 9995555, 0.780550, 0.000000, -0.625093, 0.000000
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4821.174805, 6.000000, 4063.895996, 9995555, -0.373104, -0.000001, 0.927789, -0.000001
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4847.840332, 6.000000, 4091.183838, 9995555, 0.832917, 0.000000, -0.553398, 0.000000
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4825.842285, 6.000000, 4134.761230, 9995555, 0.767747, 0.000000, -0.640753, 0.000000
 
     --Naboo Imperial Starting Area (OLD)
     --spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3571.38, -209.32, 6985.26, 9995373, math.rad(150) )
