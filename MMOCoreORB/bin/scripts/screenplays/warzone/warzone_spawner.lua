@@ -335,10 +335,10 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4614.406738, 5.983288, 4042.001465, 9995555, -0.161454, 0.014122, 0.986778, 0.000787)
     spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4660.082031, 6.000000, 4014.475830, 9995555, 0.860897, 0.000000, 0.508780, 0.000000)
     spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4686.621094, 6.000000, 3999.290771, 9995555, -0.360794, 0.000001, 0.932646, -0.000001)
-    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4710.546387, 6.000000, 4018.667480, 9995555, 0.780550, 0.000000, -0.625093, 0.000000
-    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4821.174805, 6.000000, 4063.895996, 9995555, -0.373104, -0.000001, 0.927789, -0.000001
-    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4847.840332, 6.000000, 4091.183838, 9995555, 0.832917, 0.000000, -0.553398, 0.000000
-    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4825.842285, 6.000000, 4134.761230, 9995555, 0.767747, 0.000000, -0.640753, 0.000000
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4710.546387, 6.000000, 4018.667480, 9995555, 0.780550, 0.000000, -0.625093, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4821.174805, 6.000000, 4063.895996, 9995555, -0.373104, -0.000001, 0.927789, -0.000001)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4847.840332, 6.000000, 4091.183838, 9995555, 0.832917, 0.000000, -0.553398, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/general/banner_rebel_style_01.iff", -4825.842285, 6.000000, 4134.761230, 9995555, 0.767747, 0.000000, -0.640753, 0.000000)
 
     --Naboo Imperial Starting Area (OLD)
     --spawnSceneObject("naboo", "object/static/structure/corellia/corl_imprv_wall_4x32_s03.iff", 3571.38, -209.32, 6985.26, 9995373, math.rad(150) )
