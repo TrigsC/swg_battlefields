@@ -125,10 +125,13 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 
 	int generatedCount = int(float(MAXSOCKETS * roll) / float(MAXSOCKETS * 100));
 
-	if (generatedCount > MAXSOCKETS)
+	//if (generatedCount > MAXSOCKETS)
+	//	generatedCount = MAXSOCKETS;
+	//if (generatedCount < 0)
+	//	generatedCount = 0;
+	if (generatedCount != MAXSOCKETS){
 		generatedCount = MAXSOCKETS;
-	if (generatedCount < 0)
-		generatedCount = MAXSOCKETS;
+	}
 
 	// TODO: remove this backwards compatibility fix at next wipe. Only usedSocketCount variable should be used.
 	objectCreatedPreUsedSocketCountFix = false;
