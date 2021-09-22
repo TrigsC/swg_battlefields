@@ -151,7 +151,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 
 	local currentPhase = WarzoneManager.getCurrentPhase()
 	local phaseID = WarzoneManager.getCurrentPhaseID()
-	--WarzoneManager:despawnMobiles(currentPhase)
+	WarzoneManager:despawnMobiles(currentPhase)
 	--WarzoneManager:despawnSceneObjects(currentPhase)
 	--WarzoneManager:handlePhaseChangeActiveQuests(phaseID, currentPhase)
 	--VillageCommunityCrafting:doEndOfPhaseCheck()
@@ -238,8 +238,10 @@ function WarzoneManager:spawnMobiles(currentPhase, spawnStaticMobs)
 			local mobile = mobileTable[i]
 			local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
 
-            local mobileID = SceneObject(pMobile):getObjectID()
-			writeData("warzone:npc:object:" .. i, mobileID)
+            if (pMobile ~= nil) then
+                local mobileID = SceneObject(pMobile):getObjectID()
+			    writeData("warzone:npc:object:" .. i, mobileID)
+            end
 		end
 	end
 
