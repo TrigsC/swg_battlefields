@@ -2,8 +2,8 @@
 
 armor_attachments = {
 	description = "",
-	minimumLevel = 0,
-	maximumLevel = 0,
+	minimumLevel = 300,
+	maximumLevel = 300,
 	lootItems = {
 		{itemTemplate = "attachment_armor", weight = 10000000}
 	}
