@@ -238,9 +238,8 @@ function WarzoneManager:spawnMobiles(currentPhase, spawnStaticMobs)
 			local mobile = mobileTable[i]
 			local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
 
-            if (pMobile ~= nil) then
-                local mobileID = SceneObject(pMobile):getObjectID()
-			    writeData("warzone:npc:object:" .. i, mobileID)
+            local mobileID = SceneObject(pMobile):getObjectID()
+			writeData("warzone:npc:object:" .. i, mobileID)
             end
 		end
 	end
