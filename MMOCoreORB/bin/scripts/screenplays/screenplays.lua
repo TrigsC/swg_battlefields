@@ -671,6 +671,7 @@ includeFile("battlefields/battlefield_spawner.lua");
 --WarZones
 includeFile("warzone/warzone_spawner.lua")
 includeFile("warzone/warzone_manager.lua")
+includeFile("warzone/warzone_spawn_table.lua")
 
 --Tests
 includeFile("tests/tests.lua")
