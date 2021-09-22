@@ -91,7 +91,7 @@ void WeaponObjectImplementation::loadTemplateData(SharedObjectTemplate* template
 		attackSpeed = templateAttackSpeed;
 
 	if (!isJediWeapon()) {
-		setSliceable(true);
+		setSliceable(false);
 	} else if (isJediWeapon()) {
 		setSliceable(false);
 	}

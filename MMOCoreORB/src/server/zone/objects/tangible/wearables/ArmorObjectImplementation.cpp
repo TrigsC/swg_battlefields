@@ -56,7 +56,7 @@ void ArmorObjectImplementation::loadTemplateData(SharedObjectTemplate* templateD
 			hitLocation |= ArmorObjectTemplate::HEAD;
 	}
 
-	setSliceable(true);
+	setSliceable(false);
 }
 
 void ArmorObjectImplementation::notifyLoadFromDatabase() {
@@ -264,8 +264,8 @@ float ArmorObjectImplementation::getTypeValue(int type, float value) const {
 	else if (isSpecial(type)) {
 		newValue = specialProtection + value;
 
-		if (newValue > 80)
-			newValue = 80;
+		if (newValue > 90)
+			newValue = 90;
 	} else {
 		newValue = baseProtection + value;
 		newValue *= effectivenessSlice;
@@ -274,8 +274,8 @@ float ArmorObjectImplementation::getTypeValue(int type, float value) const {
 			if(newValue > 90)
 				newValue = 90;
 		} else {
-			if(newValue > 80)
-				newValue = 80;
+			if(newValue > 90)
+				newValue = 90;
 		}
 	}
 
