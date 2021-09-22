@@ -38,4 +38,10 @@ warzoneMobileSpawns = {
         { "naboo", "fbase_rebel_soldier_extreme", 60, -4620, 6, 4085, 190, 0 },
         { "naboo", "fbase_rebel_soldier_extreme", 60, -4596, 6, 4118, 190, 0 },
     },
+    [3] = {
+
+    },
+    [4] = {
+
+    },
 }
