@@ -233,11 +233,11 @@ end
 
 function WarzoneManager:spawnMobiles(currentPhase, spawnStaticMobs)
 	if (spawnStaticMobs == true) then
-		local mobileTable = warzoneMobileSpawns[0]
+		local mobileTable = warzoneMobileSpawns[currentPhase]
 		for i = 1, #mobileTable, 1 do
 			local mobile = mobileTable[i]
 			local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
-            
+
             local mobileID = SceneObject(pMobile):getObjectID()
 			writeData("warzone:npc:object:" .. i, mobileID)
 		end
