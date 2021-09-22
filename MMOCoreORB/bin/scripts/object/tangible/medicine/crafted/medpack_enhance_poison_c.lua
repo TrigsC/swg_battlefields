@@ -46,9 +46,9 @@ object_tangible_medicine_crafted_medpack_enhance_poison_c = object_tangible_medi
 	templateType = ENHANCEPACK,
 	useCount = 10,
 	medicineUse = 100,
-	effectiveness = 80,
-	absorption = 10,
-	duration = 1800,
+	effectiveness = 240,
+	absorption = 19,
+	duration = 3625,
 	attribute = 9,
 
 	numberExperimentalProperties = {1, 1, 2, 2, 2, 2, 2, 1},

@@ -2776,7 +2776,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				"Medpack Dizzy", "object/tangible/medicine/crafted/medpack_dizzy_a.iff",
 				"Medpack Intimidated", "object/tangible/medicine/crafted/medpack_intimidated_a.iff",
 				"Medpack Stunned", "object/tangible/medicine/crafted/medpack_stunned_a.iff",
-				"Revive Pack", "object/tangible/medicine/medpack_revive.iff"
+				"Revive Pack", "object/tangible/medicine/medpack_revive.iff",
 			},
 			--"Scout Equipment",
 			--{
