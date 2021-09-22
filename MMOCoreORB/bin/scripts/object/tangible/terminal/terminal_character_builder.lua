@@ -105,72 +105,72 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--},
 					--"Master", "crafting_architect_master"
 				--},
-				--"Armorsmith",
-				--{
-					--"Novice", "crafting_armorsmith_novice",
-					--"Personal Armor",
-					--{
-					--	"Personal Armor I", "crafting_armorsmith_personal_01",
-					--	"Personal Armor II", "crafting_armorsmith_personal_02",
-					--	"Personal Armor III", "crafting_armorsmith_personal_03",
-					--	"Personal Armor IV", "crafting_armorsmith_personal_04"
-					--},
-					--"Layers",
-					--{
-					--	"Layers I", "crafting_armorsmith_heavy_01",
-					--	"Layers II", "crafting_armorsmith_heavy_02",
-					--	"Layers III", "crafting_armorsmith_heavy_03",
-					--	"Layers IV", "crafting_armorsmith_heavy_04"
-					--},
-					--"Deflectors",
-					--{
-					--	"Deflectors I", "crafting_armorsmith_deflectors_01",
-					--	"Deflectors II", "crafting_armorsmith_deflectors_02",
-					--	"Deflectors III", "crafting_armorsmith_deflectors_03",
-					--	"Deflectors IV", "crafting_armorsmith_deflectors_04"
-					--},
-					--"Technique",
-					--{
-					--	"Technique I", "crafting_armorsmith_complexity_01",
-					--	"Technique II", "crafting_armorsmith_complexity_02",
-					--	"Technique III", "crafting_armorsmith_complexity_03",
-					--	"Technique IV", "crafting_armorsmith_complexity_04"
-					--},
-					--"Master", "crafting_armorsmith_master"
-				--},
-				--"Artisan",
-				--{
-					--"Novice", "crafting_artisan_novice",
-					--"Engineering",
-					--{
-					--	"Engineering I", "crafting_artisan_engineering_01",
-					--	"Engineering II", "crafting_artisan_engineering_02",
-					--	"Engineering III", "crafting_artisan_engineering_03",
-					--	"Engineering IV", "crafting_artisan_engineering_04"
-					--},
-					--"Domestic Arts",
-					--{
-					--	"Domestic Arts I", "crafting_artisan_domestic_01",
-					--	"Domestic Arts II", "crafting_artisan_domestic_02",
-					--	"Domestic Arts III", "crafting_artisan_domestic_03",
-					--	"Domestic Arts IV", "crafting_artisan_domestic_04"
-					--},
-					--"Business",
-					--{
-					--	"Business I", "crafting_artisan_business_01",
-					--	"Business II", "crafting_artisan_business_02",
-					--	"Business III", "crafting_artisan_business_03",
-					--	"Business IV", "crafting_artisan_business_04"
-					--},
-					--"Surveying",
-					--{
-					--	"Surveying I", "crafting_artisan_survey_01",
-					--	"Surveying II", "crafting_artisan_survey_02",
-					--	"Surveying III", "crafting_artisan_survey_03",
-					--	"Surveying IV", "crafting_artisan_survey_04"
-					--},
-					--"Master", "crafting_artisan_master"
-				--},
+				"Armorsmith",
+				{
+					"Novice", "crafting_armorsmith_novice",
+					"Personal Armor",
+					{
+						"Personal Armor I", "crafting_armorsmith_personal_01",
+						"Personal Armor II", "crafting_armorsmith_personal_02",
+						"Personal Armor III", "crafting_armorsmith_personal_03",
+						"Personal Armor IV", "crafting_armorsmith_personal_04"
+					},
+					"Layers",
+					{
+						"Layers I", "crafting_armorsmith_heavy_01",
+						"Layers II", "crafting_armorsmith_heavy_02",
+						"Layers III", "crafting_armorsmith_heavy_03",
+						"Layers IV", "crafting_armorsmith_heavy_04"
+					},
+					"Deflectors",
+					{
+						"Deflectors I", "crafting_armorsmith_deflectors_01",
+						"Deflectors II", "crafting_armorsmith_deflectors_02",
+						"Deflectors III", "crafting_armorsmith_deflectors_03",
+						"Deflectors IV", "crafting_armorsmith_deflectors_04"
+					},
+					"Technique",
+					{
+						"Technique I", "crafting_armorsmith_complexity_01",
+						"Technique II", "crafting_armorsmith_complexity_02",
+						"Technique III", "crafting_armorsmith_complexity_03",
+						"Technique IV", "crafting_armorsmith_complexity_04"
+					},
+					"Master", "crafting_armorsmith_master"
+				},
+				"Artisan",
+				{
+					"Novice", "crafting_artisan_novice",
+					"Engineering",
+					{
+						"Engineering I", "crafting_artisan_engineering_01",
+						"Engineering II", "crafting_artisan_engineering_02",
+						"Engineering III", "crafting_artisan_engineering_03",
+						"Engineering IV", "crafting_artisan_engineering_04"
+					},
+					"Domestic Arts",
+					{
+						"Domestic Arts I", "crafting_artisan_domestic_01",
+						"Domestic Arts II", "crafting_artisan_domestic_02",
+						"Domestic Arts III", "crafting_artisan_domestic_03",
+						"Domestic Arts IV", "crafting_artisan_domestic_04"
+					},
+					"Business",
+					{
+						"Business I", "crafting_artisan_business_01",
+						"Business II", "crafting_artisan_business_02",
+						"Business III", "crafting_artisan_business_03",
+						"Business IV", "crafting_artisan_business_04"
+					},
+					"Surveying",
+					{
+						"Surveying I", "crafting_artisan_survey_01",
+						"Surveying II", "crafting_artisan_survey_02",
+						"Surveying III", "crafting_artisan_survey_03",
+						"Surveying IV", "crafting_artisan_survey_04"
+					},
+					"Master", "crafting_artisan_master"
+				},
 				--"Bio-Engineer",
 				--{
 					--"Novice", "outdoors_bio_engineer_novice",
@@ -1449,39 +1449,39 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					},
 					"Master", "combat_2hsword_master"
 				},
-				--"Tailor",
-				--{
-					--"Novice", "crafting_tailor_novice",
-					--"Casual Wear",
-					--{
-					--	"Casual Wear I", "crafting_tailor_casual_01",
-					--	"Casual Wear II", "crafting_tailor_casual_02",
-					--	"Casual Wear III", "crafting_tailor_casual_03",
-					--	"Casual Wear IV", "crafting_tailor_casual_04"
-					--},
-					--"Field Wear",
-					--{
-					--	"Field Wear I", "crafting_tailor_field_01",
-					--	"Field Wear II", "crafting_tailor_field_02",
-					--	"Field Wear III", "crafting_tailor_field_03",
-					--	"Field Wear IV", "crafting_tailor_field_04"
-					--},
-					--"Formal Wear",
-					--{
-					--	"Formal Wear I", "crafting_tailor_formal_01",
-					--	"Formal Wear II", "crafting_tailor_formal_02",
-					--	"Formal Wear III", "crafting_tailor_formal_03",
-					--	"Formal Wear IV", "crafting_tailor_formal_04"
-					--},
-					--"Tailoring",
-					--{
-					--	"Tailoring I", "crafting_tailor_production_01",
-					--	"Tailoring II", "crafting_tailor_production_02",
-					--	"Tailoring III", "crafting_tailor_production_03",
-					--	"Tailoring IV", "crafting_tailor_production_04"
-					--},
-					--"Master", "crafting_tailor_master"
-				--},
+				"Tailor",
+				{
+					"Novice", "crafting_tailor_novice",
+					"Casual Wear",
+					{
+						"Casual Wear I", "crafting_tailor_casual_01",
+						"Casual Wear II", "crafting_tailor_casual_02",
+						"Casual Wear III", "crafting_tailor_casual_03",
+						"Casual Wear IV", "crafting_tailor_casual_04"
+					},
+					"Field Wear",
+					{
+						"Field Wear I", "crafting_tailor_field_01",
+						"Field Wear II", "crafting_tailor_field_02",
+						"Field Wear III", "crafting_tailor_field_03",
+						"Field Wear IV", "crafting_tailor_field_04"
+					},
+					"Formal Wear",
+					{
+						"Formal Wear I", "crafting_tailor_formal_01",
+						"Formal Wear II", "crafting_tailor_formal_02",
+						"Formal Wear III", "crafting_tailor_formal_03",
+						"Formal Wear IV", "crafting_tailor_formal_04"
+					},
+					"Tailoring",
+					{
+						"Tailoring I", "crafting_tailor_production_01",
+						"Tailoring II", "crafting_tailor_production_02",
+						"Tailoring III", "crafting_tailor_production_03",
+						"Tailoring IV", "crafting_tailor_production_04"
+					},
+					"Master", "crafting_tailor_master"
+				},
 				"Teras Kasi Artist",
 				{
 					"Novice", "combat_unarmed_novice",
@@ -2822,7 +2822,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			{
 				"Crafting Tools",
 				{
-					--"Clothing and Armor Crafting Tool", "object/tangible/crafting/station/clothing_tool.iff",
+					"Clothing and Armor Crafting Tool", "object/tangible/crafting/station/clothing_tool.iff",
 					--"Food and Chemical Crafting Tool", "object/tangible/crafting/station/food_tool.iff",
 					"Generic Crafting Tool", "object/tangible/crafting/station/generic_tool.iff",
 					"Lightsaber Crafting Toolkit", "object/tangible/crafting/station/jedi_tool_crit_experiment_20.iff",
