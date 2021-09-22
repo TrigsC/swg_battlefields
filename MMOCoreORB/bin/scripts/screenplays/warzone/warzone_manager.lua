@@ -231,7 +231,7 @@ end
 
 -- Spawning functions.
 
-function VillageJediManagerTownship:spawnMobiles(currentPhase, spawnStaticMobs)
+function WarzoneManager:spawnMobiles(currentPhase, spawnStaticMobs)
 	--if (spawnStaticMobs == true) then
 	--	local mobileTable = warzoneMobileSpawns[0]
 	--	for i = 1, #mobileTable, 1 do
