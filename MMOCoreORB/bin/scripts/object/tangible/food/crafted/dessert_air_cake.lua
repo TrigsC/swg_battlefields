@@ -47,7 +47,7 @@ object_tangible_food_crafted_dessert_air_cake = object_tangible_food_crafted_sha
 	duration = 10,
 	filling = 10,
 	nutrition = 10,
-	userCount = 10,
+	useCount = 10,
 
 	effectType = 2,
 
