@@ -177,7 +177,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	--WarzoneManager.setCurrentPhaseID(phaseID + 1)
     
 	WarzoneManager.setCurrentPhaseID(currentPhase)
-	WarzoneManager:spawnMobiles(currentPhase, false)
+	WarzoneManager:spawnMobiles(currentPhase)
 	--WarzoneManager:spawnSceneObjects(currentPhase, false)
 
 	-- Spawn camps going into phase 3
@@ -206,7 +206,7 @@ function WarzoneManager:start()
 
 		local currentPhase = WarzoneManager.getCurrentPhase()
 		WarzoneManager.setCurrentPhaseInit()
-		WarzoneManager:spawnMobiles(currentPhase, true)
+		WarzoneManager:spawnMobiles(currentPhase)
 		--WarzoneManager:spawnSceneObjects(currentPhase, true)
 		--WarzoneManager:createVillageMasterObject()
 
@@ -231,16 +231,14 @@ end
 
 -- Spawning functions.
 
-function WarzoneManager:spawnMobiles(currentPhase, spawnStaticMobs)
-	if (spawnStaticMobs == true) then
-		local mobileTable = warzoneMobileSpawns[currentPhase]
-		for i = 1, #mobileTable, 1 do
-			local mobile = mobileTable[i]
-			local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
+function WarzoneManager:spawnMobiles(currentPhase)
+	local mobileTable = warzoneMobileSpawns[currentPhase]
+	for i = 1, #mobileTable, 1 do
+		local mobile = mobileTable[i]
+		local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
 
-            local mobileID = SceneObject(pMobile):getObjectID()
+        local mobileID = SceneObject(pMobile):getObjectID()
 			writeData("warzone:npc:object:" .. i, mobileID)
-		end
 	end
 
 	--local mobileTable = warzoneMobileSpawns[currentPhase]
