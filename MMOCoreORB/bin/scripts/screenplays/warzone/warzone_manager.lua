@@ -240,7 +240,6 @@ function WarzoneManager:spawnMobiles(currentPhase, spawnStaticMobs)
 
             local mobileID = SceneObject(pMobile):getObjectID()
 			writeData("warzone:npc:object:" .. i, mobileID)
-            end
 		end
 	end
 
