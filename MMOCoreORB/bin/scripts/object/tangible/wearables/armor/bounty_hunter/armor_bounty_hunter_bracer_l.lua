@@ -44,6 +44,8 @@
 object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_bracer_l = object_tangible_wearables_armor_bounty_hunter_shared_armor_bounty_hunter_bracer_l:new {
 	templateType = ARMOROBJECT,
 
+	objectMenuComponent = "ArmorObjectMenuComponent",
+
 	playerRaces = { "object/creature/player/bothan_male.iff",
 				"object/creature/player/bothan_female.iff",
 				"object/creature/player/human_male.iff",
@@ -87,22 +89,30 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_bracer_l = obj
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 	
-	-- The damage types in WeaponObject
-	vulnerability = STUN + HEAT + ACID + LIGHTSABER,
+	-- Damage types in WeaponObject
+	vulnerability = STUN + LIGHTSABER,
+
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 1,
-	actionEncumbrance = 1,
-	mindEncumbrance = 1,
+	healthEncumbrance = 76,
+	actionEncumbrance = 73,
+	mindEncumbrance = 78,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	blast = 15,
-	cold = 15,
+	kinetic = 90,
+	energy = 90,
+	electricity = 80,
+	stun = 40,
+	blast = 90,
+	heat = 90,
+	cold = 90,
+	acid = 90,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_bracer_l, "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bracer_l.iff")

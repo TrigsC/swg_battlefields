@@ -1746,6 +1746,19 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Marauder Leggings 2", "object/tangible/wearables/armor/marauder/armor_marauder_s02_leggings.iff",
 					"Marauder Leggings 3", "object/tangible/wearables/armor/marauder/armor_marauder_s03_leggings.iff"
 				},
+				"Bounty Hunter Armor",
+				{
+					"Bounty Hunter Belt", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_belt.iff",
+					"Bounty Hunter Left Bicep", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_l.iff",
+					"Bounty Hunter Right Bicep", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_r.iff",
+					"Bounty Hunter Boots", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_boots.iff",
+					"Bounty Hunter Left Bracer", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bracer_l.iff",
+					"Bounty Hunter Right Bracer", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bracer_r.iff",
+					"Bounty Hunter Chest Plate", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_chest_plate.iff",
+					"Bounty Hunter Gloves", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_gloves.iff",
+					"Bounty Hunter Helmet", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_helmet.iff",
+					"Bounty Hunter Leggings", "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_leggings.iff"
+				},
 			--	"Singing Mountain Clan Armor",
 			--	{
 			--		"Singing Mountain Clan Bicep", "object/tangible/wearables/armor/bone/armor_smc_s01_bicep_l.iff"
