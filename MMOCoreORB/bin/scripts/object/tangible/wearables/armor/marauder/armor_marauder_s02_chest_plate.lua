@@ -90,24 +90,28 @@ object_tangible_wearables_armor_marauder_armor_marauder_s02_chest_plate = object
 				"object/mobile/vendor/zabrak_male.iff" },
 	
 	-- Damage types in WeaponObject
-	vulnerability = ELECTRICITY + COLD + STUN + LIGHTSABER,
+	vulnerability = STUN + LIGHTSABER,
+
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
-	healthEncumbrance = 125,
-	actionEncumbrance = 23,
-	mindEncumbrance = 10,
+	healthEncumbrance = 268,
+	actionEncumbrance = 111,
+	mindEncumbrance = 78,
+
+	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 25,
-	energy = 15,
-	electricity = 0,
-	stun = 0,
-	blast = 15,
-	heat = 15,
-	cold = 0,
-	acid = 15,
+	kinetic = 90,
+	energy = 90,
+	electricity = 80,
+	stun = 40,
+	blast = 90,
+	heat = 90,
+	cold = 90,
+	acid = 90,
 	lightSaber = 0
 }
 

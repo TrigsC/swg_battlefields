@@ -98,6 +98,8 @@ object_tangible_component_armor_shield_generator_personal_imperial_test = object
 	-- Damage types in WeaponObject
 	vulnerability = ACID + BLAST + KINETIC,
 
+	specialResists = ENERGY,
+
 	-- These are default Blue Frog stats
 	healthEncumbrance = 0,
 	actionEncumbrance = 0,
@@ -109,14 +111,14 @@ object_tangible_component_armor_shield_generator_personal_imperial_test = object
 	rating = LIGHT,
 
 	kinetic = 0,
-	energy = 27,
-	electricity = 48,
-	stun = 48,
+	energy = 41,
+	electricity = 66,
+	stun = 66,
 	blast = 0,
-	heat = 48,
-	cold = 48,
+	heat = 66,
+	cold = 66,
 	acid = 0,
-	lightSaber = 48,
+	lightSaber = 66,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

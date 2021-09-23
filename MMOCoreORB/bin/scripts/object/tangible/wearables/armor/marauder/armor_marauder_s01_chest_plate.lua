@@ -112,7 +112,7 @@ object_tangible_wearables_armor_marauder_armor_marauder_s01_chest_plate = object
 	heat = 90,
 	cold = 90,
 	acid = 90,
-	lightSaber = 0,
+	lightSaber = 0
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_armor_marauder_armor_marauder_s01_chest_plate, "object/tangible/wearables/armor/marauder/armor_marauder_s01_chest_plate.iff")
