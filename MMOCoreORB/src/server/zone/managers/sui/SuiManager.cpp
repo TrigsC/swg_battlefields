@@ -306,9 +306,6 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->sendSystemMessage("Your buffs have been reset.");
 
 					player->clearBuffs(true, false);
-
-					ghost->setFoodFilling(0);
-					ghost->setDrinkFilling(0);
 				} else {
 					player->sendSystemMessage("Not within combat.");
 					return;
