@@ -65,4 +65,4 @@ professionSpecificItems = {
 	social_entertainer = { }
 }
 
-commonStartingItems = { compHelmet, compChest, compBoots, compLBracer }
+commonStartingItems = { }
