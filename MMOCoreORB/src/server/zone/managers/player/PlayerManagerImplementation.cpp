@@ -6455,7 +6455,7 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 		};
 	
 	for (int l = 0; l < 10; l++) {
-		String unlock_branch = unlock_branches[i];
+		String unlock_branch = unlock_branches[l];
 		player->setScreenPlayState("VillageUnlockScreenPlay:" + unlock_branch, 2);
 	}
 
