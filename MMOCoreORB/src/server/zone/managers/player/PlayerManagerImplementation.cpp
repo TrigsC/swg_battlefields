@@ -6441,6 +6441,24 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 	if (ghost == nullptr)
 		return;
 
+	String unlock_branches[] = {
+			"force_sensitive_enhanced_reflexes_vehicle_control",
+			"force_sensitive_enhanced_reflexes_survival",
+			"force_sensitive_crafting_mastery_experimentation",
+			"force_sensitive_crafting_mastery_assembly",
+			"force_sensitive_crafting_mastery_repair",
+			"force_sensitive_crafting_mastery_technique",
+			"force_sensitive_heightened_senses_healing",
+			"force_sensitive_heightened_senses_surveying",
+			"force_sensitive_heightened_senses_persuasion",
+			"force_sensitive_heightened_senses_luck"
+		};
+	
+	for (int l = 0; l < 10; l++) {
+		String unlock_branch = unlock_branches[i];
+		player->setScreenPlayState("VillageUnlockScreenPlay:" + unlock_branch, 2);
+	}
+
 	if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
 		player->sendSystemMessage("You already have FRS skills. You must drop them before using this feature again.");
 		return;
@@ -6471,7 +6489,7 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 			"force_sensitive_enhanced_reflexes_ranged_defense",
 			"force_sensitive_enhanced_reflexes_melee_defense"
 		};
-
+	
 	for (int i = 0; i < 6; i++) {
 		String branch = branches[i];
 		player->setScreenPlayState("VillageUnlockScreenPlay:" + branch, 2);
