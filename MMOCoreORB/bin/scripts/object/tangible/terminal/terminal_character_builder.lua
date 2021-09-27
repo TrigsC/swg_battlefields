@@ -63,8 +63,21 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 		"force_sensitive_combat_prowess_ranged_speed",
 		"force_sensitive_combat_prowess_melee_accuracy",
 		"force_sensitive_combat_prowess_melee_speed",
+
 		"force_sensitive_enhanced_reflexes_ranged_defense",
-		"force_sensitive_enhanced_reflexes_melee_defense"
+		"force_sensitive_enhanced_reflexes_melee_defense",
+		"force_sensitive_enhanced_reflexes_vehicle_control",
+		"force_sensitive_enhanced_reflexes_survival",
+
+		"force_sensitive_crafting_mastery_experimentation",
+		"force_sensitive_crafting_mastery_assembly",
+		"force_sensitive_crafting_mastery_repair",
+		"force_sensitive_crafting_mastery_technique",
+		
+		"force_sensitive_heightened_senses_healing",
+		"force_sensitive_heightened_senses_surveying",
+		"force_sensitive_heightened_senses_persuasion",
+		"force_sensitive_heightened_senses_luck"
 	},
 
 	itemList = {
