@@ -2796,8 +2796,30 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				"Medpack Cure Poison A", "object/tangible/medicine/crafted/medpack_cure_poison_a.iff",
 				"Medpack Cure Poison B", "object/tangible/medicine/crafted/medpack_cure_poison_b.iff",
 				"Medpack Cure Poison Area A", "object/tangible/medicine/crafted/medpack_cure_poison_area_a.iff",
+				
+				--"Poison Health Area A", "object/tangible/medicine/crafted/medpack_poison_area_health_a.iff",
+				"Poison Health Area B", "object/tangible/medicine/crafted/medpack_poison_area_health_b.iff",
+				"Poison Health Area C", "object/tangible/medicine/crafted/medpack_poison_area_health_c.iff",
+
+				"Poison Action Area B", "object/tangible/medicine/crafted/medpack_poison_area_action_b.iff",
+				"Poison Action Area C", "object/tangible/medicine/crafted/medpack_poison_area_action_c.iff",
+				
+				
+				"Poison Mind Area B", "object/tangible/medicine/crafted/medpack_poison_area_mind_b.iff",
+				"Poison Mind Area C", "object/tangible/medicine/crafted/medpack_poison_area_mind_c.iff",
+
 				"Disease Health Area A", "object/tangible/medicine/crafted/medpack_disease_area_health_a.iff",
-				"Poison Health Area A", "object/tangible/medicine/crafted/medpack_poison_area_health_a.iff",
+				"Disease Health Area B", "object/tangible/medicine/crafted/medpack_disease_area_health_b.iff",
+				"Disease Health Area C", "object/tangible/medicine/crafted/medpack_disease_area_health_c.iff",
+
+				"Disease Action Area A", "object/tangible/medicine/crafted/medpack_disease_area_action_a.iff",
+				"Disease Action Area B", "object/tangible/medicine/crafted/medpack_disease_area_action_b.iff",
+				"Disease Action Area C", "object/tangible/medicine/crafted/medpack_disease_area_action_c.iff",
+				
+				"Disease Mind Area A", "object/tangible/medicine/crafted/medpack_disease_area_mind_a.iff",
+				"Disease Mind Area B", "object/tangible/medicine/crafted/medpack_disease_area_mind_b.iff",
+				"Disease Mind Area C", "object/tangible/medicine/crafted/medpack_disease_area_mind_c.iff",
+
 				"Medpack Blinded", "object/tangible/medicine/crafted/medpack_blinded_a.iff",
 				"Medpack Dizzy", "object/tangible/medicine/crafted/medpack_dizzy_a.iff",
 				"Medpack Intimidated", "object/tangible/medicine/crafted/medpack_intimidated_a.iff",
