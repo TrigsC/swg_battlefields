@@ -18,8 +18,7 @@ function tp_hq_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sel
 
 	-- This checks what the player has chosen and runs the code accordingly.
 	if (screenID == "back") then
-        CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
-		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
+		CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you bach to HQ!") -- Sends an on screen system message.
             -- Will need to somehow get the current pvp zone to pass here
             if (faction == FACTIONREBEL) then
                 enclaveLoc = { "corellia", -6528, 398, 5968 }
