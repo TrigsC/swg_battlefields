@@ -1583,7 +1583,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			--"Clear DOTs", "clear_dots",
 			--"Max XP", "max_xp",
 			--"Become Glowy", "become_glowy",
-			"Unlock All FS Branches", "unlock_jedi_initiate"
+			"Unlock All FS Branches", "unlock_jedi_initiate",
 			"Faction Points",
 			{
 				"Imperial", "faction_imperial",
