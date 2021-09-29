@@ -149,16 +149,34 @@ void CharacterBuilderTerminalImplementation::grantJediInitiate(CreatureObject* p
 
 	luaVillageGmCmd->callFunction();
 
-	const auto& branches = terminalTemplate->getVillageBranchUnlocks();
+	//const auto& branches = terminalTemplate->getVillageBranchUnlocks();
 
-	for (int i = 0; i < branches.size(); i++) {
-		String branch = branches.get(i);
-		player->setScreenPlayState("VillageUnlockScreenPlay:" + branch, 2);
-		skillManager->awardSkill(branch + "_04", player, true, true, true);
+	String unlock_branches[] = {
+			"force_sensitive_enhanced_reflexes_vehicle_control",
+			"force_sensitive_enhanced_reflexes_survival",
+			"force_sensitive_crafting_mastery_experimentation",
+			"force_sensitive_crafting_mastery_assembly",
+			"force_sensitive_crafting_mastery_repair",
+			"force_sensitive_crafting_mastery_technique",
+			"force_sensitive_heightened_senses_healing",
+			"force_sensitive_heightened_senses_surveying",
+			"force_sensitive_heightened_senses_persuasion",
+			"force_sensitive_heightened_senses_luck"
+		};
+	
+	for (int l = 0; l < 10; l++) {
+		String unlock_branch = unlock_branches[l];
+		player->setScreenPlayState("VillageUnlockScreenPlay:" + unlock_branch, 2);
 	}
 
-	luaVillageGmCmd = lua->createFunction("FsOutro", "completeVillageOutroFrog", 0);
-	*luaVillageGmCmd << player;
+	//for (int i = 0; i < branches.size(); i++) {
+	//	String branch = branches.get(i);
+	//	player->setScreenPlayState("VillageUnlockScreenPlay:" + branch, 2);
+	//	skillManager->awardSkill(branch + "_04", player, true, true, true);
+	//}
 
-	luaVillageGmCmd->callFunction();
+	//luaVillageGmCmd = lua->createFunction("FsOutro", "completeVillageOutroFrog", 0);
+	//*luaVillageGmCmd << player;
+
+	//luaVillageGmCmd->callFunction();
 }
