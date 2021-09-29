@@ -170,7 +170,7 @@ void CharacterBuilderTerminalImplementation::grantJediInitiate(CreatureObject* p
 			"force_sensitive_combat_prowess_melee_speed"
 		};
 	
-	for (int l = 0; l < 10; l++) {
+	for (int l = 0; l < 16; l++) {
 		String unlock_branch = unlock_branches[l];
 		player->setScreenPlayState("VillageUnlockScreenPlay:" + unlock_branch, 2);
 	}
