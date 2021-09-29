@@ -154,6 +154,8 @@ void CharacterBuilderTerminalImplementation::grantJediInitiate(CreatureObject* p
 	String unlock_branches[] = {
 			"force_sensitive_enhanced_reflexes_vehicle_control",
 			"force_sensitive_enhanced_reflexes_survival",
+			"force_sensitive_enhanced_reflexes_ranged_defense",
+			"force_sensitive_enhanced_reflexes_melee_defense",
 			"force_sensitive_crafting_mastery_experimentation",
 			"force_sensitive_crafting_mastery_assembly",
 			"force_sensitive_crafting_mastery_repair",
@@ -161,7 +163,11 @@ void CharacterBuilderTerminalImplementation::grantJediInitiate(CreatureObject* p
 			"force_sensitive_heightened_senses_healing",
 			"force_sensitive_heightened_senses_surveying",
 			"force_sensitive_heightened_senses_persuasion",
-			"force_sensitive_heightened_senses_luck"
+			"force_sensitive_heightened_senses_luck",
+			"force_sensitive_combat_prowess_ranged_accuracy",
+			"force_sensitive_combat_prowess_ranged_speed",
+			"force_sensitive_combat_prowess_melee_accuracy",
+			"force_sensitive_combat_prowess_melee_speed"
 		};
 	
 	for (int l = 0; l < 10; l++) {
