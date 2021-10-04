@@ -673,6 +673,10 @@ includeFile("warzone/warzone_spawner.lua")
 includeFile("warzone/warzone_manager.lua")
 includeFile("warzone/warzone_spawn_table.lua")
 
+--includeFile("warzone/warzone_spawner.lua")
+includeFile("warzone/theed_manager.lua")
+includeFile("warzone/theed_spawn_table.lua")
+
 --Tests
 includeFile("tests/tests.lua")
 
