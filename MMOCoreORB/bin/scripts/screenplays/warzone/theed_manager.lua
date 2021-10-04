@@ -12,6 +12,7 @@ function TheedManager.setCurrentPhaseInit()
         else
             TheedManager.setCurrentPhase(0)
 		    TheedManager.setCurrentPhaseID(0)
+        end
 		--createServerEvent(TheedManager.WARZONE_PHASE_DURATION, "TheedManager", "switchToNextPhase", "TheedPhaseChange")
 	else
 		local eventID = getServerEventID("TheedPhaseChange")
