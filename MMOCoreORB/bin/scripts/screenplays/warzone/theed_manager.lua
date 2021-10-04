@@ -91,8 +91,8 @@ function TheedManager:switchToNextPhase(manualSwitch)
 	--WarzoneManager.setCurrentPhaseID(phaseID + 1)
     
 	TheedManager.setCurrentPhaseID(currentPhase)
-	--TheedManager:spawnMobiles(currentPhase)
-	--WarzoneManager:spawnSceneObjects(currentPhase, false)
+	TheedManager:spawnMobiles(currentPhase)
+	TheedManager:spawnSceneObjects(currentPhase)
 
 	-- Spawn camps going into phase 3
 	--if (currentPhase == 3) then
@@ -124,7 +124,7 @@ function TheedManager:start()
         local currentPhase = TheedManager.getCurrentPhase()
         TheedManager.setCurrentPhaseInit()
             --TheedManager:spawnMobiles(currentPhase)
-        TheedManager:spawnSceneObjects(currentPhase, true)
+        TheedManager:spawnSceneObjects(currentPhase)
             --TheedManager:createVillageMasterObject()
 
             --createNavMesh("dathomir", 5292, -4119, 210, true, "village_township")
@@ -183,7 +183,7 @@ function TheedManager:despawnMobiles(currentPhase)
 	end
 end
 
-function TheedManager:spawnSceneObjects(currentPhase, spawnStaticObjects)
+function TheedManager:spawnSceneObjects(currentPhase)
 	if (spawnStaticObjects == true) then
 		local objectTable = theedObjectSpawns[0]
 		foreach(objectTable, function(sceneObject)
@@ -196,10 +196,8 @@ function TheedManager:spawnSceneObjects(currentPhase, spawnStaticObjects)
 		local sceneObject = objectTable[i]
 		local pObject = spawnSceneObject("naboo", sceneObject[1], sceneObject[2], sceneObject[3], sceneObject[4], sceneObject[5], sceneObject[6], sceneObject[7], sceneObject[8], sceneObject[9])
 
-		if (pObject ~= nil) then
-			local objectID = SceneObject(pObject):getObjectID()
-			writeData("theed:scene:object:" .. i, objectID)
-		end
+		local objectID = SceneObject(pObject):getObjectID()
+		writeData("theed:scene:object:" .. i, objectID)
 	end
 end
 
