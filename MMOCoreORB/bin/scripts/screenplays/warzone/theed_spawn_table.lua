@@ -1,4 +1,4 @@
-villageMobileSpawns = {
+theedMobileSpawns = {
 	[0] = {
 		--{ "paemos", 5289, 78, -4149, 240, "", "" },
 	},
