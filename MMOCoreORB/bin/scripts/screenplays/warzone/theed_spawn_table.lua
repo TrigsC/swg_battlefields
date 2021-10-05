@@ -4,10 +4,12 @@ theedMobileSpawns = {
 	},
 	[1] = {
 		--{ "captain_sarguillo", 5313.9, 78.5, -4161.5, -72, "", "villageSarguilloPhase1ConvoTemplate" },
+        { "naboo", "tp_hq", 0, -5593, 6, 4083, 180, 0 }
 	},
 	[2] = {
 		--{ "captain_sarguillo", 5313.9, 78.5, -4161.5, -72, "", "villageSarguilloPhase2ConvoTemplate" },
         { "naboo", "fbase_rebel_soldier_extreme", 0, -5507, 6, 4388, 180, 0 }
+        { "naboo", "tp_hq", 0, -5329, 6, 4521, 180, 0 }
 	},
 	[3] = {
 		--{ "dageerin", 5238.25, 78.5, -4189.05, 97, "", "villageDageerinPhase3ConvoTemplate" },

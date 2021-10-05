@@ -26,7 +26,13 @@ function reb_tp_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, se
                 warzoneLoc = { "corellia", -173, 28, -4839 }
             elseif (WarzoneManager:getCurrentPhaseID() == 2) then
                 --THEED
-                warzoneLoc = { "naboo", -4584, 7, 4136 }
+                if (TheedManager:getCurrentPhaseID() == 1) then
+                    warzoneLoc = { "naboo", -5596, 6, 4080 }
+                elseif (TheedManager:getCurrentPhaseID() == 2) then
+                    warzoneLoc = { "naboo", -5339, 6, 4495 }
+                else
+                    warzoneLoc = { "naboo", -4584, 7, 4136 }
+                end
             elseif (WarzoneManager:getCurrentPhaseID() == 3) then
                 --WAYFAR
                 warzoneLoc = { "tatooine", -5071, 75, -6540 }
