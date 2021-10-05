@@ -227,7 +227,7 @@ function TheedManager:spawnMobilesPhase1()
 	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
 end
 
-function TheedManager:notifyRebelExtremeDead(pRebel_Extreme)
+function TheedManager:notifyRebelExtremeDead(pRebel_Extreme, pKiller)
 	--if (readData("spiderclancave:kiindray") == 0) then
 		--local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
 		--createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
