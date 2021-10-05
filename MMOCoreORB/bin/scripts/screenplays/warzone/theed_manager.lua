@@ -154,13 +154,6 @@ function TheedManager:despawnMobiles(currentPhase)
 end
 
 function TheedManager:spawnSceneObjects(currentPhase)
-	if (spawnStaticObjects == true) then
-		local objectTable = theedObjectSpawns[0]
-		foreach(objectTable, function(sceneObject)
-			spawnSceneObject("naboo", sceneObject[1], sceneObject[2], sceneObject[3], sceneObject[4], sceneObject[5], sceneObject[6], sceneObject[7], sceneObject[8], sceneObject[9])
-		end)
-	end
-
 	local objectTable = theedObjectSpawns[currentPhase]
 	for i = 1, #objectTable, 1 do
 		local sceneObject = objectTable[i]
@@ -180,7 +173,7 @@ function TheedManager:despawnSceneObjects(currentPhase)
 
 		if (pObject ~= nil) then
 			SceneObject(pObject):destroyObjectFromWorld()
-			deleteData("theed:npc:object:" .. i)
+			deleteData("theed:scene:object:" .. i)
 		end
 	end
 end
