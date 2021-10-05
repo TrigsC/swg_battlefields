@@ -215,6 +215,27 @@ function TheedManager:despawnSceneObjects(currentPhase)
 	end
 end
 
+function TheedManager:spawnMobiles()
+    local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
+	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
+end
+
+function TheedManager:notifyRebelExtremeDead(pRebel_Extreme)
+	--if (readData("spiderclancave:kiindray") == 0) then
+		--local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
+		--createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
+		--writeData("spiderclancave:kiindray", 1)
+    --deleteData("spiderclancave:kiindray")
+	--end
+
+	TheedManager:switchToNextPhase(true)
+end
+
+--function TheedManager:notifyRebelExtremeDead(pRebel_Extreme)
+	--deleteData("spiderclancave:kiindray")
+	--return 1
+--end
+
 registerScreenPlay("TheedManager", true)
 
 return TheedManager
