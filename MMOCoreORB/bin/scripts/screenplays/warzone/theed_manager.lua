@@ -179,7 +179,6 @@ function TheedManager:despawnSceneObjects(currentPhase)
 end
 
 function TheedManager:spawnMobilesPhase1()
-    --local objectTable = theedPhase1Kill[1]
     --local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
     local pRebel_Extreme = spawnMobile(theedPhase1Kill[1], theedPhase1Kill[2], theedPhase1Kill[3], theedPhase1Kill[4], theedPhase1Kill[5], theedPhase1Kill[6], theedPhase1Kill[7], theedPhase1Kill[8])
 	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", pRebel_Extreme)
@@ -192,10 +191,9 @@ end
 
 function TheedManager:spawnMobilesPhase2()
     if (readData("theed:rebelextreme2") == 0) then
-        local objectTable = theedPhase2_1Kill[1]
         --spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5507, 6, 4388, 180, 0)
         --local pRebel_Extreme2 = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5483, 6, 4387, 180, 0)
-        local pRebel_Extreme2 = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
+        local pRebel_Extreme2 = spawnMobile(theedPhase2_1Kill[1], theedPhase2_1Kill[2], theedPhase2_1Kill[3], theedPhase2_1Kill[4], theedPhase2_1Kill[5], theedPhase2_1Kill[6], theedPhase2_1Kill[7], theedPhase2_1Kill[8])
 	    createObserver(OBJECTDESTRUCTION, "TheedManager", "spawnMobilesPhase2_2", pRebel_Extreme2)
         writeData("theed:rebelextreme2", 1)
 	end
@@ -204,9 +202,8 @@ end
 
 function TheedManager:spawnMobilesPhase2_2(pRebel_Extreme2, pKiller)
 	if (readData("theed:rebelextreme2") == 1) then
-        local objectTable = theedPhase2_2Kill[1]
 		--local pLJS = spawnMobile("naboo", "light_jedi_sentinel", 0, -5495, 6, 4406, 180, 0)
-        local pLJS = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
+        local pLJS = spawnMobile(theedPhase2_2Kill[1], theedPhase2_2Kill[2], theedPhase2_2Kill[3], theedPhase2_2Kill[4], theedPhase2_2Kill[5], theedPhase2_2Kill[6], theedPhase2_2Kill[7], theedPhase2_2Kill[8])
 		createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyPhase2Done", pLJS)
 		writeData("theed:rebelextreme2", 2)
 	end
