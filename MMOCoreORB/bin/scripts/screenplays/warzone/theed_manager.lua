@@ -236,6 +236,7 @@ function TheedManager:notifyRebelExtremeDead(pRebel_Extreme, pKiller)
 	--end
 
 	TheedManager:switchToNextPhase(true)
+    return 1
 end
 
 --function TheedManager:notifyRebelExtremeDead(pRebel_Extreme)
