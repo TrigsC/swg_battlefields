@@ -97,6 +97,9 @@ function TheedManager:switchToNextPhase(manualSwitch)
     if(currentPhase == 1) then
         TheedManager:spawnMobilesPhase1()
     end
+    if(currentPhase == 2) then
+        TheedManager:spawnMobilesPhase2()
+    end
 
 	-- Spawn camps going into phase 3
 	--if (currentPhase == 3) then
@@ -130,6 +133,9 @@ function TheedManager:start()
             --TheedManager:spawnMobiles(currentPhase)
         if(currentPhase == 1) then
             TheedManager:spawnMobilesPhase1()
+        end
+        if(currentPhase == 2) then
+            TheedManager:spawnMobilesPhase2()
         end
         TheedManager:spawnSceneObjects(currentPhase)
             --TheedManager:createVillageMasterObject()
@@ -224,19 +230,38 @@ end
 
 function TheedManager:spawnMobilesPhase1()
     local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
-	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
+	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", pRebel_Extreme)
 end
 
-function TheedManager:notifyRebelExtremeDead(pRebel_Extreme, pKiller)
-	--if (readData("spiderclancave:kiindray") == 0) then
-		--local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
-		--createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
-		--writeData("spiderclancave:kiindray", 1)
-    --deleteData("spiderclancave:kiindray")
-	--end
-
+function TheedManager:notifyRebelExtremeDead1(pRebel_Extreme, pKiller)
 	TheedManager:switchToNextPhase(true)
     return 1
+end
+
+function TheedManager:spawnMobilesPhase2()
+    if (readData("theed:rebelextreme2") == 0) then
+        spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5507, 6, 4388, 180, 0)
+        local pRebel_Extreme2 = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5483, 6, 4387, 180, 0)
+	    createObserver(OBJECTDESTRUCTION, "TheedManager", "spawnMobilesPhase2_2", pRebel_Extreme2)
+        writeData("theed:rebelextreme2", 1)
+	end
+    return 0
+end
+
+function TheedManager:spawnMobilesPhase2_2(pRebel_Extreme2, pKiller)
+	if (readData("theed:rebelextreme2") == 1) then
+		local pLJS = spawnMobile("naboo", "light_jedi_sentinel", 0, -5495, 6, 4406, 180, 0)
+		createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyPhase2Done", pLJS)
+		writeData("theed:rebelextreme2", 2)
+	end
+
+	return 0
+end
+
+function TheedManager:notifyPhase2Done(pLJS, pKiller)
+	deleteData("theed:rebelextreme2")
+    TheedManager:switchToNextPhase(true)
+	return 1
 end
 
 --function TheedManager:notifyRebelExtremeDead(pRebel_Extreme)
