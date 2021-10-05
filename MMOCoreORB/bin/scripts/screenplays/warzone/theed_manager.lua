@@ -179,9 +179,9 @@ function TheedManager:despawnSceneObjects(currentPhase)
 end
 
 function TheedManager:spawnMobilesPhase1()
-    local objectTable = theedPhase1Kill[1]
+    --local objectTable = theedPhase1Kill[1]
     --local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
-    local pRebel_Extreme = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
+    local pRebel_Extreme = spawnMobile(theedPhase1Kill[1], theedPhase1Kill[2], theedPhase1Kill[3], theedPhase1Kill[4], theedPhase1Kill[5], theedPhase1Kill[6], theedPhase1Kill[7], theedPhase1Kill[8])
 	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", pRebel_Extreme)
 end
 

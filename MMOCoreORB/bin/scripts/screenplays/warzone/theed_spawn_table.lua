@@ -30,11 +30,7 @@ theedObjectSpawns = {
     },
 }
 
-theedPhase1Kill = {
-    [1] = {
-        { "naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0 }
-    }
-}
+theedPhase1Kill = { "naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0 }
 
 theedPhase2_1Kill = {
     [1] = {
