@@ -173,7 +173,7 @@ function TheedManager:despawnSceneObjects(currentPhase)
 
 		if (pObject ~= nil) then
 			SceneObject(pObject):destroyObjectFromWorld()
-			deleteData("theed:scene:object:" .. i)
+			deleteData("theed:npc:object:" .. i)
 		end
 	end
 end
