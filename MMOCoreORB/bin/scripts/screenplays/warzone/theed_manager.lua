@@ -94,6 +94,10 @@ function TheedManager:switchToNextPhase(manualSwitch)
 	TheedManager:spawnMobiles(currentPhase)
 	TheedManager:spawnSceneObjects(currentPhase)
 
+    if(currentPhase == 1) then
+        TheedManager:spawnMobilesPhase1()
+    end
+
 	-- Spawn camps going into phase 3
 	--if (currentPhase == 3) then
 	--	FsCounterStrike:pickPhaseCamps()
@@ -215,7 +219,7 @@ function TheedManager:despawnSceneObjects(currentPhase)
 	end
 end
 
-function TheedManager:spawnMobiles()
+function TheedManager:spawnMobilesPhase1()
     local pRebel_Extreme = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5592, 6, 4071, 174, 0)
 	createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead", pRebel_Extreme)
 end
