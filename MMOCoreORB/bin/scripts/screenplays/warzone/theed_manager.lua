@@ -128,6 +128,9 @@ function TheedManager:start()
         local currentPhase = TheedManager.getCurrentPhase()
         TheedManager.setCurrentPhaseInit()
             --TheedManager:spawnMobiles(currentPhase)
+        if(currentPhase == 1) then
+            TheedManager:spawnMobilesPhase1()
+        end
         TheedManager:spawnSceneObjects(currentPhase)
             --TheedManager:createVillageMasterObject()
 
