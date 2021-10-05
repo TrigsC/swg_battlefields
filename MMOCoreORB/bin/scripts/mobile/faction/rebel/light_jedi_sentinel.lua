@@ -22,15 +22,23 @@ light_jedi_sentinel = Creature:new {
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 0,
-	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + HERD + KILLER,
+	pvpBitmask = ATTACKABLE,
+	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
 	templates = { "light_jedi" },
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "clothing_attachments", chance = 5000000},
+				{group = "armor_attachments", chance = 5000000}
+			}
+		}
+	},
 	weapons = {"light_jedi_weapons"},
 	conversationTemplate = "",
+	reactionStf = "@npc_reaction/military",
 	attacks = merge(lightsabermaster,forcepowermaster)
 }
 
