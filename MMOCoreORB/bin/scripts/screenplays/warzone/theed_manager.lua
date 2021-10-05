@@ -128,14 +128,16 @@ function TheedManager:start()
         --local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         --if (warzoneCurrentPhase == 2) then
         Logger:log("Starting the Theed warzone Screenplay.", LT_INFO)
+        local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         local currentPhase = TheedManager.getCurrentPhase()
         TheedManager.setCurrentPhaseInit()
             --TheedManager:spawnMobiles(currentPhase)
-        if(currentPhase == 1) then
-            TheedManager:spawnMobilesPhase1()
-        end
-        if(currentPhase == 2) then
-            TheedManager:spawnMobilesPhase2()
+        if(warzoneCurrentPhase == 2) then
+            TheedManager.setCurrentPhase(1)
+		    TheedManager.setCurrentPhaseID(1)
+        else
+            TheedManager.setCurrentPhase(0)
+		    TheedManager.setCurrentPhaseID(0)
         end
         TheedManager:spawnSceneObjects(currentPhase)
             --TheedManager:createVillageMasterObject()
