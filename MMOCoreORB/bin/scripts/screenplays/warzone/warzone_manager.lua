@@ -178,6 +178,10 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
     
 	WarzoneManager.setCurrentPhaseID(currentPhase)
 	WarzoneManager:spawnMobiles(currentPhase)
+	local theedCurrentPhase = TheedManager.getCurrentPhase()
+	if(currentPhase == 2) then
+		TheedManager:setCurrentPhaseInit()
+	end
 	--WarzoneManager:spawnSceneObjects(currentPhase, false)
 
 	-- Spawn camps going into phase 3
