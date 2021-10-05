@@ -115,13 +115,13 @@ function TheedManager:start()
         if(warzoneCurrentPhase == 2) then
             TheedManager.setCurrentPhase(1)
 		    TheedManager.setCurrentPhaseID(1)
-            TheedManager:spawnMobiles(currentPhase)
+            TheedManager:spawnMobiles(1)
             TheedManager:spawnMobilesPhase1()
+            TheedManager:spawnSceneObjects(1)
         else
             TheedManager.setCurrentPhase(0)
 		    TheedManager.setCurrentPhaseID(0)
         end
-        TheedManager:spawnSceneObjects(currentPhase)
 	end
 end
 

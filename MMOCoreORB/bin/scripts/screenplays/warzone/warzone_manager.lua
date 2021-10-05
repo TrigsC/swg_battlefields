@@ -180,7 +180,11 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	WarzoneManager:spawnMobiles(currentPhase)
 	local theedCurrentPhase = TheedManager.getCurrentPhase()
 	if(currentPhase == 2) then
-		TheedManager:setCurrentPhaseInit()
+		TheedManager.setCurrentPhase(1)
+		TheedManager.setCurrentPhaseID(1)
+        TheedManager:spawnMobiles(1)
+        TheedManager:spawnMobilesPhase1()
+        TheedManager:spawnSceneObjects(1)
 	end
 	--WarzoneManager:spawnSceneObjects(currentPhase, false)
 
