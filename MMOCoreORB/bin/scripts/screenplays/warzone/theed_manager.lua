@@ -101,63 +101,27 @@ function TheedManager:switchToNextPhase(manualSwitch)
         TheedManager:spawnMobilesPhase2()
     end
 
-	-- Spawn camps going into phase 3
-	--if (currentPhase == 3) then
-	--	FsCounterStrike:pickPhaseCamps()
-	--end
-
-	--if (currentPhase == 2 or currentPhase == 3) then
-	--	VillageCommunityCrafting:createAttributeValueTables()
-	--	VillageCommunityCrafting:createProjectStatsTables()
-	--end
-
-	--WarzoneManager:createVillageMasterObject()
-
-	--if (currentPhase == 3 or currentPhase == 4) then
-	--	local pMaster = WarzoneManager:getMasterObject()
-	---	createEvent(60 * 1000, "VillageRaids", "doPhaseInit", pMaster, "")
-	--end
-
 	Logger:log("Switching theed phase to " .. currentPhase, LT_INFO)
 end
 
 function TheedManager:start()
 	if (isZoneEnabled("naboo")) then
 		
-
-        --local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
-        --if (warzoneCurrentPhase == 2) then
         Logger:log("Starting the Theed warzone Screenplay.", LT_INFO)
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         local currentPhase = TheedManager.getCurrentPhase()
         TheedManager.setCurrentPhaseInit()
-            --TheedManager:spawnMobiles(currentPhase)
+
         if(warzoneCurrentPhase == 2) then
             TheedManager.setCurrentPhase(1)
 		    TheedManager.setCurrentPhaseID(1)
+            TheedManager:spawnMobiles(currentPhase)
+            TheedManager:spawnMobilesPhase1()
         else
             TheedManager.setCurrentPhase(0)
 		    TheedManager.setCurrentPhaseID(0)
         end
         TheedManager:spawnSceneObjects(currentPhase)
-            --TheedManager:createVillageMasterObject()
-
-            --createNavMesh("dathomir", 5292, -4119, 210, true, "village_township")
-
-            --if (currentPhase == 3 or currentPhase == 4) then
-            --	local pMaster = VillageJediManagerTownship:getMasterObject()
-            --	createEvent(60 * 1000, "VillageRaids", "doPhaseInit", pMaster, "")
-
-            --	if (currentPhase == 3) then
-            --		local campList = FsCounterStrike:getPhaseCampList()
-
-            --		if (campList == nil) then
-            --			FsCounterStrike:pickPhaseCamps()
-            --		else
-            --			FsCounterStrike:spawnCamps()
-            --		end
-            --	end
-        --end
 	end
 end
 
@@ -172,15 +136,6 @@ function TheedManager:spawnMobiles(currentPhase)
         local mobileID = SceneObject(pMobile):getObjectID()
 			writeData("theed:npc:object:" .. i, mobileID)
 	end
-
-	--local mobileTable = warzoneMobileSpawns[currentPhase]
-    
-
-
-	--for i = 1, #mobileTable, 1 do
-	--	local mobile = mobileTable[i]
-	--	local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
-	--end
     
 end
 
