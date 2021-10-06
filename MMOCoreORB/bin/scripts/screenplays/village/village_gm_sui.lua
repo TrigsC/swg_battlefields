@@ -122,7 +122,7 @@ function VillageGmSui:changePhaseCallback(pPlayer, pSui, eventIndex, args)
 	end
 
 	CreatureObject(pPlayer):sendSystemMessage("Changing the Warzone from phase " .. curPhase .. " to phase " .. nextPhase .. ".")
-	WarzoneManager:switchToNextPhase(true)
+	TheedManager:switchToNextPhase(true)
 end
 
 function VillageGmSui.playerLookupByTarget(pPlayer)
