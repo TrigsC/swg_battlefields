@@ -200,7 +200,7 @@ function TheedManager:spawnMobilesPhase2()
         --local pRebel_Extreme2 = spawnMobile("naboo", "fbase_rebel_soldier_extreme", 0, -5483, 6, 4387, 180, 0)
         local pRebel_Extreme2 = spawnMobile(theedPhase2_1Kill[1], theedPhase2_1Kill[2], theedPhase2_1Kill[3], theedPhase2_1Kill[4], theedPhase2_1Kill[5], theedPhase2_1Kill[6], theedPhase2_1Kill[7], theedPhase2_1Kill[8])
 	    createObserver(OBJECTDESTRUCTION, "TheedManager", "spawnMobilesPhase2_2", pRebel_Extreme2)
-        local mobileID = SceneObject(pRebel_Extreme):getObjectID()
+        local mobileID = SceneObject(pRebel_Extreme2):getObjectID()
         writeData("theed:rebelextreme2" .. 1, mobileID)
 	end
     return 0
