@@ -211,7 +211,7 @@ function TheedManager:spawnMobilesPhase2_2(pRebel_Extreme2, pKiller)
 		--local pLJS = spawnMobile("naboo", "light_jedi_sentinel", 0, -5495, 6, 4406, 180, 0)
         local pLJS = spawnMobile(theedPhase2_2Kill[1], theedPhase2_2Kill[2], theedPhase2_2Kill[3], theedPhase2_2Kill[4], theedPhase2_2Kill[5], theedPhase2_2Kill[6], theedPhase2_2Kill[7], theedPhase2_2Kill[8])
 		createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyPhase2Done", pLJS)
-        ocal mobileID = SceneObject(pLJS):getObjectID()
+        local mobileID = SceneObject(pLJS):getObjectID()
 		writeData("theed:rebelextreme2" .. 2, pLJS)
 	end
 	return 0
