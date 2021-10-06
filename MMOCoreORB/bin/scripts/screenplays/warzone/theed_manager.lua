@@ -171,10 +171,8 @@ function TheedManager:despawnSceneObjects(currentPhase)
 		local objectID = readData("theed:scene:object:" .. i)
 		local pObject = getSceneObject(objectID)
 
-		if (pObject ~= nil) then
-			SceneObject(pObject):destroyObjectFromWorld()
-			deleteData("theed:npc:object:" .. i)
-		end
+		SceneObject(pObject):destroyObjectFromWorld()
+		deleteData("theed:npc:object:" .. i)
 	end
 end
 
