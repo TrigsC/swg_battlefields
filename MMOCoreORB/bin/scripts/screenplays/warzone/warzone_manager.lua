@@ -153,10 +153,13 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	local phaseID = WarzoneManager.getCurrentPhaseID()
 	WarzoneManager:despawnMobiles(currentPhase)
 
-	--if (currentPhase == 2) then
-	--	local theedCurrentPhase = WarzoneManager.getCurrentPhase()
-	--	TheedManager:despawnMobiles(theedCurrentPhase)
-	--	TheedManager.despawnSceneObjects(theedCurrentPhase)
+	if (currentPhase == 2) then
+		local theedCurrentPhase = WarzoneManager.getCurrentPhase()
+		TheedManager:despawnMobiles(theedCurrentPhase)
+		TheedManager.despawnSceneObjects(theedCurrentPhase)
+		TheedManager.setCurrentPhase(0)
+		TheedManager.setCurrentPhaseID(0)
+	end
 	--WarzoneManager:despawnSceneObjects(currentPhase)
 	--WarzoneManager:handlePhaseChangeActiveQuests(phaseID, currentPhase)
 	--VillageCommunityCrafting:doEndOfPhaseCheck()
@@ -183,10 +186,10 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
     
 	WarzoneManager.setCurrentPhaseID(currentPhase)
 	WarzoneManager:spawnMobiles(currentPhase)
-	local theedCurrentPhase = TheedManager.getCurrentPhase()
+	--local theedCurrentPhase = TheedManager.getCurrentPhase()
 	if(currentPhase == 2) then
-		TheedManager.despawnSceneObjects(theedCurrentPhase)
-		TheedManager:despawnMobiles(theedCurrentPhase)
+		--TheedManager.despawnSceneObjects(theedCurrentPhase)
+		--TheedManager:despawnMobiles(theedCurrentPhase)
 		TheedManager.setCurrentPhase(1)
 		TheedManager.setCurrentPhaseID(1)
         TheedManager:spawnMobiles(1)
