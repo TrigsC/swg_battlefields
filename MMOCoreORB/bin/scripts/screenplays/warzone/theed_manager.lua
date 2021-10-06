@@ -185,10 +185,10 @@ function TheedManager:spawnMobilesPhase1()
     local pRebel_Extreme = spawnMobile(theedPhase1Kill[1], theedPhase1Kill[2], theedPhase1Kill[3], theedPhase1Kill[4], theedPhase1Kill[5], theedPhase1Kill[6], theedPhase1Kill[7], theedPhase1Kill[8])
 	local mobileID = SceneObject(pRebel_Extreme):getObjectID()
 	writeData("theedphase:npc:object:" .. 1, mobileID)
-    createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", mobileID)
+    createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", pRebel_Extreme)
 end
 
-function TheedManager:notifyRebelExtremeDead1(mobileID, pKiller)
+function TheedManager:notifyRebelExtremeDead1(pRebel_Extreme, pKiller)
     deleteData("theedphase:npc:object:" .. 1)
 	TheedManager:switchToNextPhase(true)
     return 1
