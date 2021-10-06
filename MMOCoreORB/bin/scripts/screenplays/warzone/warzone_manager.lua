@@ -154,7 +154,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	WarzoneManager:despawnMobiles(currentPhase)
 
 	if (currentPhase == 2) then
-		local theedCurrentPhase = WarzoneManager.getCurrentPhase()
+		local theedCurrentPhase = TheedManager.getCurrentPhase()
 		TheedManager:despawnMobiles(theedCurrentPhase)
 		TheedManager.despawnSceneObjects(theedCurrentPhase)
 		TheedManager.setCurrentPhase(0)
