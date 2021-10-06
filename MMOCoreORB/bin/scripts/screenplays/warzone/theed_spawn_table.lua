@@ -40,8 +40,8 @@ theedObjectSpawns = {
             { "object/static/structure/general/banner_rebel_style_01.iff", -5610.357422, 6.000000, 4126.072754, 9995555, 0.999916, 0.000000, 0.012998, 0.000000 },
             { "object/static/structure/general/banner_rebel_style_01.iff", -5612.975098, 6.000000, 4083.187500, 9995555, -0.697503, -0.000001, 0.716579, -0.000001 },
             { "object/static/structure/general/banner_rebel_style_01.iff", -5615.308105, 6.000000, 4066.824219, 9995555, 0.879258, 0.000000, -0.476345, 0.000000 },
-            { "object/static/structure/general/banner_rebel_style_01.iff", -5536.790527, 6.000000, 4054.759277, 9995555, 0.710593, 0.000000, -0.703600, 0.000000 },
-            { "object/static/structure/general/banner_rebel_style_01.iff", -5536.135254, 6.000000, 4069.640625, 9995555, 0.710593, 0.000000, -0.703601, 0.000000 },
+            --{ "object/static/structure/general/banner_rebel_style_01.iff", -5536.790527, 6.000000, 4054.759277, 9995555, 0.710593, 0.000000, -0.703600, 0.000000 },
+            --{ "object/static/structure/general/banner_rebel_style_01.iff", -5536.135254, 6.000000, 4069.640625, 9995555, 0.710593, 0.000000, -0.703601, 0.000000 },
     },
     [2] = {
             { "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -5272.303223, -0.211444, 4310.262207, 9995555, 0.530207, -0.000000, 0.847868, -0.000000 },
@@ -50,8 +50,8 @@ theedObjectSpawns = {
             { "object/static/structure/general/banner_imperial_style_01.iff", -5610.357422, 6.000000, 4126.072754, 9995555, 0.999916, 0.000000, 0.012998, 0.000000 },
             { "object/static/structure/general/banner_imperial_style_01.iff", -5612.975098, 6.000000, 4083.187500, 9995555, -0.697503, -0.000001, 0.716579, -0.000001 },
             { "object/static/structure/general/banner_imperial_style_01.iff", -5615.308105, 6.000000, 4066.824219, 9995555, 0.879258, 0.000000, -0.476345, 0.000000 },
-            { "object/static/structure/general/banner_imperial_style_01.iff", -5536.790527, 6.000000, 4054.759277, 9995555, 0.710593, 0.000000, -0.703600, 0.000000 },
-            { "object/static/structure/general/banner_imperial_style_01.iff", -5536.135254, 6.000000, 4069.640625, 9995555, 0.710593, 0.000000, -0.703601, 0.000000 },
+            --{ "object/static/structure/general/banner_imperial_style_01.iff", -5536.790527, 6.000000, 4054.759277, 9995555, 0.710593, 0.000000, -0.703600, 0.000000 },
+            --{ "object/static/structure/general/banner_imperial_style_01.iff", -5536.135254, 6.000000, 4069.640625, 9995555, 0.710593, 0.000000, -0.703601, 0.000000 },
             -- rebel banner
             { "object/static/structure/general/banner_rebel_style_01.iff", -5478.069336, 6.000000, 4176.035156, 9995555, 0.999954, 0.000000, -0.009442, 0.000000 },
             { "object/static/structure/general/banner_rebel_style_01.iff", -5514.041992, 6.000000, 4176.248047, 9995555, 0.999955, 0.000000, -0.009442, 0.000000 },
