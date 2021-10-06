@@ -234,19 +234,17 @@ function TheedManager:despawnMobilesPhases(currentPhase)
 			deleteData("theedphase:npc:object:" .. 1)
 		end
     elseif (currentPhase == 2) then
+        -- 2_1
         local objectID = readData("theed:rebelextreme2" .. 1)
 		local pMobile = getSceneObject(objectID)
+        -- 2_2
+        local objectID2 = readData("theed:rebelextreme2_2" .. 1)
+		local pMobile2 = getSceneObject(objectID2)
 
 		if (pMobile ~= nil) then
 			SceneObject(pMobile):destroyObjectFromWorld()
 			deleteData("theed:rebelextreme2" .. 1)
-		end
-    elseif (currentPhase == 3) then
-        local objectID = readData("theed:rebelextreme2_2" .. 1)
-		local pMobile = getSceneObject(objectID)
-
-		if (pMobile ~= nil) then
-			SceneObject(pMobile):destroyObjectFromWorld()
+            SceneObject(pMobile2):destroyObjectFromWorld()
 			deleteData("theed:rebelextreme2_2" .. 1)
 		end
     end
