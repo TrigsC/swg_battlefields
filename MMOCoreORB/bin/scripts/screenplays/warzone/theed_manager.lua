@@ -189,6 +189,7 @@ function TheedManager:spawnMobilesPhase1()
 end
 
 function TheedManager:notifyRebelExtremeDead1(mobileID, pKiller)
+    deleteData("theedphase:npc:object:" .. 1)
 	TheedManager:switchToNextPhase(true)
     return 1
 end
@@ -207,6 +208,7 @@ end
 
 function TheedManager:spawnMobilesPhase2_2(pRebel_Extreme2, pKiller)
 	if (readData("theed:rebelextreme2") == 1) then
+        deleteData("theed:rebelextreme2" .. 1)
 		--local pLJS = spawnMobile("naboo", "light_jedi_sentinel", 0, -5495, 6, 4406, 180, 0)
         local pLJS = spawnMobile(theedPhase2_2Kill[1], theedPhase2_2Kill[2], theedPhase2_2Kill[3], theedPhase2_2Kill[4], theedPhase2_2Kill[5], theedPhase2_2Kill[6], theedPhase2_2Kill[7], theedPhase2_2Kill[8])
 		createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyPhase2Done", pLJS)
@@ -217,7 +219,7 @@ function TheedManager:spawnMobilesPhase2_2(pRebel_Extreme2, pKiller)
 end
 
 function TheedManager:notifyPhase2Done(pLJS, pKiller)
-	deleteData("theed:rebelextreme2")
+	deleteData("theed:rebelextreme2" .. 2)
     TheedManager:switchToNextPhase(true)
 	return 1
 end
