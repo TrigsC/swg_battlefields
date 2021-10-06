@@ -158,9 +158,11 @@ function TheedManager:spawnSceneObjects(currentPhase)
 	for i = 1, #objectTable, 1 do
 		local sceneObject = objectTable[i]
 		local pObject = spawnSceneObject("naboo", sceneObject[1], sceneObject[2], sceneObject[3], sceneObject[4], sceneObject[5], sceneObject[6], sceneObject[7], sceneObject[8], sceneObject[9])
-
-		local objectID = SceneObject(pObject):getObjectID()
-		writeData("theed:scene:object:" .. i, objectID)
+        
+        if (pObject ~= nil) then
+		    local objectID = SceneObject(pObject):getObjectID()
+		    writeData("theed:scene:object:" .. i, objectID)
+        end
 	end
 end
 
@@ -171,8 +173,10 @@ function TheedManager:despawnSceneObjects(currentPhase)
 		local objectID = readData("theed:scene:object:" .. i)
 		local pObject = getSceneObject(objectID)
 
-		SceneObject(pObject):destroyObjectFromWorld()
-		deleteData("theed:npc:object:" .. i)
+        if (pObject ~= nil) then
+		    SceneObject(pObject):destroyObjectFromWorld()
+		    deleteData("theed:scene:object:" .. i)
+        end
 	end
 end
 
