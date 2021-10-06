@@ -13,6 +13,13 @@ theedMobileSpawns = {
 	},
 	[3] = {
 		--{ "dageerin", 5238.25, 78.5, -4189.05, 97, "", "villageDageerinPhase3ConvoTemplate" },
+        { "naboo", "fbase_rebel_soldier", 180, -4828, 6, 4122, 290, 0 },
+        { "naboo", "fbase_rebel_soldier", 180, -4842, 6, 4101, 290, 0 },
+        { "naboo", "fbase_rebel_soldier", 180, -4829, 6, 4064, 200, 0 },
+        { "naboo", "fbase_rebel_rifleman_hard", 180, -4681, 6, 4011, 210, 0 },
+        { "naboo", "fbase_rebel_rifleman_hard", 180, -4630, 6, 4033, 210, 0 },
+        { "naboo", "fbase_rebel_soldier_extreme", 180, -4620, 6, 4085, 190, 0 },
+        { "naboo", "fbase_rebel_soldier_extreme", 180, -4596, 6, 4118, 190, 0 },
 	},
 }
 

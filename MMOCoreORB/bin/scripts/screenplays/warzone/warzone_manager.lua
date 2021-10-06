@@ -152,6 +152,11 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	local currentPhase = WarzoneManager.getCurrentPhase()
 	local phaseID = WarzoneManager.getCurrentPhaseID()
 	WarzoneManager:despawnMobiles(currentPhase)
+
+	--if (currentPhase == 2) then
+	--	local theedCurrentPhase = WarzoneManager.getCurrentPhase()
+	--	TheedManager:despawnMobiles(theedCurrentPhase)
+	--	TheedManager.despawnSceneObjects(theedCurrentPhase)
 	--WarzoneManager:despawnSceneObjects(currentPhase)
 	--WarzoneManager:handlePhaseChangeActiveQuests(phaseID, currentPhase)
 	--VillageCommunityCrafting:doEndOfPhaseCheck()
