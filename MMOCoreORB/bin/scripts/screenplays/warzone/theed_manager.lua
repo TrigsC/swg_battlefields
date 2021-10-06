@@ -169,7 +169,6 @@ end
 -- Despawn and cleanup current phase scene objects.
 function TheedManager:despawnSceneObjects(currentPhase)
 	local objectTable = theedObjectSpawns[currentPhase]
-    printLuaError("Invalid mission type " .. objectTable .. " trying to get Corellian Corvette badge.")
 	for i = 1, #objectTable, 1 do
 		local objectID = readData("theed:scene:object:" .. i)
 		local pObject = getSceneObject(objectID)
@@ -186,10 +185,10 @@ function TheedManager:spawnMobilesPhase1()
     local pRebel_Extreme = spawnMobile(theedPhase1Kill[1], theedPhase1Kill[2], theedPhase1Kill[3], theedPhase1Kill[4], theedPhase1Kill[5], theedPhase1Kill[6], theedPhase1Kill[7], theedPhase1Kill[8])
 	local mobileID = SceneObject(pRebel_Extreme):getObjectID()
 	writeData("theedphase:npc:object:" .. 1, mobileID)
-    createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", pRebel_Extreme)
+    createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyRebelExtremeDead1", mobileID)
 end
 
-function TheedManager:notifyRebelExtremeDead1(pRebel_Extreme, pKiller)
+function TheedManager:notifyRebelExtremeDead1(mobileID, pKiller)
 	TheedManager:switchToNextPhase(true)
     return 1
 end
