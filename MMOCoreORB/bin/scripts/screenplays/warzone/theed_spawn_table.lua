@@ -25,7 +25,7 @@ theedMobileSpawns = {
 
 theedObjectSpawns = {
     [0] = {
-            
+            { "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -5537.314941, 4.508315, 4072.702393, 9995555, 0.731819, 0.000000, -0.681491, 0.000000 },
     },
 	[1] = {
             { "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -5537.314941, 4.508315, 4072.702393, 9995555, 0.731819, 0.000000, -0.681491, 0.000000 },
