@@ -14,13 +14,13 @@ function TheedManager.setCurrentPhaseInit()
 		    TheedManager:setCurrentPhaseID(0)
         end
 		--createServerEvent(TheedManager.WARZONE_PHASE_DURATION, "TheedManager", "switchToNextPhase", "TheedPhaseChange")
-	else
-		local eventID = getServerEventID("TheedPhaseChange")
+	--else
+		--local eventID = getServerEventID("TheedPhaseChange")
 
-		if (eventID == nil) then
-			TheedManager:switchToNextPhase(true)
-			return
-		end
+		--if (eventID == nil) then
+			--TheedManager:switchToNextPhase(true)
+			--return
+		--end
 	end
 end
 
@@ -28,7 +28,7 @@ function TheedManager:setCurrentPhaseID(phaseID)
 	setQuestStatus("Theed:phaseID", phaseID)
 end
 
-function TheedManager.getCurrentPhaseID()
+function TheedManager:getCurrentPhaseID()
 	local curPhase = tonumber(getQuestStatus("Theed:phaseID"))
 
 	if (curPhase == nil) then
@@ -63,8 +63,8 @@ function TheedManager:switchToNextPhase(manualSwitch)
 		manualSwitch = false
 	end
 
-	local currentPhase = TheedManager.getCurrentPhase()
-	local phaseID = TheedManager.getCurrentPhaseID()
+	local currentPhase = TheedManager:getCurrentPhase()
+	local phaseID = TheedManager:getCurrentPhaseID()
 	TheedManager:despawnMobiles(currentPhase)
 	TheedManager:despawnSceneObjects(currentPhase)
 	--WarzoneManager:handlePhaseChangeActiveQuests(phaseID, currentPhase)
@@ -109,7 +109,7 @@ function TheedManager:start()
 		
         Logger:log("Starting the Theed warzone Screenplay.", LT_INFO)
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
-        local currentPhase = TheedManager.getCurrentPhase()
+        local currentPhase = TheedManager:getCurrentPhase()
         TheedManager.setCurrentPhaseInit()
 
         if(warzoneCurrentPhase == 2) then
