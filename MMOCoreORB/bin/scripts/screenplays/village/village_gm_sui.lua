@@ -7,7 +7,7 @@ function VillageGmSui:showMainPage(pPlayer)
 		return
 	end
 
-	local curPhase = WarzoneManager:getCurrentPhase()
+	local curPhase = WarzoneManager.getCurrentPhase()
 	local phaseID = WarzoneManager:getCurrentPhaseID()
 	local nextPhaseChange = WarzoneManager.getNextPhaseChangeTime()
 	local phaseTimeLeft = self:getPhaseDuration()
@@ -114,7 +114,7 @@ function VillageGmSui:changePhaseCallback(pPlayer, pSui, eventIndex, args)
 		return
 	end
 
-	local curPhase = WarzoneManager:getCurrentPhase()
+	local curPhase = WarzoneManager.getCurrentPhase()
 	local nextPhase = curPhase + 1
 
 	if nextPhase == 5 then

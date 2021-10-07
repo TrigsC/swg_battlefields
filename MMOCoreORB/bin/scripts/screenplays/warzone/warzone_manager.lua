@@ -95,7 +95,7 @@ function WarzoneManager:setCurrentPhaseID(phaseID)
 	setQuestStatus("Warzone:phaseID", phaseID)
 end
 
-function WarzoneManager.getCurrentPhaseID()
+function WarzoneManager:getCurrentPhaseID()
 	local curPhase = tonumber(getQuestStatus("Warzone:phaseID"))
 
 	if (curPhase == nil) then
@@ -150,7 +150,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	end
 
 	local currentPhase = WarzoneManager.getCurrentPhase()
-	local phaseID = WarzoneManager.getCurrentPhaseID()
+	local phaseID = WarzoneManager:getCurrentPhaseID()
 	WarzoneManager:despawnMobiles(currentPhase)
 
 	if (currentPhase == 2) then
@@ -189,7 +189,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	WarzoneManager:setCurrentPhaseID(currentPhase)
 	WarzoneManager:spawnMobiles(currentPhase)
 	if(currentPhase == 2) then
-		--TheedManager.despawnSceneObjects(theedCurrentPhase)
+		--TheedManager:despawnSceneObjects(theedCurrentPhase)
 		--TheedManager:despawnMobiles(theedCurrentPhase)
 		TheedManager:setCurrentPhase(1)
 		TheedManager:setCurrentPhaseID(1)
