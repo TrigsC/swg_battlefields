@@ -214,7 +214,7 @@ function TheedManager:spawnMobilesPhase2_2(pRebel_Extreme2, pKiller)
         local pLJS = spawnMobile(theedPhase2_2Kill[1], theedPhase2_2Kill[2], theedPhase2_2Kill[3], theedPhase2_2Kill[4], theedPhase2_2Kill[5], theedPhase2_2Kill[6], theedPhase2_2Kill[7], theedPhase2_2Kill[8])
 		createObserver(OBJECTDESTRUCTION, "TheedManager", "notifyPhase2Done", pLJS)
         local mobileID = SceneObject(pLJS):getObjectID()
-		writeData("theedphase2_2:npc:object:" .. 1, pLJS)
+		writeData("theedphase2_2:npc:object:" .. 1, mobileID)
 	end
 	return 0
 end
