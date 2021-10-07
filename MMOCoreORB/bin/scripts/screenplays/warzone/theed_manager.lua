@@ -242,13 +242,14 @@ function TheedManager:despawnMobilesPhases(currentPhase)
         local objectID2 = readData("theedphase2_2:npc:object:" .. 1)
 		local pMobile2 = getSceneObject(objectID2)
 
-		--if (pMobile ~= nil) then
+		if (pMobile ~= nil) then
 			SceneObject(pMobile):destroyObjectFromWorld()
 			deleteData("theedphase2:npc:object:".. 1)
-
+        end
+        if (pMobile2 ~= nil) then
             SceneObject(pMobile2):destroyObjectFromWorld()
 			deleteData("theedphase2_2:npc:object:" .. 1)
-		--end
+		end
     end
 end
 
