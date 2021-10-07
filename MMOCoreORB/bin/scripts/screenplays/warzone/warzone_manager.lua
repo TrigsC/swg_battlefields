@@ -158,7 +158,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		printf("theedCurrentPhaseID = " .. theedCurrentPhase)
 		TheedManager:despawnMobiles(theedCurrentPhase)
 		TheedManager:despawnMobilesPhases(theedCurrentPhase)
-		TheedManager.despawnSceneObjects(theedCurrentPhase)
+		TheedManager.despawnTheedSceneObjects(theedCurrentPhase)
 		TheedManager.setCurrentPhase(0)
 		TheedManager.setCurrentPhaseID(0)
 	end
@@ -218,6 +218,21 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	--end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)
+end
+
+-- Despawn and cleanup current phase scene objects.
+function WarzoneManager:despawnTheedSceneObjects(currentPhase)
+	local objectTables = theedObjectSpawns[currentPhase]
+    --printf("objects = " .. objectTables)
+	for i = 1, #objectTables, 1 do
+		local objectID = readData("theed:scene:object:" .. i)
+		local pObject = getSceneObject(objectID)
+
+        if (pObject ~= nil) then
+		    SceneObject(pObject):destroyObjectFromWorld()
+		    deleteData("theed:scene:object:" .. i)
+        end
+	end
 end
 
 function WarzoneManager:start()
