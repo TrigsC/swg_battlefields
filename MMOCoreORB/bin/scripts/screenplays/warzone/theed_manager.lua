@@ -3,7 +3,7 @@ TheedManager = ScreenPlay:new {
 }
 
 -- Set the current Warzone Phase for the first time.
-function TheedManager.setCurrentPhaseInit()
+function TheedManager:setCurrentPhaseInit()
 	if (not hasServerEvent("TheedPhaseChange")) then
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         if (warzoneCurrentPhase == 2) then
