@@ -7,10 +7,10 @@ WarzoneManager = ScreenPlay:new {
 }
 
 -- Set the current Warzone Phase for the first time.
-function WarzoneManager.setCurrentPhaseInit()
+function WarzoneManager:setCurrentPhaseInit()
 	if (not hasServerEvent("WarzonePhaseChange")) then
-		WarzoneManager.setCurrentPhase(1)
-		WarzoneManager.setCurrentPhaseID(1)
+		WarzoneManager:setCurrentPhase(1)
+		WarzoneManager:setCurrentPhaseID(1)
 		WarzoneManager.setLastPhaseChangeTime(os.time())
 		createServerEvent(WarzoneManager.WARZONE_PHASE_DURATION, "WarzoneManager", "switchToNextPhase", "WarzonePhaseChange")
 	else
@@ -91,7 +91,7 @@ function WarzoneManager.getLastPhaseChangeTime()
 	return lastChange
 end
 
-function WarzoneManager.setCurrentPhaseID(phaseID)
+function WarzoneManager:setCurrentPhaseID(phaseID)
 	setQuestStatus("Warzone:phaseID", phaseID)
 end
 
@@ -106,7 +106,7 @@ function WarzoneManager.getCurrentPhaseID()
 end
 
 -- Set the current Warzone Phase.
-function WarzoneManager.setCurrentPhase(nextPhase)
+function WarzoneManager:setCurrentPhase(nextPhase)
 	setQuestStatus("Warzone:CurrentPhase", nextPhase)
 end
 
@@ -154,13 +154,13 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	WarzoneManager:despawnMobiles(currentPhase)
 
 	if (currentPhase == 2) then
-		local theedCurrentPhase = tonumber(TheedManager.getCurrentPhaseID())
+		local theedCurrentPhase = tonumber(TheedManager:getCurrentPhaseID())
 		printf("theedCurrentPhaseID = " .. theedCurrentPhase)
 		TheedManager:despawnMobiles(theedCurrentPhase)
 		TheedManager:despawnMobilesPhases(theedCurrentPhase)
-		TheedManager.despawnTheedSceneObjects(theedCurrentPhase)
-		TheedManager.setCurrentPhase(0)
-		TheedManager.setCurrentPhaseID(0)
+		TheedManager:despawnSceneObjects(theedCurrentPhase)
+		TheedManager:setCurrentPhase(0)
+		TheedManager:setCurrentPhaseID(0)
 	end
 	--WarzoneManager:despawnSceneObjects(currentPhase)
 	--WarzoneManager:handlePhaseChangeActiveQuests(phaseID, currentPhase)
@@ -183,17 +183,17 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		currentPhase = 1
 	end
 
-	WarzoneManager.setCurrentPhase(currentPhase)
-	--WarzoneManager.setCurrentPhaseID(phaseID + 1)
+	WarzoneManager:setCurrentPhase(currentPhase)
+	--WarzoneManager:setCurrentPhaseID(phaseID + 1)
     
-	WarzoneManager.setCurrentPhaseID(currentPhase)
+	WarzoneManager:setCurrentPhaseID(currentPhase)
 	WarzoneManager:spawnMobiles(currentPhase)
 	--local theedCurrentPhase = TheedManager.getCurrentPhase()
 	if(currentPhase == 2) then
 		--TheedManager.despawnSceneObjects(theedCurrentPhase)
 		--TheedManager:despawnMobiles(theedCurrentPhase)
-		TheedManager.setCurrentPhase(1)
-		TheedManager.setCurrentPhaseID(1)
+		TheedManager:setCurrentPhase(1)
+		TheedManager:setCurrentPhaseID(1)
         TheedManager:spawnMobiles(1)
         TheedManager:spawnMobilesPhase1()
         TheedManager:spawnSceneObjects(1)
@@ -218,21 +218,6 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	--end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)
-end
-
--- Despawn and cleanup current phase scene objects.
-function WarzoneManager:despawnTheedSceneObjects(currentPhase)
-	local objectTables = theedObjectSpawns[currentPhase]
-    --printf("objects = " .. objectTables)
-	for i = 1, #objectTables, 1 do
-		local objectID = readData("theed:scene:object:" .. i)
-		local pObject = getSceneObject(objectID)
-
-        if (pObject ~= nil) then
-		    SceneObject(pObject):destroyObjectFromWorld()
-		    deleteData("theed:scene:object:" .. i)
-        end
-	end
 end
 
 function WarzoneManager:start()

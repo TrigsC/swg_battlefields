@@ -7,11 +7,11 @@ function TheedManager.setCurrentPhaseInit()
 	if (not hasServerEvent("TheedPhaseChange")) then
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         if (warzoneCurrentPhase == 2) then
-		    TheedManager.setCurrentPhase(1)
-		    TheedManager.setCurrentPhaseID(1)
+		    TheedManager:setCurrentPhaseID(1)
+		    TheedManager:setCurrentPhaseID(1)
         else
-            TheedManager.setCurrentPhase(0)
-		    TheedManager.setCurrentPhaseID(0)
+            TheedManager:setCurrentPhaseID(0)
+		    TheedManager:setCurrentPhaseID(0)
         end
 		--createServerEvent(TheedManager.WARZONE_PHASE_DURATION, "TheedManager", "switchToNextPhase", "TheedPhaseChange")
 	else
@@ -24,7 +24,7 @@ function TheedManager.setCurrentPhaseInit()
 	end
 end
 
-function TheedManager.setCurrentPhaseID(phaseID)
+function TheedManager:setCurrentPhaseID(phaseID)
 	setQuestStatus("Theed:phaseID", phaseID)
 end
 
@@ -44,11 +44,11 @@ function TheedManager.getCurrentPhaseID()
 end
 
 -- Set the current Theed Phase.
-function TheedManager.setCurrentPhase(nextPhase)
+function TheedManager:setCurrentPhase(nextPhase)
 	setQuestStatus("Theed:CurrentPhase", nextPhase)
 end
 
-function TheedManager.getCurrentPhase()
+function TheedManager:getCurrentPhase()
 	local curPhase = tonumber(getQuestStatus("Theed:CurrentPhase"))
 
 	if (curPhase == nil) then
@@ -87,10 +87,10 @@ function TheedManager:switchToNextPhase(manualSwitch)
 		currentPhase = 3
 	end
 
-	TheedManager.setCurrentPhase(currentPhase)
-	--WarzoneManager.setCurrentPhaseID(phaseID + 1)
+	TheedManager:setCurrentPhase(currentPhase)
+	--WarzoneManager:setCurrentPhaseID(phaseID + 1)
     
-	TheedManager.setCurrentPhaseID(currentPhase)
+	TheedManager:setCurrentPhaseID(currentPhase)
 	TheedManager:spawnMobiles(currentPhase)
 	TheedManager:spawnSceneObjects(currentPhase)
 
@@ -113,14 +113,14 @@ function TheedManager:start()
         TheedManager.setCurrentPhaseInit()
 
         if(warzoneCurrentPhase == 2) then
-            TheedManager.setCurrentPhase(1)
-		    TheedManager.setCurrentPhaseID(1)
+            TheedManager:setCurrentPhaseID(1)
+		    TheedManager:setCurrentPhaseID(1)
             TheedManager:spawnMobiles(1)
             TheedManager:spawnMobilesPhase1()
             TheedManager:spawnSceneObjects(1)
         else
-            TheedManager.setCurrentPhase(0)
-		    TheedManager.setCurrentPhaseID(0)
+            TheedManager:setCurrentPhaseID(0)
+		    TheedManager:setCurrentPhaseID(0)
         end
 	end
 end
