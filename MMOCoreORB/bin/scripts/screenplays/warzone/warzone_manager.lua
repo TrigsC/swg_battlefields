@@ -154,7 +154,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	WarzoneManager:despawnMobiles(currentPhase)
 
 	if (currentPhase == 2) then
-		local theedCurrentPhase = TheedManager.getCurrentPhaseID()
+		local theedCurrentPhase = tonumber(TheedManager.getCurrentPhaseID())
 		printf("theedCurrentPhaseID = " .. theedCurrentPhase)
 		TheedManager:despawnMobiles(theedCurrentPhase)
 		TheedManager:despawnMobilesPhases(theedCurrentPhase)
