@@ -169,7 +169,7 @@ end
 -- Despawn and cleanup current phase scene objects.
 function TheedManager:despawnSceneObjects(currentPhase)
 	local objectTables = theedObjectSpawns[currentPhase]
-    printf("objects = " .. objectTables)
+    --printf("objects = " .. objectTables)
 	for i = 1, #objectTables, 1 do
 		local objectID = readData("theed:scene:object:" .. i)
 		local pObject = getSceneObject(objectID)
