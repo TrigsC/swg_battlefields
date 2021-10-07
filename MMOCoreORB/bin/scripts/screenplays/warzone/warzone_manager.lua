@@ -162,20 +162,6 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		TheedManager:setCurrentPhase(0)
 		TheedManager:setCurrentPhaseID(0)
 	end
-	--WarzoneManager:despawnSceneObjects(currentPhase)
-	--WarzoneManager:handlePhaseChangeActiveQuests(phaseID, currentPhase)
-	--VillageCommunityCrafting:doEndOfPhaseCheck()
-	--VillageCommunityCrafting:doEndOfPhasePrizes()
-	--VillageJediManagerTownship:destroyVillageMasterObject()
-
-	-- Despawn camps going into phase 4
-	--if (currentPhase == 3) then
-	--	FsCounterStrike:despawnAllCamps()
-	--end
-
-	--if (currentPhase == 3 or currentPhase == 4) then
-	--	VillageRaids:despawnTurrets()
-	--end
 
 	currentPhase = currentPhase + 1
 
@@ -197,24 +183,6 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         TheedManager:spawnMobilesPhase1()
         TheedManager:spawnSceneObjects(1)
 	end
-	--WarzoneManager:spawnSceneObjects(currentPhase, false)
-
-	-- Spawn camps going into phase 3
-	--if (currentPhase == 3) then
-	--	FsCounterStrike:pickPhaseCamps()
-	--end
-
-	--if (currentPhase == 2 or currentPhase == 3) then
-	--	VillageCommunityCrafting:createAttributeValueTables()
-	--	VillageCommunityCrafting:createProjectStatsTables()
-	--end
-
-	--WarzoneManager:createVillageMasterObject()
-
-	--if (currentPhase == 3 or currentPhase == 4) then
-	--	local pMaster = WarzoneManager:getMasterObject()
-	---	createEvent(60 * 1000, "VillageRaids", "doPhaseInit", pMaster, "")
-	--end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)
 end
@@ -224,27 +192,8 @@ function WarzoneManager:start()
 		Logger:log("Starting the Warzone Township Screenplay.", LT_INFO)
 
 		local currentPhase = WarzoneManager.getCurrentPhase()
-		WarzoneManager.setCurrentPhaseInit()
+		WarzoneManager:setCurrentPhaseInit()
 		WarzoneManager:spawnMobiles(currentPhase)
-		--WarzoneManager:spawnSceneObjects(currentPhase, true)
-		--WarzoneManager:createVillageMasterObject()
-
-		--createNavMesh("dathomir", 5292, -4119, 210, true, "village_township")
-
-		--if (currentPhase == 3 or currentPhase == 4) then
-		--	local pMaster = VillageJediManagerTownship:getMasterObject()
-		--	createEvent(60 * 1000, "VillageRaids", "doPhaseInit", pMaster, "")
-
-		--	if (currentPhase == 3) then
-		--		local campList = FsCounterStrike:getPhaseCampList()
-
-		--		if (campList == nil) then
-		--			FsCounterStrike:pickPhaseCamps()
-		--		else
-		--			FsCounterStrike:spawnCamps()
-		--		end
-		--	end
-		--end
 	end
 end
 
@@ -259,16 +208,6 @@ function WarzoneManager:spawnMobiles(currentPhase)
         local mobileID = SceneObject(pMobile):getObjectID()
 			writeData("warzone:npc:object:" .. i, mobileID)
 	end
-
-	--local mobileTable = warzoneMobileSpawns[currentPhase]
-    
-
-
-	--for i = 1, #mobileTable, 1 do
-	--	local mobile = mobileTable[i]
-	--	local pMobile = spawnMobile(mobile[1], mobile[2], mobile[3], mobile[4], mobile[5], mobile[6], mobile[7], mobile[8])
-	--end
-    
 end
 
 -- Despawn and cleanup current phase mobiles.
