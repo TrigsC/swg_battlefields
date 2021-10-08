@@ -323,6 +323,10 @@ function WarZoneSpawner:spawnSceneObjects()
     spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -4644.739746, 4.974399, 4049.992920, 9995555, 0.978911, 0.000000, -0.204288, 0.000000)
     spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -4639.939453, 5.579536, 4082.246582, 9995555, -0.626877, -0.000001, 0.779118, -0.000001)
     spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -4644.909180, 6.000012, 4104.276855, 9995555, -0.628118, -0.000001, 0.778118, -0.000001)
+    
+    spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -5644.661133, -0.323419, 4256.747559, 9995555, 0.813009, 0.000000, 0.582251, 0.000000)
+    spawnSceneObject("naboo", "object/static/structure/naboo/wall_a1_naboo_theed_style_1.iff", -5310.085938, 0.880184, 4177.045898, 9995555, 0.876803, 0.000000, 0.480850, 0.000000)
+    
     --imp banners
     spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5829.174316, 6.000000, 4155.972656, 9995555, 0.495115, -0.000000, 0.868827, -0.000000)
     spawnSceneObject("naboo", "object/static/structure/general/banner_imperial_style_01.iff", -5839.462891, 6.000000, 4122.976563, 9995555, 0.765768, 0.000001, -0.643116, 0.000001)
