@@ -3,12 +3,23 @@ theedMobileSpawns = {
 		--{ "paemos", 5289, 78, -4149, 240, "", "" },
 	},
 	[1] = {
-		--{ "captain_sarguillo", 5313.9, 78.5, -4161.5, -72, "", "villageSarguilloPhase1ConvoTemplate" },
+		{ "naboo", "fbase_rebel_soldier", 60, -5629, 6, 4113, 0, 0 },
+        { "naboo", "fbase_rebel_soldier", 60, -5620, 6, 4113, 0, 0 },
+
         { "naboo", "tp_hq", 0, -5593, 6, 4083, 180, 0 },
 	},
 	[2] = {
 		--{ "captain_sarguillo", 5313.9, 78.5, -4161.5, -72, "", "villageSarguilloPhase2ConvoTemplate" },
         { "naboo", "fbase_rebel_soldier_extreme", 0, -5507, 6, 4388, 180, 0 },
+
+        { "naboo", "fbase_rebel_rifleman", 0, -5488, 6, 4288, 180, 0 },
+        { "naboo", "fbase_rebel_soldier", 0, -5488, 6, 4284, 180, 0 },
+        { "naboo", "fbase_rebel_soldier", 0, -5493, 6, 4284, 180, 0 },
+        { "naboo", "fbase_rebel_rifleman", 0, -5493, 6, 4287, 180, 0 },
+        { "naboo", "fbase_rebel_sergeant", 0, -5490, 6, 4281, 180, 0 },
+        { "naboo", "fbase_rebel_sharpshooter", 0, -5457, 6, 4291, 180, 0 },
+        { "naboo", "fbase_rebel_sharpshooter", 0, -5540, 6, 4289, 180, 0 },
+
         { "naboo", "tp_hq", 0, -5329, 6, 4521, 180, 0 },
 	},
 	[3] = {
