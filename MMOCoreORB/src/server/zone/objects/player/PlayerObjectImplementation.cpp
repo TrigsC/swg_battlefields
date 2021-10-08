@@ -1417,25 +1417,31 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
 	StringBuffer query;
+	StringBuffer loginMessage;
 
 	if (ghost->getLastLogout()->miliDifference() > 20020) {
 		if (playerCreature->isImperial()) {
 			playerCreature->switchZone("naboo", 2423, 292, -3915, 0);
 			query << "UPDATE characters SET faction=1 WHERE character_oid=" << playerCreature->getObjectID() << ";";
 			ServerDatabase::instance()->executeStatement(query);
+			loginMessage << "An Imperial has logged in!";
+			playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, loginMessage.toString());
 		} else if (playerCreature->isRebel()) {
 			playerCreature->switchZone("corellia", -6528, 398, 5968, 0);
 			query << "UPDATE characters SET faction=2 WHERE character_oid=" << playerCreature->getObjectID() << ";";
 			ServerDatabase::instance()->executeStatement(query);
+			loginMessage << "A Rebel has logged in!";
+			playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, loginMessage.toString());
 		} else {
 			playerCreature->setFaction(Factions::FACTIONIMPERIAL);
 			playerCreature->setFactionStatus(FactionStatus::OVERT);
 			playerCreature->switchZone("naboo", 2423, 292, -3915, 0);
 			query << "UPDATE characters SET faction=1 WHERE character_oid=" << playerCreature->getObjectID() << ";";
 			ServerDatabase::instance()->executeStatement(query);
+			loginMessage << "An Imperial has logged in!";
+			playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, loginMessage.toString());
 		 }
 	}
-	
 }
 
 void PlayerObjectImplementation::notifyOffline() {
