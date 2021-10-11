@@ -158,9 +158,10 @@ function TheedManager:spawnSceneObjects(currentPhase)
 	for i = 1, #objectTable, 1 do
 		local sceneObject = objectTable[i]
 		local pObject = spawnSceneObject("naboo", sceneObject[1], sceneObject[2], sceneObject[3], sceneObject[4], sceneObject[5], sceneObject[6], sceneObject[7], sceneObject[8], sceneObject[9])
-        playClientEffectLoc(pObject, "clienteffect/holoemote_imperial.cef", "naboo", SceneObject(pObject):getPositionX(), SceneObject(pObject):getPositionZ(), SceneObject(pObject):getPositionY(), SceneObject(pObject):getParentID())
+        
         if (pObject ~= nil) then
 		    local objectID = SceneObject(pObject):getObjectID()
+            playClientEffectLoc(SceneObject(pObject):getObjectID(), "clienteffect/holoemote_imperial.cef", "naboo", SceneObject(pObject):getPositionX(), SceneObject(pObject):getPositionZ(), SceneObject(pObject):getPositionY(), SceneObject(pObject):getParentID())
 		    writeData("theed:scene:object:" .. i, objectID)
         end
 	end
