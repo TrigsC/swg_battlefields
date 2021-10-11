@@ -175,7 +175,7 @@ function TheedManager:despawnSceneObjects(currentPhase)
 		local pObject = getSceneObject(objectID)
 
         if (pObject ~= nil) then
-            playClientEffectLoc(pObject, "clienteffect/lair_damage_heavy.cef", "naboo", SceneObject(pObject):getPositionX(), SceneObject(pObject):getPositionZ(), SceneObject(pObject):getPositionY(), SceneObject(pObject):getParentID())
+            --playClientEffectLoc(pObject, "clienteffect/lair_damage_heavy.cef", "naboo", SceneObject(pObject):getPositionX(), SceneObject(pObject):getPositionZ(), SceneObject(pObject):getPositionY(), SceneObject(pObject):getParentID())
 		    SceneObject(pObject):destroyObjectFromWorld()
 		    deleteData("theed:scene:object:" .. i)
         end
