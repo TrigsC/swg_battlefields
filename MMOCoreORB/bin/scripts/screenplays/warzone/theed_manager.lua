@@ -160,6 +160,7 @@ function TheedManager:spawnSceneObjects(currentPhase)
 		local pObject = spawnSceneObject("naboo", sceneObject[1], sceneObject[2], sceneObject[3], sceneObject[4], sceneObject[5], sceneObject[6], sceneObject[7], sceneObject[8], sceneObject[9])
         
         if (pObject ~= nil) then
+            playClientEffectLoc(pObject, "clienteffect/lair_hvy_damage_fire.cef", "naboo", sceneObject[2], sceneObject[3], sceneObject[4], 0)
 		    local objectID = SceneObject(pObject):getObjectID()
 		    writeData("theed:scene:object:" .. i, objectID)
         end
@@ -175,7 +176,6 @@ function TheedManager:despawnSceneObjects(currentPhase)
 		local pObject = getSceneObject(objectID)
 
         if (pObject ~= nil) then
-            playClientEffectLoc(pObject, "clienteffect/lair_hvy_damage_fire.cef", "naboo", -5539, 6, 4062, 0)
 		    SceneObject(pObject):destroyObjectFromWorld()
 		    deleteData("theed:scene:object:" .. i)
         end
