@@ -158,7 +158,7 @@ function TheedManager:spawnSceneObjects(currentPhase)
 	for i = 1, #objectTable, 1 do
 		local sceneObject = objectTable[i]
 		local pObject = spawnSceneObject("naboo", sceneObject[1], sceneObject[2], sceneObject[3], sceneObject[4], sceneObject[5], sceneObject[6], sceneObject[7], sceneObject[8], sceneObject[9])
-        
+        playClientEffectLoc(pObject, "clienteffect/lair_damage_heavy.cef", "naboo", sceneObject[2], sceneObject[3], sceneObject[4], 0)
         if (pObject ~= nil) then
 		    local objectID = SceneObject(pObject):getObjectID()
 		    writeData("theed:scene:object:" .. i, objectID)
@@ -175,7 +175,6 @@ function TheedManager:despawnSceneObjects(currentPhase)
 		local pObject = getSceneObject(objectID)
 
         if (pObject ~= nil) then
-            playClientEffectLoc(pObject, "clienteffect/lair_damage_heavy.cef", "naboo", SceneObject(pObject):getPositionX(), SceneObject(pObject):getPositionZ(), SceneObject(pObject):getPositionY(), SceneObject(pObject):getParentID())
 		    SceneObject(pObject):destroyObjectFromWorld()
 		    deleteData("theed:scene:object:" .. i)
         end
