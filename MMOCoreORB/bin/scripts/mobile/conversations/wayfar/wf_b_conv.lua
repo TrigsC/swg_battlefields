@@ -1,7 +1,7 @@
 wf_b_convo_template = ConvoTemplate:new {
 	initialScreen = "first_screen",
 	templateType = "Lua",
-	luaClassHandler = "wf_convo_handler",
+	luaClassHandler = "b_wf_convo_handler",
 	screens = {}
 }
 
