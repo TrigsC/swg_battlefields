@@ -678,8 +678,8 @@ includeFile("warzone/theed_manager.lua")
 includeFile("warzone/theed_spawn_table.lua")
 
 --Wayfar
-includeFile("warzone/theed_manager.lua")
-includeFile("warzone/theed_spawn_table.lua")
+includeFile("warzone/wayfar_manager.lua")
+includeFile("warzone/wayfar_spawn_table.lua")
 
 --Tests
 includeFile("tests/tests.lua")

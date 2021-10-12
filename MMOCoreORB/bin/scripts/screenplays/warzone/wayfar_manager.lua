@@ -5,22 +5,9 @@ WayfarManager = ScreenPlay:new {
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit()
 	if (not hasServerEvent("TheedPhaseChange")) then
-        local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
-        if (warzoneCurrentPhase == 3) then
-		    WayfarManager:setCurrentPhaseID(0)
-		    WayfarManager:setCurrentPhase(0)
-        else
-            WayfarManager:setCurrentPhaseID(0)
-		    WayfarManager:setCurrentPhase(0)
-        end
-		--createServerEvent(WayfarManager.WARZONE_PHASE_DURATION, "WayfarManager", "switchToNextPhase", "TheedPhaseChange")
-	--else
-		--local eventID = getServerEventID("TheedPhaseChange")
-
-		--if (eventID == nil) then
-			--WayfarManager:switchToNextPhase(true)
-			--return
-		--end
+        --local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
+		WayfarManager:setCurrentPhaseID(0)
+		WayfarManager:setCurrentPhase(0)
 	end
 end
 
