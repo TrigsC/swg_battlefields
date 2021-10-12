@@ -16,8 +16,9 @@ wayfarObjectSpawns = {
     },
     -- No Point, Imperial B
     [3] = {
-            { "object/static/structure/general/banner_imperial_style_01.iff", -5137.978516, 75.000000, -6604.126953, 9995555, -0.664596, -0.000003, 0.747203, -0.000003 },
-            { "object/tangible/event_perk/banner_tatooine_style_01.iff", -5212.590332, 75.000000, -6492.770020, 9995555, 0.719771, 0.000000, 0.694211, 0.000000 },
+            { "object/static/structure/general/banner_imperial_style_01.iff", -5212.590332, 75.000000, -6492.770020, 9995555, 0.719771, 0.000000, 0.694211, 0.000000 },
+            { "object/tangible/event_perk/banner_tatooine_style_01.iff", -5137.978516, 75.000000, -6604.126953, 9995555, -0.664596, -0.000003, 0.747203, -0.000003 },
+            
     },
     -- No Point, Rebel B
     [4] = {
