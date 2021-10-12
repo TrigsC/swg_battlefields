@@ -4,7 +4,7 @@ WayfarManager = ScreenPlay:new {
 
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit()
-	if (not hasServerEvent("TheedPhaseChange")) then
+	if (not hasServerEvent("WayfarPhaseChange")) then
         --local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
@@ -85,7 +85,9 @@ function WayfarManager:switchToNextPhase()
 	WayfarManager:despawnSceneObjects(currentPhase)
 
     local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
+    printf("APoint = " .. aPoint)
     local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
+    printf("BPoint = " .. bPoint)
 
     -- No Point, No Point
     if (aPoint == 0 and bPoint == 0) then
