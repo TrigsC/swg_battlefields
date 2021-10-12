@@ -14,7 +14,7 @@ first_screen = ConvoScreen:new {
 		{"No, more newbs to kill!", "exit_one"}
 	}
 }
-wf_imp_convo_template:addScreen(first_screen);
+wf_a_convo_template:addScreen(first_screen);
 
 exit_one = ConvoScreen:new {
 	id = "exit_one",
@@ -30,6 +30,6 @@ fight = ConvoScreen:new {
 	stopConversation = "true",
 	options = {}
 }
-wf_imp_convo_template:addScreen(fight);
+wf_a_convo_template:addScreen(fight);
 
 addConversationTemplate("wf_a_convo_template", wf_a_convo_template);
