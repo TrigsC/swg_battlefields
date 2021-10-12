@@ -24,7 +24,7 @@ function a_wf_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sele
             WayfarManager:switchToNextPhase()
         else
             CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
-            sendSystemMessage(" \\#FFFF00\\Imperials Own A!") -- Sends an on screen system message.
+            --sendSystemMessage(" \\#FFFF00\\Imperials Own A!") -- Sends an on screen system message.
             WayfarManager:switchB(1)
             WayfarManager:switchToNextPhase()
         end
