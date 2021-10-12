@@ -33,8 +33,6 @@ function WayfarManager:start()
             WayfarManager:spawnSceneObjects(0)
             WayfarManager:switchA(0)
             WayfarManager:switchB(0)
-            WayfarManager:spawnMobileA()
-            WayfarManager:spawnMobileB()
         end
 	end
 end
