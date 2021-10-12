@@ -8,10 +8,10 @@ function TheedManager:setCurrentPhaseInit()
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         if (warzoneCurrentPhase == 2) then
 		    TheedManager:setCurrentPhaseID(1)
-		    TheedManager:setCurrentPhaseID(1)
+		    TheedManager:setCurrentPhase(1)
         else
             TheedManager:setCurrentPhaseID(0)
-		    TheedManager:setCurrentPhaseID(0)
+		    TheedManager:setCurrentPhase(0)
         end
 		--createServerEvent(TheedManager.WARZONE_PHASE_DURATION, "TheedManager", "switchToNextPhase", "TheedPhaseChange")
 	--else

@@ -673,7 +673,11 @@ includeFile("warzone/warzone_spawner.lua")
 includeFile("warzone/warzone_manager.lua")
 includeFile("warzone/warzone_spawn_table.lua")
 
---includeFile("warzone/warzone_spawner.lua")
+--Theed
+includeFile("warzone/theed_manager.lua")
+includeFile("warzone/theed_spawn_table.lua")
+
+--Wayfar
 includeFile("warzone/theed_manager.lua")
 includeFile("warzone/theed_spawn_table.lua")
 
@@ -691,3 +695,7 @@ includeFile("../custom_scripts/screenplays/screenplays.lua")
 includeFile("custom_screenplays/tp/imp_tp_convo_handler.lua")
 includeFile("custom_screenplays/tp/reb_tp_convo_handler.lua")
 includeFile("custom_screenplays/tp/tp_hq_convo_handler.lua")
+
+-- wayfar convos
+includeFile("custom_screenplays/wayfar/a_wf_convo_handler.lua")
+includeFile("custom_screenplays/wayfar/b_wf_convo_handler.lua")
