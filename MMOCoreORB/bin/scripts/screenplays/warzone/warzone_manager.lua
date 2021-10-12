@@ -163,6 +163,15 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		TheedManager:setCurrentPhaseID(0)
 	end
 
+	if(currentPhase == 3) then
+		WayfarManager:despawnMobileA()
+		WayfarManager:despawnMobileB()
+		WayfarManager:setCurrentPhaseID(0)
+		WayfarManager:setCurrentPhase(0)
+		WayfarManager:switchA(0)
+		WayfarManager:switchB(0)
+	end
+
 	currentPhase = currentPhase + 1
 
 	if currentPhase > WarzoneManager.WARZONE_TOTAL_NUMBER_OF_PHASES then
@@ -182,6 +191,15 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         TheedManager:spawnMobiles(1)
         TheedManager:spawnMobilesPhase1()
         TheedManager:spawnSceneObjects(1)
+	end
+	if(currentPhase == 3) then
+		WayfarManager:setCurrentPhaseID(0)
+		WayfarManager:setCurrentPhase(0)
+        WayfarManager:spawnSceneObjects(0)
+        WayfarManager:switchA(0)
+        WayfarManager:switchB(0)
+        WayfarManager:spawnMobileA()
+        WayfarManager:spawnMobileB()
 	end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)

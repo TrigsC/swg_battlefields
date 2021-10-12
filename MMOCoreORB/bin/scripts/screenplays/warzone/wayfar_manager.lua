@@ -38,12 +38,16 @@ function WayfarManager:start()
             WayfarManager:spawnSceneObjects(0)
             WayfarManager:switchA(0)
             WayfarManager:switchB(0)
+            WayfarManager:spawnMobileA()
+            WayfarManager:spawnMobileB()
         else
             WayfarManager:setCurrentPhaseID(0)
 		    WayfarManager:setCurrentPhase(0)
             WayfarManager:spawnSceneObjects(0)
             WayfarManager:switchA(0)
             WayfarManager:switchB(0)
+            WayfarManager:spawnMobileA()
+            WayfarManager:spawnMobileB()
         end
 	end
 end
