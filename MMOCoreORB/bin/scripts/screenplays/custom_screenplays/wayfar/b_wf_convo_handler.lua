@@ -13,6 +13,7 @@ function b_wf_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sele
 
 	local screen = LuaConversationScreen(pConvScreen)
 	local screenID = screen:getScreenID()
+    local faction = CreatureObject(pPlayer):getFaction()
 
 	-- This checks what the player has chosen and runs the code accordingly.
 	if (screenID == "fight") then
