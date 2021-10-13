@@ -109,9 +109,7 @@ function WayfarManager:switchToNextPhase()
 	WayfarManager:despawnSceneObjects(currentPhase)
 
     local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
-    printf("APoint = " .. aPoint)
     local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
-    printf("BPoint = " .. bPoint)
 
     -- No Point, No Point
     if (aPoint == 0 and bPoint == 0) then
