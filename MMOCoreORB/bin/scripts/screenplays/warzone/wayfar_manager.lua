@@ -74,13 +74,14 @@ function WayfarManager:switchA(switch, faction)
     setQuestStatus("Wayfar:APoint", switch)
     if(faction ~= nil) then
         local objectID = readData("wf_a_spawn:npc:object:" .. 1)
+        local pMobile = getSceneObject(objectID)
         local broadcastTemplate = ""
         if(faction == FACTIONREBEL) then
             broadcastTemplate = "Rebels have captured A!"
-            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+            WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         else
             broadcastTemplate = "Imperials have captured A!"
-            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+            WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         end
     end
 end
@@ -89,13 +90,14 @@ function WayfarManager:switchB(switch, faction)
     setQuestStatus("Wayfar:BPoint", switch)
     if(faction ~= nil) then
         local objectID = readData("wf_b_spawn:npc:object:" .. 1)
+        local pMobile = getSceneObject(objectID)
         local broadcastTemplate = ""
         if(faction == FACTIONREBEL) then
             broadcastTemplate = "Rebels have captured B!"
-            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+            WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         else
             broadcastTemplate = "Imperials have captured B!"
-            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+            WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         end
     end
 end
@@ -215,12 +217,12 @@ function WayfarManager:despawnMobileB()
 	end
 end
 
-function WayfarManager:broadcastMessage(objectID, broadcastTemplate)
-	if (objectID == nil) then
+function WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
+	if (pMobile == nil) then
 		return
 	end
 
-	local playerTable = SceneObject(objectID):getPlayersInRange(400)
+	local playerTable = SceneObject(pMobile):getPlayersInRange(400)
 
 	if (#playerTable > 0) then
 		for i = 1, #playerTable, 1 do
