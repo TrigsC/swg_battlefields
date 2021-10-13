@@ -77,10 +77,10 @@ function WayfarManager:switchA(switch, faction)
         local pMobile = getSceneObject(objectID)
         local broadcastTemplate = ""
         if(faction == FACTIONREBEL) then
-            broadcastTemplate = "\\#FFD700 Rebels have captured A!"
+            broadcastTemplate = "\\#00ff00 Rebels have captured A!"
             WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         else
-            broadcastTemplate = "\\#FFD700 Imperials have captured A!"
+            broadcastTemplate = "\\#00ff00 Imperials have captured A!"
             WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         end
     end
@@ -93,10 +93,10 @@ function WayfarManager:switchB(switch, faction)
         local pMobile = getSceneObject(objectID)
         local broadcastTemplate = ""
         if(faction == FACTIONREBEL) then
-            broadcastTemplate = "\\#FFD700 Rebels have captured B!"
+            broadcastTemplate = "\\#00ff00 Rebels have captured B!"
             WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         else
-            broadcastTemplate = "\\#FFD700 Imperials have captured B!"
+            broadcastTemplate = "\\#00ff00 Imperials have captured B!"
             WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
         end
     end
