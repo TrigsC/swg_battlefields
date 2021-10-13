@@ -3,7 +3,7 @@ WarzoneManager = ScreenPlay:new {
 	phaseChangeTimeOfDay = { hour = 08, min = 30 }, -- Hour of day, server military time, to change the phase. Comment out to disable
 
 	--WARZONE_PHASE_DURATION = 168 * 60 * 60 * 1000 -- 7 days
-    WARZONE_PHASE_DURATION = 24 * 60 * 60 * 1000 -- 1 hour
+    WARZONE_PHASE_DURATION = 24 * 60 * 60 * 1000 -- 1 day
 }
 
 -- Set the current Warzone Phase for the first time.
@@ -163,6 +163,15 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		TheedManager:setCurrentPhaseID(0)
 	end
 
+	if(currentPhase == 3) then
+		WayfarManager:despawnMobileA()
+		WayfarManager:despawnMobileB()
+		WayfarManager:setCurrentPhaseID(0)
+		WayfarManager:setCurrentPhase(0)
+		WayfarManager:switchA(0, faction)
+		WayfarManager:switchB(0, faction)
+	end
+
 	currentPhase = currentPhase + 1
 
 	if currentPhase > WarzoneManager.WARZONE_TOTAL_NUMBER_OF_PHASES then
@@ -182,6 +191,15 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         TheedManager:spawnMobiles(1)
         TheedManager:spawnMobilesPhase1()
         TheedManager:spawnSceneObjects(1)
+	end
+	if(currentPhase == 3) then
+		WayfarManager:setCurrentPhaseID(0)
+		WayfarManager:setCurrentPhase(0)
+        WayfarManager:spawnSceneObjects(0)
+        WayfarManager:switchA(0, faction)
+        WayfarManager:switchB(0, faction)
+        WayfarManager:spawnMobileA()
+        WayfarManager:spawnMobileB()
 	end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)

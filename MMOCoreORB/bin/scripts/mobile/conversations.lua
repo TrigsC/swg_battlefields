@@ -299,3 +299,6 @@ includeFile("conversations/junk_dealer/junk_dealer_sneg_conv.lua")
 includeFile("conversations/tp/tp_imp_conv.lua")
 includeFile("conversations/tp/tp_reb_conv.lua")
 includeFile("conversations/tp/tp_hq_conv.lua")
+
+includeFile("conversations/wayfar/wf_a_conv.lua")
+includeFile("conversations/wayfar/wf_b_conv.lua")
