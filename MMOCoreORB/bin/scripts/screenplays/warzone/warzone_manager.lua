@@ -168,8 +168,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		WayfarManager:despawnMobileB()
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
-		WayfarManager:switchA(0)
-		WayfarManager:switchB(0)
+		WayfarManager:switchA(0, faction)
+		WayfarManager:switchB(0, faction)
 	end
 
 	currentPhase = currentPhase + 1
@@ -196,8 +196,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
         WayfarManager:spawnSceneObjects(0)
-        WayfarManager:switchA(0)
-        WayfarManager:switchB(0)
+        WayfarManager:switchA(0, faction)
+        WayfarManager:switchB(0, faction)
         WayfarManager:spawnMobileA()
         WayfarManager:spawnMobileB()
 	end

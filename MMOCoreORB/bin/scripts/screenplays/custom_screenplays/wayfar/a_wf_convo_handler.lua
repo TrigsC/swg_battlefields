@@ -21,12 +21,12 @@ function a_wf_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sele
             CreatureObject(pPlayer):playMusicMessage("sound/ui_xwing_target_enemy.snd")  -- Plays a sound message
             --sendSystemMessage(" \\#FFFF00\\Rebels Own A!") -- Sends an on screen system message.
 		    --CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
-            WayfarManager:switchA(2)
+            WayfarManager:switchA(2, faction)
             WayfarManager:switchToNextPhase()
         else
             CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
             --sendSystemMessage(" \\#FFFF00\\Imperials Own A!") -- Sends an on screen system message.
-            WayfarManager:switchA(1)
+            WayfarManager:switchA(1, faction)
             WayfarManager:switchToNextPhase()
         end
 	end

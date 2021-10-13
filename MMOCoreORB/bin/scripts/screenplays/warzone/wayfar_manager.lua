@@ -23,16 +23,16 @@ function WayfarManager:start()
             WayfarManager:setCurrentPhaseID(0)
 		    WayfarManager:setCurrentPhase(0)
             WayfarManager:spawnSceneObjects(0)
-            WayfarManager:switchA(0)
-            WayfarManager:switchB(0)
+            WayfarManager:switchA(0, faction)
+            WayfarManager:switchB(0, faction)
             WayfarManager:spawnMobileA()
             WayfarManager:spawnMobileB()
         else
             WayfarManager:setCurrentPhaseID(0)
 		    WayfarManager:setCurrentPhase(0)
             WayfarManager:spawnSceneObjects(0)
-            WayfarManager:switchA(0)
-            WayfarManager:switchB(0)
+            WayfarManager:switchA(0, faction)
+            WayfarManager:switchB(0, faction)
         end
 	end
 end
@@ -70,12 +70,34 @@ function WayfarManager:getCurrentPhase()
 	return curPhase
 end
 
-function WayfarManager:switchA(switch)
+function WayfarManager:switchA(switch, faction)
     setQuestStatus("Wayfar:APoint", switch)
+    if(faction ~= nil) then
+        local objectID = readData("wf_a_spawn:npc:object:" .. 1)
+        local broadcastTemplate = ""
+        if(faction == FACTIONREBEL) then
+            broadcastTemplate = "Rebels have captured A!"
+            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+        else
+            broadcastTemplate = "Imperials have captured A!"
+            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+        end
+    end
 end
 
-function WayfarManager:switchB(switch)
+function WayfarManager:switchB(switch, faction)
     setQuestStatus("Wayfar:BPoint", switch)
+    if(faction ~= nil) then
+        local objectID = readData("wf_b_spawn:npc:object:" .. 1)
+        local broadcastTemplate = ""
+        if(faction == FACTIONREBEL) then
+            broadcastTemplate = "Rebels have captured B!"
+            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+        else
+            broadcastTemplate = "Imperials have captured B!"
+            WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+        end
+    end
 end
 
 function WayfarManager:switchToNextPhase()
@@ -131,7 +153,7 @@ function WayfarManager:switchToNextPhase()
 
 	WayfarManager:spawnSceneObjects(currentPhase)
 
-	Logger:log("Switching theed phase to " .. currentPhase, LT_INFO)
+	Logger:log("Switching wayfar phase to " .. currentPhase, LT_INFO)
 end
 
 function WayfarManager:spawnSceneObjects(currentPhase)
@@ -190,6 +212,24 @@ function WayfarManager:despawnMobileB()
 	if (pMobile ~= nil) then
 		SceneObject(pMobile):destroyObjectFromWorld()
 		deleteData("wf_b_spawn:npc:object:" .. 1)
+	end
+end
+
+function WayfarManager:broadcastMessage(objectID, broadcastTemplate)
+	if (objectID == nil) then
+		return
+	end
+
+	local playerTable = SceneObject(objectID):getPlayersInRange(400)
+
+	if (#playerTable > 0) then
+		for i = 1, #playerTable, 1 do
+			local pPlayer = playerTable[i]
+
+			if (pPlayer ~= nil and broadcastTemplate ~= nil) then
+				CreatureObject(pPlayer):sendSystemMessage(broadcastTemplate)
+			end
+		end
 	end
 end
 
