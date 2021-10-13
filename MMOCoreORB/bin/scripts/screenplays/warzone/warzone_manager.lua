@@ -3,7 +3,7 @@ WarzoneManager = ScreenPlay:new {
 	phaseChangeTimeOfDay = { hour = 08, min = 30 }, -- Hour of day, server military time, to change the phase. Comment out to disable
 
 	--WARZONE_PHASE_DURATION = 168 * 60 * 60 * 1000 -- 7 days
-    WARZONE_PHASE_DURATION = 24 * 60 * 60 * 1000 -- 1 hour
+    WARZONE_PHASE_DURATION = 24 * 60 * 60 * 1000 -- 1 day
 }
 
 -- Set the current Warzone Phase for the first time.
