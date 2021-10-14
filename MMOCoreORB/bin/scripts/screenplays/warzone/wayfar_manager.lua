@@ -1,14 +1,96 @@
 WayfarManager = ScreenPlay:new {
 	--THEED_TOTAL_NUMBER_OF_PHASES = 4,
+    WAYFAR_RESET_TIME = 1 * 60 * 60 * 1000 -- 1 hour
+    WAYFAR_TICKER = 1 * 60 * 1000 -- 1 minute
 }
 
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit()
 	if (not hasServerEvent("WayfarPhaseChange")) then
-        --local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
+        local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
+        if (warzoneCurrentPhase == 3) then
+            WayfarManager:setLastPhaseChangeTime(os.time())
+            createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
+        else
+            local eventID = getServerEventID("WayfarPhaseChange")
+
+            if (eventID == nil) then
+                WayfarManager:switchToNextPhase()
+                return
+            end
+    
+            local eventTimeLeft = getServerEventTimeLeft(eventID)
+    
+            if (eventTimeLeft == nil) then
+                WayfarManager:switchToNextPhase()
+                return
+            end
+    
+            if (eventTimeLeft < 0) then
+                return
+            end
+    
+            -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
+            local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
+    
+            if (lastChange ~= nil and lastChange ~= 0) then
+                return
+            end
+    
+            WayfarManager.setLastPhaseChangeTime(os.time())
+    
+            local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+    
+            rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+        end
+
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
 	end
+end
+
+function WayfarManager:setLastPhaseChangeTime(time)
+	setQuestStatus("Wayfar:lastPhaseChangeTime", time)
+end
+
+function WayfarManager.getLastPhaseChangeTime()
+	local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
+
+	if (lastChange == nil) then
+		lastChange = os.time()
+		setQuestStatus("Wayfar:lastPhaseChangeTime", lastChange)
+	end
+
+	return lastChange
+end
+
+function WayfarManager:getWayfarPhaseDuration()
+	return WayfarManager.WAYFAR_RESET_TIME
+end
+
+function WayfarManager:getNextPhaseChangeTime(includePast)
+	local lastPhaseChange = WayfarManager:getLastPhaseChangeTime()
+	local nextPhaseChange = lastPhaseChange + (WayfarManager:getWayfarPhaseDuration() / 1000)
+
+	local timeTable = os.date("*t", nextPhaseChange)
+	local disregardTimeOfDay = WayfarManager.getWayfarPhaseDuration() < (1 * 60 * 60 * 1000)
+
+	--if (WayfarManager.phaseChangeTimeOfDay ~= nil) then
+	--	if (disregardTimeOfDay) then
+	--		printf("WayfarManager:getNextPhaseChangeTime disregarding phaseChangeTimeOfDay due to a phase duration under 1 hour.\n")
+	--	else
+	--		timeTable.hour = WayfarManager.phaseChangeTimeOfDay.hour
+	--		timeTable.min = WayfarManager.phaseChangeTimeOfDay.min
+	--		timeTable.sec = 0
+	--	end
+	--end
+	local returnTime = os.time(timeTable)
+
+	if (returnTime < os.time() and not includePast and not disregardTimeOfDay) then
+		returnTime = returnTime + 3600 -- If the time was modified by phaseChangeTimeOfDay and ended up being in the past, push it forward by 1 hour
+	end
+
+	return returnTime
 end
 
 function WayfarManager:start()
@@ -103,6 +185,16 @@ function WayfarManager:switchB(switch, faction)
 end
 
 function WayfarManager:switchToNextPhase()
+
+    local nextPhaseChange = WarzoneManager.getNextPhaseChangeTime(true)
+    WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
+    local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+
+    if (hasServerEvent("WayfarPhaseChange")) then
+		rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+	else
+		createServerEvent(timeToSchedule, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
+	end
 
 	local currentPhase = WayfarManager:getCurrentPhase()
 	--local phaseID = WayfarManager:getCurrentPhaseID()
