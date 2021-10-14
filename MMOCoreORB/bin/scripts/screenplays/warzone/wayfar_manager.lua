@@ -1,7 +1,7 @@
 WayfarManager = ScreenPlay:new {
 	--THEED_TOTAL_NUMBER_OF_PHASES = 4,
-    WAYFAR_RESET_TIME = 1 * 60 * 60 * 1000 -- 1 hour
-    WAYFAR_TICKER = 1 * 60 * 1000 -- 1 minute
+    WAYFAR_RESET_TIME = 1 * 60 * 60 * 1000, -- 1 hour
+    WAYFAR_TICKER = 1 * 60 * 1000, -- 1 minute
 }
 
 -- Set the current Warzone Phase for the first time.
