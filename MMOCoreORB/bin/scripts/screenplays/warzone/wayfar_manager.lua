@@ -33,43 +33,43 @@ function WayfarManager:pointsWayfar()
     local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
     if (aPoint == 1) then
         if (readData("wayfar:tick:imperial:") == 0) then
-            writeData("wayfar:tick:imperial:" .. point)
+            writeData("wayfar:tick:imperial:", point)
         else
-            local tickImperial = readData("wayfar:tick:imperial:" .. 1)
+            local tickImperial = readData("wayfar:tick:imperial:")
             tickImperial = tickImperial + point
-            writeData("wayfar:tick:imperial:" .. tickImperial)
+            writeData("wayfar:tick:imperial:", tickImperial)
         end
     elseif (aPoint == 2) then
         if (readData("wayfar:tick:rebel:") == 0) then
-            writeData("wayfar:tick:rebel:" .. point)
+            writeData("wayfar:tick:rebel:", point)
         else
-            local tickRebel = readData("wayfar:tick:rebel:" .. 1)
+            local tickRebel = readData("wayfar:tick:rebel:")
             tickRebel = tickRebel + point
-            writeData("wayfar:tick:rebel:" .. tickRebel)
+            writeData("wayfar:tick:rebel:", tickRebel)
         end
     end
     if (bPoint == 1) then
         if (readData("wayfar:tick:imperial:") == 0) then
-            writeData("wayfar:tick:imperial:" .. point)
+            writeData("wayfar:tick:imperial:", point)
         else
-            local tickImperial = readData("wayfar:tick:imperial:" .. 1)
+            local tickImperial = readData("wayfar:tick:imperial:")
             tickImperial = tickImperial + point
-            writeData("wayfar:tick:imperial:" .. tickImperial)
+            writeData("wayfar:tick:imperial:", tickImperial)
         end
     elseif (bPoint == 2) then
         if (readData("wayfar:tick:rebel:") == 0) then
-            writeData("wayfar:tick:rebel:" .. point)
+            writeData("wayfar:tick:rebel:", point)
         else
-            local tickRebel = readData("wayfar:tick:rebel:" .. 1)
+            local tickRebel = readData("wayfar:tick:rebel:")
             tickRebel = tickRebel + point
-            writeData("wayfar:tick:rebel:" .. tickRebel)
+            writeData("wayfar:tick:rebel:", tickRebel)
         end
     end
     -- broadcast results
-    local objectID = readData("wf_a_spawn:npc:object:" .. 1)
+    local objectID = readData("wf_a_spawn:npc:object:")
     local pMobile = getSceneObject(objectID)
-    local rebelPoints = readData("wayfar:tick:rebel:" .. 1)
-    local imperialPoints = readData("wayfar:tick:imperial:" .. 1)
+    local rebelPoints = readData("wayfar:tick:rebel:")
+    local imperialPoints = readData("wayfar:tick:imperial:")
     local broadcastTemplate = ""
     broadcastTemplate = "    Imperials: ".. imperialPoints .. "    Rebels: " .. rebelPoints
     WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
