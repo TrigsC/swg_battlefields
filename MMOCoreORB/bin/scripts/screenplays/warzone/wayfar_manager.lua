@@ -13,6 +13,8 @@ function WayfarManager:resetWayfar()
     WayfarManager:spawnSceneObjects(0)
     WayfarManager:switchA(0, faction)
     WayfarManager:switchB(0, faction)
+    deleteData("wayfar:tick:imperial:")
+    deleteData("wayfar:tick:rebel:")
 
     WayfarManager:setLastPhaseChangeTime(os.time())
     local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
@@ -33,10 +35,13 @@ function WayfarManager:pointsWayfar()
     local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
     if (aPoint == 1) then
         if (readData("wayfar:tick:imperial:") == 0) then
+            printf("imp == 0")
             writeData("wayfar:tick:imperial:", point)
+            printf("imp == " .. point)
         else
             local tickImperial = readData("wayfar:tick:imperial:")
             tickImperial = tickImperial + point
+            printf("imp == " .. tickImperial)
             writeData("wayfar:tick:imperial:", tickImperial)
         end
     elseif (aPoint == 2) then
