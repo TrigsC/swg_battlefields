@@ -31,12 +31,13 @@ function WayfarManager:setCurrentPhaseInit()
     
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
         local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
+        printf("WAYFAR lastChange = " .. lastChange)
     
         if (lastChange ~= nil and lastChange ~= 0) then
             return
         end
     
-        WayfarManager.setLastPhaseChangeTime(os.time())
+        WayfarManager:setLastPhaseChangeTime(os.time())
     
         local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
     
