@@ -20,8 +20,8 @@ function WayfarManager:resetWayfar()
     
     rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 
-    WayfarManager:setLastPhaseTickerTime(os.time())
-    local timeToSchedule2 = (WayfarManager:getNextPhaseTickerTime(false) - os.time()) * 1000
+    WayfarManager:setLastTickerChangeTime(os.time())
+    local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
     printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
     
     rescheduleServerEvent("WayfarTick", timeToSchedule2)
@@ -137,7 +137,7 @@ function WayfarManager:setCurrentPhaseInit()
         end
     
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
-        local lastChange2 = tonumber(getQuestStatus("Wayfar:lastPhaseTickerTime"))
+        local lastChange2 = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
         printf("WAYFAR lastChange = " .. lastChange2)
     
         --if (lastChange ~= nil and lastChange ~= 0) then
