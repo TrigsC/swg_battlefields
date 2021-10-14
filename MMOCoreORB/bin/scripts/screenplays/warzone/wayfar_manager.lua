@@ -73,7 +73,7 @@ function WayfarManager:getNextPhaseChangeTime(includePast)
 	local nextPhaseChange = lastPhaseChange + (WayfarManager:getWayfarPhaseDuration() / 1000)
 
 	local timeTable = os.date("*t", nextPhaseChange)
-	local disregardTimeOfDay = WayfarManager.getWayfarPhaseDuration() < (1 * 60 * 60 * 1000)
+	local disregardTimeOfDay = WayfarManager:getWayfarPhaseDuration() < (1 * 60 * 60 * 1000)
 
 	--if (WayfarManager.phaseChangeTimeOfDay ~= nil) then
 	--	if (disregardTimeOfDay) then
@@ -99,7 +99,7 @@ function WayfarManager:start()
         Logger:log("Starting the Wayfar warzone Screenplay.", LT_INFO)
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         local currentPhase = WayfarManager:getCurrentPhase()
-        WayfarManager.setCurrentPhaseInit()
+        WayfarManager:setCurrentPhaseInit()
 
         if(warzoneCurrentPhase == 3) then
             WayfarManager:setCurrentPhaseID(0)
