@@ -5,6 +5,9 @@ WayfarManager = ScreenPlay:new {
 }
 
 function WayfarManager:resetWayfar()
+
+    local currentPhase = WayfarManager:getCurrentPhase()
+    WayfarManager:despawnSceneObjects(currentPhase)
     WayfarManager:setCurrentPhaseID(0)
 	WayfarManager:setCurrentPhase(0)
     WayfarManager:spawnSceneObjects(0)
