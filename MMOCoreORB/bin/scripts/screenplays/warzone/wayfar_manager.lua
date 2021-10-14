@@ -184,7 +184,7 @@ end
 
 function WayfarManager:switchToNextPhase()
 
-    local nextPhaseChange = WarzoneManager.getNextPhaseChangeTime(true)
+    local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
     WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
     local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
 
