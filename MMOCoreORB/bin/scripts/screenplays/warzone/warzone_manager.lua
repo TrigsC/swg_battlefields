@@ -201,6 +201,14 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         WayfarManager:switchB(0, faction)
         WayfarManager:spawnMobileA()
         WayfarManager:spawnMobileB()
+		-- set phase time
+		local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
+    	WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
+    	local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+
+    	if (hasServerEvent("WayfarPhaseChange")) then
+			rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+		end
 	end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)

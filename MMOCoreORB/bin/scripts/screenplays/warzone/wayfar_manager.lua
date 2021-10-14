@@ -33,13 +33,14 @@ function WayfarManager:setCurrentPhaseInit()
         local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
         printf("WAYFAR lastChange = " .. lastChange)
     
-        if (lastChange ~= nil and lastChange ~= 0) then
-            return
-        end
+        --if (lastChange ~= nil and lastChange ~= 0) then
+        --    return
+        --end
     
         WayfarManager:setLastPhaseChangeTime(os.time())
     
         local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+        printf("WAYFAR timeToSchedule = " .. timeToSchedule)
     
         rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
 
@@ -185,15 +186,14 @@ end
 
 function WayfarManager:switchToNextPhase()
 
-    local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
-    WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
-    local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
-
-    if (hasServerEvent("WayfarPhaseChange")) then
-		rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
-	else
-		createServerEvent(timeToSchedule, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
-	end
+    --local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
+    --WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
+    --local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+    --if (hasServerEvent("WayfarPhaseChange")) then
+	--	rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+	--else
+	--	createServerEvent(timeToSchedule, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
+	--end
 
 	local currentPhase = WayfarManager:getCurrentPhase()
 	--local phaseID = WayfarManager:getCurrentPhaseID()
