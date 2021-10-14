@@ -14,9 +14,10 @@ function VillageGmSui:showMainPage(pPlayer)
 	local theedCurPhase = TheedManager:getCurrentPhase()
 	local wayfarCurrentPhase = WayfarManager:getCurrentPhase()
 	local wayfarNextPhaseChange = WayfarManager:getNextPhaseChangeTime()
+	local wayfarNextTickerChange = WayfarManager:getNextPhaseTickerTime()
 
 	local suiPrompt = " \\#pcontrast1 " .. "Current Phase:" .. " \\#pcontrast2 " .. curPhase .. " (id " .. phaseID .. ")\n" .. " \\#pcontrast1 " .. "Current Server Time:" .. " \\#pcontrast2 " .. os.date("%c") .. " \\#pcontrast1 " .. "Theed Phase:" .. " \\#pcontrast2 " .. theedCurPhase .. "\n" .. " \\#pcontrast1 " .. "Wayfar Phase:" .. " \\#pcontrast2 " .. wayfarCurrentPhase .. "\n"
-	local suiPrompt = suiPrompt .. " \\#pcontrast1 " .. "Next Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", nextPhaseChange)  .. " \\#pcontrast1 " .. "Next Wayfar Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", wayfarNextPhaseChange) --.. "\n \\#pcontrast1 " .. "Phase Time Left: " .. " \\#pcontrast2 " --.. phaseTimeLeft
+	local suiPrompt = suiPrompt .. " \\#pcontrast1 " .. "Next Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", nextPhaseChange)  .. " \\#pcontrast1 " .. "Next Wayfar Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", wayfarNextPhaseChange) .. " \\#pcontrast1 " .. "Next Wayfar Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", wayfarNextTickerChange)--.. "\n \\#pcontrast1 " .. "Phase Time Left: " .. " \\#pcontrast2 " --.. phaseTimeLeft
 
 	--local pMaster = VillageJediManagerTownship:getMasterObject()
 
