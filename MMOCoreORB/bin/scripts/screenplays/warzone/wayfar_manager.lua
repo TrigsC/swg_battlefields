@@ -33,9 +33,9 @@ function WayfarManager:setCurrentPhaseInit()
         local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
         printf("WAYFAR lastChange = " .. lastChange)
     
-        if (lastChange ~= nil and lastChange ~= 0) then
-            return
-        end
+        --if (lastChange ~= nil and lastChange ~= 0) then
+        --    return
+        --end
     
         WayfarManager:setLastPhaseChangeTime(os.time())
     
