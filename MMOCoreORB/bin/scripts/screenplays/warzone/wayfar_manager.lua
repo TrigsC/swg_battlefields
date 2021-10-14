@@ -171,6 +171,10 @@ function WayfarManager.getLastTickerChangeTime()
 	return lastChange
 end
 
+function WayfarManager:getWayfarTickerDuration()
+	return WayfarManager.WAYFAR_TICKER
+end
+
 function WayfarManager:getNextTickerChangeTime(includePast)
 	local lastTickerChange = WayfarManager:getLastTickerChangeTime()
 	local nextTickerChange = lastTickerChange + (WayfarManager:getWayfarTickerDuration() / 1000)
