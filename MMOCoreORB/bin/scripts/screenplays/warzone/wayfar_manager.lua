@@ -16,6 +16,60 @@ function WayfarManager:resetWayfar()
     printf("RESET WAYFAR timeToSchedule = " .. timeToSchedule)
     
     rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
+
+    WayfarManager:setLastPhaseTickerTime(os.time())
+    local timeToSchedule2 = (WayfarManager:getNextPhaseTickerTime(false) - os.time()) * 1000
+    printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
+    
+    rescheduleServerEvent("WayfarTick", timeToSchedule2)
+end
+
+function WayfarManager:pointsWayfar()
+    local point = 1
+    local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
+    local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
+    if (aPoint == 1) then
+        if (readData("wayfar:tick:imperial:") == 0) then
+            writeData("wayfar:tick:imperial:" .. point)
+        else
+            local tickImperial = readData("wayfar:tick:imperial:" .. 1)
+            tickImperial = tickImperial + point
+            writeData("wayfar:tick:imperial:" .. tickImperial)
+        end
+    elseif (aPoint == 2) then
+        if (readData("wayfar:tick:rebel:") == 0) then
+            writeData("wayfar:tick:rebel:" .. point)
+        else
+            local tickRebel = readData("wayfar:tick:rebel:" .. 1)
+            tickRebel = tickRebel + point
+            writeData("wayfar:tick:rebel:" .. tickRebel)
+        end
+    end
+    if (bPoint == 1) then
+        if (readData("wayfar:tick:imperial:") == 0) then
+            writeData("wayfar:tick:imperial:" .. point)
+        else
+            local tickImperial = readData("wayfar:tick:imperial:" .. 1)
+            tickImperial = tickImperial + point
+            writeData("wayfar:tick:imperial:" .. tickImperial)
+        end
+    elseif (bPoint == 2) then
+        if (readData("wayfar:tick:rebel:") == 0) then
+            writeData("wayfar:tick:rebel:" .. point)
+        else
+            local tickRebel = readData("wayfar:tick:rebel:" .. 1)
+            tickRebel = tickRebel + point
+            writeData("wayfar:tick:rebel:" .. tickRebel)
+        end
+    end
+    -- broadcast results
+    local objectID = readData("wf_a_spawn:npc:object:" .. 1)
+    local pMobile = getSceneObject(objectID)
+    local rebelPoints = readData("wayfar:tick:rebel:" .. 1)
+    local imperialPoints = readData("wayfar:tick:imperial:" .. 1)
+    local broadcastTemplate = ""
+    broadcastTemplate = "    Imperials: ".. imperialPoints .. "    Rebels: " .. rebelPoints
+    WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
 end
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit()
@@ -56,10 +110,78 @@ function WayfarManager:setCurrentPhaseInit()
         printf("WAYFAR timeToSchedule = " .. timeToSchedule)
     
         rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
-
-		WayfarManager:setCurrentPhaseID(0)
-		WayfarManager:setCurrentPhase(0)
 	end
+    if (not hasServerEvent("WayfarTick")) then
+        WayfarManager:setLastTickerChangeTime(os.time())
+        createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
+    else
+        local eventID2 = getServerEventID("WayfarTick")
+
+        if (eventID2 == nil) then
+            WayfarManager:switchToNextPhase()
+            return
+        end
+    
+        local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
+    
+        if (eventTimeLeft2 == nil) then
+            WayfarManager:switchToNextPhase()
+            return
+        end
+    
+        if (eventTimeLeft2 < 0) then
+            return
+        end
+    
+        -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
+        local lastChange2 = tonumber(getQuestStatus("Wayfar:lastPhaseTickerTime"))
+        printf("WAYFAR lastChange = " .. lastChange2)
+    
+        --if (lastChange ~= nil and lastChange ~= 0) then
+        --    return
+        --end
+    
+        WayfarManager:setLastTickerChangeTime(os.time())
+    
+        local timeToSchedule2 = (WayfarManager:getLastTickerChangeTime(false) - os.time()) * 1000
+        printf("WAYFAR timeToSchedule = " .. timeToSchedule2)
+    
+        rescheduleServerEvent("WayfarTick", timeToSchedule2)
+    end
+
+    WayfarManager:setCurrentPhaseID(0)
+	WayfarManager:setCurrentPhase(0)
+end
+
+function WayfarManager:setLastTickerChangeTime(time)
+	setQuestStatus("Wayfar:lastTickerChangeTime", time)
+end
+
+function WayfarManager.getLastTickerChangeTime()
+	local lastChange = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
+
+	if (lastChange == nil) then
+		lastChange = os.time()
+		setQuestStatus("Wayfar:lastTickerChangeTime", lastChange)
+	end
+
+	return lastChange
+end
+
+function WayfarManager:getNextTickerChangeTime(includePast)
+	local lastTickerChange = WayfarManager:getLastTickerChangeTime()
+	local nextTickerChange = lastTickerChange + (WayfarManager:getWayfarTickerDuration() / 1000)
+
+	local timeTable = os.date("*t", nextTickerChange)
+	local disregardTimeOfDay = WayfarManager:getWayfarTickerDuration() < (1 * 60 * 1000)
+
+	local returnTime = os.time(timeTable)
+
+	if (returnTime < os.time() and not includePast and not disregardTimeOfDay) then
+		returnTime = returnTime + 60 -- If the time was modified by phaseTickerTimeOfDay and ended up being in the past, push it forward by 1 minute
+	end
+
+	return returnTime
 end
 
 function WayfarManager:setLastPhaseChangeTime(time)
@@ -198,15 +320,6 @@ function WayfarManager:switchB(switch, faction)
 end
 
 function WayfarManager:switchToNextPhase()
-
-    --local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
-    --WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
-    --local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
-    --if (hasServerEvent("WayfarPhaseReset")) then
-	--	rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
-	--else
-	--	createServerEvent(timeToSchedule, "WayfarManager", "switchToNextPhase", "WayfarPhaseReset")
-	--end
 
 	local currentPhase = WayfarManager:getCurrentPhase()
 	--local phaseID = WayfarManager:getCurrentPhaseID()

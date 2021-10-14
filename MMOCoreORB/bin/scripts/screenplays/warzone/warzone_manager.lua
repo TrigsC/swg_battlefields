@@ -209,7 +209,12 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
 
 		rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
-		
+
+		WayfarManager:setLastTickerChangeTime(os.time())
+		local timeToSchedule2 = (WayfarManager:getLastTickerChangeTime(false) - os.time()) * 1000
+
+		rescheduleServerEvent("WayfarTick", timeToSchedule2)
+
 	end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)
