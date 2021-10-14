@@ -7,42 +7,40 @@ WayfarManager = ScreenPlay:new {
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit()
 	if (not hasServerEvent("WayfarPhaseChange")) then
-        local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
-        if (warzoneCurrentPhase == 3) then
-            WayfarManager:setLastPhaseChangeTime(os.time())
-            createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
-        else
-            local eventID = getServerEventID("WayfarPhaseChange")
+        printf("***********not hasServerEvent WayfarPhaseChange****************")
+        WayfarManager:setLastPhaseChangeTime(os.time())
+        createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
+    else
+        local eventID = getServerEventID("WayfarPhaseChange")
 
-            if (eventID == nil) then
-                WayfarManager:switchToNextPhase()
-                return
-            end
-    
-            local eventTimeLeft = getServerEventTimeLeft(eventID)
-    
-            if (eventTimeLeft == nil) then
-                WayfarManager:switchToNextPhase()
-                return
-            end
-    
-            if (eventTimeLeft < 0) then
-                return
-            end
-    
-            -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
-            local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
-    
-            if (lastChange ~= nil and lastChange ~= 0) then
-                return
-            end
-    
-            WayfarManager.setLastPhaseChangeTime(os.time())
-    
-            local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
-    
-            rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+        if (eventID == nil) then
+            WayfarManager:switchToNextPhase()
+            return
         end
+    
+        local eventTimeLeft = getServerEventTimeLeft(eventID)
+    
+        if (eventTimeLeft == nil) then
+            WayfarManager:switchToNextPhase()
+            return
+        end
+    
+        if (eventTimeLeft < 0) then
+            return
+        end
+    
+        -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
+        local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
+    
+        if (lastChange ~= nil and lastChange ~= 0) then
+            return
+        end
+    
+        WayfarManager.setLastPhaseChangeTime(os.time())
+    
+        local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+    
+        rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
 
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
