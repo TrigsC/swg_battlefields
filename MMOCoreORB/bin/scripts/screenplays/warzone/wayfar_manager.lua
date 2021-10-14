@@ -4,14 +4,27 @@ WayfarManager = ScreenPlay:new {
     WAYFAR_TICKER = 1 * 60 * 1000, -- 1 minute
 }
 
+function WayfarManager:resetWayfar()
+    WayfarManager:setCurrentPhaseID(0)
+	WayfarManager:setCurrentPhase(0)
+    WayfarManager:spawnSceneObjects(0)
+    WayfarManager:switchA(0, faction)
+    WayfarManager:switchB(0, faction)
+
+    WayfarManager:setLastPhaseChangeTime(os.time())
+    local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+    printf("RESET WAYFAR timeToSchedule = " .. timeToSchedule)
+    
+    rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
+end
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit()
-	if (not hasServerEvent("WayfarPhaseChange")) then
-        printf("***********not hasServerEvent WayfarPhaseChange****************")
+	if (not hasServerEvent("WayfarPhaseReset")) then
+        printf("***********not hasServerEvent WayfarPhaseReset****************")
         WayfarManager:setLastPhaseChangeTime(os.time())
-        createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
+        createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "resetWayfar", "WayfarPhaseReset")
     else
-        local eventID = getServerEventID("WayfarPhaseChange")
+        local eventID = getServerEventID("WayfarPhaseReset")
 
         if (eventID == nil) then
             WayfarManager:switchToNextPhase()
@@ -42,7 +55,7 @@ function WayfarManager:setCurrentPhaseInit()
         local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
         printf("WAYFAR timeToSchedule = " .. timeToSchedule)
     
-        rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+        rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
@@ -189,10 +202,10 @@ function WayfarManager:switchToNextPhase()
     --local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
     --WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
     --local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
-    --if (hasServerEvent("WayfarPhaseChange")) then
-	--	rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+    --if (hasServerEvent("WayfarPhaseReset")) then
+	--	rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 	--else
-	--	createServerEvent(timeToSchedule, "WayfarManager", "switchToNextPhase", "WayfarPhaseChange")
+	--	createServerEvent(timeToSchedule, "WayfarManager", "switchToNextPhase", "WayfarPhaseReset")
 	--end
 
 	local currentPhase = WayfarManager:getCurrentPhase()

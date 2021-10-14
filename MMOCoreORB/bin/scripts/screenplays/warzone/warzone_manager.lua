@@ -206,8 +206,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
     	WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
     	local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
 
-    	if (hasServerEvent("WayfarPhaseChange")) then
-			rescheduleServerEvent("WayfarPhaseChange", timeToSchedule)
+    	if (hasServerEvent("WayfarPhaseReset")) then
+			rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 		end
 	end
 
