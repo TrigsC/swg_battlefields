@@ -30,9 +30,17 @@ function WayfarManager:resetWayfar()
 end
 
 function WayfarManager:pointsWayfar()
+    WayfarManager:setLastTickerChangeTime(os.time())
+    local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
+    printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
+    
+    rescheduleServerEvent("WayfarTick", timeToSchedule2)
     local point = 1
+    printf("point == " .. point)
     local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
+    printf("aPoint == " .. aPoint)
     local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
+    printf("bPoint == " .. bPoint)
     if (aPoint == 1) then
         if (readData("wayfar:tick:imperial:") == 0) then
             printf("imp == 0")
