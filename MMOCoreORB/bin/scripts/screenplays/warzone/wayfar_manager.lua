@@ -120,6 +120,7 @@ function WayfarManager:setCurrentPhaseInit()
         rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 	end
     if (not hasServerEvent("WayfarTick")) then
+        printf("***********not hasServerEvent WayfarTick****************")
         WayfarManager:setLastTickerChangeTime(os.time())
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
     else
@@ -151,7 +152,7 @@ function WayfarManager:setCurrentPhaseInit()
     
         WayfarManager:setLastTickerChangeTime(os.time())
     
-        local timeToSchedule2 = (WayfarManager:getLastTickerChangeTime(false) - os.time()) * 1000
+        local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
         printf("WAYFAR timeToSchedule = " .. timeToSchedule2)
     
         rescheduleServerEvent("WayfarTick", timeToSchedule2)
