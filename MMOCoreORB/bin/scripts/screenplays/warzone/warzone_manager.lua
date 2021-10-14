@@ -202,7 +202,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         WayfarManager:spawnMobileA()
         WayfarManager:spawnMobileB()
 		-- set phase time
-		local nextPhaseChange = WarzoneManager:getNextPhaseChangeTime(true)
+		local nextPhaseChange = WayfarManager:getNextPhaseChangeTime(true)
     	WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
     	local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
 

@@ -109,7 +109,7 @@ end
 function WayfarManager:start()
 	if (isZoneEnabled("tatooine")) then
 		
-        Logger:log("Starting the Wayfar warzone Screenplay.", LT_INFO)
+        Logger:log("Starting the Wayfar wayfar Screenplay.", LT_INFO)
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
         local currentPhase = WayfarManager:getCurrentPhase()
         WayfarManager:setCurrentPhaseInit()
