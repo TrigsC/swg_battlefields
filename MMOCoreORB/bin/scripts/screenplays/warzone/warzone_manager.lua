@@ -201,6 +201,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         WayfarManager:switchB(0, faction)
         WayfarManager:spawnMobileA()
         WayfarManager:spawnMobileB()
+		deleteData("wayfar:tick:imperial:")
+    	deleteData("wayfar:tick:rebel:")
 		-- set phase time
 		
 		--local nextPhaseChange = WayfarManager:getNextPhaseChangeTime(true)
