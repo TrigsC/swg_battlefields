@@ -34,7 +34,7 @@ function WayfarManager:pointsWayfar()
     local timeToSchedule3 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
     printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
     
-    rescheduleServerEvent("WayfarTick", timeToSchedule3)
+    --rescheduleServerEvent("WayfarTick", timeToSchedule3)
     local point = 1
     printf("point == " .. point)
     local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
@@ -165,14 +165,14 @@ function WayfarManager:setLastTickerChangeTime(time)
 end
 
 function WayfarManager.getLastTickerChangeTime()
-	local lastChange = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
+	local lastChange2 = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
 
-	if (lastChange == nil) then
-		lastChange = os.time()
-		setQuestStatus("Wayfar:lastTickerChangeTime", lastChange)
+	if (lastChange2 == nil) then
+		lastChange2 = os.time()
+		setQuestStatus("Wayfar:lastTickerChangeTime", lastChange2)
 	end
 
-	return lastChange
+	return lastChange2
 end
 
 function WayfarManager:getWayfarTickerDuration()
@@ -180,19 +180,19 @@ function WayfarManager:getWayfarTickerDuration()
 end
 
 function WayfarManager:getNextTickerChangeTime(includePast)
-	local lastTickerChange = WayfarManager:getLastTickerChangeTime()
-	local nextTickerChange = lastTickerChange + (WayfarManager:getWayfarTickerDuration() / 1000)
+	local lastTickerChange2 = WayfarManager:getLastTickerChangeTime()
+	local nextTickerChange2 = lastTickerChange2 + (WayfarManager:getWayfarTickerDuration() / 1000)
 
-	local timeTable = os.date("*t", nextTickerChange)
-	local disregardTimeOfDay = WayfarManager:getWayfarTickerDuration() < (1 * 60 * 1000)
+	local timeTable2 = os.date("*t", nextTickerChange2)
+	local disregardTimeOfDay2 = WayfarManager:getWayfarTickerDuration() < (1 * 60 * 1000)
 
-	local returnTime = os.time(timeTable)
+	local returnTime2 = os.time(timeTable2)
 
-	if (returnTime < os.time() and not includePast and not disregardTimeOfDay) then
-		returnTime = returnTime + 60 -- If the time was modified by phaseTickerTimeOfDay and ended up being in the past, push it forward by 1 minute
+	if (returnTime2 < os.time() and not includePast and not disregardTimeOfDay2) then
+		returnTime2 = returnTime2 + 60 -- If the time was modified by phaseTickerTimeOfDay and ended up being in the past, push it forward by 1 minute
 	end
 
-	return returnTime
+	return returnTime2
 end
 
 function WayfarManager:setLastPhaseChangeTime(time)
