@@ -38,6 +38,7 @@ function WayfarManager:resetWayfar()
         broadcastTemplate = "    GAME OVER! Imperials Win " .. imperialPoints .. "to " .. rebelPoints
     else
         broadcastTemplate = "    GAME OVER! Rounded ended in a tie " .. imperialPoints .. "to " .. rebelPoints
+    end
     WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
 
     WayfarManager:setLastTickerChangeTime(os.time())
