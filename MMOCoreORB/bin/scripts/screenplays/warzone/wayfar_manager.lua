@@ -141,31 +141,37 @@ function WayfarManager:setCurrentPhaseInit2()
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
     else
         printf("***********hasServerEvent WayfarTick****************")
-        local eventID2 = getServerEventID("WayfarTick")
-        if (eventID2 == nil) then
-            WayfarManager:pointsWayfar()
-            return
-        end
-        local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
-        if (eventTimeLeft2 == nil) then
-            WayfarManager:pointsWayfar()
-            return
-        end
-        if (eventTimeLeft2 < 0) then
-            return
-        end
+        WayfarManager:setLastTickerChangeTime(os.time())
+
+        local timeToSchedule3 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
+        printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
+        rescheduleServerEvent("WayfarTick", timeToSchedule3)
+
+        --local eventID2 = getServerEventID("WayfarTick")
+        --if (eventID2 == nil) then
+        --    WayfarManager:pointsWayfar()
+        --    return
+        --end
+        --local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
+        --if (eventTimeLeft2 == nil) then
+        --    WayfarManager:pointsWayfar()
+        --    return
+        --end
+        --if (eventTimeLeft2 < 0) then
+        --    return
+        --end
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
-        local lastChange2 = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
-        printf("WAYFAR lastChange = " .. lastChange2)
+        --local lastChange2 = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
+        --printf("WAYFAR lastChange = " .. lastChange2)
     
         --if (lastChange ~= nil and lastChange ~= 0) then
         --    return
         --end
     
-        WayfarManager:setLastTickerChangeTime(os.time())
+        --WayfarManager:setLastTickerChangeTime(os.time())
     
-        local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
-        printf("WAYFAR timeToSchedule = " .. timeToSchedule2)
+        --local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
+        --printf("WAYFAR timeToSchedule = " .. timeToSchedule2)
     
         rescheduleServerEvent("WayfarTick", timeToSchedule2)
     end
