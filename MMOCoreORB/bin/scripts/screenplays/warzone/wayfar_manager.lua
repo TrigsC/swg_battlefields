@@ -88,7 +88,7 @@ function WayfarManager:pointsWayfar()
     WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
 end
 -- Set the current Warzone Phase for the first time.
-function WayfarManager:setCurrentPhaseInit()
+function WayfarManager:setCurrentPhaseInit1()
 	if (not hasServerEvent("WayfarPhaseReset")) then
         printf("***********not hasServerEvent WayfarPhaseReset****************")
         WayfarManager:setLastPhaseChangeTime(os.time())
@@ -96,12 +96,12 @@ function WayfarManager:setCurrentPhaseInit()
     else
         local eventID = getServerEventID("WayfarPhaseReset")
         if (eventID == nil) then
-            WayfarManager:switchToNextPhase()
+            WayfarManager:resetWayfar()
             return
         end
         local eventTimeLeft = getServerEventTimeLeft(eventID)
         if (eventTimeLeft == nil) then
-            WayfarManager:switchToNextPhase()
+            WayfarManager:resetWayfar()
             return
         end
         if (eventTimeLeft < 0) then
@@ -122,24 +122,27 @@ function WayfarManager:setCurrentPhaseInit()
     
         rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 	end
+end
+function WayfarManager:setCurrentPhaseInit2()
     if (not hasServerEvent("WayfarTick")) then
         printf("***********not hasServerEvent WayfarTick****************")
         WayfarManager:setLastTickerChangeTime(os.time())
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
     else
-        --local eventID2 = getServerEventID("WayfarTick")
-        --if (eventID2 == nil) then
-        --    WayfarManager:switchToNextPhase()
-        --    return
-        --end
-        --local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
-        --if (eventTimeLeft2 == nil) then
-        --    WayfarManager:switchToNextPhase()
-        --    return
-        --end
-        --if (eventTimeLeft2 < 0) then
-        --    return
-        --end
+        printf("***********hasServerEvent WayfarTick****************")
+        local eventID2 = getServerEventID("WayfarTick")
+        if (eventID2 == nil) then
+            WayfarManager:pointsWayfar()
+            return
+        end
+        local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
+        if (eventTimeLeft2 == nil) then
+            WayfarManager:pointsWayfar()
+            return
+        end
+        if (eventTimeLeft2 < 0) then
+            return
+        end
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
         local lastChange2 = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
         printf("WAYFAR lastChange = " .. lastChange2)
@@ -155,9 +158,6 @@ function WayfarManager:setCurrentPhaseInit()
     
         rescheduleServerEvent("WayfarTick", timeToSchedule2)
     end
-
-    WayfarManager:setCurrentPhaseID(0)
-	WayfarManager:setCurrentPhase(0)
 end
 
 function WayfarManager:setLastTickerChangeTime(time)
@@ -244,8 +244,9 @@ function WayfarManager:start()
 		
         Logger:log("Starting the Wayfar wayfar Screenplay.", LT_INFO)
         local warzoneCurrentPhase = WarzoneManager.getCurrentPhase()
-        local currentPhase = WayfarManager:getCurrentPhase()
-        WayfarManager:setCurrentPhaseInit()
+        --local currentPhase = WayfarManager:getCurrentPhase()
+        WayfarManager:setCurrentPhaseInit1()
+        WayfarManager:setCurrentPhaseInit2()
 
         if(warzoneCurrentPhase == 3) then
             WayfarManager:setCurrentPhaseID(0)
