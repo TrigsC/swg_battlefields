@@ -95,23 +95,18 @@ function WayfarManager:setCurrentPhaseInit()
         createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "resetWayfar", "WayfarPhaseReset")
     else
         local eventID = getServerEventID("WayfarPhaseReset")
-
         if (eventID == nil) then
             WayfarManager:switchToNextPhase()
             return
         end
-    
         local eventTimeLeft = getServerEventTimeLeft(eventID)
-    
         if (eventTimeLeft == nil) then
             WayfarManager:switchToNextPhase()
             return
         end
-    
         if (eventTimeLeft < 0) then
             return
         end
-    
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
         local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
         printf("WAYFAR lastChange = " .. lastChange)
@@ -132,24 +127,19 @@ function WayfarManager:setCurrentPhaseInit()
         WayfarManager:setLastTickerChangeTime(os.time())
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
     else
-        local eventID2 = getServerEventID("WayfarTick")
-
-        if (eventID2 == nil) then
-            WayfarManager:switchToNextPhase()
-            return
-        end
-    
-        local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
-    
-        if (eventTimeLeft2 == nil) then
-            WayfarManager:switchToNextPhase()
-            return
-        end
-    
-        if (eventTimeLeft2 < 0) then
-            return
-        end
-    
+        --local eventID2 = getServerEventID("WayfarTick")
+        --if (eventID2 == nil) then
+        --    WayfarManager:switchToNextPhase()
+        --    return
+        --end
+        --local eventTimeLeft2 = getServerEventTimeLeft(eventID2)
+        --if (eventTimeLeft2 == nil) then
+        --    WayfarManager:switchToNextPhase()
+        --    return
+        --end
+        --if (eventTimeLeft2 < 0) then
+        --    return
+        --end
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
         local lastChange2 = tonumber(getQuestStatus("Wayfar:lastTickerChangeTime"))
         printf("WAYFAR lastChange = " .. lastChange2)

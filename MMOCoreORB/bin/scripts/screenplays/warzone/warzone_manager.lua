@@ -211,7 +211,7 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 		rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 
 		WayfarManager:setLastTickerChangeTime(os.time())
-		local timeToSchedule2 = (WayfarManager:getLastTickerChangeTime(false) - os.time()) * 1000
+		local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
 
 		rescheduleServerEvent("WayfarTick", timeToSchedule2)
 
