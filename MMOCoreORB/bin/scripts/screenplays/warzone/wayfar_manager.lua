@@ -90,7 +90,7 @@ function WayfarManager:pointsWayfar()
         end
     end
     -- broadcast results
-    local objectID = readData("wf_a_spawn:npc:object:")
+    local objectID = readData("wf_a_spawn:npc:object:" .. 1)
     local pMobile = getSceneObject(objectID)
     local rebelPoints = readData("wayfar:tick:rebel:")
     local imperialPoints = readData("wayfar:tick:imperial:")
