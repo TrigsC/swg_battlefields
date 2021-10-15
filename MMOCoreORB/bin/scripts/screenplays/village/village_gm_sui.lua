@@ -103,8 +103,8 @@ function VillageGmSui.changePhase(pPlayer)
 
 	local sui = SuiMessageBox.new("VillageGmSui", "changePhaseCallback")
 
-	sui.setTitle("Warzone Phase Change")
-	sui.setPrompt("Are you sure you want to change the warzone to the next phase? Doing so will reset the progress of all players in the current phase.")
+	sui.setTitle("Arena Phase Change")
+	sui.setPrompt("Are you sure you want to change the arena to the next phase? Doing so will reset the progress of all players in the current phase.")
 	sui.setOkButtonText("Yes")
 	sui.setCancelButtonText("No")
 
@@ -126,7 +126,7 @@ function VillageGmSui:changePhaseCallback(pPlayer, pSui, eventIndex, args)
 		nextPhase = 1
 	end
 
-	CreatureObject(pPlayer):sendSystemMessage("Changing the Warzone from phase " .. curPhase .. " to phase " .. nextPhase .. ".")
+	CreatureObject(pPlayer):sendSystemMessage("Changing the Arena from phase " .. curPhase .. " to phase " .. nextPhase .. ".")
 	WarzoneManager:switchToNextPhase(true)
 end
 
