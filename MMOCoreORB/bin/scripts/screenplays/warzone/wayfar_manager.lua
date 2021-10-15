@@ -187,7 +187,7 @@ function WayfarManager:setCurrentPhaseInit2()
         --local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
         --printf("WAYFAR timeToSchedule = " .. timeToSchedule2)
     
-        rescheduleServerEvent("WayfarTick", timeToSchedule2)
+        --rescheduleServerEvent("WayfarTick", timeToSchedule2)
     end
 end
 
