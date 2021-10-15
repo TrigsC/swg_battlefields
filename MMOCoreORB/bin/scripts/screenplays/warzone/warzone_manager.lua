@@ -194,6 +194,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         TheedManager:spawnSceneObjects(1)
 	end
 	if(currentPhase == 3) then
+		local wayfarcurrentPhase = WayfarManager:getCurrentPhase()
+		WayfarManager:despawnSceneObjects(wayfarcurrentPhase)
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
         WayfarManager:spawnSceneObjects(0)
