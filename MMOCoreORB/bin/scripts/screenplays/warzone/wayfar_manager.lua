@@ -13,8 +13,6 @@ function WayfarManager:resetWayfar()
     WayfarManager:spawnSceneObjects(0)
     WayfarManager:switchA(0, faction)
     WayfarManager:switchB(0, faction)
-    deleteData("wayfar:tick:imperial:")
-    deleteData("wayfar:tick:rebel:")
 
     WayfarManager:setLastPhaseChangeTime(os.time())
     local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
@@ -33,12 +31,14 @@ function WayfarManager:resetWayfar()
     local imperialPoints = readData("wayfar:tick:imperial:")
     local broadcastTemplate = ""
     if (rebelPoints > imperialPoints) then
-        broadcastTemplate = "    GAME OVER! Rebels Win " .. rebelPoints .. "to " .. imperialPoints
+        broadcastTemplate = "    GAME OVER! Rebels Win " .. rebelPoints .. " to " .. imperialPoints
     elseif (imperialPoints > rebelPoints) then
-        broadcastTemplate = "    GAME OVER! Imperials Win " .. imperialPoints .. "to " .. rebelPoints
+        broadcastTemplate = "    GAME OVER! Imperials Win " .. imperialPoints .. " to " .. rebelPoints
     else
-        broadcastTemplate = "    GAME OVER! Rounded ended in a tie " .. imperialPoints .. "to " .. rebelPoints
+        broadcastTemplate = "    GAME OVER! Rounded ended in a Tie " .. imperialPoints .. " to " .. rebelPoints
     end
+    deleteData("wayfar:tick:imperial:")
+    deleteData("wayfar:tick:rebel:")
     WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
 
     WayfarManager:setLastTickerChangeTime(os.time())
