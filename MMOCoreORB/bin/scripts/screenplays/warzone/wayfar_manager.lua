@@ -26,6 +26,20 @@ function WayfarManager:resetWayfar()
         rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
     end
 
+    -- broadcast results
+    local objectID = readData("wf_a_spawn:npc:object:" .. 1)
+    local pMobile = getSceneObject(objectID)
+    local rebelPoints = readData("wayfar:tick:rebel:")
+    local imperialPoints = readData("wayfar:tick:imperial:")
+    local broadcastTemplate = ""
+    if (rebelPoints > imperialPoints) then
+        broadcastTemplate = "    GAME OVER! Rebels Win " .. rebelPoints .. "to " .. imperialPoints
+    elseif (imperialPoints > rebelPoints) then
+        broadcastTemplate = "    GAME OVER! Imperials Win " .. imperialPoints .. "to " .. rebelPoints
+    else
+        broadcastTemplate = "    GAME OVER! Rounded ended in a tie " .. imperialPoints .. "to " .. rebelPoints
+    WayfarManager:broadcastMessage(pMobile, broadcastTemplate)
+
     WayfarManager:setLastTickerChangeTime(os.time())
     local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
     printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
