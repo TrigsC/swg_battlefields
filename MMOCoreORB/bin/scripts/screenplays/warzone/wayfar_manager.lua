@@ -31,10 +31,10 @@ end
 
 function WayfarManager:pointsWayfar()
     WayfarManager:setLastTickerChangeTime(os.time())
-    local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
-    printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
+    local timeToSchedule3 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
+    printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
     
-    rescheduleServerEvent("WayfarTick", timeToSchedule2)
+    rescheduleServerEvent("WayfarTick", timeToSchedule3)
     local point = 1
     printf("point == " .. point)
     local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
