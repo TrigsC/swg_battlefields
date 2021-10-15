@@ -17,17 +17,24 @@ function b_wf_convo_handler:runScreenHandlers(pConvTemplate, pPlayer, pNpc, sele
 
 	-- This checks what the player has chosen and runs the code accordingly.
 	if (screenID == "fight") then
+        local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
+        printf("bPoint == " .. bPoint)
         if (faction == FACTIONREBEL) then
-            CreatureObject(pPlayer):playMusicMessage("sound/ui_xwing_target_enemy.snd")  -- Plays a sound message
-            --sendSystemMessage(" \\#FFFF00\\Rebels Own B!") -- Sends an on screen system message.
-		    --CreatureObject(pPlayer):sendSystemMessage(" \\#FFFF00\\Sending you to the frontline!") -- Sends an on screen system message.
-            WayfarManager:switchB(2, faction)
-            WayfarManager:switchToNextPhase()
+            if (bPoint == 2) then
+                return
+            else
+                CreatureObject(pPlayer):playMusicMessage("sound/ui_xwing_target_enemy.snd")  -- Plays a sound message
+                WayfarManager:switchB(2, faction)
+                WayfarManager:switchToNextPhase()
+            end
         else
-            CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
-            --sendSystemMessage(" \\#FFFF00\\Imperials Own B!") -- Sends an on screen system message.
-            WayfarManager:switchB(1, faction)
-            WayfarManager:switchToNextPhase()
+            if (bPoint == 1) then
+                return
+            else
+                CreatureObject(pPlayer):playMusicMessage("sound/ui_tie_target_enemy.snd")  -- Plays a sound message
+                WayfarManager:switchB(1, faction)
+                WayfarManager:switchToNextPhase()
+            end
         end
 	end
 
