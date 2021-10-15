@@ -164,6 +164,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	end
 
 	if(currentPhase == 3) then
+		local wayfarcurrentPhase1 = WayfarManager:getCurrentPhase()
+		WayfarManager:despawnSceneObjects(wayfarcurrentPhase1)
 		WayfarManager:despawnMobileA()
 		WayfarManager:despawnMobileB()
 		WayfarManager:spawnSceneObjects(0)
@@ -194,6 +196,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         TheedManager:spawnSceneObjects(1)
 	end
 	if(currentPhase == 3) then
+		local wayfarcurrentPhase = WayfarManager:getCurrentPhase()
+		WayfarManager:despawnSceneObjects(wayfarcurrentPhase)
 		WayfarManager:setCurrentPhaseID(0)
 		WayfarManager:setCurrentPhase(0)
         WayfarManager:spawnSceneObjects(0)
@@ -201,6 +205,29 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
         WayfarManager:switchB(0, faction)
         WayfarManager:spawnMobileA()
         WayfarManager:spawnMobileB()
+		deleteData("wayfar:tick:imperial:")
+    	deleteData("wayfar:tick:rebel:")
+		-- set phase time
+		
+		--local nextPhaseChange = WayfarManager:getNextPhaseChangeTime(true)
+    	--WayfarManager:setLastPhaseChangeTime(nextPhaseChange)
+		WayfarManager:setLastPhaseChangeTime(os.time())
+		local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
+
+		if (not hasServerEvent("WayfarPhaseReset")) then
+			createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "resetWayfar", "WayfarPhaseReset")
+		else
+			rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
+		end
+
+		WayfarManager:setLastTickerChangeTime(os.time())
+		local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
+		if (not hasServerEvent("WayfarTick")) then
+			createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
+		else
+			rescheduleServerEvent("WayfarTick", timeToSchedule2)
+		end
+
 	end
 
 	Logger:log("Switching warzone phase to " .. currentPhase, LT_INFO)

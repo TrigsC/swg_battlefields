@@ -13,9 +13,13 @@ function VillageGmSui:showMainPage(pPlayer)
 	local phaseTimeLeft = self:getPhaseDuration()
 	local theedCurPhase = TheedManager:getCurrentPhase()
 	local wayfarCurrentPhase = WayfarManager:getCurrentPhase()
+	local wayfarNextPhaseChange = WayfarManager:getNextPhaseChangeTime()
+	local wayfarNextTickerChange = WayfarManager:getNextTickerChangeTime()
+	local tickImperial = readData("wayfar:tick:imperial:")
+	local tickRebel = readData("wayfar:tick:rebel:")
 
-	local suiPrompt = " \\#pcontrast1 " .. "Current Phase:" .. " \\#pcontrast2 " .. curPhase .. " (id " .. phaseID .. ")\n" .. " \\#pcontrast1 " .. "Current Server Time:" .. " \\#pcontrast2 " .. os.date("%c") .. " \\#pcontrast1 " .. "Theed Phase:" .. " \\#pcontrast2 " .. theedCurPhase .. "\n" .. " \\#pcontrast1 " .. "Wayfar Phase:" .. " \\#pcontrast2 " .. wayfarCurrentPhase .. "\n"
-	local suiPrompt = suiPrompt .. " \\#pcontrast1 " .. "Next Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", nextPhaseChange)  .. "\n \\#pcontrast1 " .. "Phase Time Left: " .. " \\#pcontrast2 " --.. phaseTimeLeft
+	local suiPrompt = " \\#pcontrast1 " .. "Current Phase:" .. " \\#pcontrast2 " .. curPhase .. " (id " .. phaseID .. ")\n" .. " \\#pcontrast1 " .. "Current Server Time:" .. " \\#pcontrast2 " .. os.date("%c") .. " \n\\#pcontrast1 " .. "Theed Phase:" .. " \\#pcontrast2 " .. theedCurPhase .. "\n" .. " \\#pcontrast1 " .. "Wayfar Phase:" .. " \\#pcontrast2 " .. wayfarCurrentPhase .. "\n"
+	local suiPrompt = suiPrompt .. " \\#pcontrast1 " .. "Next Phase Change: " .. " \\#pcontrast2 " .. os.date("%c", nextPhaseChange)  .. " \n\\#pcontrast1 " .. "Next Wayfar 1hr Change: " .. " \\#pcontrast2 " .. os.date("%c", wayfarNextPhaseChange) .. " \n\\#pcontrast1 " .. "Next Wayfar 1m Change: " .. " \\#pcontrast2 " .. os.date("%c", wayfarNextTickerChange) .. " \n\\#pcontrast1 " .. "Wayfar Imperial Points: " .. " \\#pcontrast2 " .. tickImperial .. " \n\\#pcontrast1 " .. "Wayfar Rebel Points: " .. " \\#pcontrast2 " .. tickRebel--.. "\n \\#pcontrast1 " .. "Phase Time Left: " .. " \\#pcontrast2 " --.. phaseTimeLeft
 
 	--local pMaster = VillageJediManagerTownship:getMasterObject()
 
@@ -99,8 +103,8 @@ function VillageGmSui.changePhase(pPlayer)
 
 	local sui = SuiMessageBox.new("VillageGmSui", "changePhaseCallback")
 
-	sui.setTitle("Warzone Phase Change")
-	sui.setPrompt("Are you sure you want to change the warzone to the next phase? Doing so will reset the progress of all players in the current phase.")
+	sui.setTitle("Arena Phase Change")
+	sui.setPrompt("Are you sure you want to change the arena to the next phase? Doing so will reset the progress of all players in the current phase.")
 	sui.setOkButtonText("Yes")
 	sui.setCancelButtonText("No")
 
@@ -122,7 +126,7 @@ function VillageGmSui:changePhaseCallback(pPlayer, pSui, eventIndex, args)
 		nextPhase = 1
 	end
 
-	CreatureObject(pPlayer):sendSystemMessage("Changing the Warzone from phase " .. curPhase .. " to phase " .. nextPhase .. ".")
+	CreatureObject(pPlayer):sendSystemMessage("Changing the Arena from phase " .. curPhase .. " to phase " .. nextPhase .. ".")
 	WarzoneManager:switchToNextPhase(true)
 end
 
