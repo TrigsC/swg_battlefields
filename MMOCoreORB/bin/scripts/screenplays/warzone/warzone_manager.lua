@@ -164,6 +164,8 @@ function WarzoneManager:switchToNextPhase(manualSwitch)
 	end
 
 	if(currentPhase == 3) then
+		local wayfarcurrentPhase1 = WayfarManager:getCurrentPhase()
+		WayfarManager:despawnSceneObjects(wayfarcurrentPhase1)
 		WayfarManager:despawnMobileA()
 		WayfarManager:despawnMobileB()
 		WayfarManager:spawnSceneObjects(0)
