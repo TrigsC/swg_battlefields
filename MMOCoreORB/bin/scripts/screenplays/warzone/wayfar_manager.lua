@@ -16,7 +16,7 @@ function WayfarManager:resetWayfar()
 
     WayfarManager:setLastPhaseChangeTime(os.time())
     local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
-    printf("RESET WAYFAR timeToSchedule = " .. timeToSchedule)
+    -- printf("RESET WAYFAR timeToSchedule = " .. timeToSchedule)
     
     if (not hasServerEvent("WayfarPhaseReset")) then
         createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "resetWayfar", "WayfarPhaseReset")
@@ -43,7 +43,7 @@ function WayfarManager:resetWayfar()
 
     WayfarManager:setLastTickerChangeTime(os.time())
     local timeToSchedule2 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
-    printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
+    -- printf("RESET WAYFAR timeToSchedule2 = " .. timeToSchedule2)
     
     if (not hasServerEvent("WayfarTick")) then
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
@@ -55,27 +55,27 @@ end
 function WayfarManager:pointsWayfar()
     WayfarManager:setLastTickerChangeTime(os.time())
     local timeToSchedule3 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
-    printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
+    -- printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
     if (not hasServerEvent("WayfarTick")) then
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
     else
         rescheduleServerEvent("WayfarTick", timeToSchedule3)
     end
     local point = 1
-    printf("point == " .. point)
+    -- printf("point == " .. point)
     local aPoint = tonumber(getQuestStatus("Wayfar:APoint"))
-    printf("aPoint == " .. aPoint)
+    -- printf("aPoint == " .. aPoint)
     local bPoint = tonumber(getQuestStatus("Wayfar:BPoint"))
-    printf("bPoint == " .. bPoint)
+    -- printf("bPoint == " .. bPoint)
     if (aPoint == 1) then
         if (readData("wayfar:tick:imperial:") == 0) then
-            printf("imp == 0")
+            -- printf("imp == 0")
             writeData("wayfar:tick:imperial:", point)
-            printf("imp == " .. point)
+            -- printf("imp == " .. point)
         else
             local tickImperial = readData("wayfar:tick:imperial:")
             tickImperial = tickImperial + point
-            printf("imp == " .. tickImperial)
+            -- printf("imp == " .. tickImperial)
             writeData("wayfar:tick:imperial:", tickImperial)
         end
     elseif (aPoint == 2) then
@@ -116,7 +116,7 @@ end
 -- Set the current Warzone Phase for the first time.
 function WayfarManager:setCurrentPhaseInit1()
 	if (not hasServerEvent("WayfarPhaseReset")) then
-        printf("***********not hasServerEvent WayfarPhaseReset****************")
+        -- printf("***********not hasServerEvent WayfarPhaseReset****************")
         WayfarManager:setLastPhaseChangeTime(os.time())
         createServerEvent(WayfarManager.WAYFAR_RESET_TIME, "WayfarManager", "resetWayfar", "WayfarPhaseReset")
     else
@@ -135,7 +135,7 @@ function WayfarManager:setCurrentPhaseInit1()
         end
         -- Fixes servers that were already running the Wayfar prior to the change in schedule handling
         local lastChange = tonumber(getQuestStatus("Wayfar:lastPhaseChangeTime"))
-        printf("WAYFAR lastChange = " .. lastChange)
+        -- printf("WAYFAR lastChange = " .. lastChange)
     
         --if (lastChange ~= nil and lastChange ~= 0) then
         --    return
@@ -144,22 +144,22 @@ function WayfarManager:setCurrentPhaseInit1()
         WayfarManager:setLastPhaseChangeTime(os.time())
     
         local timeToSchedule = (WayfarManager:getNextPhaseChangeTime(false) - os.time()) * 1000
-        printf("WAYFAR timeToSchedule = " .. timeToSchedule)
+        -- printf("WAYFAR timeToSchedule = " .. timeToSchedule)
     
         rescheduleServerEvent("WayfarPhaseReset", timeToSchedule)
 	end
 end
 function WayfarManager:setCurrentPhaseInit2()
     if (not hasServerEvent("WayfarTick")) then
-        printf("***********not hasServerEvent WayfarTick****************")
+        -- printf("***********not hasServerEvent WayfarTick****************")
         WayfarManager:setLastTickerChangeTime(os.time())
         createServerEvent(WayfarManager.WAYFAR_TICKER, "WayfarManager", "pointsWayfar", "WayfarTick")
     else
-        printf("***********hasServerEvent WayfarTick****************")
+        -- printf("***********hasServerEvent WayfarTick****************")
         WayfarManager:setLastTickerChangeTime(os.time())
 
         local timeToSchedule3 = (WayfarManager:getNextTickerChangeTime(false) - os.time()) * 1000
-        printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
+        -- printf("RESET WAYFAR timeToSchedule3 = " .. timeToSchedule3)
         rescheduleServerEvent("WayfarTick", timeToSchedule3)
 
         --local eventID2 = getServerEventID("WayfarTick")
