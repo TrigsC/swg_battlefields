@@ -659,12 +659,14 @@ void CombatManager::broadcastCombatAction(CreatureObject* attacker, WeaponObject
 				animationCRC = animation.hashCode();
 			}
 
-			fatal(animationCRC != 0, "animationCRC is 0");
+			if (animationCRC != 0) {
+				uint64 weaponID = weapon->getObjectID();
 
-			uint64 weaponID = weapon->getObjectID();
-
-			CombatAction* combatAction = new CombatAction(attacker, targetDefenders, animationCRC, data.getTrails(), weaponID);
-			attacker->broadcastMessage(combatAction, true);
+				CombatAction* combatAction = new CombatAction(attacker, targetDefenders, animationCRC, data.getTrails(), weaponID);
+				attacker->broadcastMessage(combatAction, true);
+			} else {
+				attacker->error("animationCRC is 0 for " + data.getCommandName());
+			}
 		}
 	}
 
@@ -714,6 +716,8 @@ void CombatManager::finalCombatSpam(TangibleObject* attacker, WeaponObject* weap
 
 		// Combat Spam
 		if (defender != nullptr) {
+			Locker defLock(defender, attacker);
+
 			int jediMitigation = hitList->getJediMitigation();
 			int foodMit = hitList->getFoodMitigation();
 			int broadcastDamage = hitList->getInitialDamage() - jediMitigation - foodMit;
