@@ -1897,7 +1897,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				--"Garrmorl", "object/tangible/food/crafted/drink_garrmorl.iff",
 				--"Gralinyn Juice", "object/tangible/food/crafted/drink_gralinyn_juice.iff",
 				--"Ice Blaster", "object/tangible/food/crafted/drink_ice_blaster.iff",
-				--"Ithorian Mist", "object/tangible/food/crafted/drink_ithorian_mist.iff",
+				"Ithorian Mist", "object/tangible/food/crafted/drink_ithorian_mist.iff",
 				--"Jaar", "object/tangible/food/crafted/drink_jaar.iff",
 				--"Jawa Beer", "object/tangible/food/crafted/drink_jawa_beer.iff",
 				--"Kylessian Fruit Distillate", "object/tangible/food/crafted/drink_kylessian_fruit_distillate.iff",
@@ -1912,7 +1912,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				--"Tssolok", "object/tangible/food/crafted/drink_tssolok.iff",
 				"Vasarian Brandy", "object/tangible/food/crafted/drink_vasarian_brandy.iff",
 				--"Vayerbok", "object/tangible/food/crafted/drink_vayerbok.iff",
-				--"Veronian Berry Wine", "object/tangible/food/crafted/drink_veronian_berry_wine.iff"
+				"Veronian Berry Wine", "object/tangible/food/crafted/drink_veronian_berry_wine.iff"
 				},
 				--"Foraged Food",
 				--{
